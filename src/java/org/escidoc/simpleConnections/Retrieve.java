@@ -76,9 +76,13 @@ public class Retrieve {
             }
             else {
                 // write out data
+                String contentEncoding = conn.getContentEncoding();
+                if (contentEncoding == null) {
+                    contentEncoding = "UTF-8";
+                }
                 BufferedReader in =
                     new BufferedReader(new InputStreamReader(conn
-                        .getInputStream(), "UTF-8"));
+                        .getInputStream(), contentEncoding));
 
                 String line = in.readLine();
                 while (line != null) {
