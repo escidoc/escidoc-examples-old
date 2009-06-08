@@ -28,8 +28,11 @@
  */
 package org.escidoc.simpleConnections;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -46,44 +49,50 @@ import java.net.URL;
  */
 public class Retrieve {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
 
-		// define the location if the resource
-		URL url = null;
+        // define the location if the resource
+        URL url = null;
 
-		try {
-			url = new URL("http://localhost:8080/ir/item/escidoc:ex5");
-		} catch (MalformedURLException e) {
-			System.err.println("Mal formed URL '" + url + "'");
-			System.exit(1);
-		}
+        try {
+            url = new URL("http://localhost:8080/ir/item/escidoc:ex5");
+        }
+        catch (MalformedURLException e) {
+            System.err.println("Mal formed URL '" + url + "'");
+            System.exit(1);
+        }
 
-		// establish connection
-		try {
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("GET");
+        // establish connection
+        try {
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
 
-			// check response code
-			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				System.err.println(conn.getResponseMessage());
-			} else {
-				// write out data
-				DataInputStream in = new DataInputStream(conn.getInputStream());
+            // check response code
+            if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                System.err.println(conn.getResponseMessage());
+            }
+            else {
+                // write out data
+                BufferedReader in =
+                    new BufferedReader(new InputStreamReader(conn
+                        .getInputStream(), "UTF-8"));
 
-				int ch;
-				while ((ch = in.read()) >= 0) {
-					System.out.print((char) ch);
-				}
+                String line = in.readLine();
+                while (line != null) {
+                    System.out.println(line);
+                    line = in.readLine();
+                }
 
-				in.close();
-			}
+                in.close();
+            }
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
 
-	}
+    }
 }
