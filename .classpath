@@ -2,5 +2,45 @@
 <classpath>
 	<classpathentry kind="src" path="src/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/activation.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/axis-ant.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/axis.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/bsf.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/castor-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/commons-net-1.0.0-dev.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/ibmjsse.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/javax.jms.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/JimiProClasses.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/mailapi_1_3_1.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/saaj.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/servlet.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/axis1.4/wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/commons/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/commons/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/bcel.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/jibx-bind.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/jibx-extras.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/jibx-run.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/qdox-1.6.1.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/stax-api.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/wstx-asl.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/xmlpull_1_1_4.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/jibx-1.1.6a/xpp3.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/joda-time-1.5.2/joda-time-1.5.2.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/security/sunxacml.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/security/wss4j.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/security/xmlsec-1.2.1.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/xalan/xalan-2.6.0.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/xerces-2.9.1/resolver.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/xerces-2.9.1/serializer.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/xerces-2.9.1/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/xerces-2.9.1/xercesSamples.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/xerces-2.9.1/xml-apis.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/escidoc-core-client-lib-HEAD-buildHEAD.jar"/>
+	<classpathentry kind="lib" path="src/java/org/escidoc/workingWithClientLib/lib/opensaml-1.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
