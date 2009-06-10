@@ -54,8 +54,6 @@ public class Create {
     private static final String CREATE_ITEM_URL =
         "http://localhost:8080/ir/item";
 
-    private static String userHandle = "Shibboleth-Handle-1";
-
     private static String user;
 
     private static String pass;
@@ -66,8 +64,8 @@ public class Create {
     public static void main(String[] args) {
 
         if (args.length < 2) {
-            user = "roland";
-            pass = "Shibboleth-Handle-1";
+            user = "sysadmin";
+            pass = "eSciDoc";
         }
         else {
             user = args[0];
