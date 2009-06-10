@@ -38,17 +38,14 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author Frank Schwichtenberg <Frank.Schwichtenberg@FIZ-Karlsruhe.de>
  * 
  */
-public class Create {
+public class CreateItem {
 
-    private static final String TEMPLATE_URL =
+    private static String templateUrl =
         "http://localhost:8080/ir/item/escidoc:ex5";
 
     private static final String CREATE_ITEM_URL =
@@ -59,41 +56,59 @@ public class Create {
     private static String pass;
 
     /**
+     * Execute the creation of a resource in eSciDoc Infrastructure from given
+     * XML as given user.
+     * 
      * @param args
+     *            An optional URL of an eSciDoc resource XML followed by
+     *            username and password for login. If neither the URL nor the
+     *            user credentials are present default values are applied.
      */
     public static void main(String[] args) {
 
-        if (args.length < 2) {
+        // first param is template url, if present
+        if (args.length > 0) {
+            templateUrl = args[0];
+        }
+
+        // set username and password from params or to default
+        if (args.length < 3) {
             user = "sysadmin";
             pass = "eSciDoc";
         }
         else {
-            user = args[0];
-            pass = args[1];
+            user = args[1];
+            pass = args[2];
         }
 
+        // define the location of the template resource
         URL url = null;
         try {
-            // define the location of the template resource
-            url = new URL(TEMPLATE_URL);
-
-            // create new resource from template
-            String xml = createFromTemplate(url);
-
-            System.out.println(xml);
-
+            url = new URL(templateUrl);
         }
         catch (MalformedURLException e) {
             System.err.println("Mal formed URL '" + url + "'");
             System.exit(1);
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        // create new resource from template
+        String xml = createFromTemplate(url);
+
+        System.out.println(xml);
 
     }
 
-    private static String createFromTemplate(final URL url) throws IOException {
+    /**
+     * Creates a resource in eSciDoc Infrastructure from template retrieved from
+     * url. Supported protocols are "file" and those supported by
+     * <code>java.net.URLConnection</code>.
+     * 
+     * @param url
+     *            URL of template.
+     * @return A string containing the XML representation of the newly created
+     *         resource.
+     */
+    private static String createFromTemplate(final URL url) {
 
         BufferedReader in = Util.getTemplate(url);
 
@@ -102,6 +117,15 @@ public class Create {
         return item;
     }
 
+    /**
+     * Creates a resource in eSciDoc Infrastructure from template read from
+     * given Reader.
+     * 
+     * @param in
+     *            Reader to read the template XML from.
+     * @return A string containing the XML representation of the newly created
+     *         resource.
+     */
     private static String createItem(BufferedReader in) {
 
         StringBuffer result = new StringBuffer();
@@ -151,8 +175,7 @@ public class Create {
                     System.err.println(line);
                     line = r.readLine();
                 }
-                throw new RuntimeException(
-                    "Create connection for creating resource failed.");
+                throw new RuntimeException("Creating resource failed.");
             }
 
             // read newly created resource

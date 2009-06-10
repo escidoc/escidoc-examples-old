@@ -29,6 +29,7 @@
 package org.escidoc.simpleConnections;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -126,21 +127,48 @@ public class Util {
         return handle;
     }
 
-    public static BufferedReader getTemplate(URL url) throws IOException {
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    /**
+     * Returns a reader for reading the content of url. Supported protocols are
+     * "file" and those supported by <code>java.net.URLConnection</code>.
+     * 
+     * @param url
+     * @return
+     */
+    public static BufferedReader getTemplate(URL url) {
+        BufferedReader templateReader = null;
 
-        // check response code
-        if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-            System.err.println(conn.getResponseMessage());
-            throw new IOException("Error connecting template URL.");
+        try {
+
+            if (url.getProtocol().equalsIgnoreCase("file")) {
+                String path = url.toString().replaceFirst("file://", "");
+                // TODO get encoding from XML header
+                templateReader =
+                    new BufferedReader(new InputStreamReader(
+                        new FileInputStream(path), "UTF-8"));
+            }
+            else {
+                HttpURLConnection conn =
+                    (HttpURLConnection) url.openConnection();
+                // check response code
+                if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                    System.err.println(conn.getResponseMessage());
+                    throw new IOException("Error connecting template URL.");
+                }
+
+                String contentEncoding = conn.getContentEncoding();
+                if (contentEncoding == null) {
+                    contentEncoding = DEFAULT_CONTENT_ENCODING;
+                }
+
+                templateReader =
+                    new BufferedReader(new InputStreamReader(conn
+                        .getInputStream(), contentEncoding));
+            }
+        }
+        catch (IOException e) {
+            throw new RuntimeException("Error retrieving template.", e);
         }
 
-        String contentEncoding = conn.getContentEncoding();
-        if (contentEncoding == null) {
-            contentEncoding = DEFAULT_CONTENT_ENCODING;
-        }
-
-        return new BufferedReader(new InputStreamReader(conn.getInputStream(),
-            contentEncoding));
+        return templateReader;
     }
 }
