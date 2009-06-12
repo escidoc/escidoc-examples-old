@@ -13,14 +13,14 @@ import de.escidoc.core.client.exceptions.TransportException;
  * @author SWA
  * 
  */
-public class Crud {
+public class Demo1 {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
-		Create c = new Create();
+		DemoItem c = new DemoItem();
 
 		try {
 			c.createItem();

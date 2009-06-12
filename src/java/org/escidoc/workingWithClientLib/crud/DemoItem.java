@@ -12,12 +12,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import de.escidoc.core.client.ItemHandlerClient;
+import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
+import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.common.properties.ContentModelSpecific;
 import de.escidoc.core.resources.om.item.Item;
@@ -28,7 +30,7 @@ import de.escidoc.core.resources.om.item.Item;
  * @author SWA
  * 
  */
-public class Create {
+public class DemoItem {
 
 	/**
 	 * Create an Item.
@@ -72,17 +74,10 @@ public class Create {
 	/**
 	 * Item lifecycle.
 	 * 
-	 * @throws TransportException
-	 *             Thrown in case of errors on transport level.
-	 * @throws InternalClientException
-	 *             Thrown if client library internal errors occur.
-	 * @throws EscidocException
-	 *             Thrown if framework throws exception.
 	 * @throws ParserConfigurationException
+	 * @throws EscidocClientException
 	 */
-	public void createLifecycle() throws EscidocException,
-			InternalClientException, TransportException,
-			ParserConfigurationException {
+	public void createLifecycle() throws ParserConfigurationException, EscidocClientException {
 
 		ItemHandlerClient ihc = new ItemHandlerClient();
 		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
@@ -94,23 +89,57 @@ public class Create {
 		System.out.println(item.getObjid());
 
 		// submit
-        TaskParam tp = new TaskParam();
-        tp.setLastModificationDate(item.getLastModificationDate());
-        tp.setComment("Submitted on eSciDoc Days 2009");
+		TaskParam tp = new TaskParam();
+		tp.setLastModificationDate(item.getLastModificationDate());
+		tp.setComment("Submitted on eSciDoc Days 2009");
 
-        ihc.submit(item, tp);
-        
-        // release
-        tp.setLastModificationDate(item.getLastModificationDate());
-        tp.setComment("Released on eSciDoc Days 2009");
-        
-        ihc.release(item, tp);
+		Result result = ihc.submit(item, tp);
+
+		// release
+		tp.setLastModificationDate(result.getLastModificationDate());
+		tp.setComment("Released on eSciDoc Days 2009");
+
+		ihc.release(item, tp);
 	}
 
 	/**
-	 * Prepare Item for create.
+	 * Show how to assign persistent identifier to Item.
 	 * 
-	 * @return Item.
+	 * @throws ParserConfigurationException
+	 * @throws EscidocClientException
+	 */
+	public void assignPids() throws ParserConfigurationException,
+			EscidocClientException {
+
+		ItemHandlerClient ihc = new ItemHandlerClient();
+		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
+				Constants.SYSTEM_ADMIN_PASSWORD);
+
+		// create --------------------------------------------------------------
+		Item item = ihc.create(prepareItem());
+
+		System.out.println(item.getObjid());
+
+		// assign object PID ---------------------------------------------------
+		TaskParam taskParam = new TaskParam();
+		taskParam.setLastModificationDate(item.getLastModificationDate());
+		taskParam.setUrl("htttaskParamo.solution/for/this/resource");
+		taskParam.setComment("Object PID on eSciDoc Days 2009");
+
+		Result result = ihc.assignObjectPid(item, taskParam);
+
+		// assign version PID --------------------------------------------------
+		taskParam.setLastModificationDate(result.getLastModificationDate());
+		taskParam.setUrl("htttaskParamo.solution/for/this/resource");
+		taskParam.setComment("Object PID on eSciDoc Days 2009");
+
+		ihc.assignObjectPid(item, taskParam);
+
+	}
+
+	/**
+	 * Prepare Item for create. taskParam@return Item.
+	 * 
 	 * @throws ParserConfigurationException
 	 */
 	private Item prepareItem() throws ParserConfigurationException {
