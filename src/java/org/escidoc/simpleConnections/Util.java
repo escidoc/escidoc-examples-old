@@ -50,12 +50,36 @@ public class Util {
     public static final Object LINE_SEPARATOR =
         System.getProperty("line.separator");
 
+    private static String escidocInfrastructureHost = "localhost";
+
+    private static String escidocInfrastructurePort = "8080";
+
+    public static String getEscidocInfrastructureHost() {
+        return escidocInfrastructureHost;
+    }
+
+    public static void setEscidocInfrastructureHost(
+        String escidocInfrastructureHost) {
+        Util.escidocInfrastructureHost = escidocInfrastructureHost;
+    }
+
+    public static String getEscidocInfrastructurePort() {
+        return escidocInfrastructurePort;
+    }
+
+    public static void setEscidocInfrastructurePort(
+        String escidocInfrastructurePort) {
+        Util.escidocInfrastructurePort = escidocInfrastructurePort;
+    }
+
     public static String getAuthHandle(String username, String password) {
         String handle = null;
 
         try {
 
-            URL loginUrl = new URL("http://localhost:8080/aa/login");
+            URL loginUrl =
+                new URL("http://" + escidocInfrastructureHost + ":"
+                    + escidocInfrastructurePort + "/aa/login");
             URL authURL =
                 new URL("http://localhost:8080/aa/j_spring_security_check");
 
@@ -135,6 +159,19 @@ public class Util {
      * @return
      */
     public static BufferedReader getTemplate(URL url) {
+        return getTemplate(url, null, null);
+    }
+
+    /**
+     * Returns a reader for reading the content of url. A HTTP Request to the
+     * eSciDoc Infrastructure is authenticated with user and pass. Supported
+     * protocols are "file" and those supported by
+     * <code>java.net.URLConnection</code>.
+     * 
+     * @param url
+     * @return
+     */
+    public static BufferedReader getTemplate(URL url, String user, String pass) {
         BufferedReader templateReader = null;
 
         try {
@@ -147,12 +184,18 @@ public class Util {
                         new FileInputStream(path), "UTF-8"));
             }
             else {
+                HttpURLConnection.setFollowRedirects(false);
                 HttpURLConnection conn =
                     (HttpURLConnection) url.openConnection();
+                if (user != null && pass != null) {
+                    conn.setRequestProperty("Cookie", "escidocCookie="
+                        + Util.getAuthHandle(user, pass));
+                }
                 // check response code
                 if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                    System.err.println(conn.getResponseMessage());
-                    throw new IOException("Error connecting template URL.");
+                    throw new IOException("Error connecting template '" + url
+                        + "'. Status: " + conn.getResponseCode() + ", "
+                        + conn.getResponseMessage());
                 }
 
                 String contentEncoding = conn.getContentEncoding();
@@ -163,10 +206,16 @@ public class Util {
                 templateReader =
                     new BufferedReader(new InputStreamReader(conn
                         .getInputStream(), contentEncoding));
+                // String line = templateReader.readLine();
+                // while (line != null) {
+                // System.out.println(line);
+                // line = templateReader.readLine();
+                // }
             }
         }
         catch (IOException e) {
-            throw new RuntimeException("Error retrieving template.", e);
+            throw new RuntimeException(
+                "Error retrieving template " + url + ".", e);
         }
 
         return templateReader;

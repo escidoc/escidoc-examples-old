@@ -43,12 +43,12 @@ import java.net.URL;
  * @author Frank Schwichtenberg <Frank.Schwichtenberg@FIZ-Karlsruhe.de>
  * 
  */
-public class CreateItem {
+public class CreateContainer {
 
     private static String templateUrl =
-        "http://localhost:8080/ir/item/escidoc:ex5";
+        "http://localhost:8080/ir/container/escidoc:ex7";
 
-    private static final String CREATE_ITEM_PATH = "/ir/item";
+    private static final String CREATE_CONTAINER_PATH = "/ir/container";
 
     private static String user;
 
@@ -109,11 +109,11 @@ public class CreateItem {
      */
     private static String createFromTemplate(final URL url) {
 
-        BufferedReader in = Util.getTemplate(url);
+        BufferedReader in = Util.getTemplate(url, user, pass);
 
-        String item = createItem(in);
+        String container = createContainer(in);
 
-        return item;
+        return container;
     }
 
     /**
@@ -125,14 +125,14 @@ public class CreateItem {
      * @return A string containing the XML representation of the newly created
      *         resource.
      */
-    private static String createItem(BufferedReader in) {
+    private static String createContainer(BufferedReader in) {
 
         StringBuffer result = new StringBuffer();
 
         try {
             URL createUrl =
                 new URL("http://" + Util.getEscidocInfrastructureHost() + ":"
-                    + Util.getEscidocInfrastructurePort() + CREATE_ITEM_PATH);
+                    + Util.getEscidocInfrastructurePort() + CREATE_CONTAINER_PATH);
             HttpURLConnection createConnection =
                 (HttpURLConnection) createUrl.openConnection();
 
