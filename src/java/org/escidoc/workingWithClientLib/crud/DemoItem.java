@@ -77,7 +77,7 @@ public class DemoItem {
 	 * @throws ParserConfigurationException
 	 * @throws EscidocClientException
 	 */
-	public void createLifecycle() throws ParserConfigurationException, EscidocClientException {
+	public void lifecycle() throws ParserConfigurationException, EscidocClientException {
 
 		ItemHandlerClient ihc = new ItemHandlerClient();
 		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
