@@ -18,6 +18,7 @@ import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
+import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.common.properties.ContentModelSpecific;
 import de.escidoc.core.resources.om.item.Item;
 
@@ -43,8 +44,8 @@ public class Create {
 	public void createItem() throws EscidocException, InternalClientException,
 			TransportException, ParserConfigurationException {
 
-		ItemHandlerClient cc = new ItemHandlerClient();
-		cc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
+		ItemHandlerClient ihc = new ItemHandlerClient();
+		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
 				Constants.SYSTEM_ADMIN_PASSWORD);
 
 		Item item = new Item();
@@ -54,41 +55,131 @@ public class Create {
 		item.getProperties().setContentModel(
 				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
-		// // Content-model-specific
+		// Content-model
+		item.getProperties().setContentModelSpecific(getContentModelSpecific());
+
+		// Metadata Record(s)
+		MetadataRecords mdRecords = new MetadataRecords();
+		mdRecords.add(getMdRecord("escidoc"));
+		item.setMetadataRecords(mdRecords);
+
+		// create
+		Item newItem = ihc.create(item);
+
+		System.out.println(newItem.getObjid());
+	}
+
+	/**
+	 * Item lifecycle.
+	 * 
+	 * @throws TransportException
+	 *             Thrown in case of errors on transport level.
+	 * @throws InternalClientException
+	 *             Thrown if client library internal errors occur.
+	 * @throws EscidocException
+	 *             Thrown if framework throws exception.
+	 * @throws ParserConfigurationException
+	 */
+	public void createLifecycle() throws EscidocException,
+			InternalClientException, TransportException,
+			ParserConfigurationException {
+
+		ItemHandlerClient ihc = new ItemHandlerClient();
+		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
+				Constants.SYSTEM_ADMIN_PASSWORD);
+
+		// create
+		Item item = ihc.create(prepareItem());
+
+		System.out.println(item.getObjid());
+
+		// submit
+        TaskParam tp = new TaskParam();
+        tp.setLastModificationDate(item.getLastModificationDate());
+        tp.setComment("Submitted on eSciDoc Days 2009");
+
+        ihc.submit(item, tp);
+        
+        // release
+        tp.setLastModificationDate(item.getLastModificationDate());
+        tp.setComment("Released on eSciDoc Days 2009");
+        
+        ihc.release(item, tp);
+	}
+
+	/**
+	 * Prepare Item for create.
+	 * 
+	 * @return Item.
+	 * @throws ParserConfigurationException
+	 */
+	private Item prepareItem() throws ParserConfigurationException {
+		Item item = new Item();
+
+		item.getProperties().setContext(
+				new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+		item.getProperties().setContentModel(
+				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+
+		// Content-model
+		item.getProperties().setContentModelSpecific(getContentModelSpecific());
+
+		// Metadata Record(s)
+		MetadataRecords mdRecords = new MetadataRecords();
+		mdRecords.add(getMdRecord("escidoc"));
+		item.setMetadataRecords(mdRecords);
+
+		return item;
+	}
+
+	/**
+	 * Get content model specific.
+	 * 
+	 * @return
+	 * @throws ParserConfigurationException
+	 */
+	private ContentModelSpecific getContentModelSpecific()
+			throws ParserConfigurationException {
+
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
 		Document doc = builder.newDocument();
+
 		Element contentModelSpecific = doc.createElementNS(null, "cms");
-		Element element1 = doc.createElement("some-other-stuff1");
-		element1.setTextContent("33333333333333333333");
+		Element element1 = doc.createElement("some-other-stuff");
+		element1.setTextContent("some content - " + System.nanoTime());
 
 		List<Element> cmsContent = new LinkedList<Element>();
 		cmsContent.add(contentModelSpecific);
 		cmsContent.add(element1);
-		ContentModelSpecific cms = new ContentModelSpecific();
 
+		ContentModelSpecific cms = new ContentModelSpecific();
 		cms.setContent(cmsContent);
 
-		item.getProperties().setContentModelSpecific(cms);
+		return cms;
+	}
 
-		MetadataRecords mdRecords = new MetadataRecords();
+	/**
+	 * Get MetadataRecord.
+	 * 
+	 * @param name
+	 *            Name of md-record.
+	 * @return MetadataRecord
+	 * @throws ParserConfigurationException
+	 */
+	private MetadataRecord getMdRecord(final String name)
+			throws ParserConfigurationException {
+
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = factory.newDocumentBuilder();
+		Document doc = builder.newDocument();
+
 		MetadataRecord mdRecord = new MetadataRecord();
-		mdRecord.setName("escidoc");
+		mdRecord.setName(name);
 
 		Element element = doc.createElementNS(null, "myMdRecord");
 		mdRecord.setContent(element);
 
-		mdRecords.add(mdRecord);
-		item.setMetadataRecords(mdRecords);
-
-		// Relations relations = new Relations();
-		// Relation relation = new Relation(new ResourceRef(EXAMPLE_ITEM_ID));
-		// relation
-		// .setPredicate("http://www.escidoc.de/ontologies/mpdl-ontologies/content-relations#isPartOf");
-		// relations.add(relation);
-		// item.setRelations(relations);
-		cc.create(item);
-
+		return mdRecord;
 	}
-
 }
