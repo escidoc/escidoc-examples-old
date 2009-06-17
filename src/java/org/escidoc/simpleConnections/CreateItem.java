@@ -153,6 +153,7 @@ public class CreateItem {
             }
             in.close();
             out.close();
+            createConnection.connect();
 
             // connect creating reader
             BufferedReader createdReader = null;

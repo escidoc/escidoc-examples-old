@@ -81,7 +81,8 @@ public class Util {
                 new URL("http://" + escidocInfrastructureHost + ":"
                     + escidocInfrastructurePort + "/aa/login");
             URL authURL =
-                new URL("http://localhost:8080/aa/j_spring_security_check");
+                new URL("http://" + escidocInfrastructureHost + ":"
+                    + escidocInfrastructurePort + "/aa/j_spring_security_check");
 
             HttpURLConnection.setFollowRedirects(false);
 
