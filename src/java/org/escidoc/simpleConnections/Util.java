@@ -39,6 +39,8 @@ import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 
+import de.escidoc.core.client.exceptions.application.security.AuthenticationException;
+
 /**
  * @author Frank Schwichtenberg <Frank.Schwichtenberg@FIZ-Karlsruhe.de>
  * 
@@ -72,7 +74,8 @@ public class Util {
         Util.escidocInfrastructurePort = escidocInfrastructurePort;
     }
 
-    public static String getAuthHandle(String username, String password) {
+    public static String getAuthHandle(String username, String password)
+        throws AuthenticationException {
         String handle = null;
 
         try {
@@ -128,6 +131,12 @@ public class Util {
             cookieList = redirectConn.getHeaderFields().get("Set-Cookie");
             // System.err.println(cookieList);
 
+            // check if login failed
+            if (cookieList == null) {
+                throw new AuthenticationException(403, "Forbidden",
+                    "Could not log in user " + username + ".",
+                    "redirectlocation");
+            }
             // Get the user handle from the auth cookie.
             Iterator<String> cookieIterator = cookieList.iterator();
             while (cookieIterator.hasNext()) {
@@ -159,7 +168,8 @@ public class Util {
      * @param url
      * @return
      */
-    public static BufferedReader getTemplate(URL url) {
+    public static BufferedReader getTemplate(URL url)
+        throws AuthenticationException {
         return getTemplate(url, null, null);
     }
 
@@ -171,8 +181,10 @@ public class Util {
      * 
      * @param url
      * @return
+     * @throws AuthenticationException
      */
-    public static BufferedReader getTemplate(URL url, String user, String pass) {
+    public static BufferedReader getTemplate(URL url, String user, String pass)
+        throws AuthenticationException {
         BufferedReader templateReader = null;
 
         try {

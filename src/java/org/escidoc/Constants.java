@@ -4,9 +4,9 @@ public class Constants {
 
 	public static final String DEFAULT_SERVICE_URL = "http://localhost:8080/";
 
-	public static final String SYSTEM_ADMIN_USER = "testsystemadministrator";
+	public static final String SYSTEM_ADMIN_USER = "sysadmin";
 
-	public static final String SYSTEM_ADMIN_PASSWORD = "escidoc";
+	public static final String SYSTEM_ADMIN_PASSWORD = "eSciDoc";
 
 	/**
 	 * Objid from common example set.

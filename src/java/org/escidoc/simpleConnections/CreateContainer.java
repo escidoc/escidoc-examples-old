@@ -39,6 +39,8 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+import de.escidoc.core.client.exceptions.application.security.AuthenticationException;
+
 /**
  * @author Frank Schwichtenberg <Frank.Schwichtenberg@FIZ-Karlsruhe.de>
  * 
@@ -64,6 +66,7 @@ public class CreateContainer {
      *            user credentials are present default values are applied.
      */
     public static void main(String[] args) {
+        String xml = null;
 
         // first param is template url, if present
         if (args.length > 0) {
@@ -84,14 +87,19 @@ public class CreateContainer {
         URL url = null;
         try {
             url = new URL(templateUrl);
+
+            // create new resource from template
+            xml = createFromTemplate(url);
         }
         catch (MalformedURLException e) {
             System.err.println("Mal formed URL '" + url + "'");
             System.exit(1);
         }
-
-        // create new resource from template
-        String xml = createFromTemplate(url);
+        catch (AuthenticationException e) {
+            System.err.println("Error during authentication.");
+            e.printStackTrace();
+            System.exit(1);
+        }
 
         System.out.println(xml);
 
@@ -106,8 +114,10 @@ public class CreateContainer {
      *            URL of template.
      * @return A string containing the XML representation of the newly created
      *         resource.
+     * @throws AuthenticationException
      */
-    private static String createFromTemplate(final URL url) {
+    private static String createFromTemplate(final URL url)
+        throws AuthenticationException {
 
         BufferedReader in = Util.getTemplate(url, user, pass);
 
@@ -124,15 +134,18 @@ public class CreateContainer {
      *            Reader to read the template XML from.
      * @return A string containing the XML representation of the newly created
      *         resource.
+     * @throws AuthenticationException
      */
-    private static String createContainer(BufferedReader in) {
+    private static String createContainer(BufferedReader in)
+        throws AuthenticationException {
 
         StringBuffer result = new StringBuffer();
 
         try {
             URL createUrl =
                 new URL("http://" + Util.getEscidocInfrastructureHost() + ":"
-                    + Util.getEscidocInfrastructurePort() + CREATE_CONTAINER_PATH);
+                    + Util.getEscidocInfrastructurePort()
+                    + CREATE_CONTAINER_PATH);
             HttpURLConnection createConnection =
                 (HttpURLConnection) createUrl.openConnection();
 
@@ -153,6 +166,7 @@ public class CreateContainer {
             }
             in.close();
             out.close();
+            createConnection.connect();
 
             // connect creating reader
             BufferedReader createdReader = null;
