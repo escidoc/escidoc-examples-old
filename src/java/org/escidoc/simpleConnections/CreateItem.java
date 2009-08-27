@@ -39,6 +39,8 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+import org.escidoc.Constants;
+
 import de.escidoc.core.client.exceptions.application.security.AuthenticationException;
 
 /**
@@ -75,8 +77,8 @@ public class CreateItem {
 
         // set username and password from params or to default
         if (args.length < 3) {
-            user = "sysadmin";
-            pass = "eSciDoc";
+            user = Constants.SYSTEM_ADMIN_USER;
+            pass = Constants.SYSTEM_ADMIN_PASSWORD;
         }
         else {
             user = args[1];
