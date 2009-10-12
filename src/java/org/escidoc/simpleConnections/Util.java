@@ -125,6 +125,7 @@ public class Util {
         String line = reader.readLine();
         while (line != null) {
             writer.append(line);
+            line = reader.readLine();
         }
         reader.close();
 
