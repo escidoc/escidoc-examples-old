@@ -31,17 +31,17 @@ package org.escidoc.simpleConnections;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.escidoc.Constants;
 
@@ -74,6 +74,15 @@ public class Util {
 
     private static String escidocInfrastructurePath =
         Constants.DEFAULT_INFRASTRUCTURE_PATH;
+
+    private static final Pattern PATTERN_OBJID_ATTRIBUTE =
+        Pattern.compile("objid=\"([^\"]*)\"");
+
+    private static final Pattern PATTERN_XLINK_HREF_ATTRIBUTE =
+        Pattern.compile("xlink:href=\"([^\"]*)\"");
+
+    private static final Pattern PATTERN_LMD_ATTRIBUTE =
+        Pattern.compile("last-modification-date=\"([^\"]*)\"");
 
     /**
      * constructors
@@ -287,5 +296,46 @@ public class Util {
         }
 
         return templateReader;
+    }
+
+    /**
+     * Obtain objid and last-modification-date from eSciDoc XML.
+     * 
+     * @param xml
+     *            XML representation of eSciDoc resource
+     * @return String[objid, last-modification-date]
+     */
+    public static String[] obtainObjidAndLmd(final String xml) {
+
+        String[] objidLmd = new String[2];
+
+        // objid from href
+        Matcher m = PATTERN_XLINK_HREF_ATTRIBUTE.matcher(xml);
+        if (m.find()) {
+            String href = m.group(1);
+            int p = href.lastIndexOf("/");
+            objidLmd[0] = href.substring(p + 1);
+        }
+        else {
+            // fall back to objid (SOAP)
+            m = PATTERN_OBJID_ATTRIBUTE.matcher(xml);
+            if (m.find()) {
+                objidLmd[0] = m.group(1);
+            }
+            else {
+                objidLmd[0] = null;
+            }
+        }
+
+        // lmd
+        m = PATTERN_LMD_ATTRIBUTE.matcher(xml);
+        if (m.find()) {
+            objidLmd[1] = m.group(1);
+        }
+        else {
+            objidLmd[1] = null;
+        }
+
+        return objidLmd;
     }
 }
