@@ -14,17 +14,17 @@ public class CreateItem {
 
         try {
 
-            String xmlFile = null;
-            if (args.length < 1) {
-                xmlFile = "templates/TUE/Item_create_minimal.xml";
+            String xmlFile = "templates/TUE/Item_create_minimal.xml";
+            if (args.length > 0) {
+                xmlFile = args[0];
             }
 
             String createdResource =
                 createItem(Util.getXmlFileAsString(xmlFile));
-            
+
             String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
-            System.out.println("Item with objid='" + objidLmd[0]
-                + "' at '" + objidLmd[1] + "' created");
+            System.out.println("Item with objid='" + objidLmd[0] + "' at '"
+                + objidLmd[1] + "' created.");
 
         }
         catch (EscidocClientException e) {

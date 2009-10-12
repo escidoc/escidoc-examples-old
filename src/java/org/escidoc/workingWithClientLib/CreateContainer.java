@@ -14,17 +14,17 @@ public class CreateContainer {
 
         try {
 
-            String xmlFile = null;
-            if (args.length < 1) {
-                xmlFile = "templates/TUE/Container_create_minimal.xml";
+            String xmlFile = "templates/TUE/Container_create_minimal.xml";
+            if (args.length > 0) {
+                xmlFile = args[0];
             }
 
             String createdResource =
                 createContainer(Util.getXmlFileAsString(xmlFile));
-            
+
             String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
             System.out.println("Container with objid='" + objidLmd[0]
-                + "' at '" + objidLmd[1] + "' created");
+                + "' at '" + objidLmd[1] + "' created.");
 
         }
         catch (EscidocClientException e) {

@@ -14,17 +14,17 @@ public class CreateContext {
 
         try {
 
-            String xmlFile = null;
-            if (args.length < 1) {
-                xmlFile = "templates/TUE/Context_create.xml";
+            String xmlFile = "templates/TUE/Context_create.xml";
+            if (args.length > 0) {
+                xmlFile = args[0];
             }
 
             String createdResource =
                 createContext(Util.getXmlFileAsString(xmlFile));
-            
+
             String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
-            System.out.println("Context with objid='" + objidLmd[0]
-                + "' at '" + objidLmd[1] + "' created");
+            System.out.println("Context with objid='" + objidLmd[0] + "' at '"
+                + objidLmd[1] + "' created.");
 
         }
         catch (EscidocClientException e) {
