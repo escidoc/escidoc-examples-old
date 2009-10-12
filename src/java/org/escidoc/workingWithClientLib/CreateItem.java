@@ -35,7 +35,6 @@ public class CreateItem {
             System.out
                 .println("First parameter must be an eSciDoc Item XML File.");
         }
-
     }
 
     private static String createItem(String itemXml)
