@@ -6,9 +6,9 @@ import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.rest.RestItemHandlerClient;
+import de.escidoc.core.client.rest.RestContainerHandlerClient;
 
-public class CreateItem {
+public class CreateContainer {
 
     public static void main(String[] args) {
 
@@ -16,14 +16,14 @@ public class CreateItem {
 
             String xmlFile = null;
             if (args.length < 1) {
-                xmlFile = "templates/TUE/Item_create_minimal.xml";
+                xmlFile = "templates/TUE/Container_create_minimal.xml";
             }
 
             String createdResource =
-                createItem(Util.getXmlFileAsString(xmlFile));
+                createContainer(Util.getXmlFileAsString(xmlFile));
             
             String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
-            System.out.println("Item with objid='" + objidLmd[0]
+            System.out.println("Container with objid='" + objidLmd[0]
                 + "' at '" + objidLmd[1] + "' created");
 
         }
@@ -36,15 +36,15 @@ public class CreateItem {
         }
     }
 
-    private static String createItem(String itemXml)
+    private static String createContainer(String containerXml)
         throws EscidocClientException {
 
-        RestItemHandlerClient client = new RestItemHandlerClient();
+        RestContainerHandlerClient client = new RestContainerHandlerClient();
         client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
-        String createdItem = client.create(itemXml);
+        String createdContainer = client.create(containerXml);
 
-        return createdItem;
+        return createdContainer;
     }
 
 }

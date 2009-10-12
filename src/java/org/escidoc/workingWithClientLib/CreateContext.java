@@ -21,8 +21,10 @@ public class CreateContext {
 
             String createdResource =
                 createContext(Util.getXmlFileAsString(xmlFile));
-
-            System.out.println(createdResource);
+            
+            String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
+            System.out.println("Context with objid='" + objidLmd[0]
+                + "' at '" + objidLmd[1] + "' created");
 
         }
         catch (EscidocClientException e) {
