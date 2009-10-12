@@ -19,8 +19,8 @@ import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
  * Unused is mapping between Java classes and XML representations to explain the
  * XML data structure.
  * 
- * eSciDoc REST representation is used. Please keep that in mind, if you adapt
- * these examples for SOAP.
+ * eSciDoc XML REST representation is used. Please keep that in mind, if you
+ * adapt these examples for SOAP.
  * 
  * @author SWA
  * 
