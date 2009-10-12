@@ -31,9 +31,11 @@ package org.escidoc.simpleConnections;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -139,6 +141,24 @@ public class Util {
         reader.close();
 
         return writer.toString();
+    }
+
+    public static void storeXmlStringAsFile(String xml, String path)
+        throws IOException {
+        storeXmlStringAsFile(xml, new File(path));
+    }
+
+    public static void storeXmlStringAsFile(String xml, File file)
+        throws IOException {
+        FileWriter writer = new FileWriter(file);
+        BufferedReader reader = new BufferedReader(new StringReader(xml));
+        String line = reader.readLine();
+        while (line != null) {
+            writer.append(line);
+            line = reader.readLine();
+        }
+        reader.close();
+        writer.close();
     }
 
     public static String getAuthHandle(String username, String password)

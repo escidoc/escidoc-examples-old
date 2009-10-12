@@ -14,7 +14,7 @@ public class CreateItem {
 
         try {
 
-            String xmlFile = "templates/TUE/Item_create_minimal.xml";
+            String xmlFile = "templates/TUE/Item_create_schwäbischer-dialekt.xml";
             if (args.length > 0) {
                 xmlFile = args[0];
             }
