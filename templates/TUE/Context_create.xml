@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context:context
+	xmlns:context="http://www.escidoc.de/schemas/context/0.6"
+	xmlns:prop="http://escidoc.de/core/01/properties/"
+	xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace">
+
+	<context:properties>
+		<prop:name>BW-eSci(T)</prop:name>
+		<prop:description>Default Context for the BW-eSci(T) project.</prop:description>
+		<prop:type>Default</prop:type>
+
+		<prop:organizational-units>
+			<srel:organizational-unit
+				xlink:href="/oum/organizational-unit/###ORGANIZATIONAL_UNIT###" />
+		</prop:organizational-units>
+	</context:properties>
+
+</context:context>
+
