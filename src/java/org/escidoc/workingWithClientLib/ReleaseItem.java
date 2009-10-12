@@ -9,6 +9,7 @@ import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.client.rest.RestItemHandlerClient;
 import de.escidoc.core.resources.common.Filter;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
@@ -28,7 +29,6 @@ public class ReleaseItem {
     public static void releaseItem(String id) {
 
         try {
-
             ItemHandlerClient ihc = new ItemHandlerClient();
             ihc.login(Constants.DEFAULT_SERVICE_URL,
                 Constants.SYSTEM_ADMIN_USER, Constants.SYSTEM_ADMIN_PASSWORD);

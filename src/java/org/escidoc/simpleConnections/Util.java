@@ -29,15 +29,21 @@
 package org.escidoc.simpleConnections;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
+
+import org.escidoc.Constants;
 
 import de.escidoc.core.client.exceptions.application.security.AuthenticationException;
 
@@ -47,14 +53,38 @@ import de.escidoc.core.client.exceptions.application.security.AuthenticationExce
  */
 public class Util {
 
+    /*
+     * public fields
+     */
+
     public static final String DEFAULT_CONTENT_ENCODING = "UTF-8";
 
     public static final Object LINE_SEPARATOR =
         System.getProperty("line.separator");
 
-    private static String escidocInfrastructureHost = "localhost";
+    /*
+     * private fields
+     */
 
-    private static String escidocInfrastructurePort = "8080";
+    private static String escidocInfrastructureHost =
+        Constants.DEFAULT_INFRASTRUCTURE_HOST;
+
+    private static String escidocInfrastructurePort =
+        Constants.DEFAULT_INFRASTRUCTURE_PORT;
+
+    private static String escidocInfrastructurePath =
+        Constants.DEFAULT_INFRASTRUCTURE_PATH;
+
+    /**
+     * constructors
+     */
+
+    private Util() {
+    }
+
+    /*
+     * getter and setter
+     */
 
     public static String getEscidocInfrastructureHost() {
         return escidocInfrastructureHost;
@@ -74,18 +104,42 @@ public class Util {
         Util.escidocInfrastructurePort = escidocInfrastructurePort;
     }
 
+    /*
+     * public methods
+     */
+
+    public static String getInfrastructureURL() {
+        return "http://" + escidocInfrastructureHost + ":"
+            + escidocInfrastructurePort + escidocInfrastructurePath;
+    }
+
+    public static String getXmlFileAsString(String path) throws IOException {
+        return getXmlFileAsString(new File(path));
+    }
+
+    public static String getXmlFileAsString(File file) throws IOException {
+        StringWriter writer = new StringWriter();
+        BufferedReader reader =
+            new BufferedReader(new InputStreamReader(new FileInputStream(file),
+                "UTF-8"));
+        String line = reader.readLine();
+        while (line != null) {
+            writer.append(line);
+        }
+        reader.close();
+
+        return writer.toString();
+    }
+
     public static String getAuthHandle(String username, String password)
         throws AuthenticationException {
         String handle = null;
 
         try {
 
-            URL loginUrl =
-                new URL("http://" + escidocInfrastructureHost + ":"
-                    + escidocInfrastructurePort + "/aa/login");
+            URL loginUrl = new URL(getInfrastructureURL() + "/aa/login");
             URL authURL =
-                new URL("http://" + escidocInfrastructureHost + ":"
-                    + escidocInfrastructurePort + "/aa/j_spring_security_check");
+                new URL(getInfrastructureURL() + "/aa/j_spring_security_check");
 
             HttpURLConnection.setFollowRedirects(false);
 
