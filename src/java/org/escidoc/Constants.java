@@ -10,7 +10,7 @@ public class Constants {
 
     public static final String DEFAULT_SERVICE_URL =
         "http://" + DEFAULT_INFRASTRUCTURE_HOST + ":"
-            + DEFAULT_INFRASTRUCTURE_PORT;
+            + DEFAULT_INFRASTRUCTURE_PORT + DEFAULT_INFRASTRUCTURE_PATH;
 
     public static final String SYSTEM_ADMIN_USER = "sysadmin";
 
