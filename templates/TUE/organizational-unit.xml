@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prefix-organizational-unit:organizational-unit
+	xmlns:prefix-organizational-unit="http://www.escidoc.de/schemas/organizationalunit/0.7"
+	xmlns:prefix-xlink="http://www.w3.org/1999/xlink"
+	xmlns:md-records="http://www.escidoc.de/schemas/metadatarecords/0.4">
+	
+	<md-records:md-records
+		xmlns:ou="http://www.escidoc.de/metadata/organizational-unit"
+		xmlns:dc="http://purl.org/dc/elements/1.1/">
+		<md-records:md-record name="escidoc">
+			<ou:ou>
+				<dc:title>###YOUR_OU_NAME###</dc:title>
+			</ou:ou>
+		</md-records:md-record>
+	</md-records:md-records>
+</prefix-organizational-unit:organizational-unit>
