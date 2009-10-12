@@ -1,0 +1,4249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idiomatica>
+
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dd="http://www.sfs.uni-tuebingen.de/dialectometry">
+
+        <dc:creator>Arno Ruoff</dc:creator>
+        <dc:identifier>X125</dc:identifier>
+        <dc:date>1985</dc:date>
+        <dc:title>Idiomatica Band 11</dc:title>
+        <dc:type>Interview</dc:type>
+
+        <dd:site-name>Wolfach(Kreisstadt)</dd:site-name>
+        <dd:site-longitude/>
+        <dd:site-latitude/>
+        <dd:site-description>Kleinstadt in Kinzigtal mit vielen Ämtern und Gaststätten, wenig
+            Industrie, regem Gewerbe. Starker Fremdenverkehr im Ort und in der Umgebung. Noch
+            weitgehend erhaltene allem.</dd:site-description>
+        <dd:site-area/>
+        <dd:site-dialect>Ortsmda</dd:site-dialect>
+        <dd:site-religion>catholic</dd:site-religion>
+        <dd:site-population>4500</dd:site-population>
+        <dd:interview-date>1964</dd:interview-date>
+        <dd:interview-length>11'50</dd:interview-length>
+
+        <dd:interview-topics>
+            <dd:interview-topic>Fasnacht</dd:interview-topic>
+            <dd:interview-topic>Über ihr Geschäft</dd:interview-topic>
+            <dd:interview-topic>Aus ihrem Leben</dd:interview-topic>
+        </dd:interview-topics>
+        <dd:interviewee-gender>f</dd:interviewee-gender>
+        <dd:interviewee-religion>catholic</dd:interviewee-religion>
+        <dd:interviewee-birthday>1918</dd:interviewee-birthday>
+        <dd:interviewee-profession>Housewife</dd:interviewee-profession>
+        <dd:interviewee-vita>War vor dem 2. Krieg je 1 Jahr in Karlsruhe und Sigmaringen zur Arbeit.
+            Spricht bei der Aufn. - wie auch sonst — natürlich und flüssig in Stadtmda. mit einigen
+            Hebungen.</dd:interviewee-vita>
+        <dd:interviewer>A.Ruoff</dd:interviewer>
+        <dd:transcriber>R. Stauß</dd:transcriber>
+
+    </metadata>
+
+    <wordlist>
+        <a>
+
+            <word>
+                <swabian>'ma</swabian>
+                <high>einen</high>
+                <english>one</english>
+            </word>
+
+            <word>
+                <swabian>dabii</swabian>
+                <high>dabei</high>
+                <english>thereby/with it</english>
+            </word>
+
+            <word>
+                <swabian>in</swabian>
+                <high>in</high>
+                <english>in</english>
+            </word>
+
+            <word>
+                <swabian>jå </swabian>
+                <high>ja</high>
+                <english>yes</english>
+            </word>
+
+            <word>
+                <swabian>entschuldiga </swabian>
+                <high>entschuldigen</high>
+                <english>sorry</english>
+            </word>
+
+            <word>
+                <swabian>Se</swabian>
+                <high>Sie</high>
+                <english>you</english>
+            </word>
+
+            <word>
+                <swabian>ich</swabian>
+                <high>ich</high>
+                <english>I</english>
+            </word>
+
+            <word>
+                <swabian>hab' </swabian>
+                <high>habe</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>Sie</swabian>
+                <high>Sie</high>
+                <english>you</english>
+            </word>
+
+            <word>
+                <swabian>bloß</swabian>
+                <high>nur</high>
+                <english>only</english>
+            </word>
+
+            <word>
+                <swabian>bloß</swabian>
+                <high>soeben></high>
+                <english>just now </english>
+            </word>
+
+            <word>
+                <swabian>g'schwind </swabian>
+                <high>geschwind</high>
+                <english>rapidly</english>
+            </word>
+
+            <word>
+                <swabian>unterbrocha</swabian>
+                <high>untergebrochen</high>
+                <english>disturbed</english>
+            </word>
+
+            <word>
+                <swabian>weil</swabian>
+                <high>weil</high>
+                <english>because</english>
+            </word>
+
+            <word>
+                <swabian>i' </swabian>
+                <high>ich</high>
+                <english>I</english>
+            </word>
+
+            <word>
+                <swabian>die</swabian>
+                <high>die</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>Nummer</swabian>
+                <high>Nummer</high>
+                <english>number</english>
+            </word>
+
+            <word>
+                <swabian>no' </swabian>
+                <high>noch</high>
+                <english>still</english>
+            </word>
+
+            <word>
+                <swabian>ha'</swabian>
+                <high>habe</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>naisaga </swabian>
+                <high>hinein sagen</high>
+                <english>speak into (microphone)</english>
+            </word>
+
+            <word>
+                <swabian>missa</swabian>
+                <high>muss</high>
+                <english>must</english>
+            </word>
+
+            <word>
+                <swabian>ja</swabian>
+                <high>ja</high>
+                <english>yes</english>
+            </word>
+
+            <word>
+                <swabian>wie </swabian>
+                <high>wie</high>
+                <english>how</english>
+            </word>
+
+            <word>
+                <swabian>isch's</swabian>
+                <high>ist es</high>
+                <english>it is</english>
+            </word>
+
+            <word>
+                <swabian>'n</swabian>
+                <high>nun</high>
+                <english>now</english>
+            </word>
+
+            <word>
+                <swabian>was</swabian>
+                <high>was</high>
+                <english>what</english>
+            </word>
+
+            <word>
+                <swabian>sind</swabian>
+                <high>sind</high>
+                <english>are/be</english>
+            </word>
+
+            <word>
+                <swabian>friher</swabian>
+                <high>früher</high>
+                <english>earlier</english>
+            </word>
+
+            <word>
+                <swabian>fir</swabian>
+                <high>für </high>
+                <english>for</english>
+            </word>
+
+            <word>
+                <swabian>Verãi'</swabian>
+                <high>Verein</high>
+                <english>society</english>
+            </word>
+
+            <word>
+                <swabian>då </swabian>
+                <high>dann</high>
+                <english>then</english>
+            </word>
+
+            <word>
+                <swabian>g'wä'a</swabian>
+                <high>gewesen</high>
+                <english>been</english>
+            </word>
+
+            <word>
+                <swabian>entschuldigen</swabian>
+                <high>entschuldigen</high>
+                <english>sorry</english>
+            </word>
+
+            <word>
+                <swabian>'sch'</swabian>
+                <high>ist</high>
+                <english>is/be</english>
+            </word>
+
+            <word>
+                <swabian>klaar</swabian>
+                <high>klar</high>
+                <english>clear</english>
+            </word>
+
+            <word>
+                <swabian>isch'n</swabian>
+                <high>ist denn</high>
+                <english>is then</english>
+            </word>
+
+            <word>
+                <swabian>G'wä'</swabian>
+                <high>gewesen</high>
+                <english>been</english>
+            </word>
+
+            <word>
+                <swabian>also</swabian>
+                <high>also</high>
+                <english>so</english>
+            </word>
+
+            <word>
+                <swabian>des </swabian>
+                <high>das</high>
+                <english>that</english>
+            </word>
+
+            <word>
+                <swabian>Singa </swabian>
+                <high>Singen</high>
+                <english>singing</english>
+            </word>
+
+            <word>
+                <swabian>von</swabian>
+                <high>von</high>
+                <english>of/from</english>
+            </word>
+
+            <word>
+                <swabian>Ihne</swabian>
+                <high>Ihnen</high>
+                <english>you</english>
+            </word>
+
+            <word>
+                <swabian>an </swabian>
+                <high>an</high>
+                <english>on</english>
+            </word>
+
+            <word>
+                <swabian>Fasnat</swabian>
+                <high>Fastnacht</high>
+                <english>shrovetide</english>
+            </word>
+
+            <word>
+                <swabian>isch' </swabian>
+                <high>ist</high>
+                <english>is</english>
+            </word>
+
+            <word>
+                <swabian>au'</swabian>
+                <high>auch</high>
+                <english>also</english>
+            </word>
+
+            <word>
+                <swabian>irgend</swabian>
+                <high>irgend</high>
+                <english>something/at all</english>
+            </word>
+
+            <word>
+                <swabian>ous'ganga </swabian>
+                <high>ausgegangen</high>
+                <english>originate</english>
+            </word>
+
+            <word>
+                <swabian>oder</swabian>
+                <high>oder</high>
+                <english>or</english>
+            </word>
+
+            <word>
+                <swabian>hen </swabian>
+                <high>haben</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>so </swabian>
+                <high>so</high>
+                <english>so</english>
+            </word>
+
+            <word>
+                <swabian>privat </swabian>
+                <high>privat </high>
+                <english>privately</english>
+            </word>
+
+            <word>
+                <swabian>g'macht</swabian>
+                <high>gemacht</high>
+                <english>made/done</english>
+            </word>
+
+            <word>
+                <swabian>ond </swabian>
+                <high>und</high>
+                <english>and</english>
+            </word>
+
+            <word>
+                <swabian>Schnorra </swabian>
+                <high>Schnorren</high>
+                <english>cadging</english>
+            </word>
+
+            <word>
+                <swabian>'ganga</swabian>
+                <high>gegangen</high>
+                <english>gone</english>
+            </word>
+
+            <word>
+                <swabian>d' </swabian>
+                <high>die</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>Melodie </swabian>
+                <high>Melodie</high>
+                <english>melody</english>
+            </word>
+
+            <word>
+                <swabian>und </swabian>
+                <high>und</high>
+                <english>and</english>
+            </word>
+
+            <word>
+                <swabian>da</swabian>
+                <high>der</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>Täxt</swabian>
+                <high>Text</high>
+                <english>text</english>
+            </word>
+
+            <word>
+                <swabian> m'r </swabian>
+                <high>man</high>
+                <english>one</english>
+            </word>
+
+            <word>
+                <swabian>då</swabian>
+                <high>dann</high>
+                <english>then</english>
+            </word>
+
+            <word>
+                <swabian>wo </swabian>
+                <high>wo</high>
+                <english>where</english>
+            </word>
+
+            <word>
+                <swabian>nã</swabian>
+                <high>hin</high>
+                <english>towards</english>
+            </word>
+
+            <word>
+                <swabian>'rum'zoga</swabian>
+                <high>herumgezogen</high>
+                <english>walk around</english>
+            </word>
+
+            <word>
+                <swabian>macha </swabian>
+                <high>machen</high>
+                <english>make</english>
+            </word>
+
+            <word>
+                <swabian>Viele</swabian>
+                <high>Viele</high>
+                <english>much</english>
+            </word>
+
+            <word>
+                <swabian>odder</swabian>
+                <high>oder</high>
+                <english>or</english>
+            </word>
+
+            <word>
+                <swabian>on' </swabian>
+                <high>und</high>
+                <english>and</english>
+            </word>
+
+            <word>
+                <swabian>nã</swabian>
+                <high>dann</high>
+                <english>then</english>
+            </word>
+
+            <word>
+                <swabian>lang</swabian>
+                <high>lang </high>
+                <english>long</english>
+            </word>
+
+            <word>
+                <swabian>sing-</swabian>
+                <high>singen</high>
+                <english>sing </english>
+            </word>
+
+            <word>
+                <swabian>macht</swabian>
+                <high>macht</high>
+                <english>makes/make</english>
+            </word>
+
+            <word>
+                <swabian>kenna </swabian>
+                <high>können</high>
+                <english>can</english>
+            </word>
+
+            <word>
+                <swabian>mer </swabian>
+                <high>mir</high>
+                <english>me</english>
+            </word>
+
+            <word>
+                <swabian>sonscht </swabian>
+                <high>sonst</high>
+                <english>further</english>
+            </word>
+
+            <word>
+                <swabian>a bißle</swabian>
+                <high>ein bischen</high>
+                <english>a bit</english>
+            </word>
+
+            <word>
+                <swabian>vo'</swabian>
+                <high>von</high>
+                <english>of</english>
+            </word>
+
+            <word>
+                <swabian>d'r </swabian>
+                <high>der</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>Fasnet </swabian>
+                <high>Fastnacht</high>
+                <english>shrovetide</english>
+            </word>
+
+            <word>
+                <swabian>verzehla</swabian>
+                <high>erzählen</high>
+                <english>tell</english>
+            </word>
+
+            <word>
+                <swabian>n obel</swabian>
+                <high>nobel</high>
+                <english>fancy</english>
+            </word>
+
+            <word>
+                <swabian>jetzt </swabian>
+                <high>jetzt</high>
+                <english>now</english>
+            </word>
+
+            <word>
+                <swabian>Ihrem </swabian>
+                <high>Ihrem</high>
+                <english>your</english>
+            </word>
+
+            <word>
+                <swabian>G'schäft </swabian>
+                <high>Geschäft</high>
+                <english>shop</english>
+            </word>
+
+            <word>
+                <swabian>dåhunda</swabian>
+                <high>da unten</high>
+                <english>down there</english>
+            </word>
+
+            <word>
+                <swabian>misset </swabian>
+                <high>mussen</high>
+                <english>must</english>
+            </word>
+
+            <word>
+                <swabian>allaine</swabian>
+                <high>allein</high>
+                <english>alone</english>
+            </word>
+
+            <word>
+                <swabian>fihra</swabian>
+                <high>führen</high>
+                <english>run</english>
+            </word>
+
+            <word>
+                <swabian>schõ'</swabian>
+                <high>schon</high>
+                <english>already</english>
+            </word>
+
+            <word>
+                <swabian>Buchbinderei</swabian>
+                <high>Buchbinderei</high>
+                <english>bookbindery</english>
+            </word>
+
+            <word>
+                <swabian>war</swabian>
+                <high>war</high>
+                <english>was </english>
+            </word>
+
+            <word>
+                <swabian>immer</swabian>
+                <high>immer</high>
+                <english>always</english>
+            </word>
+
+            <word>
+                <swabian>im </swabian>
+                <high>im</high>
+                <english>in the</english>
+            </word>
+
+            <word>
+                <swabian>Krieg </swabian>
+                <high>Krieg </high>
+                <english>war</english>
+            </word>
+
+            <word>
+                <swabian>Ihr </swabian>
+                <high>Ihr</high>
+                <english>your</english>
+            </word>
+
+            <word>
+                <swabian>Mã </swabian>
+                <high>Mann</high>
+                <english>husband</english>
+            </word>
+
+            <word>
+                <swabian>wäg </swabian>
+                <high>weg</high>
+                <english>awaz</english>
+            </word>
+
+            <word>
+                <swabian>'n</swabian>
+                <high>ein</high>
+                <english>one</english>
+            </word>
+
+            <word>
+                <swabian>Moment</swabian>
+                <high>Moment </high>
+                <english>moment</english>
+            </word>
+
+            <word>
+                <swabian>j etz' </swabian>
+                <high>jetzt</high>
+                <english>now</english>
+            </word>
+
+            <word>
+                <swabian>no'mål</swabian>
+                <high>nochmal</high>
+                <english>again</english>
+            </word>
+
+            <word>
+                <swabian>Zahla</swabian>
+                <high>Zahlen</high>
+                <english>numbers</english>
+            </word>
+
+            <word>
+                <swabian>bitte</swabian>
+                <high>bitte</high>
+                <english>please</english>
+            </word>
+
+            <word>
+                <swabian>Wochadaag</swabian>
+                <high>Wochentage</high>
+                <english>weekdays</english>
+            </word>
+
+            <word>
+                <swabian>saga</swabian>
+                <high>sagen</high>
+                <english>say</english>
+            </word>
+        </a>
+        <s>
+            <word>
+                <swabian>i'</swabian>
+                <high>ich</high>
+                <english>I</english>
+            </word>
+
+            <word>
+                <swabian>zwischa'nii'</swabian>
+                <high>zwischen hinein</high>
+                <english>in between</english>
+            </word>
+
+            <word>
+                <swabian>Kuurgarta</swabian>
+                <high>Kurgarten</high>
+                <english>cure garden</english>
+            </word>
+
+            <word>
+                <swabian>Ladag'schäft</swabian>
+                <high>Ladengeschäft</high>
+                <english>shop</english>
+            </word>
+
+            <word>
+                <swabian>då</swabian>
+                <high>da</high>
+                <english>there</english>
+            </word>
+
+            <word>
+                <swabian>då</swabian>
+                <high>dann</high>
+                <english>then</english>
+            </word>
+
+            <word>
+                <swabian>håt</swabian>
+                <high>hat</high>
+                <english>has/have</english>
+            </word>
+
+            <word>
+                <swabian>hȧt </swabian>
+                <high>hat</high>
+                <english>has/have</english>
+            </word>
+
+            <word>
+                <swabian>m'r</swabian>
+                <high>mir</high>
+                <english>me</english>
+            </word>
+
+            <word>
+                <swabian>halt</swabian>
+                <high>halt</high>
+                <english>just</english>
+            </word>
+
+            <word>
+                <swabian>g'sunga</swabian>
+                <high>gesungen</high>
+                <english>sung</english>
+            </word>
+
+            <word>
+                <swabian>net</swabian>
+                <high>nicht</high>
+                <english>no/not</english>
+            </word>
+
+            <word>
+                <swabian>ne'</swabian>
+                <high>nicht</high>
+                <english>no/not</english>
+            </word>
+
+            <word>
+                <swabian>nicht</swabian>
+                <high>nicht</high>
+                <english>not</english>
+            </word>
+
+            <word>
+                <swabian>d'r</swabian>
+                <high>der</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>Liederkranz</swabian>
+                <high>Liederkranz</high>
+                <english>chorus</english>
+            </word>
+
+            <word>
+                <swabian>so a</swabian>
+                <high>so auch</high>
+                <english>so also</english>
+            </word>
+
+            <word>
+                <swabian>Abtailung</swabian>
+                <high>Abteilung</high>
+                <english>division</english>
+            </word>
+
+            <word>
+                <swabian>g'het</swabian>
+                <high>geht</high>
+                <english>goes/go</english>
+            </word>
+
+            <word>
+                <swabian>fir</swabian>
+                <high>für</high>
+                <english>for</english>
+            </word>
+
+            <word>
+                <swabian>g'mischda</swabian>
+                <high>gemischte</high>
+                <english>mixed</english>
+            </word>
+
+            <word>
+                <swabian>Koor</swabian>
+                <high>Chor</high>
+                <english>chorus</english>
+            </word>
+
+            <word>
+                <swabian>on'</swabian>
+                <high>und</high>
+                <english>and</english>
+            </word>
+
+            <word>
+                <swabian>ond </swabian>
+                <high>und</high>
+                <english>and</english>
+            </word>
+
+            <word>
+                <swabian>alls</swabian>
+                <high>alles</high>
+                <english>all</english>
+            </word>
+
+            <word>
+                <swabian>mitg'sunga</swabian>
+                <high>mitgesungen</high>
+                <english>sung in a choir</english>
+            </word>
+
+            <word>
+                <swabian>Vader</swabian>
+                <high>Vater</high>
+                <english>father</english>
+            </word>
+
+            <word>
+                <swabian>där </swabian>
+                <high>der</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>singt</swabian>
+                <high>singt</high>
+                <english>sings/sing</english>
+            </word>
+
+            <word>
+                <swabian>ou'</swabian>
+                <high>auch</high>
+                <english>also</english>
+            </word>
+
+            <word>
+                <swabian>schẽẽ'</swabian>
+                <high>schön</high>
+                <english>fine</english>
+            </word>
+
+            <word>
+                <swabian>hab'</swabian>
+                <high>habe</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>ich</swabian>
+                <high>ich</high>
+                <english>I</english>
+            </word>
+
+            <word>
+                <swabian>Solo</swabian>
+                <high>Solo</high>
+                <english>solo</english>
+            </word>
+
+            <word>
+                <swabian>isch' </swabian>
+                <high>ist</high>
+                <english>is</english>
+            </word>
+
+            <word>
+                <swabian>åbends</swabian>
+                <high>abends</high>
+                <english>in the evening</english>
+            </word>
+
+            <word>
+                <swabian>miassa</swabian>
+                <high>müssen</high>
+                <english>must</english>
+            </word>
+
+            <word>
+                <swabian>iba</swabian>
+                <high>über</high>
+                <english>over</english>
+            </word>
+
+            <word>
+                <swabian>dann </swabian>
+                <high>dann</high>
+                <english>then</english>
+            </word>
+
+            <word>
+                <swabian>Klavier </swabian>
+                <high>Klavier</high>
+                <english>piano</english>
+            </word>
+
+            <word>
+                <swabian>g'schbielt </swabian>
+                <high>gespielt</high>
+                <english>played</english>
+            </word>
+
+            <word>
+                <swabian>un' </swabian>
+                <high>und</high>
+                <english>and</english>
+            </word>
+
+            <word>
+                <swabian>hett' </swabian>
+                <high>hat</high>
+                <english>has/have</english>
+            </word>
+
+            <word>
+                <swabian>aigentlich </swabian>
+                <high>eigentlich</high>
+                <english>actually</english>
+            </word>
+
+            <word>
+                <swabian>solla </swabian>
+                <high>soll</high>
+                <english>should</english>
+            </word>
+
+            <word>
+                <swabian>mich </swabian>
+                <high>mich</high>
+                <english>myself</english>
+            </word>
+
+            <word>
+                <swabian>usbilda</swabian>
+                <high>ausbilden</high>
+                <english>train</english>
+            </word>
+
+            <word>
+                <swabian>mai' </swabian>
+                <high>main</high>
+                <english>my</english>
+            </word>
+
+            <word>
+                <swabian>Klavierlährer </swabian>
+                <high>Klavierlehrer</high>
+                <english>piano-teacher</english>
+            </word>
+
+            <word>
+                <swabian>emmer </swabian>
+                <high>immer</high>
+                <english>always</english>
+            </word>
+
+            <word>
+                <swabian>g'sait</swabian>
+                <high>gesagt</high>
+                <english>said</english>
+            </word>
+
+            <word>
+                <swabian>Mensch</swabian>
+                <high>Frauenperson</high>
+                <english>girl/woman</english>
+            </word>
+
+            <word>
+                <swabian>du </swabian>
+                <high>du</high>
+                <english>you</english>
+            </word>
+
+            <word>
+                <swabian>musch' </swabian>
+                <high>musst</high>
+                <english>must</english>
+            </word>
+
+            <word>
+                <swabian>singa </swabian>
+                <high>singen</high>
+                <english>sing</english>
+            </word>
+
+            <word>
+                <swabian>lähra</swabian>
+                <high>lernen</high>
+                <english>learn</english>
+            </word>
+
+            <word>
+                <swabian>aber </swabian>
+                <high>aber</high>
+                <english>but</english>
+            </word>
+
+            <word>
+                <swabian>wie</swabian>
+                <high>wie </high>
+                <english>how</english>
+            </word>
+
+            <word>
+                <swabian>war </swabian>
+                <high>war</high>
+                <english>was</english>
+            </word>
+
+            <word>
+                <swabian>wara </swabian>
+                <high>war(en)</high>
+                <english>were/be</english>
+            </word>
+
+            <word>
+                <swabian>Zeit </swabian>
+                <high>Zeit</high>
+                <english>time</english>
+            </word>
+
+            <word>
+                <swabian>dort</swabian>
+                <high>dort</high>
+                <english>there</english>
+            </word>
+
+            <word>
+                <swabian>dahaim</swabian>
+                <high>daheim</high>
+                <english>at home</english>
+            </word>
+
+            <word>
+                <swabian>wohl </swabian>
+                <high>wohl</high>
+                <english>well/arguably</english>
+            </word>
+
+            <word>
+                <swabian>ainzig's </swabian>
+                <high>einzige</high>
+                <english>single</english>
+            </word>
+
+            <word>
+                <swabian>Mädle</swabian>
+                <high> Mädchen (3)</high>
+                <english>girl</english>
+            </word>
+
+            <word>
+                <swabian>begitert </swabian>
+                <high>begütert</high>
+                <english>well-off</english>
+            </word>
+
+            <word>
+                <swabian>daß </swabian>
+                <high>daß</high>
+                <english>that</english>
+            </word>
+
+            <word>
+                <swabian>saga </swabian>
+                <high>sagen</high>
+                <english>say</english>
+            </word>
+
+            <word>
+                <swabian>kenna</swabian>
+                <high>können</high>
+                <english>can</english>
+            </word>
+
+            <word>
+                <swabian>kenna</swabian>
+                <high>kennen</high>
+                <english>know</english>
+            </word>
+
+            <word>
+                <swabian>kenna</swabian>
+                <high>sein </high>
+                <english>be</english>
+            </word>
+
+            <word>
+                <swabian>jetz' </swabian>
+                <high>jetzt</high>
+                <english>now</english>
+            </word>
+
+            <word>
+                <swabian>kannsch' </swabian>
+                <high>kannst</high>
+                <english>can</english>
+            </word>
+
+            <word>
+                <swabian>fort </swabian>
+                <high>fort</high>
+                <english>off</english>
+            </word>
+
+            <word>
+                <swabian>uf </swabian>
+                <high>auf</high>
+                <english>on/to</english>
+            </word>
+
+            <word>
+                <swabian>uf's </swabian>
+                <high>aufs</high>
+                <english>on the/to the</english>
+            </word>
+
+            <word>
+                <swabian>Konservadorium </swabian>
+                <high>Konservatorium</high>
+                <english>conservatory</english>
+            </word>
+
+            <word>
+                <swabian>viel </swabian>
+                <high>viel</high>
+                <english>many/much</english>
+            </word>
+
+            <word>
+                <swabian>Gäld</swabian>
+                <high>Geld</high>
+                <english>money</english>
+            </word>
+
+            <word>
+                <swabian>des </swabian>
+                <high> das</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>dåmåls </swabian>
+                <high>damals</high>
+                <english>at that time</english>
+            </word>
+
+            <word>
+                <swabian>'ganga </swabian>
+                <high>gegangen</high>
+                <english>gone</english>
+            </word>
+
+            <word>
+                <swabian>in </swabian>
+                <high>in</high>
+                <english>in</english>
+            </word>
+
+            <word>
+                <swabian>dene </swabian>
+                <high>denen</high>
+                <english>whose</english>
+            </word>
+
+            <word>
+                <swabian>achtazwanziger </swabian>
+                <high>achtundzwanzigste</high>
+                <english>twenty-eighth</english>
+            </word>
+
+            <word>
+                <swabian>Jåhr' </swabian>
+                <high>Jahr</high>
+                <english>year</english>
+            </word>
+
+            <word>
+                <swabian>heit'</swabian>
+                <high>heute</high>
+                <english>today</english>
+            </word>
+
+            <word>
+                <swabian>Jugend</swabian>
+                <high>Jugend</high>
+                <english>youth</english>
+            </word>
+
+            <word>
+                <swabian>wenn</swabian>
+                <high>wenn</high>
+                <english>if</english>
+            </word>
+
+            <word>
+                <swabian>Schuh'</swabian>
+                <high>Schuhe</high>
+                <english>shoes</english>
+            </word>
+
+            <word>
+                <swabian>fort'traga</swabian>
+                <high>forttragen</high>
+                <english>bear away</english>
+            </word>
+
+            <word>
+                <swabian>zeh'</swabian>
+                <high>zehn</high>
+                <english>ten</english>
+            </word>
+
+            <word>
+                <swabian>Pfennig</swabian>
+                <high>Pfennig</high>
+                <english>pfennig</english>
+            </word>
+
+            <word>
+                <swabian>kriagt</swabian>
+                <high>bekommt</high>
+                <english>got</english>
+            </word>
+
+            <word>
+                <swabian>nã</swabian>
+                <high>dann</high>
+                <english>then</english>
+            </word>
+
+            <word>
+                <swabian>nã</swabian>
+                <high>hin</high>
+                <english>towards</english>
+            </word>
+
+            <word>
+                <swabian>g'maint</swabian>
+                <high>gemaint</high>
+                <english>thought</english>
+            </word>
+
+            <word>
+                <swabian>' ich</swabian>
+                <high>ich</high>
+                <english>I</english>
+            </word>
+
+            <word>
+                <swabian>bin</swabian>
+                <high>bin</high>
+                <english>am</english>
+            </word>
+
+            <word>
+                <swabian>Keenig</swabian>
+                <high>König</high>
+                <english>King</english>
+            </word>
+
+            <word>
+                <swabian>ha'</swabian>
+                <high>habe</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>fraideschtrahlend</swabian>
+                <high>freudestrahlend</high>
+                <english>joyful</english>
+            </word>
+
+            <word>
+                <swabian>zu</swabian>
+                <high>zu </high>
+                <english>to</english>
+            </word>
+
+            <word>
+                <swabian>Muder</swabian>
+                <high>Mutter</high>
+                <english>Mother</english>
+            </word>
+
+            <word>
+                <swabian>haim</swabian>
+                <high>heim(gehen)</high>
+                <english>return home</english>
+            </word>
+
+            <word>
+                <swabian>jetz</swabian>
+                <high>jetzt</high>
+                <english>now</english>
+            </word>
+
+            <word>
+                <swabian>e'</swabian>
+                <high>ich</high>
+                <english>I</english>
+            </word>
+
+            <word>
+                <swabian>vo'</swabian>
+                <high>von</high>
+                <english>of/from</english>
+            </word>
+
+            <word>
+                <swabian>dem</swabian>
+                <high>dem</high>
+                <english>the </english>
+            </word>
+
+            <word>
+                <swabian>alles</swabian>
+                <high>alles</high>
+                <english>all</english>
+            </word>
+
+            <word>
+                <swabian>sälbverschtendlich</swabian>
+                <high>selbstverständlich</high>
+                <english>self-evident</english>
+            </word>
+
+            <word>
+                <swabian>von</swabian>
+                <high>von</high>
+                <english>of/from</english>
+            </word>
+
+            <word>
+                <swabian>de'</swabian>
+                <high>der</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>unser</swabian>
+                <high>unser</high>
+                <english>our</english>
+            </word>
+
+            <word>
+                <swabian>Vadder</swabian>
+                <high>Vater</high>
+                <english>father</english>
+            </word>
+
+            <word>
+                <swabian>immer</swabian>
+                <high>immer</high>
+                <english>always</english>
+            </word>
+
+            <word>
+                <swabian>wen'g</swabian>
+                <high>wenig</high>
+                <english>little</english>
+            </word>
+
+            <word>
+                <swabian>vornad'rã'</swabian>
+                <high>vorneweg</high>
+                <english>ahead</english>
+            </word>
+
+            <word>
+                <swabian>weil</swabian>
+                <high>weil</high>
+                <english>because</english>
+            </word>
+
+            <word>
+                <swabian>main'</swabian>
+                <high>meint</high>
+                <english>think</english>
+            </word>
+
+            <word>
+                <swabian>sin'</swabian>
+                <high>sind</high>
+                <english>are/be</english>
+            </word>
+
+            <word>
+                <swabian>a paar</swabian>
+                <high>ein paar</high>
+                <english>some</english>
+            </word>
+
+            <word>
+                <swabian>Klicke</swabian>
+                <high>Clique</high>
+                <english>group</english>
+            </word>
+
+            <word>
+                <swabian>a</swabian>
+                <high>ein</high>
+                <english>a/one</english>
+            </word>
+
+            <word>
+                <swabian>a</swabian>
+                <high>ab</high>
+                <english>from</english>
+            </word>
+
+            <word>
+                <swabian>a'</swabian>
+                <high>ein</high>
+                <english>a/one</english>
+            </word>
+
+            <word>
+                <swabian>wo</swabian>
+                <high>wo</high>
+                <english>where</english>
+            </word>
+
+            <word>
+                <swabian>äbbis</swabian>
+                <high>etwas</high>
+                <english>something</english>
+            </word>
+
+            <word>
+                <swabian>macht</swabian>
+                <high>macht</high>
+                <english>makes/make</english>
+            </word>
+
+            <word>
+                <swabian>Verain</swabian>
+                <high>Verein</high>
+                <english>society</english>
+            </word>
+
+            <word>
+                <swabian>irgend</swabian>
+                <high>irgend</high>
+                <english>something/at all</english>
+            </word>
+
+            <word>
+                <swabian>haißt's</swabian>
+                <high>heißt</high>
+                <english>means/mean</english>
+            </word>
+
+            <word>
+                <swabian>kaa''s</swabian>
+                <high>kann es</high>
+                <english>that can</english>
+            </word>
+
+            <word>
+                <swabian>nimmt</swabian>
+                <high>nimmt</high>
+                <english>takes/take</english>
+            </word>
+
+            <word>
+                <swabian>holt</swabian>
+                <high>holt</high>
+                <english>fetch</english>
+            </word>
+
+            <word>
+                <swabian>au' </swabian>
+                <high>auch</high>
+                <english>also</english>
+            </word>
+
+            <word>
+                <swabian>nåchhär</swabian>
+                <high>nachher</high>
+                <english>after</english>
+            </word>
+
+            <word>
+                <swabian>er</swabian>
+                <high>er</high>
+                <english>he</english>
+            </word>
+
+            <word>
+                <swabian>Meidli</swabian>
+                <high>kleines Mädchen</high>
+                <english>little girl</english>
+            </word>
+
+            <word>
+                <swabian>g'si</swabian>
+                <high>gewesen</high>
+                <english>been</english>
+            </word>
+
+            <word>
+                <swabian>machsch'</swabian>
+                <high>machst</high>
+                <english>make</english>
+            </word>
+
+            <word>
+                <swabian>dees</swabian>
+                <high>das</high>
+                <english>that</english>
+            </word>
+
+            <word>
+                <swabian>muasch'</swabian>
+                <high>muss</high>
+                <english>must</english>
+            </word>
+
+            <word>
+                <swabian>machan</swabian>
+                <high>machen</high>
+                <english>make</english>
+            </word>
+
+            <word>
+                <swabian>säll</swabian>
+                <high>soll</high>
+                <english>should</english>
+            </word>
+
+            <word>
+                <swabian>macha</swabian>
+                <high>machen</high>
+                <english>make</english>
+            </word>
+
+            <word>
+                <swabian>und</swabian>
+                <high>und</high>
+                <english>and</english>
+            </word>
+
+            <word>
+                <swabian>wider</swabian>
+                <high>wieder</high>
+                <english>again</english>
+            </word>
+
+            <word>
+                <swabian>'s</swabian>
+                <high>es</high>
+                <english>it</english>
+            </word>
+
+            <word>
+                <swabian>nägscht'</swabian>
+                <high>nächste</high>
+                <english>next</english>
+            </word>
+
+            <word>
+                <swabian>Weihnachtsfeier</swabian>
+                <high>Weihnachtsfeier</high>
+                <english>Christmas celebration</english>
+            </word>
+
+            <word>
+                <swabian>oder </swabian>
+                <high>oder</high>
+                <english>or</english>
+            </word>
+
+            <word>
+                <swabian>waas</swabian>
+                <high>was</high>
+                <english>what</english>
+            </word>
+
+            <word>
+                <swabian>sin's</swabian>
+                <high>sind</high>
+                <english>are/be</english>
+            </word>
+
+            <word>
+                <swabian>Gliich'</swabian>
+                <high>die Gleichen</high>
+                <english>the same</english>
+            </word>
+
+            <word>
+                <swabian>durch</swabian>
+                <high>durch</high>
+                <english>through</english>
+            </word>
+
+            <word>
+                <swabian>amål</swabian>
+                <high>einmal</high>
+                <english>just</english>
+            </word>
+
+            <word>
+                <swabian>fuchzeh'</swabian>
+                <high>fünfzehn</high>
+                <english>fifteen</english>
+            </word>
+
+            <word>
+                <swabian>sächzeh'</swabian>
+                <high>sechzehn</high>
+                <english>sixteen</english>
+            </word>
+
+            <word>
+                <swabian>nȧchhär</swabian>
+                <high>nachher</high>
+                <english>after</english>
+            </word>
+
+            <word>
+                <swabian>scho'</swabian>
+                <high>schon </high>
+                <english>already</english>
+            </word>
+
+            <word>
+                <swabian>g'schnorrt</swabian>
+                <high>geschnorrt</high>
+                <english>cadged</english>
+            </word>
+
+            <word>
+                <swabian>håt's</swabian>
+                <high>hat</high>
+                <english>has/have</english>
+            </word>
+
+            <word>
+                <swabian>g'haißa</swabian>
+                <high>geheißen</high>
+                <english>meant</english>
+            </word>
+
+            <word>
+                <swabian>g'haißa</swabian>
+                <high>wurde genannt</high>
+                <english>is called</english>
+            </word>
+
+            <word>
+                <swabian>'etz'</swabian>
+                <high>jetzt</high>
+                <english>now</english>
+            </word>
+
+            <word>
+                <swabian>gåhsch'</swabian>
+                <high>gehtst</high>
+                <english>goes/go</english>
+            </word>
+
+            <word>
+                <swabian>scho</swabian>
+                <high>schon</high>
+                <english>already</english>
+            </word>
+
+            <word>
+                <swabian>g'wißt</swabian>
+                <high>gewisst</high>
+                <english>knew</english>
+            </word>
+
+            <word>
+                <swabian>brucht</swabian>
+                <high>braucht</high>
+                <english>need</english>
+            </word>
+
+            <word>
+                <swabian>nemme</swabian>
+                <high>nehmen</high>
+                <english>take</english>
+            </word>
+
+            <word>
+                <swabian>groaß</swabian>
+                <high>groß</high>
+                <english>big</english>
+            </word>
+
+            <word>
+                <swabian>ã'lähra</swabian>
+                <high>anlernen</high>
+                <english>teach</english>
+            </word>
+
+            <word>
+                <swabian>Liad</swabian>
+                <high>Lied</high>
+                <english>song</english>
+            </word>
+
+            <word>
+                <swabian>i's</swabian>
+                <high>ich</high>
+                <english>I</english>
+            </word>
+
+            <word>
+                <swabian>uf'm</swabian>
+                <high>auf dem</high>
+                <english>on the</english>
+            </word>
+
+            <word>
+                <swabian>g'iabt</swabian>
+                <high>gehabt</high>
+                <english>had</english>
+            </word>
+
+            <word>
+                <swabian>jeder </swabian>
+                <high>jeder</high>
+                <english>each</english>
+            </word>
+
+            <word>
+                <swabian>Schlager</swabian>
+                <high>Schlager</high>
+                <english>popular song</english>
+            </word>
+
+            <word>
+                <swabian>noch</swabian>
+                <high>noch</high>
+                <english>still</english>
+            </word>
+
+            <word>
+                <swabian>jung </swabian>
+                <high>jung</high>
+                <english>young</english>
+            </word>
+
+            <word>
+                <swabian>doch </swabian>
+                <high>doch</high>
+                <english>yet/still</english>
+            </word>
+
+            <word>
+                <swabian>jedes</swabian>
+                <high>jedes</high>
+                <english>each</english>
+            </word>
+
+            <word>
+                <swabian>Liadle</swabian>
+                <high>kleines Lied</high>
+                <english>song</english>
+            </word>
+
+            <word>
+                <swabian>sei's </swabian>
+                <high>sei es</high>
+                <english>be it</english>
+            </word>
+
+            <word>
+                <swabian>no'</swabian>
+                <high>noch</high>
+                <english>still</english>
+            </word>
+
+            <word>
+                <swabian>liadrig</swabian>
+                <high>unordentlich</high>
+                <english>messy</english>
+            </word>
+
+            <word>
+                <swabian>do' </swabian>
+                <high>doch</high>
+                <english>yet/still</english>
+            </word>
+
+            <word>
+                <swabian>gli'</swabian>
+                <high>gleich</high>
+                <english>equal</english>
+            </word>
+
+            <word>
+                <swabian>also</swabian>
+                <high>also</high>
+                <english>so</english>
+            </word>
+
+            <word>
+                <swabian>entweder</swabian>
+                <high>entweder</high>
+                <english>either</english>
+            </word>
+
+            <word>
+                <swabian>Onkel</swabian>
+                <high>Onkel</high>
+                <english>uncle</english>
+            </word>
+
+            <word>
+                <swabian>hen's</swabian>
+                <high>drinnen (1)</high>
+                <english>inside</english>
+            </word>
+
+            <word>
+                <swabian>ufg'setzt</swabian>
+                <high>aufgesetzt</high>
+                <english>sat </english>
+            </word>
+
+            <word>
+                <swabian>hȧt's</swabian>
+                <high>haben</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>muscht</swabian>
+                <high>musst</high>
+                <english>must</english>
+            </word>
+
+            <word>
+                <swabian>ȧbends</swabian>
+                <high>abends </high>
+                <english>in the evening</english>
+            </word>
+
+            <word>
+                <swabian>Prob' </swabian>
+                <high>Probe</high>
+                <english>test</english>
+            </word>
+
+            <word>
+                <swabian>Melodie</swabian>
+                <high>Melodie</high>
+                <english>melody</english>
+            </word>
+
+            <word>
+                <swabian>da </swabian>
+                <high>der</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>Täxt</swabian>
+                <high>Text</high>
+                <english>text</english>
+            </word>
+
+            <word>
+                <swabian>nåch</swabian>
+                <high>nach</high>
+                <english>to/after</english>
+            </word>
+
+            <word>
+                <swabian>Tail</swabian>
+                <high>Teil</high>
+                <english>part</english>
+            </word>
+
+            <word>
+                <swabian>Operätta</swabian>
+                <high>Operette</high>
+                <english>operetta</english>
+            </word>
+
+            <word>
+                <swabian>manchmål</swabian>
+                <high>manchmal</high>
+                <english>sometimes </english>
+            </word>
+
+            <word>
+                <swabian>hem-mer </swabian>
+                <high>haben wir (2)</high>
+                <english>we have</english>
+            </word>
+
+            <word>
+                <swabian>Kirchalied </swabian>
+                <high>Kirchenlied</high>
+                <english>chant</english>
+            </word>
+
+            <word>
+                <swabian>g'nomma</swabian>
+                <high>genommen</high>
+                <english>taken</english>
+            </word>
+
+            <word>
+                <swabian>'komma </swabian>
+                <high>kommen</high>
+                <english>come</english>
+            </word>
+
+            <word>
+                <swabian>je </swabian>
+                <high>je</high>
+                <english>ever</english>
+            </word>
+
+            <word>
+                <swabian>nåchdem</swabian>
+                <high>nachdem</high>
+                <english>after</english>
+            </word>
+
+            <word>
+                <swabian>dä</swabian>
+                <high>der</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>da</swabian>
+                <high>der</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>da</swabian>
+                <high>da</high>
+                <english>there</english>
+            </word>
+
+            <word>
+                <swabian>Trouermarsch </swabian>
+                <high>Trauermarsch</high>
+                <english>funeral march</english>
+            </word>
+
+            <word>
+                <swabian>vom</swabian>
+                <high>vom</high>
+                <english>of/from</english>
+            </word>
+
+            <word>
+                <swabian>dazwischa'nii' </swabian>
+                <high>da zwischen hinein</high>
+                <english>in between</english>
+            </word>
+
+            <word>
+                <swabian>genou </swabian>
+                <high>genau</high>
+                <english>exactly</english>
+            </word>
+
+            <word>
+                <swabian>sunsch' </swabian>
+                <high>sonst</high>
+                <english>else</english>
+            </word>
+
+            <word>
+                <swabian>'proobt</swabian>
+                <high>probt</high>
+                <english>tries/try</english>
+            </word>
+
+            <word>
+                <swabian>los</swabian>
+                <high>los</high>
+                <english>let's</english>
+            </word>
+
+            <word>
+                <swabian>hit </swabian>
+                <high>heute</high>
+                <english>today</english>
+            </word>
+
+            <word>
+                <swabian>åbe'd </swabian>
+                <high>abend(s)</high>
+                <english>in the evening</english>
+            </word>
+
+            <word>
+                <swabian>si</swabian>
+                <high>sein</high>
+                <english>be</english>
+            </word>
+
+            <word>
+                <swabian>klappa</swabian>
+                <high>klappen</high>
+                <english>work</english>
+            </word>
+
+            <word>
+                <swabian>ainer </swabian>
+                <high>einer</high>
+                <english>one/another</english>
+            </word>
+
+            <word>
+                <swabian>mit'ganga </swabian>
+                <high>mitgegangen</high>
+                <english>gone along</english>
+            </word>
+
+            <word>
+                <swabian>mit-ara </swabian>
+                <high>mit der</high>
+                <english>with the</english>
+            </word>
+
+            <word>
+                <swabian>Ziehharmonika</swabian>
+                <high>Ziehharmonika</high>
+                <english>accordion</english>
+            </word>
+
+            <word>
+                <swabian>manchmȧl </swabian>
+                <high>manchmal</high>
+                <english>sometimes</english>
+            </word>
+
+            <word>
+                <swabian>war's </swabian>
+                <high>war</high>
+                <english>was</english>
+            </word>
+
+            <word>
+                <swabian>Lehrer</swabian>
+                <high>Lehrer</high>
+                <english>teacher</english>
+            </word>
+
+            <word>
+                <swabian>guat </swabian>
+                <high>gut</high>
+                <english>good</english>
+            </word>
+
+            <word>
+                <swabian>schbiela </swabian>
+                <high>spielen</high>
+                <english>play</english>
+            </word>
+
+            <word>
+                <swabian>dia </swabian>
+                <high>die</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>Sacha</swabian>
+                <high>Sachen</high>
+                <english>things</english>
+            </word>
+
+            <word>
+                <swabian>Ze-duur </swabian>
+                <high>C-dur</high>
+                <english>C-major</english>
+            </word>
+
+            <word>
+                <swabian>g'schriba </swabian>
+                <high>geschrieben</high>
+                <english>written</english>
+            </word>
+
+            <word>
+                <swabian>ai'm </swabian>
+                <high>einem</high>
+                <english>one/another</english>
+            </word>
+
+            <word>
+                <swabian>z' </swabian>
+                <high>zu</high>
+                <english>to</english>
+            </word>
+
+            <word>
+                <swabian>hoch </swabian>
+                <high>hoch</high>
+                <english>high</english>
+            </word>
+
+            <word>
+                <swabian>nieder </swabian>
+                <high>nieder</high>
+                <english>low</english>
+            </word>
+
+            <word>
+                <swabian>umsetza</swabian>
+                <high>umsetzen </high>
+                <english>implement/transform</english>
+            </word>
+
+            <word>
+                <swabian>'klappt</swabian>
+                <high>(ge)klappt</high>
+                <english>worked</english>
+            </word>
+
+            <word>
+                <swabian>durchg'falla </swabian>
+                <high>durchgefallen</high>
+                <english>fail</english>
+            </word>
+
+            <word>
+                <swabian>sim-mer </swabian>
+                <high>sind wir</high>
+                <english>we are</english>
+            </word>
+
+            <word>
+                <swabian>nia</swabian>
+                <high>nie</high>
+                <english>never</english>
+            </word>
+
+            <word>
+                <swabian>wurd </swabian>
+                <high>wird</high>
+                <english>will/is</english>
+            </word>
+
+            <word>
+                <swabian>ã'g'fanga </swabian>
+                <high>angefangen</high>
+                <english>start</english>
+            </word>
+
+            <word>
+                <swabian>im </swabian>
+                <high>im (in+dem)</high>
+                <english>in the</english>
+            </word>
+
+            <word>
+                <swabian>Bãh'hof</swabian>
+                <high>Bahnhof</high>
+                <english>station</english>
+            </word>
+
+            <word>
+                <swabian>die</swabian>
+                <high>die</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>eißerschde</swabian>
+                <high>äusserste</high>
+                <english>ultimate</english>
+            </word>
+
+            <word>
+                <swabian>eißerscht'</swabian>
+                <high>äusserste</high>
+                <english>ultimate</english>
+            </word>
+
+            <word>
+                <swabian>Wirtschaft</swabian>
+                <high>Wirtschaft</high>
+                <english>economy</english>
+            </word>
+
+            <word>
+                <swabian>mir </swabian>
+                <high>mir</high>
+                <english>me</english>
+            </word>
+
+            <word>
+                <swabian>mir</swabian>
+                <high>ich</high>
+                <english>I</english>
+            </word>
+
+            <word>
+                <swabian>mir</swabian>
+                <high>wir</high>
+                <english>we</english>
+            </word>
+
+            <word>
+                <swabian>saget</swabian>
+                <high>sagt</high>
+                <english>says/say</english>
+            </word>
+
+            <word>
+                <swabian>Pfarrei</swabian>
+                <high>Pfarrer (3)</high>
+                <english>vicar</english>
+            </word>
+
+            <word>
+                <swabian>jå wohl</swabian>
+                <high>jawohl</high>
+                <english>exactly</english>
+            </word>
+
+            <word>
+                <swabian>meh' </swabian>
+                <high>mehr (2)</high>
+                <english>more</english>
+            </word>
+
+            <word>
+                <swabian>dabii</swabian>
+                <high>dabei</high>
+                <english>nearby</english>
+            </word>
+
+            <word>
+                <swabian>d' </swabian>
+                <high>die</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>so </swabian>
+                <high>so</high>
+                <english>so</english>
+            </word>
+
+            <word>
+                <swabian>'rei</swabian>
+                <high>rein</high>
+                <english>clean</english>
+            </word>
+
+            <word>
+                <swabian>Schtadt</swabian>
+                <high>Stadt</high>
+                <english>town</english>
+            </word>
+
+            <word>
+                <swabian>g'macht </swabian>
+                <high>gemacht</high>
+                <english>done</english>
+            </word>
+
+            <word>
+                <swabian>iber</swabian>
+                <high>über</high>
+                <english>over</english>
+            </word>
+
+            <word>
+                <swabian>rüber </swabian>
+                <high>rüber</high>
+                <english>over</english>
+            </word>
+
+            <word>
+                <swabian>dåå </swabian>
+                <high>dann/da</high>
+                <english>then</english>
+            </word>
+
+            <word>
+                <swabian>Lit </swabian>
+                <high>Leute</high>
+                <english>people</english>
+            </word>
+
+            <word>
+                <swabian>hen </swabian>
+                <high>hin</high>
+                <english>over/towards</english>
+            </word>
+
+            <word>
+                <swabian>komma</swabian>
+                <high>kommen </high>
+                <english>come</english>
+            </word>
+
+            <word>
+                <swabian>se</swabian>
+                <high>Sie</high>
+                <english>you</english>
+            </word>
+
+            <word>
+                <swabian>g'nagelt</swabian>
+                <high>genagelt</high>
+                <english>nailed</english>
+            </word>
+
+            <word>
+                <swabian>voll</swabian>
+                <high>voll</high>
+                <english>full</english>
+            </word>
+
+            <word>
+                <swabian>waar</swabian>
+                <high>war</high>
+                <english>was</english>
+            </word>
+
+            <word>
+                <swabian>main'</swabian>
+                <high>meine</high>
+                <english>my</english>
+            </word>
+
+            <word>
+                <swabian>Schouschbieler </swabian>
+                <high>Shauspieler</high>
+                <english>actor</english>
+            </word>
+
+            <word>
+                <swabian>schbielt</swabian>
+                <high>spielt</high>
+                <english>plays/play</english>
+            </word>
+
+            <word>
+                <swabian>Applous</swabian>
+                <high>Applaus</high>
+                <english>clapping</english>
+            </word>
+
+            <word>
+                <swabian>bruucht</swabian>
+                <high>gebracht</high>
+                <english>carried/brought</english>
+            </word>
+
+            <word>
+                <swabian>genauu</swabian>
+                <high>genau</high>
+                <english>exactly</english>
+            </word>
+
+            <word>
+                <swabian>nit</swabian>
+                <high>nicht</high>
+                <english>no/not</english>
+            </word>
+
+            <word>
+                <swabian>g'lacht</swabian>
+                <high>gelacht</high>
+                <english>laughed</english>
+            </word>
+
+            <word>
+                <swabian>nint</swabian>
+                <high>nichts (3)</high>
+                <english>nothing</english>
+            </word>
+
+            <word>
+                <swabian>geh' </swabian>
+                <high>geh</high>
+                <english>go</english>
+            </word>
+
+            <word>
+                <swabian>mer </swabian>
+                <high>mehr</high>
+                <english>more</english>
+            </word>
+
+            <word>
+                <swabian>muaß </swabian>
+                <high>muss</high>
+                <english>must</english>
+            </word>
+
+            <word>
+                <swabian>Idealischt </swabian>
+                <high>Idealist</high>
+                <english>idealist</english>
+            </word>
+
+            <word>
+                <swabian>si'</swabian>
+                <high>seid</high>
+                <english>are/be</english>
+            </word>
+
+            <word>
+                <swabian>um</swabian>
+                <high>um</high>
+                <english>at</english>
+            </word>
+
+            <word>
+                <swabian>sagt</swabian>
+                <high>sagt </high>
+                <english>says/say</english>
+            </word>
+
+            <word>
+                <swabian>Allgemainhait</swabian>
+                <high>Allgemeinheit</high>
+                <english>universality</english>
+            </word>
+
+            <word>
+                <swabian>Gliiche</swabian>
+                <high>Gleiche</high>
+                <english>the same</english>
+            </word>
+
+            <word>
+                <swabian>geh'n</swabian>
+                <high>gehen</high>
+                <english>go</english>
+            </word>
+
+            <word>
+                <swabian>allmählich </swabian>
+                <high>allmählich</high>
+                <english>gradually</english>
+            </word>
+
+            <word>
+                <swabian>ab</swabian>
+                <high>ab</high>
+                <english>from</english>
+            </word>
+
+            <word>
+                <swabian>un </swabian>
+                <high>und</high>
+                <english>and</english>
+            </word>
+
+            <word>
+                <swabian>wieder</swabian>
+                <high>wieder</high>
+                <english>again</english>
+            </word>
+
+            <word>
+                <swabian>Junge</swabian>
+                <high>Junge Menschen</high>
+                <english>young people</english>
+            </word>
+
+            <word>
+                <swabian>sag' </swabian>
+                <high>sagen</high>
+                <english>say</english>
+            </word>
+
+            <word>
+                <swabian>warum</swabian>
+                <high>warum</high>
+                <english>why</english>
+            </word>
+
+            <word>
+                <swabian>komman </swabian>
+                <high>kommen</high>
+                <english>come</english>
+            </word>
+
+            <word>
+                <swabian>Ihr</swabian>
+                <high>Ihr</high>
+                <english>your</english>
+            </word>
+
+            <word>
+                <swabian>Ihr</swabian>
+                <high>Sie</high>
+                <english>you</english>
+            </word>
+
+            <word>
+                <swabian>nimme</swabian>
+                <high>nicht mehr (3)</high>
+                <english>no more</english>
+            </word>
+
+            <word>
+                <swabian>ja</swabian>
+                <high>ja</high>
+                <english>yes</english>
+            </word>
+
+            <word>
+                <swabian>Gott</swabian>
+                <high>Gott</high>
+                <english>God</english>
+            </word>
+
+            <word>
+                <swabian>achtasächzig</swabian>
+                <high>achtundsechzig</high>
+                <english>sixty eight</english>
+            </word>
+
+            <word>
+                <swabian>will</swabian>
+                <high>will</high>
+                <english>want</english>
+            </word>
+
+            <word>
+                <swabian>afangs </swabian>
+                <high>anfangs</high>
+                <english>at the beginning</english>
+            </word>
+
+            <word>
+                <swabian>no</swabian>
+                <high>noch</high>
+                <english>still</english>
+            </word>
+
+            <word>
+                <swabian>gnuag</swabian>
+                <high>genug</high>
+                <english>enough</english>
+            </word>
+
+            <word>
+                <swabian>jå</swabian>
+                <high>ja </high>
+                <english>yes</english>
+            </word>
+
+            <word>
+                <swabian>gåht</swabian>
+                <high>geht</high>
+                <english>goes/go</english>
+            </word>
+
+            <word>
+                <swabian>middaags </swabian>
+                <high>(nach)mittags</high>
+                <english>in the afternoon</english>
+            </word>
+
+            <word>
+                <swabian>am</swabian>
+                <high>am</high>
+                <english>on</english>
+            </word>
+
+            <word>
+                <swabian>viere</swabian>
+                <high>vier</high>
+                <english>four</english>
+            </word>
+
+            <word>
+                <swabian>Sonndag</swabian>
+                <high>Sonntag</high>
+                <english>Sunday</english>
+            </word>
+
+            <word>
+                <swabian>gȧht</swabian>
+                <high>geht</high>
+                <english>goes/go</english>
+            </word>
+
+            <word>
+                <swabian>ã'</swabian>
+                <high>an</high>
+                <english>on</english>
+            </word>
+
+            <word>
+                <swabian>isch</swabian>
+                <high>ist </high>
+                <english>is</english>
+            </word>
+
+            <word>
+                <swabian>färdig</swabian>
+                <high>fertig</high>
+                <english>ready</english>
+            </word>
+
+            <word>
+                <swabian>nachts</swabian>
+                <high>nachts</high>
+                <english>at night</english>
+            </word>
+
+            <word>
+                <swabian>zwai </swabian>
+                <high>zwei</high>
+                <english>two</english>
+            </word>
+
+            <word>
+                <swabian>hundsmiad</swabian>
+                <high>sehr müde (2) </high>
+                <english>too tired</english>
+            </word>
+
+            <word>
+                <swabian>wem-m'r</swabian>
+                <high>wenn ich</high>
+                <english>if I</english>
+            </word>
+
+            <word>
+                <swabian>in's </swabian>
+                <high>ins</high>
+                <english>in the</english>
+            </word>
+
+            <word>
+                <swabian>Bett</swabian>
+                <high>Bett</high>
+                <english>bed</english>
+            </word>
+
+            <word>
+                <swabian>ligt</swabian>
+                <high>liegt</high>
+                <english>lies/lie</english>
+            </word>
+
+            <word>
+                <swabian>kannsch' </swabian>
+                <high>kannst/kann</high>
+                <english>can</english>
+            </word>
+
+            <word>
+                <swabian>schlåfa</swabian>
+                <high>schlafen</high>
+                <english>sleep</english>
+            </word>
+
+            <word>
+                <swabian>geh'n </swabian>
+                <high>gehen/geht</high>
+                <english>goes/go</english>
+            </word>
+
+            <word>
+                <swabian>Melodia </swabian>
+                <high>Melodie</high>
+                <english>melody</english>
+            </word>
+
+            <word>
+                <swabian>bis</swabian>
+                <high>bis </high>
+                <english>till</english>
+            </word>
+
+            <word>
+                <swabian>Morga</swabian>
+                <high>Morgen</high>
+                <english>morning</english>
+            </word>
+
+            <word>
+                <swabian>friah</swabian>
+                <high>früh (2)</high>
+                <english>early</english>
+            </word>
+
+            <word>
+                <swabian>seckse </swabian>
+                <high>sechs</high>
+                <english>six</english>
+            </word>
+
+            <word>
+                <swabian>ufschtoũ'</swabian>
+                <high>aufstehen</high>
+                <english>rise</english>
+            </word>
+
+            <word>
+                <swabian>bisch' </swabian>
+                <high>bist</high>
+                <english>are</english>
+            </word>
+
+            <word>
+                <swabian>halbe</swabian>
+                <high>halbe</high>
+                <english>half</english>
+            </word>
+
+            <word>
+                <swabian>Woch'</swabian>
+                <high>Woche</high>
+                <english>week</english>
+            </word>
+
+            <word>
+                <swabian>ganz</swabian>
+                <high>ganz</high>
+                <english>whole</english>
+            </word>
+
+            <word>
+                <swabian>ka-o</swabian>
+                <high>K.O.</high>
+                <english>knockout</english>
+            </word>
+
+            <word>
+                <swabian>des halb</swabian>
+                <high>deshalb </high>
+                <english>therefore</english>
+            </word>
+
+            <word>
+                <swabian>g'raad</swabian>
+                <high>gerade</high>
+                <english>straight</english>
+            </word>
+
+            <word>
+                <swabian>froh</swabian>
+                <high>froh</high>
+                <english>glad</english>
+            </word>
+
+            <word>
+                <swabian>Andere</swabian>
+                <high>Andere</high>
+                <english>other</english>
+            </word>
+
+            <word>
+                <swabian>alt</swabian>
+                <high>alt</high>
+                <english>old</english>
+            </word>
+
+            <word>
+                <swabian>sind</swabian>
+                <high>sind</high>
+                <english>are</english>
+            </word>
+
+            <word>
+                <swabian>'s </swabian>
+                <high>das/es</high>
+                <english>it/that</english>
+            </word>
+
+            <word>
+                <swabian>isch's </swabian>
+                <high>ist es</high>
+                <english>it is</english>
+            </word>
+
+            <word>
+                <swabian>an </swabian>
+                <high>an</high>
+                <english>on</english>
+            </word>
+
+            <word>
+                <swabian>Fasnet </swabian>
+                <high>Fastnacht (3) </high>
+                <english>shrovetide</english>
+            </word>
+
+            <word>
+                <swabian>hegschd' </swabian>
+                <high>höchste</high>
+                <english>the highest</english>
+            </word>
+
+            <word>
+                <swabian>Fiardig </swabian>
+                <high>Feiertag</high>
+                <english>holiday</english>
+            </word>
+
+            <word>
+                <swabian>u ns</swabian>
+                <high>uns </high>
+                <english>us</english>
+            </word>
+
+            <word>
+                <swabian>schmutziga Dunschdig</swabian>
+                <high>Donnerstag vor Fastnacht</high>
+                <english>Thursday before the shrovetide</english>
+            </word>
+
+            <word>
+                <swabian>morgens </swabian>
+                <high>morgens</high>
+                <english>in the motning</english>
+            </word>
+
+            <word>
+                <swabian>Elfe-Mäß</swabian>
+                <high>Elf-Uhr Messe</high>
+                <english>eleven-o'clock mass</english>
+            </word>
+
+            <word>
+                <swabian>dȧ </swabian>
+                <high>dann</high>
+                <english>then</english>
+            </word>
+
+            <word>
+                <swabian>dȧ</swabian>
+                <high>da</high>
+                <english>there</english>
+            </word>
+
+            <word>
+                <swabian>gugga</swabian>
+                <high>gucken</high>
+                <english>look</english>
+            </word>
+
+            <word>
+                <swabian>jȧ </swabian>
+                <high>ja</high>
+                <english>yes</english>
+            </word>
+
+            <word>
+                <swabian>zum </swabian>
+                <high>zum</high>
+                <english>to the</english>
+            </word>
+
+            <word>
+                <swabian>Kaffee </swabian>
+                <high>Kaffee</high>
+                <english>coffee</english>
+            </word>
+
+            <word>
+                <swabian>komm' </swabian>
+                <high>kommen</high>
+                <english>come</english>
+            </word>
+
+            <word>
+                <swabian>schnäll </swabian>
+                <high>schnell</high>
+                <english>fast</english>
+            </word>
+
+            <word>
+                <swabian>Ässa</swabian>
+                <high>Essen</high>
+                <english>food</english>
+            </word>
+
+            <word>
+                <swabian>mit </swabian>
+                <high>mit</high>
+                <english>with</english>
+            </word>
+
+            <word>
+                <swabian>Kaffeedanda</swabian>
+                <high>Kaffeetante</high>
+                <english>coffee aunt</english>
+            </word>
+
+            <word>
+                <swabian>schwätza </swabian>
+                <high>schwatzen (3)</high>
+                <english>chatter</english>
+            </word>
+
+            <word>
+                <swabian>sen' </swabian>
+                <high>sind</high>
+                <english>are</english>
+            </word>
+
+            <word>
+                <swabian>luter </swabian>
+                <high>lauter</high>
+                <english>louder</english>
+            </word>
+
+            <word>
+                <swabian>Wiiber </swabian>
+                <high>Weiber</high>
+                <english>totty</english>
+            </word>
+
+            <word>
+                <swabian>unserem </swabian>
+                <high>unserem</high>
+                <english>owrs</english>
+            </word>
+
+            <word>
+                <swabian>Alder</swabian>
+                <high>Alter</high>
+                <english>older (person)</english>
+            </word>
+
+            <word>
+                <swabian>eldera</swabian>
+                <high>älter</high>
+                <english>older</english>
+            </word>
+
+            <word>
+                <swabian>jingere</swabian>
+                <high>jünger</high>
+                <english>younger</english>
+            </word>
+
+            <word>
+                <swabian>sondiera</swabian>
+                <high>absondern</high>
+                <english>separate</english>
+            </word>
+
+            <word>
+                <swabian>g'schwätzt </swabian>
+                <high>untergehalten</high>
+                <english>chattered</english>
+            </word>
+
+            <word>
+                <swabian>'traatscht</swabian>
+                <high>geswatzt (3)</high>
+                <english>chattered</english>
+            </word>
+
+            <word>
+                <swabian>weenigscht'</swabian>
+                <high>wenigste</high>
+                <english>the smallest</english>
+            </word>
+
+            <word>
+                <swabian>Ander'</swabian>
+                <high>Andere</high>
+                <english>the other(s)</english>
+            </word>
+
+            <word>
+                <swabian>gang</swabian>
+                <high>gegangen</high>
+                <english>gone</english>
+            </word>
+
+            <word>
+                <swabian>Lada</swabian>
+                <high>Laden</high>
+                <english>store</english>
+            </word>
+
+            <word>
+                <swabian>bliib </swabian>
+                <high>bleibe</high>
+                <english>stay</english>
+            </word>
+
+            <word>
+                <swabian>uma </swabian>
+                <high>um</high>
+                <english>at</english>
+            </word>
+
+            <word>
+                <swabian>finfe</swabian>
+                <high>fünf</high>
+                <english>five</english>
+            </word>
+
+            <word>
+                <swabian>'rum </swabian>
+                <high>herum</high>
+                <english>around</english>
+            </word>
+
+            <word>
+                <swabian>(uma... 'rum)</swabian>
+                <high>(um... herum)</high>
+                <english>around</english>
+            </word>
+
+            <word>
+                <swabian>Fasnet-Meendig </swabian>
+                <high>Montag vor Fastnacht</high>
+                <english>Monday before the shrovetide</english>
+            </word>
+
+            <word>
+                <swabian>kainer </swabian>
+                <high>kainer</high>
+                <english>no</english>
+            </word>
+
+            <word>
+                <swabian>den</swabian>
+                <high>den</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>sie</swabian>
+                <high>sie </high>
+                <english>she/they</english>
+            </word>
+
+            <word>
+                <swabian>jetzt </swabian>
+                <high>jetzt</high>
+                <english>now</english>
+            </word>
+
+            <word>
+                <swabian>abg'schafft</swabian>
+                <high>abgeschafft</high>
+                <english>ceased</english>
+            </word>
+
+            <word>
+                <swabian>Fäschtschbiel</swabian>
+                <high>Festspiel</high>
+                <english>pageant</english>
+            </word>
+
+            <word>
+                <swabian>kãi'</swabian>
+                <high>kein </high>
+                <english>no</english>
+            </word>
+
+            <word>
+                <swabian>Zit</swabian>
+                <high>Zeit</high>
+                <english>time</english>
+            </word>
+
+            <word>
+                <swabian>ärscht </swabian>
+                <high>erst</high>
+                <english>first</english>
+            </word>
+
+            <word>
+                <swabian>(zu)m </swabian>
+                <high>zum</high>
+                <english>to the</english>
+            </word>
+
+            <word>
+                <swabian>viele</swabian>
+                <high>viele</high>
+                <english>many</english>
+            </word>
+
+            <word>
+                <swabian>bi'm </swabian>
+                <high>beim</high>
+                <english>by the</english>
+            </word>
+
+            <word>
+                <swabian>mitg'macht</swabian>
+                <high>mitgemacht</high>
+                <english>took part</english>
+            </word>
+
+            <word>
+                <swabian>sich umziahga</swabian>
+                <high>sich umgezogen</high>
+                <english>changed clothes</english>
+            </word>
+
+            <word>
+                <swabian>umschtendlich</swabian>
+                <high>umständlich</high>
+                <english>intricately</english>
+            </word>
+
+            <word>
+                <swabian>no'mål </swabian>
+                <high>nochmals</high>
+                <english>again</english>
+            </word>
+
+            <word>
+                <swabian>geh-mer</swabian>
+                <high>gehen mehr</high>
+                <english>go more</english>
+            </word>
+
+            <word>
+                <swabian>alle</swabian>
+                <high>alle</high>
+                <english>all</english>
+            </word>
+
+            <word>
+                <swabian>dazua</swabian>
+                <high>dazu</high>
+                <english>thereto</english>
+            </word>
+
+            <word>
+                <swabian>ziehga</swabian>
+                <high>ziehen</high>
+                <english>pull</english>
+            </word>
+
+            <word>
+                <swabian>unsere </swabian>
+                <high>unsere</high>
+                <english>our</english>
+            </word>
+
+            <word>
+                <swabian>beschde</swabian>
+                <high>beste</high>
+                <english>best</english>
+            </word>
+
+            <word>
+                <swabian>Kinder </swabian>
+                <high>Kinder</high>
+                <english>children</english>
+            </word>
+
+            <word>
+                <swabian>Kinder' </swabian>
+                <high>Kinder</high>
+                <english>children</english>
+            </word>
+
+            <word>
+                <swabian>ã''zoga </swabian>
+                <high>angezogen</high>
+                <english>dressed up</english>
+            </word>
+
+            <word>
+                <swabian>håscht</swabian>
+                <high>hast / haben</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>wellet</swabian>
+                <high>wollen (3) </high>
+                <english>want</english>
+            </word>
+
+            <word>
+                <swabian>Muader </swabian>
+                <high>Mutter</high>
+                <english>mother</english>
+            </word>
+
+            <word>
+                <swabian>Mudder </swabian>
+                <high>Mutter</high>
+                <english>mother</english>
+            </word>
+
+            <word>
+                <swabian>mitgåht</swabian>
+                <high>mitgeht</high>
+                <english>goes along/go along</english>
+            </word>
+
+            <word>
+                <swabian>Hääs </swabian>
+                <high>Haus</high>
+                <english>house</english>
+            </word>
+
+            <word>
+                <swabian>richda</swabian>
+                <high>richten</high>
+                <english>clean up</english>
+            </word>
+
+            <word>
+                <swabian>hem-mir </swabian>
+                <high>haben wir</high>
+                <english>we have</english>
+            </word>
+
+            <word>
+                <swabian>Kischt</swabian>
+                <high>Kiste</high>
+                <english>box</english>
+            </word>
+
+            <word>
+                <swabian>Kischt'</swabian>
+                <high>Kiste</high>
+                <english>box</english>
+            </word>
+
+            <word>
+                <swabian>kommt </swabian>
+                <high>kommt</high>
+                <english>comes/come</english>
+            </word>
+
+            <word>
+                <swabian>Zimmer</swabian>
+                <high>Zimmer</high>
+                <english>room</english>
+            </word>
+
+            <word>
+                <swabian>niamar </swabian>
+                <high>niemand</high>
+                <english>nobody</english>
+            </word>
+
+            <word>
+                <swabian>d'renna </swabian>
+                <high>drinnen</high>
+                <english>inside</english>
+            </word>
+
+            <word>
+                <swabian>große </swabian>
+                <high>große</high>
+                <english>big</english>
+            </word>
+
+            <word>
+                <swabian>Kischda </swabian>
+                <high>Kiste</high>
+                <english>box</english>
+            </word>
+
+            <word>
+                <swabian>kunnt </swabian>
+                <high>kommt</high>
+                <english>comes/come</english>
+            </word>
+
+            <word>
+                <swabian>ruus</swabian>
+                <high>raus</high>
+                <english>out</english>
+            </word>
+
+            <word>
+                <swabian>'rom</swabian>
+                <high>rum</high>
+                <english>around</english>
+            </word>
+
+            <word>
+                <swabian>Dag' </swabian>
+                <high>Tage</high>
+                <english>days</english>
+            </word>
+
+            <word>
+                <swabian>ufrumma </swabian>
+                <high>aufräumen</high>
+                <english>clear</english>
+            </word>
+
+            <word>
+                <swabian>'nii'</swabian>
+                <high>hinein</high>
+                <english>into</english>
+            </word>
+
+            <word>
+                <swabian>zum Tail</swabian>
+                <high>zum Teil</high>
+                <english>partially</english>
+            </word>
+
+            <word>
+                <swabian>miir </swabian>
+                <high>mir</high>
+                <english>me</english>
+            </word>
+
+            <word>
+                <swabian>Kind</swabian>
+                <high>Kind</high>
+                <english>child</english>
+            </word>
+
+            <word>
+                <swabian>ã'ziehga </swabian>
+                <high>anziehen</high>
+                <english>dress up</english>
+            </word>
+
+            <word>
+                <swabian>unser' </swabian>
+                <high>unsere</high>
+                <english>our</english>
+            </word>
+
+            <word>
+                <swabian>Klaine</swabian>
+                <high>Kleine</high>
+                <english>little/small</english>
+            </word>
+
+            <word>
+                <swabian>finf</swabian>
+                <high>fünf</high>
+                <english>five</english>
+            </word>
+
+            <word>
+                <swabian>dis'</swabian>
+                <high>diese(s)</high>
+                <english>this/these</english>
+            </word>
+
+            <word>
+                <swabian>Jåhr</swabian>
+                <high>Jahr</high>
+                <english>year</english>
+            </word>
+
+            <word>
+                <swabian>Kinees</swabian>
+                <high>Kirmes</high>
+                <english>carnival</english>
+            </word>
+
+            <word>
+                <swabian>Kinees'</swabian>
+                <high>Kirmes</high>
+                <english>carnival</english>
+            </word>
+
+            <word>
+                <swabian>ã'g'het</swabian>
+                <high>angeht</high>
+                <english>goes on/go on</english>
+            </word>
+
+            <word>
+                <swabian>hab'n</swabian>
+                <high>haben</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>bloß</swabian>
+                <high>nur</high>
+                <english>only</english>
+            </word>
+
+            <word>
+                <swabian>bloß</swabian>
+                <high>soeben</high>
+                <english>just now</english>
+            </word>
+
+            <word>
+                <swabian>klãi'</swabian>
+                <high>klein</high>
+                <english>little/small</english>
+            </word>
+
+            <word>
+                <swabian>abg'endert </swabian>
+                <high>abgeändert</high>
+                <english>changed</english>
+            </word>
+
+            <word>
+                <swabian>Kineesa-Grupp'</swabian>
+                <high>Kirmes-Gruppe </high>
+                <english>carnival-group</english>
+            </word>
+
+            <word>
+                <swabian>mitmacha</swabian>
+                <high>mitmachen</high>
+                <english>take part</english>
+            </word>
+
+            <word>
+                <swabian>nicks</swabian>
+                <high>nichts</high>
+                <english>nothing</english>
+            </word>
+
+            <word>
+                <swabian>muß</swabian>
+                <high>muss</high>
+                <english>must</english>
+            </word>
+
+            <word>
+                <swabian>häärbring</swabian>
+                <high>herbringen. </high>
+                <english>brought</english>
+            </word>
+
+            <word>
+                <swabian>håsch'</swabian>
+                <high>hast</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>håsch </swabian>
+                <high>hast</high>
+                <english>have</english>
+            </word>
+
+            <word>
+                <swabian>'n </swabian>
+                <high>in</high>
+                <english>in</english>
+            </word>
+
+            <word>
+                <swabian>g'wäscha</swabian>
+                <high>gewaschen</high>
+                <english>washed</english>
+            </word>
+
+            <word>
+                <swabian>on'</swabian>
+                <high>und</high>
+                <english>and</english>
+            </word>
+
+            <word>
+                <swabian>g'riicht'</swabian>
+                <high>gerochen </high>
+                <english>smelled</english>
+            </word>
+
+            <word>
+                <swabian>Bendele</swabian>
+                <high>Bänder</high>
+                <english>ribbons/belts</english>
+            </word>
+
+            <word>
+                <swabian>nã'-g'macht</swabian>
+                <high>nachgemacht</high>
+                <english>copy/forge</english>
+            </word>
+
+            <word>
+                <swabian>neia </swabian>
+                <high>neue</high>
+                <english>new</english>
+            </word>
+
+            <word>
+                <swabian>Huat</swabian>
+                <high>Hut</high>
+                <english>hat</english>
+            </word>
+
+            <word>
+                <swabian>'kouft</swabian>
+                <high>gekauft</high>
+                <english>bought</english>
+            </word>
+
+            <word>
+                <swabian>nå'r </swabian>
+                <high>nachher</high>
+                <english>afterwards</english>
+            </word>
+
+            <word>
+                <swabian>ufg'het</swabian>
+                <high>aufgeht</high>
+                <english>risen</english>
+            </word>
+
+            <word>
+                <swabian>Senft'</swabian>
+                <high>Sänfte</high>
+                <english>litter (carrying a person)</english>
+            </word>
+
+            <word>
+                <swabian>sait</swabian>
+                <high>sagt</high>
+                <english>says/say</english>
+            </word>
+
+            <word>
+                <swabian>'rumtraga</swabian>
+                <high>herumtragen</high>
+                <english>take along</english>
+            </word>
+
+            <word>
+                <swabian>woor'a</swabian>
+                <high>wurden</high>
+                <english>are</english>
+            </word>
+
+            <word>
+                <swabian>duat</swabian>
+                <high>tut</high>
+                <english>do</english>
+            </word>
+
+            <word>
+                <swabian>generazionaweis' </swabian>
+                <high>generationsweise</high>
+                <english>generationwise</english>
+            </word>
+
+            <word>
+                <swabian>ufheba</swabian>
+                <high>aufheben</high>
+                <english>raise</english>
+            </word>
+
+            <word>
+                <swabian>sonsch' </swabian>
+                <high>sonst</high>
+                <english>else/otherwise</english>
+            </word>
+
+            <word>
+                <swabian>wär' </swabian>
+                <high>war</high>
+                <english>was</english>
+            </word>
+
+            <word>
+                <swabian>Klaid</swabian>
+                <high>Kleid</high>
+                <english>clothes/dress</english>
+            </word>
+
+            <word>
+                <swabian>Kaffeedandaklaid</swabian>
+                <high>Kaffeetantenkleid</high>
+                <english>coffee aunt dress</english>
+            </word>
+
+            <word>
+                <swabian>Hochzichklaid</swabian>
+                <high>Hochzeitkleid</high>
+                <english>wedding dress</english>
+            </word>
+
+            <word>
+                <swabian>isch''s</swabian>
+                <high>ist es</high>
+                <english>it is</english>
+            </word>
+
+            <word>
+                <swabian>mei'm </swabian>
+                <high>meinem</high>
+                <english>my</english>
+            </word>
+
+            <word>
+                <swabian>Mann</swabian>
+                <high>Mann</high>
+                <english>husband</english>
+            </word>
+
+            <word>
+                <swabian>sainera</swabian>
+                <high>seiner</high>
+                <english>his</english>
+            </word>
+
+            <word>
+                <swabian>ald's</swabian>
+                <high>altes</high>
+                <english>old</english>
+            </word>
+
+            <word>
+                <swabian>wunderbaar</swabian>
+                <high>wunderbar</high>
+                <english>wonderful</english>
+            </word>
+
+            <word>
+                <swabian>ischt</swabian>
+                <high>ist</high>
+                <english>is</english>
+            </word>
+
+            <word>
+                <swabian>ärhalden </swabian>
+                <high>erhalten</high>
+                <english>get</english>
+            </word>
+
+            <word>
+                <swabian>ainst</swabian>
+                <high>einst</high>
+                <english>once</english>
+            </word>
+
+            <word>
+                <swabian>alde </swabian>
+                <high>alte</high>
+                <english>old</english>
+            </word>
+
+            <word>
+                <swabian>Schaal</swabian>
+                <high>Schal </high>
+                <english>scarf</english>
+            </word>
+
+            <word>
+                <swabian>Schaala</swabian>
+                <high>Schal</high>
+                <english>scarf</english>
+            </word>
+
+            <word>
+                <swabian>friher</swabian>
+                <high>früher</high>
+                <english>earlier</english>
+            </word>
+
+            <word>
+                <swabian>handg'wobene </swabian>
+                <high>handgewoben</high>
+                <english>handtissued</english>
+            </word>
+
+            <word>
+                <swabian>oriendalische</swabian>
+                <high>orientalische</high>
+                <english>oriental</english>
+            </word>
+
+            <word>
+                <swabian>Muschder</swabian>
+                <high>Muster</high>
+                <english>pattern</english>
+            </word>
+
+            <word>
+                <swabian>Tracht</swabian>
+                <high>Tracht</high>
+                <english>national costume</english>
+            </word>
+
+            <word>
+                <swabian>'trag</swabian>
+                <high>tragen</high>
+                <english>bore</english>
+            </word>
+
+            <word>
+                <swabian>groß</swabian>
+                <high>groß</high>
+                <english>big</english>
+            </word>
+
+            <word>
+                <swabian>Koutschdecke</swabian>
+                <high>Couchdecke</high>
+                <english>coverage</english>
+            </word>
+
+            <word>
+                <swabian>fascht </swabian>
+                <high>fast</high>
+                <english>almost</english>
+            </word>
+
+            <word>
+                <swabian>greeßer</swabian>
+                <high>größer</high>
+                <english>bigger</english>
+            </word>
+
+            <word>
+                <swabian>wärtvolle</swabian>
+                <high>wertvolle</high>
+                <english>precious</english>
+            </word>
+
+            <word>
+                <swabian>ziahg </swabian>
+                <high>ziehen</high>
+                <english>pull</english>
+            </word>
+
+            <word>
+                <swabian>voornähm</swabian>
+                <high>vornehm</high>
+                <english>distinguished</english>
+            </word>
+
+            <word>
+                <swabian>Buachbinder </swabian>
+                <high>Buchbinder</high>
+                <english>bookbinder</english>
+            </word>
+
+            <word>
+                <swabian>mach </swabian>
+                <high>mache</high>
+                <english>make</english>
+            </word>
+
+            <word>
+                <swabian>G'schäft</swabian>
+                <high>Geschäft</high>
+                <english>shop</english>
+            </word>
+
+            <word>
+                <swabian>dabei</swabian>
+                <high>dabei</high>
+                <english>thereby/with it</english>
+            </word>
+
+            <word>
+                <swabian>fescht </swabian>
+                <high>fest</high>
+                <english>strong</english>
+            </word>
+
+            <word>
+                <swabian>d'rã'langa</swabian>
+                <high>hinlangen</high>
+                <english>hand</english>
+            </word>
+
+            <word>
+                <swabian>mi'</swabian>
+                <high>mein</high>
+                <english>my</english>
+            </word>
+
+            <word>
+                <swabian>hundertun'virzig </swabian>
+                <high>hundertundvierzig</high>
+                <english>one hundred fourteen</english>
+            </word>
+
+            <word>
+                <swabian>fufzig </swabian>
+                <high>fünfzig</high>
+                <english>fifteen</english>
+            </word>
+
+            <word>
+                <swabian>Familiab'sitz</swabian>
+                <high>Familienbesitz</high>
+                <english>family posession</english>
+            </word>
+
+            <word>
+                <swabian>Buchbinderei </swabian>
+                <high>Buchbinderei</high>
+                <english>bookbindery</english>
+            </word>
+
+            <word>
+                <swabian>dabi</swabian>
+                <high>dabei</high>
+                <english>thereby/with it</english>
+            </word>
+
+            <word>
+                <swabian>zum Bai </swabian>
+                <high>zum Beispiel</high>
+                <english>for example</english>
+            </word>
+
+            <word>
+                <swabian>Biacher </swabian>
+                <high>Bücher</high>
+                <english>books</english>
+            </word>
+
+            <word>
+                <swabian>härbringa</swabian>
+                <high>herbringen</high>
+                <english>bring</english>
+            </word>
+
+            <word>
+                <swabian>sim-mir</swabian>
+                <high>sind wir</high>
+                <english>we are</english>
+            </word>
+
+            <word>
+                <swabian>fufz'g</swabian>
+                <high>fünfzig</high>
+                <english>fifteen</english>
+            </word>
+
+            <word>
+                <swabian>Kunda</swabian>
+                <high>Kunden</high>
+                <english>customers</english>
+            </word>
+
+            <word>
+                <swabian>Schreibwara </swabian>
+                <high>Schreibwaren</high>
+                <english>stationery</english>
+            </word>
+
+            <word>
+                <swabian>härkriega </swabian>
+                <high>herkriegen</high>
+                <english>take out</english>
+            </word>
+
+            <word>
+                <swabian>'sch' </swabian>
+                <high>ist</high>
+                <english>is</english>
+            </word>
+
+            <word>
+                <swabian>sit</swabian>
+                <high>seit </high>
+                <english>for/since</english>
+            </word>
+
+            <word>
+                <swabian>dia </swabian>
+                <high>dem</high>
+                <english>the</english>
+            </word>
+
+            <word>
+                <swabian>beschtehen</swabian>
+                <high>bestehen</high>
+                <english>pass/obtain</english>
+            </word>
+
+            <word>
+                <swabian>bi </swabian>
+                <high>bei</high>
+                <english>by</english>
+            </word>
+
+            <word>
+                <swabian>gega</swabian>
+                <high>gegen</high>
+                <english>against</english>
+            </word>
+
+            <word>
+                <swabian>dåhär</swabian>
+                <high>daher</high>
+                <english>therefore</english>
+            </word>
+
+            <word>
+                <swabian>Lädele</swabian>
+                <high>Laden</high>
+                <english>store </english>
+            </word>
+
+            <word>
+                <swabian>goũ</swabian>
+                <high>gehen</high>
+                <english>go</english>
+            </word>
+
+            <word>
+                <swabian>Rande </swabian>
+                <high>Rand</high>
+                <english>side</english>
+            </word>
+
+            <word>
+                <swabian>machscht</swabian>
+                <high>machst</high>
+                <english>make</english>
+            </word>
+
+            <word>
+                <swabian>genou</swabian>
+                <high>genau</high>
+                <english>exactly</english>
+            </word>
+
+            <word>
+                <swabian>ain'</swabian>
+                <high>einen</high>
+                <english>one/another</english>
+            </word>
+
+            <word>
+                <swabian>Zaichablock</swabian>
+                <high>Zeichenblock </high>
+                <english>sketch block</english>
+            </word>
+
+            <word>
+                <swabian>villicht</swabian>
+                <high>vielleicht</high>
+                <english>possibly</english>
+            </word>
+
+            <word>
+                <swabian>'brucht </swabian>
+                <high>braucht</high>
+                <english>needs/need</english>
+            </word>
+
+            <word>
+                <swabian>brucha </swabian>
+                <high>brauchen</high>
+                <english>need</english>
+            </word>
+
+            <word>
+                <swabian>virzeh'</swabian>
+                <high>vierzehn </high>
+                <english>fourteen</english>
+            </word>
+
+            <word>
+                <swabian>Daag </swabian>
+                <high>Tag</high>
+                <english>day</english>
+            </word>
+
+            <word>
+                <swabian>Verbrouch</swabian>
+                <high>Verbrauch</high>
+                <english>consumption</english>
+            </word>
+
+            <word>
+                <swabian>allem </swabian>
+                <high>allem</high>
+                <english>all</english>
+            </word>
+
+            <word>
+                <swabian>arg</swabian>
+                <high>arg</high>
+                <english>bad</english>
+            </word>
+
+            <word>
+                <swabian>nadirlich</swabian>
+                <high>natürlich</high>
+                <english>naturally</english>
+            </word>
+
+            <word>
+                <swabian>mitgaũ</swabian>
+                <high>mitgehen</high>
+                <english>go along</english>
+            </word>
+
+            <word>
+                <swabian>d'renndinna </swabian>
+                <high>dadrinnen</high>
+                <english>into</english>
+            </word>
+
+            <word>
+                <swabian>schtåhscht</swabian>
+                <high>stehst</high>
+                <english>stand</english>
+            </word>
+
+            <word>
+                <swabian>muasch </swabian>
+                <high>musst</high>
+                <english>must</english>
+            </word>
+
+            <word>
+                <swabian>es</swabian>
+                <high>es</high>
+                <english>it</english>
+            </word>
+
+            <word>
+                <swabian>näbahär </swabian>
+                <high>nebenher</high>
+                <english>alongside</english>
+            </word>
+
+            <word>
+                <swabian>Husfrau</swabian>
+                <high>Hausfrau</high>
+                <english>housewife</english>
+            </word>
+
+            <word>
+                <swabian>Schweschder </swabian>
+                <high>Schwester</high>
+                <english>sister</english>
+            </word>
+
+            <word>
+                <swabian>mai'm </swabian>
+                <high>meinem</high>
+                <english>my</english>
+            </word>
+
+            <word>
+                <swabian>versorga </swabian>
+                <high>versorgen</high>
+                <english>take care</english>
+            </word>
+
+            <word>
+                <swabian>sonscht </swabian>
+                <high>sonst</high>
+                <english>else/otherwise</english>
+            </word>
+
+            <word>
+                <swabian>ai'm</swabian>
+                <high>einem</high>
+                <english>one/another</english>
+            </word>
+
+            <word>
+                <swabian>ledig</swabian>
+                <high>ledig</high>
+                <english>unmarried</english>
+            </word>
+
+            <word>
+                <swabian>Schweschdera</swabian>
+                <high>Schwestern</high>
+                <english>sisters</english>
+            </word>
+
+            <word>
+                <swabian>widerschg'firt</swabian>
+                <high>weitergeführt</high>
+                <english>runs on/run on</english>
+            </word>
+
+            <word>
+                <swabian>Eldara</swabian>
+                <high>Eltern</high>
+                <english>parents</english>
+            </word>
+
+            <word>
+                <swabian>Bruader </swabian>
+                <high>Bruder</high>
+                <english>brother</english>
+            </word>
+
+            <word>
+                <swabian>ärhalda</swabian>
+                <high>erhalten</high>
+                <english>get</english>
+            </word>
+
+            <word>
+                <swabian>är</swabian>
+                <high>er</high>
+                <english>he</english>
+            </word>
+
+            <word>
+                <swabian>Zwischazit</swabian>
+                <high>Zwischenzeit</high>
+                <english>meantime</english>
+            </word>
+
+            <word>
+                <swabian>aine</swabian>
+                <high>eine</high>
+                <english>one/another</english>
+            </word>
+
+            <word>
+                <swabian>g'schtorba</swabian>
+                <high>gestorben</high>
+                <english>died</english>
+            </word>
+
+            <word>
+                <swabian>vor </swabian>
+                <high>vor</high>
+                <english>of/over/before</english>
+            </word>
+
+            <word>
+                <swabian>wora </swabian>
+                <high>war</high>
+                <english>was</english>
+            </word>
+
+            <word>
+                <swabian>kam-m'r</swabian>
+                <high>kamen wir</high>
+                <english>we came</english>
+            </word>
+
+            <word>
+                <swabian>'nufgoũ</swabian>
+                <high>raufgegangen</high>
+                <english>gone above</english>
+            </word>
+
+            <word>
+                <swabian>ãi's </swabian>
+                <high>eins</high>
+                <english>one</english>
+            </word>
+
+            <word>
+                <swabian>hat</swabian>
+                <high>hat</high>
+                <english>has/have</english>
+            </word>
+
+            <word>
+                <swabian>gãhsch'</swabian>
+                <high>gehst</high>
+                <english>go</english>
+            </word>
+
+            <word>
+                <swabian>waiß </swabian>
+                <high>weiß</high>
+                <english>know</english>
+            </word>
+
+            <word>
+                <swabian>glii</swabian>
+                <high>gleich</high>
+                <english>same</english>
+            </word>
+
+            <word>
+                <swabian>sondern</swabian>
+                <high>sondern</high>
+                <english>but instead</english>
+            </word>
+
+            <word>
+                <swabian>bikannt</swabian>
+                <high>bekannt</high>
+                <english>famous</english>
+            </word>
+
+            <word>
+                <swabian>roãta </swabian>
+                <high>rote</high>
+                <english>red</english>
+            </word>
+
+            <word>
+                <swabian>Hund</swabian>
+                <high>Hund </high>
+                <english>dog</english>
+            </word>
+
+            <word>
+                <swabian>ganza</swabian>
+                <high>ganz</high>
+                <english>whole</english>
+            </word>
+
+        </s>
+    </wordlist>
+</idiomatica>

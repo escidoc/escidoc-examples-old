@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE relations SYSTEM "germanet_relations_short.dtd"[]>
+<relations>
+<con_rel dir='revert' from='0' inv='hyponymy' name='hyperonymy' to='50339'/>
+<con_rel dir='revert' from='1' inv='hyponymy' name='hyperonymy' to='0'/>
+<con_rel dir='revert' from='2' inv='hyponymy' name='hyperonymy' to='1'/>
+<con_rel dir='revert' from='3' inv='hyponymy' name='hyperonymy' to='1'/>
+<con_rel dir='revert' from='4' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='4' inv='hyponymy' name='hyperonymy' to='3'/>
+<con_rel dir='revert' from='5' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='5' inv='hyponymy' name='hyperonymy' to='3'/>
+<con_rel dir='revert' from='6' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='7' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='8' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='9' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='10' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='11' inv='hyponymy' name='hyperonymy' to='10'/>
+<con_rel dir='revert' from='12' inv='hyponymy' name='hyperonymy' to='10'/>
+<con_rel dir='revert' from='13' inv='hyponymy' name='hyperonymy' to='10'/>
+<con_rel dir='revert' from='14' inv='hyponymy' name='hyperonymy' to='10'/>
+<con_rel dir='revert' from='15' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='16' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='17' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='18' inv='hyponymy' name='hyperonymy' to='2'/>
+<con_rel dir='revert' from='19' inv='hyponymy' name='hyperonymy' to='1'/>
+<con_rel dir='revert' from='20' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='21' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='22' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='23' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='24' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='25' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='26' inv='hyponymy' name='hyperonymy' to='21'/>
+<con_rel dir='revert' from='27' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='28' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='29' inv='hyponymy' name='hyperonymy' to='19'/>
+<con_rel dir='revert' from='30' inv='hyponymy' name='hyperonymy' to='29'/>
+<con_rel dir='revert' from='31' inv='hyponymy' name='hyperonymy' to='29'/>
+<con_rel dir='revert' from='32' inv='hyponymy' name='hyperonymy' to='1'/>
+<con_rel dir='revert' from='33' inv='hyponymy' name='hyperonymy' to='29'/>
+<con_rel dir='revert' from='34' inv='hyponymy' name='hyperonymy' to='29'/>
+<con_rel dir='revert' from='35' inv='hyponymy' name='hyperonymy' to='1'/>
+</relations>

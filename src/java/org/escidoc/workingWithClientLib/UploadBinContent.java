@@ -5,10 +5,11 @@ import java.io.IOException;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
 
-public class CreateItem {
+public class UploadBinContent {
 
     public static void main(String[] args) {
 
@@ -16,13 +17,13 @@ public class CreateItem {
 
             String xmlFile = null;
             if (args.length < 1) {
-                xmlFile = "templates/TUE/Item_create_minimal.xml";
+                xmlFile = "templates/TUE/content/Beispiel schwäbischer Dialektdaten.xml";
             }
 
-            String createdResource =
-                createItem(Util.getXmlFileAsString(xmlFile));
+            String createdResourceURL =
+                uploadContent(Util.getXmlFileAsString(xmlFile));
 
-            System.out.println(createdResource);
+            System.out.println(createdResourceURL);
 
         }
         catch (EscidocClientException e) {
@@ -34,15 +35,15 @@ public class CreateItem {
         }
     }
 
-    private static String createItem(String itemXml)
+    private static String uploadContent(String xml)
         throws EscidocClientException {
 
         RestItemHandlerClient client = new RestItemHandlerClient();
+        ItemHandlerClient ihc = new ItemHandlerClient();
         client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
-        String createdItem = client.create(itemXml);
 
-        return createdItem;
+        return null;
     }
 
 }
