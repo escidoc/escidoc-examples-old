@@ -5,8 +5,8 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace">
 
 	<escidocItem:properties>
-		<srel:context xlink:href="/ir/context/escidoc:ex1" />
-		<srel:content-model xlink:href="/cmm/content-model/escidoc:ex4" />
+		<srel:context xlink:href="/ir/context/###CONTEXT_ID###" />
+		<srel:content-model xlink:href="/cmm/content-model/###CONTENT_MODEL_ID###" />
 		<prop:content-model-specific />
 	</escidocItem:properties>
 
