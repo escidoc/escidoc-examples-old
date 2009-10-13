@@ -26,7 +26,7 @@
  * Gesellschaft zur Foerderung der Wissenschaft e.V.  
  * All rights reserved.  Use is subject to license terms.
  */
-package org.escidoc.simpleConnections;
+package org.escidoc.simpleConnections.item;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -39,18 +39,21 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+import org.escidoc.Constants;
+import org.escidoc.simpleConnections.Util;
+
 import de.escidoc.core.client.exceptions.application.security.AuthenticationException;
 
 /**
  * @author Frank Schwichtenberg <Frank.Schwichtenberg@FIZ-Karlsruhe.de>
  * 
  */
-public class CreateContainer {
+public class CreateItem {
 
     private static String templateUrl =
-        "http://localhost:8080/ir/container/escidoc:ex7";
+        "http://localhost:8080/ir/item/escidoc:ex5";
 
-    private static final String CREATE_CONTAINER_PATH = "/ir/container";
+    private static final String CREATE_ITEM_PATH = "/ir/item";
 
     private static String user;
 
@@ -75,8 +78,8 @@ public class CreateContainer {
 
         // set username and password from params or to default
         if (args.length < 3) {
-            user = "sysadmin";
-            pass = "eSciDoc";
+            user = Constants.SYSTEM_ADMIN_USER;
+            pass = Constants.SYSTEM_ADMIN_PASSWORD;
         }
         else {
             user = args[1];
@@ -119,11 +122,11 @@ public class CreateContainer {
     private static String createFromTemplate(final URL url)
         throws AuthenticationException {
 
-        BufferedReader in = Util.getTemplate(url, user, pass);
+        BufferedReader in = Util.getTemplate(url);
 
-        String container = createContainer(in);
+        String item = createItem(in);
 
-        return container;
+        return item;
     }
 
     /**
@@ -136,7 +139,7 @@ public class CreateContainer {
      *         resource.
      * @throws AuthenticationException
      */
-    private static String createContainer(BufferedReader in)
+    private static String createItem(BufferedReader in)
         throws AuthenticationException {
 
         StringBuffer result = new StringBuffer();
@@ -144,8 +147,7 @@ public class CreateContainer {
         try {
             URL createUrl =
                 new URL("http://" + Util.getEscidocInfrastructureHost() + ":"
-                    + Util.getEscidocInfrastructurePort()
-                    + CREATE_CONTAINER_PATH);
+                    + Util.getEscidocInfrastructurePort() + CREATE_ITEM_PATH);
             HttpURLConnection createConnection =
                 (HttpURLConnection) createUrl.openConnection();
 

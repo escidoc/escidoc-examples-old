@@ -52,7 +52,7 @@ public class Retrieve {
      */
     public static void main(String[] args) {
 
-        // define the location if the resource
+        // define the location of the resource
         URL url = null;
 
         try {
