@@ -86,6 +86,9 @@ public class Util {
     private static final Pattern PATTERN_LMD_ATTRIBUTE =
         Pattern.compile("last-modification-date=\"([^\"]*)\"");
 
+    private static final Pattern PATTERN_XML_BASE_ATTRIBUTE =
+        Pattern.compile("xml:base=\"([^\"]*)\"");
+
     /**
      * constructors
      */
@@ -357,5 +360,29 @@ public class Util {
         }
 
         return objidLmd;
+    }
+
+    public static String obtainResourceHref(final String xml) {
+
+        // base
+        String base = "";
+        Matcher baseMatcher = PATTERN_XML_BASE_ATTRIBUTE.matcher(xml);
+        if (baseMatcher.find()) {
+            base = baseMatcher.group(1);
+        }
+
+        // href
+        String href = null;
+        Matcher hrefMatcher = PATTERN_XLINK_HREF_ATTRIBUTE.matcher(xml);
+        if (hrefMatcher.find()) {
+            href = hrefMatcher.group(1);
+        }
+        else {
+            throw new UnsupportedOperationException(
+                "Can not obtain href for resources without xlink:href attribute.");
+        }
+
+        return base + href;
+
     }
 }
