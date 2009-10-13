@@ -18,7 +18,7 @@ public class ReleaseContainer {
 
         try {
 
-            String id = "escidoc:93003";
+            String id = "escidoc:95001";
             if (args.length > 0) {
                 id = args[0];
             }
