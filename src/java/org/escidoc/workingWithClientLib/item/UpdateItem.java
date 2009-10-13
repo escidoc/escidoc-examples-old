@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib;
+package org.escidoc.workingWithClientLib.item;
 
 import java.io.IOException;
 
@@ -6,22 +6,22 @@ import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.rest.RestContainerHandlerClient;
+import de.escidoc.core.client.rest.RestItemHandlerClient;
 
-public class UpdateContainer {
+public class UpdateItem {
 
     public static void main(String[] args) {
 
-        String id = "escidoc:95002";
-        String xmlFile = "templates/TUE/Container_update.xml";
+        String id = "escidoc:93002";
+        String xmlFile = "templates/TUE/Item_update.xml";
 
         try {
 
             String updatedResource =
-                updateContainer(id, Util.getXmlFileAsString(xmlFile));
+                updateItem(id, Util.getXmlFileAsString(xmlFile));
 
             String[] objidLmd = Util.obtainObjidAndLmd(updatedResource);
-            System.out.println("Container with objid='" + objidLmd[0] + "' at '"
+            System.out.println("Item with objid='" + objidLmd[0] + "' at '"
                 + objidLmd[1] + "' updated.");
 
         }
@@ -32,7 +32,7 @@ public class UpdateContainer {
             // can not load xml, create it
             try {
 
-                Util.storeXmlStringAsFile(retrieveContainer(id), xmlFile);
+                Util.storeXmlStringAsFile(retrieveItem(id), xmlFile);
 
             }
             catch (EscidocClientException ee) {
@@ -45,24 +45,24 @@ public class UpdateContainer {
         }
     }
 
-    private static String updateContainer(String containerId, String containerXml)
+    private static String updateItem(String itemId, String itemXml)
         throws EscidocClientException {
 
-        RestContainerHandlerClient client = new RestContainerHandlerClient();
+        RestItemHandlerClient client = new RestItemHandlerClient();
         client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
-        String createdContainer = client.update(containerId, containerXml);
+        String createdItem = client.update(itemId, itemXml);
 
-        return createdContainer;
+        return createdItem;
     }
 
-    private static String retrieveContainer(String containerId)
+    private static String retrieveItem(String itemId)
         throws EscidocClientException {
 
-        RestContainerHandlerClient client = new RestContainerHandlerClient();
+        RestItemHandlerClient client = new RestItemHandlerClient();
         client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
-        String itemXml = client.retrieve(containerId);
+        String itemXml = client.retrieve(itemId);
 
         return itemXml;
     }

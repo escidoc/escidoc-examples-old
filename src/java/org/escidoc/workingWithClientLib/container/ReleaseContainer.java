@@ -1,32 +1,29 @@
-package org.escidoc.workingWithClientLib;
+package org.escidoc.workingWithClientLib.container;
 
 import java.util.Vector;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
-import de.escidoc.core.client.ItemHandlerClient;
+import de.escidoc.core.client.ContainerHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.exceptions.EscidocException;
-import de.escidoc.core.client.exceptions.InternalClientException;
-import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.resources.common.Filter;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
-import de.escidoc.core.resources.om.item.Item;
+import de.escidoc.core.resources.om.container.Container;
 
-public class ReleaseItem {
+public class ReleaseContainer {
 
     public static void main(String[] args) {
 
         try {
 
-            String id = "escidoc:93002";
+            String id = "escidoc:95001";
             if (args.length > 0) {
                 id = args[0];
             }
 
-            releaseItem(id);
+            releaseContainer(id);
 
         }
         catch (EscidocClientException e) {
@@ -35,28 +32,28 @@ public class ReleaseItem {
 
     }
 
-    public static void releaseItem(String id) throws EscidocClientException {
+    public static void releaseContainer(String id) throws EscidocClientException {
 
         // prepare client object
-        ItemHandlerClient ihc = new ItemHandlerClient();
-        ihc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
+        ContainerHandlerClient chc = new ContainerHandlerClient();
+        chc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
 
-        // create item object retrieving the item
-        Item item = ihc.retrieve(id);
+        // create Container object retrieving the container
+        Container container = chc.retrieve(id);
 
         // submit
         Result submitResult =
-            ihc.submit(item, new TaskParam(item.getLastModificationDate(),
+            chc.submit(container, new TaskParam(container.getLastModificationDate(),
                 "submit", null, null, new Vector<Filter>()));
 
         // release using submit result
         Result releaseResult =
-            ihc.release(item, new TaskParam(submitResult
+            chc.release(container, new TaskParam(submitResult
                 .getLastModificationDate(), "release", null, null,
                 new Vector<Filter>()));
 
-        System.out.println("Item with objid='" + id + "' at '"
+        System.out.println("Container with objid='" + id + "' at '"
             + releaseResult.getLastModificationDateAsString() + "' released.");
     }
 }

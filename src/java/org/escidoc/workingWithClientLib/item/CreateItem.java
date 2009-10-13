@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib;
+package org.escidoc.workingWithClientLib.item;
 
 import java.io.IOException;
 
@@ -6,24 +6,24 @@ import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.rest.RestContextHandlerClient;
+import de.escidoc.core.client.rest.RestItemHandlerClient;
 
-public class CreateContext {
+public class CreateItem {
 
     public static void main(String[] args) {
 
         try {
 
-            String xmlFile = "templates/TUE/Context_create.xml";
+            String xmlFile = "templates/TUE/Item_create_schwäbischer-dialekt.xml";
             if (args.length > 0) {
                 xmlFile = args[0];
             }
 
             String createdResource =
-                createContext(Util.getXmlFileAsString(xmlFile));
+                createItem(Util.getXmlFileAsString(xmlFile));
 
             String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
-            System.out.println("Context with objid='" + objidLmd[0] + "' at '"
+            System.out.println("Item with objid='" + objidLmd[0] + "' at '"
                 + objidLmd[1] + "' created.");
 
         }
@@ -36,15 +36,15 @@ public class CreateContext {
         }
     }
 
-    private static String createContext(String contextXml)
+    private static String createItem(String itemXml)
         throws EscidocClientException {
 
-        RestContextHandlerClient client = new RestContextHandlerClient();
+        RestItemHandlerClient client = new RestItemHandlerClient();
         client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
-        String createdContext = client.create(contextXml);
+        String createdItem = client.create(itemXml);
 
-        return createdContext;
+        return createdItem;
     }
 
 }

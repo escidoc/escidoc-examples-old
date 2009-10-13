@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib;
+package org.escidoc.workingWithClientLib.context;
 
 import java.io.IOException;
 
@@ -6,25 +6,25 @@ import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.rest.RestContainerHandlerClient;
+import de.escidoc.core.client.rest.RestContextHandlerClient;
 
-public class CreateContainer {
+public class CreateContext {
 
     public static void main(String[] args) {
 
         try {
 
-            String xmlFile = "templates/TUE/Container_create_minimal.xml";
+            String xmlFile = "templates/TUE/Context_create.xml";
             if (args.length > 0) {
                 xmlFile = args[0];
             }
 
             String createdResource =
-                createContainer(Util.getXmlFileAsString(xmlFile));
+                createContext(Util.getXmlFileAsString(xmlFile));
 
             String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
-            System.out.println("Container with objid='" + objidLmd[0]
-                + "' at '" + objidLmd[1] + "' created.");
+            System.out.println("Context with objid='" + objidLmd[0] + "' at '"
+                + objidLmd[1] + "' created.");
 
         }
         catch (EscidocClientException e) {
@@ -36,15 +36,15 @@ public class CreateContainer {
         }
     }
 
-    private static String createContainer(String containerXml)
+    private static String createContext(String contextXml)
         throws EscidocClientException {
 
-        RestContainerHandlerClient client = new RestContainerHandlerClient();
+        RestContextHandlerClient client = new RestContextHandlerClient();
         client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
-        String createdContainer = client.create(containerXml);
+        String createdContext = client.create(contextXml);
 
-        return createdContainer;
+        return createdContext;
     }
 
 }
