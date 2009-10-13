@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Xml declaration is not allowed for content model!
+  <?xml version="1.0" encoding="UTF-8"?>
+ -->
 <content-model:content-model
 	xmlns:content-model="http://www.escidoc.de/schema/contenttype/0.2"
 	xmlns:xlink="http://www.w3.org/1999/xlink" objid="escidoc:ex4"
