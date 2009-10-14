@@ -52,7 +52,40 @@ public class OrganizationalUnitEx {
 				Constants.SYSTEM_ADMIN_PASSWORD);
 
 		// load XML template of organizational unit
-		File templOu = new File("./templates/TUE/organizational-unit.xml");
+		File templOu = new File("./templates/TUE/organizational-unit/"
+				+ "escidoc_ou_for_create.xml");
+		String ouXml = Util.getXmlFileAsString(templOu);
+
+		// create
+		String crtdOuXML = rouc.create(ouXml);
+
+		// write out objid and last modification date
+		String[] objidLmd = Util.obtainObjidAndLmd(crtdOuXML);
+		System.out.println("Organizational Unit with objid='" + objidLmd[0]
+				+ "' at '" + objidLmd[1] + "' created");
+	}
+
+	/**
+	 * Create Organizational Unit (from REST XML template) as child of other OU.
+	 * 
+	 * @throws InternalClientException
+	 * @throws EscidocException
+	 * @throws TransportException
+	 * @throws IOException
+	 */
+	public void createChildOu() throws InternalClientException,
+			EscidocException, TransportException, IOException {
+
+		// get handler for organizational units
+		RestOrganizationalUnitHandlerClient rouc = new RestOrganizationalUnitHandlerClient();
+
+		// authenticate
+		rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
+				Constants.SYSTEM_ADMIN_PASSWORD);
+
+		// load XML template of organizational unit
+		File templOu = new File("./templates/TUE/organizational-unit/"
+				+ "escidoc_child_ou_for_create.xml");
 		String ouXml = Util.getXmlFileAsString(templOu);
 
 		// create
