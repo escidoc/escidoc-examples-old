@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user-account:user-account
+    xmlns:user-account="http://www.escidoc.de/schemas/useraccount/0.6"
+    xmlns:prop="http://escidoc.de/core/01/properties/"
+    xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <user-account:properties>
+        <prop:email>max.mustermann@email.de</prop:email>
+        <prop:name>Max Mustermann</prop:name>
+        <prop:login-name>mustermann</prop:login-name>
+        <prop:organizational-units>
+            <srel:organizational-unit
+                xlink:href="/oum/organizational-unit/###ORGUNIT###"/>
+        </prop:organizational-units>
+    </user-account:properties>
+</user-account:user-account>
