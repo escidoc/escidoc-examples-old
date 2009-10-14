@@ -27,32 +27,70 @@ import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
  */
 public class OrganizationalUnitEx {
 
-    /**
+	/**
      * 
      */
-    OrganizationalUnitEx() {
-    }
+	OrganizationalUnitEx() {
+	}
 
-    public void create() throws InternalClientException, EscidocException,
-        TransportException, IOException {
+	/**
+	 * Create Organizational Unit (from REST XML template).
+	 * 
+	 * @throws InternalClientException
+	 * @throws EscidocException
+	 * @throws TransportException
+	 * @throws IOException
+	 */
+	public void create() throws InternalClientException, EscidocException,
+			TransportException, IOException {
 
-        // get handler for organizational units
-        RestOrganizationalUnitHandlerClient rouc =
-            new RestOrganizationalUnitHandlerClient();
+		// get handler for organizational units
+		RestOrganizationalUnitHandlerClient rouc = new RestOrganizationalUnitHandlerClient();
 
-        // authenticate
-        rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+		// authenticate
+		rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
+				Constants.SYSTEM_ADMIN_PASSWORD);
 
-        // load XML template of organizational unit
-        File templOu = new File("./templates/TUE/organizational-unit.xml");
-        String ouXml = Util.getXmlFileAsString(templOu);
+		// load XML template of organizational unit
+		File templOu = new File("./templates/TUE/organizational-unit.xml");
+		String ouXml = Util.getXmlFileAsString(templOu);
 
-        // create
-        String crtdOuXML = rouc.create(ouXml);
-        String[] objidLmd = Util.obtainObjidAndLmd(crtdOuXML);
+		// create
+		String crtdOuXML = rouc.create(ouXml);
 
-        System.out.println("Organizational Unit with objid='" + objidLmd[0]
-            + "' at '" + objidLmd[1] + "' created");
-    }
+		// write out objid and last modification date
+		String[] objidLmd = Util.obtainObjidAndLmd(crtdOuXML);
+		System.out.println("Organizational Unit with objid='" + objidLmd[0]
+				+ "' at '" + objidLmd[1] + "' created");
+	}
+
+	/**
+	 * Set Organizational Unit to open.
+	 * 
+	 * @param objd
+	 *            The objid of the Organizational Unit
+	 * @param lmd
+	 *            last modification date of Organizational Unit
+	 * @throws InternalClientException
+	 * @throws EscidocException
+	 * @throws TransportException
+	 * @throws IOException
+	 */
+	public void open(final String objid, final String taskParam)
+			throws InternalClientException, EscidocException,
+			TransportException, IOException {
+
+		// login
+		RestOrganizationalUnitHandlerClient rouc = new RestOrganizationalUnitHandlerClient();
+		rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
+				Constants.SYSTEM_ADMIN_PASSWORD);
+
+		// open OU
+		String responseXml = rouc.open(objid, taskParam);
+
+		// write out objid and last modification date
+		String[] objidLmd = Util.obtainObjidAndLmd(responseXml);
+		System.out.println("Organizational Unit with objid='" + objid
+				+ "' at '" + objidLmd[1] + "' set to open");
+	}
 }
