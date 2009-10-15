@@ -19,7 +19,7 @@ public class Open {
         OrganizationalUnitEx ouEx = new OrganizationalUnitEx();
 
         try {
-        	String objid = "escidoc:1124785";
+        	String objid = "escidoc:1";
 
         	// prepare and load taskParam XML
     		File templ = new File("./templates/TUE/taskParam.xml");

@@ -18,7 +18,7 @@ public class OpenContext {
 
         try {
 
-            String id = "escidoc:101002";
+            String id = "escidoc:1";
             if (args.length > 0) {
                 id = args[0];
             }
@@ -39,7 +39,7 @@ public class OpenContext {
         chc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
 
-        // create Context object retrieving the container
+        // create Context object retrieving the context
         Context context = chc.retrieve(id);
 
         // submit

@@ -15,7 +15,7 @@ import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.om.item.Item;
 
-public class ReleaseItem {
+public class SubmitReleaseItem {
 
     public static void main(String[] args) {
 
@@ -45,10 +45,16 @@ public class ReleaseItem {
         // create item object retrieving the item
         Item item = ihc.retrieve(id);
 
+        // submit
+        Result submitResult =
+            ihc.submit(item, new TaskParam(item.getLastModificationDate(),
+                "submit", null, null, new Vector<Filter>()));
+
         // release using submit result
         Result releaseResult =
-            ihc.release(item, new TaskParam(item.getLastModificationDate(),
-                "release", null, null, new Vector<Filter>()));
+            ihc.release(item, new TaskParam(submitResult
+                .getLastModificationDate(), "release", null, null,
+                new Vector<Filter>()));
 
         System.out.println("Item with objid='" + id + "' at '"
             + releaseResult.getLastModificationDateAsString() + "' released.");

@@ -13,7 +13,7 @@
 
 		<prop:organizational-units>
 			<srel:organizational-unit
-				xlink:href="/oum/organizational-unit/###ORGANIZATIONAL_UNIT###" />
+				xlink:href="/oum/organizational-unit/###ORGANIZATIONAL_UNIT_ID###" />
 		</prop:organizational-units>
 	</context:properties>
 

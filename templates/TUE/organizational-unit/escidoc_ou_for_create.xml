@@ -9,9 +9,9 @@
 		xmlns:dcterms="http://purl.org/dc/terms/">
 		<md-records:md-record name="escidoc">
 			<ou:ou>
-				<dc:title>###NAME OF OU###</dc:title>
-				<dcterms:alternative>###ALTERNATIVE NAME OF OU</dcterms:alternative>
-				<dc:description>###DESCRIPTION OF OU###</dc:description>
+				<dc:title>###TITLE###</dc:title>
+				<dcterms:alternative>###ABBREVIATION###</dcterms:alternative>
+				<dc:description>###DESCRIPTION###</dc:description>
 			</ou:ou>
 		</md-records:md-record>
 	</md-records:md-records>

@@ -53,6 +53,6 @@ public class ContentModelEx {
         String[] objidLmd = Util.obtainObjidAndLmd(crtdOuXML);
 
         System.out.println("Content Model with objid='" + objidLmd[0]
-            + "' at '" + objidLmd[1] + "' created");
+            + "' created");
     }
 }

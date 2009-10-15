@@ -16,17 +16,17 @@ public class CreateGrant {
 	 */
 	public static void main(String[] args) {
 
-		UserAccountEx ouEx = new UserAccountEx();
+		UserAccountEx uaEx = new UserAccountEx();
 
 		try {
-			String userAccountId = "escidoc:1123792";
+			String userAccountId = "escidoc:1";
 
 			// prepare and load taskParam XML
 			File templ = new File("./templates/TUE/user-account/"
 					+ "escidoc_depositor_grant_for_create.xml");
 			String grantXml = Util.getXmlFileAsString(templ);
 
-			ouEx.createGrant(userAccountId, grantXml);
+			uaEx.createGrant(userAccountId, grantXml);
 		} catch (EscidocException e) {
 			e.printStackTrace();
 		} catch (InternalClientException e) {

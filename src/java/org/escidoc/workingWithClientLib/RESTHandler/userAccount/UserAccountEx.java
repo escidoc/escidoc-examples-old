@@ -87,7 +87,7 @@ public class UserAccountEx {
 
 		// write out objid and last modification date
 		String[] objidLmd = Util.obtainObjidAndLmd(crXML);
-		System.out.println("User Account with objid='" + userAccountId
-				+ "' at '" + objidLmd[1] + "' created");
+		System.out.println("Grant set for User Account with objid='" + userAccountId
+				+ "' at '" + objidLmd[1] + "'.");
 }
 }

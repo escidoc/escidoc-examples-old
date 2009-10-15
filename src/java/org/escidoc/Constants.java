@@ -13,8 +13,10 @@ public class Constants {
             + DEFAULT_INFRASTRUCTURE_PORT + DEFAULT_INFRASTRUCTURE_PATH;
 
     public static final String SYSTEM_ADMIN_USER = "sysadmin";
+//    public static final String SYSTEM_ADMIN_USER = "mustermann";
 
     public static final String SYSTEM_ADMIN_PASSWORD = "eSciDoc";
+//    public static final String SYSTEM_ADMIN_PASSWORD = "PubManR2";
 
     /**
      * Objid from common example set.

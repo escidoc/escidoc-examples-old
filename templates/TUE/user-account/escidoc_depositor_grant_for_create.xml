@@ -9,6 +9,6 @@
 		<srel:role
 			xlink:href="/aa/role/escidoc:role-depositor" />
 		<srel:assigned-on
-			xlink:href="/ir/context/###CONTEXT###" />
+			xlink:href="/ir/context/###CONTEXT_ID###" />
 	</grants:properties>
 </grants:grant>
