@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib.item;
+package org.escidoc.workingWithClientLib.RESTHandler.item;
 
 import java.io.IOException;
 

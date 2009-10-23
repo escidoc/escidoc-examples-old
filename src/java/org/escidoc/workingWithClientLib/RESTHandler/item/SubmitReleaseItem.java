@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib.item;
+package org.escidoc.workingWithClientLib.RESTHandler.item;
 
 import java.util.Vector;
 
@@ -7,15 +7,12 @@ import org.escidoc.simpleConnections.Util;
 
 import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.exceptions.EscidocException;
-import de.escidoc.core.client.exceptions.InternalClientException;
-import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.resources.common.Filter;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.om.item.Item;
 
-public class SubmitItem {
+public class SubmitReleaseItem {
 
     public static void main(String[] args) {
 
@@ -50,7 +47,13 @@ public class SubmitItem {
             ihc.submit(item, new TaskParam(item.getLastModificationDate(),
                 "submit", null, null, new Vector<Filter>()));
 
+        // release using submit result
+        Result releaseResult =
+            ihc.release(item, new TaskParam(submitResult
+                .getLastModificationDate(), "release", null, null,
+                new Vector<Filter>()));
+
         System.out.println("Item with objid='" + id + "' at '"
-            + submitResult.getLastModificationDateAsString() + "' submitted.");
+            + releaseResult.getLastModificationDateAsString() + "' released.");
     }
 }

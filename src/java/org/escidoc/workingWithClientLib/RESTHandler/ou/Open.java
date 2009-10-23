@@ -15,7 +15,7 @@ import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
  * Example how to set the status of an Organizational Unit to open.
  * 
  * <p>
- * The status open is required to use the Orgaizational Unit; e.g. add an user
+ * The status open is required to use the Organizational Unit; e.g. add an user
  * to this Organizational Unit.
  * </P>
  * 

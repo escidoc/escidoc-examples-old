@@ -12,7 +12,7 @@ import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
 
 /**
- * Example how to define create an Organizational Unit and simultaniusly
+ * Example how to create an Organizational Unit and simultaneously
  * defining it as child of another Organizational Unit.
  * 
  * @author SWA
