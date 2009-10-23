@@ -1,10 +1,16 @@
-package org.escidoc.workingWithClientLib.RESTHandler.item;
+package org.escidoc.workingWithClientLib.JavaClasses.item;
+
+import java.util.Vector;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.rest.RestItemHandlerClient;
+import de.escidoc.core.resources.common.Filter;
+import de.escidoc.core.resources.common.Result;
+import de.escidoc.core.resources.common.TaskParam;
+import de.escidoc.core.resources.om.item.Item;
 
 /**
  * Example how to release an Item.
@@ -49,34 +55,31 @@ public class ReleaseItem {
 	 * </p>
 	 * <p>
 	 * The taskParam has to contain the last-modification-date of the Item
-	 * (optimistic locking) and can contain a release comment.
+	 * (optimistic locking) and the release comment.
 	 * </p>
 	 * 
 	 * @param id
+	 *            The objid of the Item.
 	 * @throws EscidocClientException
 	 */
-	public static void releaseItem(String id) throws EscidocClientException {
+	public static void releaseItem(final String id)
+			throws EscidocClientException {
 
 		// prepare client object
-		RestItemHandlerClient rihc = new RestItemHandlerClient();
-		rihc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
+		ItemHandlerClient ihc = new ItemHandlerClient();
+		ihc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
 				Constants.SYSTEM_ADMIN_PASSWORD);
 
-		// retrieving the Item
-		String itemXml = rihc.retrieve(id);
-
-		// we need last-modifcation-date for release
-		String[] objidLmd = Util.obtainObjidAndLmd(itemXml);
-
-		String taskParam = "<param last-modification-date=\"" + objidLmd[0]
-				+ "\">\n" + "</param>";
+		// create item object retrieving the item
+		Item item = ihc.retrieve(id);
 
 		// release using submit result
-		String releaseResultXml = rihc.release(itemXml, taskParam);
+		Result releaseResult = ihc.release(item, new TaskParam(item
+				.getLastModificationDate(), "release", null, null,
+				new Vector<Filter>()));
 
-		// obtain last-modification-date for further processing
-		objidLmd = Util.obtainObjidAndLmd(releaseResultXml);
-		System.out.println("Item with objid='" + id + "' at '" + objidLmd[1]
+		System.out.println("Item with objid='" + id + "' at '"
+				+ releaseResult.getLastModificationDateAsString()
 				+ "' released.");
 	}
 }

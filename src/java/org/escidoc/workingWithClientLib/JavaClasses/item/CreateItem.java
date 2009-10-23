@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib.RESTHandler.item;
+package org.escidoc.workingWithClientLib.JavaClasses.item;
 
 import java.io.IOException;
 
@@ -57,15 +57,10 @@ public class CreateItem {
 	private static String createItem(final String itemXml)
 			throws EscidocClientException {
 
-		// get REST handler
-		RestItemHandlerClient rihc = new RestItemHandlerClient();
-
-		// login
-		rihc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
+		RestItemHandlerClient client = new RestItemHandlerClient();
+		client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
 				Constants.SYSTEM_ADMIN_PASSWORD);
-
-		// create the Item
-		String createdItem = rihc.create(itemXml);
+		String createdItem = client.create(itemXml);
 
 		return createdItem;
 	}
