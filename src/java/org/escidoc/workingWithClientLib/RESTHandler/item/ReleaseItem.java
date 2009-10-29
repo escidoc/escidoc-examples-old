@@ -9,7 +9,7 @@ import de.escidoc.core.client.rest.RestItemHandlerClient;
 /**
  * Example how to release an Item.
  * 
- * @author FRS, SWA
+ * @author FRS
  * 
  */
 public class ReleaseItem {
