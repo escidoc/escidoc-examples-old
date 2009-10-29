@@ -1,17 +1,28 @@
 package org.escidoc.workingWithClientLib.ClassMapping.item;
 
-import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
+import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.rest.RestItemHandlerClient;
+import de.escidoc.core.resources.ResourceRef;
+import de.escidoc.core.resources.common.MetadataRecord;
+import de.escidoc.core.resources.common.MetadataRecords;
+import de.escidoc.core.resources.common.properties.ContentModelSpecific;
+import de.escidoc.core.resources.om.item.Item;
 
 /**
  * Example how to create an Item.
  * 
- * @author FRS
+ * @author SWA
  * 
  */
 public class CreateItem {
@@ -21,48 +32,112 @@ public class CreateItem {
 	 * 
 	 * @param args
 	 *            location of Item XML
+	 * @throws ParserConfigurationException
 	 */
 	public static void main(String[] args) {
 
 		try {
 
-			String xmlFile = "templates/TUE/Item_create_minimal.xml";
-			if (args.length > 0) {
-				xmlFile = args[0];
-			}
+			Item createdResource = createItem();
 
-			String createdResource = createItem(Util
-					.getXmlFileAsString(xmlFile));
-
-			String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
-			System.out.println("Item with objid='" + objidLmd[0] + "' at '"
-					+ objidLmd[1] + "' created.");
+			System.out.println("Item with objid='" + createdResource.getObjid()
+					+ "' at '"
+					+ createdResource.getLastModificationDateAsString()
+					+ "' created.");
 
 		} catch (EscidocClientException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			System.out
-					.println("First parameter must be an eSciDoc Item XML File.");
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
 		}
 	}
 
 	/**
 	 * Create Item.
 	 * 
-	 * @param itemXml
-	 *            Item XML
 	 * @return XML representation of the created Item
 	 * @throws EscidocClientException
+	 * @throws ParserConfigurationException
 	 */
-	private static String createItem(final String itemXml)
-			throws EscidocClientException {
+	private static Item createItem() throws EscidocClientException,
+			ParserConfigurationException {
 
-		RestItemHandlerClient client = new RestItemHandlerClient();
-		client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
+		ItemHandlerClient ihc = new ItemHandlerClient();
+		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
 				Constants.SYSTEM_ADMIN_PASSWORD);
-		String createdItem = client.create(itemXml);
 
-		return createdItem;
+		Item item = new Item();
+
+		item.getProperties().setContext(
+				new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+		item.getProperties().setContentModel(
+				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+
+		// Content-model
+		ContentModelSpecific cms = getContentModelSpecific();
+		item.getProperties().setContentModelSpecific(cms);
+
+		// Metadata Record(s)
+		MetadataRecords mdRecords = new MetadataRecords();
+		MetadataRecord mdrecord = getMdRecord("escidoc");
+		mdRecords.add(mdrecord);
+		item.setMetadataRecords(mdRecords);
+
+		// create
+		Item newItem = ihc.create(item);
+
+		return newItem;
+	}
+
+	/**
+	 * Get content model specific.
+	 * 
+	 * @return
+	 * @throws ParserConfigurationException
+	 */
+	private static ContentModelSpecific getContentModelSpecific()
+			throws ParserConfigurationException {
+
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = factory.newDocumentBuilder();
+		Document doc = builder.newDocument();
+
+		Element contentModelSpecific = doc.createElementNS(null, "cms");
+		Element element1 = doc.createElement("some-other-stuff");
+		element1.setTextContent("some content - " + System.nanoTime());
+
+		List<Element> cmsContent = new LinkedList<Element>();
+		cmsContent.add(contentModelSpecific);
+		cmsContent.add(element1);
+
+		ContentModelSpecific cms = new ContentModelSpecific();
+		cms.setContent(cmsContent);
+
+		return cms;
+	}
+
+	/**
+	 * Get MetadataRecord.
+	 * 
+	 * @param name
+	 *            Name of md-record.
+	 * @return MetadataRecord
+	 * @throws ParserConfigurationException
+	 */
+	private static MetadataRecord getMdRecord(final String name)
+			throws ParserConfigurationException {
+
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = factory.newDocumentBuilder();
+		Document doc = builder.newDocument();
+
+		MetadataRecord mdRecord = new MetadataRecord();
+		mdRecord.setName(name);
+
+		Element element = doc.createElementNS(null, "myMdRecord");
+		mdRecord.setContent(element);
+
+		return mdRecord;
 	}
 
 }
