@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib.JavaClasses.context;
+package org.escidoc.workingWithClientLib.ClassMapping.context;
 
 import java.io.IOException;
 

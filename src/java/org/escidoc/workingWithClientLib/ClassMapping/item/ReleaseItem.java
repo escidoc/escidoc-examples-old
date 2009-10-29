@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib.JavaClasses.item;
+package org.escidoc.workingWithClientLib.ClassMapping.item;
 
 import java.util.Vector;
 
