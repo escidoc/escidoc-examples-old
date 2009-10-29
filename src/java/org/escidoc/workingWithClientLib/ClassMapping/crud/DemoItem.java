@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib.crud;
+package org.escidoc.workingWithClientLib.ClassMapping.crud;
 
 import java.util.LinkedList;
 import java.util.List;

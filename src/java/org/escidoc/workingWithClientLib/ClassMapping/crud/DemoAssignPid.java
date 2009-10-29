@@ -1,7 +1,4 @@
-/**
- * 
- */
-package org.escidoc.workingWithClientLib.crud;
+package org.escidoc.workingWithClientLib.ClassMapping.crud;
 
 import javax.xml.parsers.ParserConfigurationException;
 
