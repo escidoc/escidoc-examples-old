@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib.context;
+package org.escidoc.workingWithClientLib.RESTHandler.context;
 
 import java.io.IOException;
 

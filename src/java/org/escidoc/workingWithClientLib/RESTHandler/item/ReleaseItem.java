@@ -9,7 +9,7 @@ import de.escidoc.core.client.rest.RestItemHandlerClient;
 /**
  * Example how to release an Item.
  * 
- * @author FRS
+ * @author FRS, SWA
  * 
  */
 public class ReleaseItem {
@@ -65,7 +65,7 @@ public class ReleaseItem {
 		// retrieving the Item
 		String itemXml = rihc.retrieve(id);
 
-		// we need last-modifcation-date for release
+		// we need last-modification-date for release
 		String[] objidLmd = Util.obtainObjidAndLmd(itemXml);
 
 		String taskParam = "<param last-modification-date=\"" + objidLmd[0]
