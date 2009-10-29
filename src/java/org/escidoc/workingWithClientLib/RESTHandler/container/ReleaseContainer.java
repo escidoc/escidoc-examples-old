@@ -1,4 +1,4 @@
-package org.escidoc.workingWithClientLib.container;
+package org.escidoc.workingWithClientLib.RESTHandler.container;
 
 import java.util.Vector;
 
