@@ -1,50 +1,100 @@
 package org.escidoc.workingWithClientLib.ClassMapping.context;
 
-import java.io.IOException;
-
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
-import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.rest.RestContextHandlerClient;
+import de.escidoc.core.client.ContextHandlerClient;
+import de.escidoc.core.client.exceptions.EscidocException;
+import de.escidoc.core.client.exceptions.InternalClientException;
+import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.resources.om.context.Context;
+import de.escidoc.core.resources.om.context.Properties;
 
+/**
+ * Example how to create an Context by using the eSciDoc Java client library.
+ * 
+ * @author SWA
+ * 
+ */
 public class CreateContext {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        try {
+		// Prepare a value object with new values of Context.
+		Context context = prepareContext();
+		try {
+			// call create with VO on eSciDoc
+			context = createContext(context);
+		} catch (EscidocException e) {
+			e.printStackTrace();
+		} catch (InternalClientException e) {
+			e.printStackTrace();
+		} catch (TransportException e) {
+			e.printStackTrace();
+		}
 
-            String xmlFile = "templates/TUE/Context_create.xml";
-            if (args.length > 0) {
-                xmlFile = args[0];
-            }
+		// for convenient reason: print out objid and last-modification-date of
+		// created context
+		System.out.println("Context with objid='" + context.getObjid() + "' at '"
+				+ context.getLastModificationDate() + "' created.");
+		
+	}
 
-            String createdResource =
-                createContext(Util.getXmlFileAsString(xmlFile));
+	/**
+	 * The value object Context is to create and to fill with (at least
+	 * required) parameter.
+	 * 
+	 * @return Context (which is not created within the infrastructure).
+	 */
+	private static Context prepareContext() {
 
-            String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
-            System.out.println("Context with objid='" + objidLmd[0] + "' at '"
-                + objidLmd[1] + "' created.");
+		Context context = new Context();
 
-        }
-        catch (EscidocClientException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
-            System.out
-                .println("First parameter must be an eSciDoc Item XML File.");
-        }
-    }
+		Properties properties = new Properties();
 
-    private static String createContext(String contextXml)
-        throws EscidocClientException {
+		// Context requires a name
+		properties.setName("Example_Package_Context");
 
-        RestContextHandlerClient client = new RestContextHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
-        String createdContext = client.create(contextXml);
+		// description is nice
+		properties.setDescription("Example package Context.");
 
-        return createdContext;
-    }
+		context.setProperties(properties);
 
+		return context;
+	}
+
+	/**
+	 * Creating the Context within the eSciDoc infrastructure. The value object
+	 * Context is send to the create method of the infrastructure. The
+	 * infrastructure delivers the the created Context as response. The created
+	 * Context is enriched with values from the infrastructure.
+	 * 
+	 * @param context
+	 *            The value object of a Context.
+	 * @return Value Object of created Context (enriched with values by
+	 *         infrastructure)
+	 * 
+	 * @throws EscidocException
+	 *             Thrown if eSciDoc infrastructure throws an exception. This
+	 *             happens mostly if data structure is incomplete for the
+	 *             required operation, method is not allowed in object status or
+	 *             permissions are restricted.
+	 * @throws InternalClientException
+	 *             These are thrown if client library internal failure occur.
+	 * @throws TransportException
+	 *             Is thrown if transport between client library and framework
+	 *             is malfunctioned.
+	 */
+	private static Context createContext(final Context context)
+			throws EscidocException, InternalClientException,
+			TransportException {
+
+		ContextHandlerClient client = new ContextHandlerClient();
+		client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
+				Constants.SYSTEM_ADMIN_PASSWORD);
+
+		Context createdContext = client.create(context);
+
+		return createdContext;
+	}
 }
