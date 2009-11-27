@@ -7,11 +7,16 @@ import de.escidoc.core.client.ContextHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.om.context.Context;
+import de.escidoc.core.resources.om.context.OrganizationalUnitRefs;
 import de.escidoc.core.resources.om.context.Properties;
 
 /**
  * Example how to create an Context by using the eSciDoc Java client library.
+ * 
+ * At least one Organizational Unit (OU) has to exists. The referenze of the OU
+ * is to define as reference (see prepareContext method).
  * 
  * @author SWA
  * 
@@ -35,9 +40,9 @@ public class CreateContext {
 
 		// for convenient reason: print out objid and last-modification-date of
 		// created context
-		System.out.println("Context with objid='" + context.getObjid() + "' at '"
-				+ context.getLastModificationDate() + "' created.");
-		
+		System.out.println("Context with objid='" + context.getObjid()
+				+ "' at '" + context.getLastModificationDate() + "' created.");
+
 	}
 
 	/**
@@ -57,6 +62,20 @@ public class CreateContext {
 
 		// description is nice
 		properties.setDescription("Example package Context.");
+
+		// define the type
+		properties.setType("ExampleType");
+
+		/*
+		 * Organizational Unit(s) is/are required
+		 */
+		OrganizationalUnitRefs ous = new OrganizationalUnitRefs();
+
+		// add the Organizational Unit with objid escidoc:ex3 (the ou of the
+		// example eSciDoc representation package) to the list of
+		// organizational Units
+		ous.addOrganizationalUnitRef(new ResourceRef("escidoc:ex3"));
+		properties.setOrganizationalUnitRefs(ous);
 
 		context.setProperties(properties);
 
