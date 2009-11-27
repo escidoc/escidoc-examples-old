@@ -25,7 +25,7 @@ public class OpenContext {
 	public static void main(String[] args) {
 
 		// set objid of Context which is to open
-		String objid = "escidoc:3980";
+		String objid = "escidoc:1";
 		if (args.length > 0) {
 			objid = args[0];
 		}
