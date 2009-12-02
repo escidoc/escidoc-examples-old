@@ -23,13 +23,13 @@ import de.escidoc.core.resources.oum.OrganizationalUnit;
 import de.escidoc.core.resources.oum.Properties;
 
 /**
- * Example how to create an Organizational Unit by using the eSciDoc Java client
+ * Example how to delete an Organizational Unit by using the eSciDoc Java client
  * library.
  * 
  * @author SWA
  * 
  */
-public class CreateOu {
+public class DeleteOu {
 
     public static void main(String[] args) {
 
@@ -37,14 +37,23 @@ public class CreateOu {
             // Prepare a value object with new values of Organizational Unit
             OrganizationalUnit ou = prepareOrganizationalUnit();
 
-            // call create with VO on eSciDoc
-            ou = createOrganizationalUnit(ou);
+            // get handler
+            OrganizationalUnitHandlerClient client =
+                new OrganizationalUnitHandlerClient();
+            client.login(Util.getInfrastructureURL(),
+                Constants.SYSTEM_ADMIN_USER, Constants.SYSTEM_ADMIN_PASSWORD);
+
+            // call create
+            OrganizationalUnit createdOu = client.create(ou);
 
             // for convenient reason: print out objid and last-modification-date
             // of created Organizational Unit
             System.out.println("Organizational Unit with objid='"
-                + ou.getObjid() + "' at '" + ou.getLastModificationDate()
-                + "' created.");
+                + createdOu.getObjid() + "' at '"
+                + createdOu.getLastModificationDate() + "' created.");
+
+            // delete just created OU
+            client.delete(createdOu.getObjid());
 
         }
         catch (EscidocException e) {
@@ -98,7 +107,8 @@ public class CreateOu {
         String str =
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<ou:organization-details "
-                + "xmlns:ou=\"http://escidoc.mpg.de/metadataprofile/schema/0.1/organization\">\n"
+                + "xmlns:ou=\"http://escidoc.mpg.de/metadataprofile/"
+                + "schema/0.1/organization\">\n"
                 + "<dc:title xmlns:dc=\"http://purl.org/dc/elements/1.1/\">"
                 + "Generic Organizational Unit</dc:title>\n"
                 + "</ou:organization-details>";
@@ -119,42 +129,4 @@ public class CreateOu {
         return ou;
     }
 
-    /**
-     * Creating the Organizational Unit within the eSciDoc infrastructure. The
-     * value object OrganizationalUnit is send to the create method of the
-     * infrastructure. The infrastructure delivers the created
-     * OrganizationalUnit as response. The created OrganizationalUnit is
-     * enriched with values from the infrastructure.
-     * 
-     * @param ou
-     *            The value object of an OrganizationalUnit.
-     * @return Value Object of created OrganizationalUnit (enriched with values
-     *         by infrastructure)
-     * 
-     * @throws EscidocException
-     *             Thrown if eSciDoc infrastructure throws an exception. This
-     *             happens mostly if data structure is incomplete for the
-     *             required operation, method is not allowed in object status or
-     *             permissions are restricted.
-     * @throws InternalClientException
-     *             These are thrown if client library internal failure occur.
-     * @throws TransportException
-     *             Is thrown if transport between client library and framework
-     *             is malfunctioned.
-     */
-    private static OrganizationalUnit createOrganizationalUnit(
-        final OrganizationalUnit ou) throws EscidocException,
-        InternalClientException, TransportException {
-
-        // get handler
-        OrganizationalUnitHandlerClient client =
-            new OrganizationalUnitHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
-
-        // call create
-        OrganizationalUnit createdOu = client.create(ou);
-
-        return createdOu;
-    }
 }
