@@ -1,5 +1,9 @@
 package org.escidoc.workingWithClientLib.ClassMapping.ou;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -8,6 +12,7 @@ import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
 
 import de.escidoc.core.client.OrganizationalUnitHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocException;
@@ -37,8 +42,7 @@ public class CreateOu {
             ou = createOrganizationalUnit(ou);
 
             // for convenient reason: print out objid and last-modification-date
-            // of
-            // created Organizational Unit
+            // of created Organizational Unit
             System.out.println("Organizational Unit with objid='"
                 + ou.getObjid() + "' at '" + ou.getLastModificationDate()
                 + "' created.");
@@ -56,6 +60,12 @@ public class CreateOu {
         catch (ParserConfigurationException e) {
             e.printStackTrace();
         }
+        catch (SAXException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -66,9 +76,11 @@ public class CreateOu {
      * @return OrganizationalUnit (which is not created within the
      *         infrastructure).
      * @throws ParserConfigurationException
+     * @throws IOException 
+     * @throws SAXException 
      */
     private static OrganizationalUnit prepareOrganizationalUnit()
-        throws ParserConfigurationException {
+        throws ParserConfigurationException, SAXException, IOException {
 
         OrganizationalUnit ou = new OrganizationalUnit();
 
@@ -82,29 +94,27 @@ public class CreateOu {
          * 'escidoc'.
          */
         MetadataRecord mdRecord = new MetadataRecord();
-
         mdRecord.setName("escidoc");
 
-        // create md-record
+        String str =
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<ou:organization-details "
+                + "xmlns:ou=\"http://escidoc.mpg.de/metadataprofile/schema/0.1/organization\">\n"
+                + "<dc:title xmlns:dc=\"http://purl.org/dc/elements/1.1/\">"
+                + "Generic Organizational Unit</dc:title>\n"
+                + "</ou:organization-details>";
+        InputStream in = new ByteArrayInputStream(str.getBytes());
+
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.newDocument();
-
-        Element rootMdContent = doc.createElement("ou");
-        Element title =
-            doc.createElementNS("http://purl.org/dc/elements/1.1/", "dc:title");
-        title.appendChild(doc.createTextNode("Example_Organizational_Unit"));
-        rootMdContent.appendChild(title);
-
-        doc.appendChild(rootMdContent);
-
-        mdRecord.setContent(rootMdContent);
+        Document doc = builder.parse(in);
+        mdRecord.setContent(doc.getDocumentElement());
 
         // add mdRecord to set
         MetadataRecords mdRecords = new MetadataRecords();
         mdRecords.add(mdRecord);
 
-        // add metadata-record_s_ to OU
+        // add metadata-records to OU
         ou.setMetadataRecords(mdRecords);
 
         return ou;
@@ -137,11 +147,13 @@ public class CreateOu {
         final OrganizationalUnit ou) throws EscidocException,
         InternalClientException, TransportException {
 
+        // get handler
         OrganizationalUnitHandlerClient client =
             new OrganizationalUnitHandlerClient();
         client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
 
+        // call create
         OrganizationalUnit createdOu = client.create(ou);
 
         return createdOu;
