@@ -23,97 +23,98 @@ import de.escidoc.core.resources.om.context.Properties;
  */
 public class CreateContext {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// Prepare a value object with new values of Context.
-		Context context = prepareContext();
-		try {
-			// call create with VO on eSciDoc
-			context = createContext(context);
-		} catch (EscidocException e) {
-			e.printStackTrace();
-		} catch (InternalClientException e) {
-			e.printStackTrace();
-		} catch (TransportException e) {
-			e.printStackTrace();
-		}
+        // Prepare a value object with new values of Context.
+        Context context = prepareContext();
 
-		// for convenient reason: print out objid and last-modification-date of
-		// created context
-		System.out.println("Context with objid='" + context.getObjid()
-				+ "' at '" + context.getLastModificationDate() + "' created.");
+        try {
+            // call create with VO on eSciDoc
+            context = createContext(context);
 
-	}
+            System.out.println("Context with objid='" + context.getObjid()
+                + "' at '" + context.getLastModificationDateAsString()
+                + "' created.");
+        }
+        catch (EscidocException e) {
+            e.printStackTrace();
+        }
+        catch (InternalClientException e) {
+            e.printStackTrace();
+        }
+        catch (TransportException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * The value object Context is to create and to fill with (at least
-	 * required) parameter.
-	 * 
-	 * @return Context (which is not created within the infrastructure).
-	 */
-	private static Context prepareContext() {
+    /**
+     * The value object Context is to create and to fill with (at least
+     * required) parameter.
+     * 
+     * @return Context (which is not created within the infrastructure).
+     */
+    private static Context prepareContext() {
 
-		Context context = new Context();
+        Context context = new Context();
 
-		Properties properties = new Properties();
+        Properties properties = new Properties();
 
-		// Context requires a name
-		properties.setName("Example_Package_Context");
+        // Context requires a name
+        properties.setName("Example_Package_Context");
 
-		// description is nice
-		properties.setDescription("Example package Context.");
+        // description is nice
+        properties.setDescription("Example package Context.");
 
-		// define the type
-		properties.setType("ExampleType");
+        // define the type
+        properties.setType("ExampleType");
 
-		/*
-		 * Organizational Unit(s) is/are required
-		 */
-		OrganizationalUnitRefs ous = new OrganizationalUnitRefs();
+        /*
+         * Organizational Unit(s) is/are required
+         */
+        OrganizationalUnitRefs ous = new OrganizationalUnitRefs();
 
-		// add the Organizational Unit with objid escidoc:ex3 (the ou of the
-		// example eSciDoc representation package) to the list of
-		// organizational Units
-		ous.addOrganizationalUnitRef(new ResourceRef("escidoc:ex3"));
-		properties.setOrganizationalUnitRefs(ous);
+        // add the Organizational Unit with objid escidoc:ex3 (the ou of the
+        // example eSciDoc representation package) to the list of
+        // organizational Units
+        ous.addOrganizationalUnitRef(new ResourceRef("escidoc:ex3"));
+        properties.setOrganizationalUnitRefs(ous);
 
-		context.setProperties(properties);
+        context.setProperties(properties);
 
-		return context;
-	}
+        return context;
+    }
 
-	/**
-	 * Creating the Context within the eSciDoc infrastructure. The value object
-	 * Context is send to the create method of the infrastructure. The
-	 * infrastructure delivers the the created Context as response. The created
-	 * Context is enriched with values from the infrastructure.
-	 * 
-	 * @param context
-	 *            The value object of a Context.
-	 * @return Value Object of created Context (enriched with values by
-	 *         infrastructure)
-	 * 
-	 * @throws EscidocException
-	 *             Thrown if eSciDoc infrastructure throws an exception. This
-	 *             happens mostly if data structure is incomplete for the
-	 *             required operation, method is not allowed in object status or
-	 *             permissions are restricted.
-	 * @throws InternalClientException
-	 *             These are thrown if client library internal failure occur.
-	 * @throws TransportException
-	 *             Is thrown if transport between client library and framework
-	 *             is malfunctioned.
-	 */
-	private static Context createContext(final Context context)
-			throws EscidocException, InternalClientException,
-			TransportException {
+    /**
+     * Creating the Context within the eSciDoc infrastructure. The value object
+     * Context is send to the create method of the infrastructure. The
+     * infrastructure delivers the the created Context as response. The created
+     * Context is enriched with values from the infrastructure.
+     * 
+     * @param context
+     *            The value object of a Context.
+     * @return Value Object of created Context (enriched with values by
+     *         infrastructure)
+     * 
+     * @throws EscidocException
+     *             Thrown if eSciDoc infrastructure throws an exception. This
+     *             happens mostly if data structure is incomplete for the
+     *             required operation, method is not allowed in object status or
+     *             permissions are restricted.
+     * @throws InternalClientException
+     *             These are thrown if client library internal failure occur.
+     * @throws TransportException
+     *             Is thrown if transport between client library and framework
+     *             is malfunctioned.
+     */
+    private static Context createContext(final Context context)
+        throws EscidocException, InternalClientException, TransportException {
 
-		ContextHandlerClient client = new ContextHandlerClient();
-		client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-				Constants.SYSTEM_ADMIN_PASSWORD);
+        ContextHandlerClient client = new ContextHandlerClient();
+        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
+            Constants.SYSTEM_ADMIN_PASSWORD);
 
-		Context createdContext = client.create(context);
+        Context createdContext = client.create(context);
 
-		return createdContext;
-	}
+        return createdContext;
+    }
 }
