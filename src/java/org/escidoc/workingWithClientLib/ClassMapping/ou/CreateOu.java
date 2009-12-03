@@ -17,9 +17,11 @@ import de.escidoc.core.client.OrganizationalUnitHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
+import de.escidoc.core.resources.oum.Parents;
 import de.escidoc.core.resources.oum.Properties;
 
 /**
@@ -115,6 +117,14 @@ public class CreateOu {
 
         // add metadata-records to OU
         ou.setMetadataRecords(mdRecords);
+
+        // add parent OU
+        Parents parents = new Parents();
+        ResourceRef resourceRef = new ResourceRef();
+
+        resourceRef.setObjid("escidoc:ex3");
+        parents.addParentRef(resourceRef);
+        ou.setParents(parents);
 
         return ou;
     }
