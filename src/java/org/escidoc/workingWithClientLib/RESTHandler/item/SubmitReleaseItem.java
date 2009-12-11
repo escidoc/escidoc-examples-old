@@ -16,20 +16,17 @@ public class SubmitReleaseItem {
 
     public static void main(String[] args) {
 
+        String id = "escidoc:1";
+        if (args.length > 0) {
+            id = args[0];
+        }
+
         try {
-
-            String id = "escidoc:1";
-            if (args.length > 0) {
-                id = args[0];
-            }
-
             releaseItem(id);
-
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
         }
-
     }
 
     public static void releaseItem(String id) throws EscidocClientException {

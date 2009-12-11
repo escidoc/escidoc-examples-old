@@ -68,7 +68,7 @@ public class ReleaseItem {
 		// we need last-modification-date for release
 		String[] objidLmd = Util.obtainObjidAndLmd(itemXml);
 
-		String taskParam = "<param last-modification-date=\"" + objidLmd[0]
+		String taskParam = "<param last-modification-date=\"" + objidLmd[1]
 				+ "\">\n" + "</param>";
 
 		// release using submit result

@@ -27,19 +27,16 @@ public class SubmitItem {
 	 */
 	public static void main(String[] args) {
 
+        String id = "escidoc:1";
+        if (args.length > 0) {
+            id = args[0];
+        }
+
 		try {
-
-			String id = "escidoc:1";
-			if (args.length > 0) {
-				id = args[0];
-			}
-
 			submitItem(id);
-
 		} catch (EscidocClientException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/**

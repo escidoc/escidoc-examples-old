@@ -1,6 +1,5 @@
 package org.escidoc.workingWithClientLib.RESTHandler.ou;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.escidoc.Constants;
@@ -27,62 +26,79 @@ import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
  */
 public class CreateOrganizationalUnit {
 
-	/**
-	 * @param args
-	 *            args are ignored
-	 */
-	public static void main(String[] args) {
+    /**
+     * Create Organizational Unit.
+     * 
+     * @param args
+     *            If args[0] is given, than is it taken as filename for the
+     *            resource template, otherwise default template is used
+     */
+    public static void main(String[] args) {
 
-		try {
-			create();
-		} catch (EscidocException e) {
-			e.printStackTrace();
-		} catch (InternalClientException e) {
-			e.printStackTrace();
-		} catch (TransportException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        // select template
+        String xmlFile =
+            "./templates/TUE/organizational-unit/"
+                + "escidoc_ou_for_create.xml";
+        if (args.length > 0) {
+            xmlFile = args[0];
+        }
 
-	}
+        try {
+            String createdResource = create(Util.getXmlFileAsString(xmlFile));
 
-	/**
-	 * Create Organizational Unit.
-	 * 
-	 * <p>
-	 * This method makes usage of a Content Relation XML (REST) template.<br/>
-	 * objid of created Content Relation and the last modification date is
-	 * finally printed to stdout.
-	 * </p>
-	 * 
-	 * @throws InternalClientException
-	 * @throws EscidocException
-	 * @throws TransportException
-	 * @throws IOException
-	 */
-	private static void create() throws InternalClientException,
-			EscidocException, TransportException, IOException {
+            /*
+             * objid of created Context and the last modification date is
+             * printed to stdout.
+             */
+            String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
+            System.out.println("Organizational Unit with objid='" + objidLmd[0]
+                + "' at '" + objidLmd[1] + "' created");
+        }
+        catch (EscidocException e) {
+            e.printStackTrace();
+        }
+        catch (InternalClientException e) {
+            e.printStackTrace();
+        }
+        catch (TransportException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
 
-		// get handler for organizational units
-		RestOrganizationalUnitHandlerClient rouc = new RestOrganizationalUnitHandlerClient();
+    }
 
-		// authenticate
-		rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-				Constants.SYSTEM_ADMIN_PASSWORD);
+    /**
+     * Create Organizational Unit.
+     * 
+     * <p>
+     * This method makes usage of a Content Relation XML (REST) template.<br/>
+     * objid of created Content Relation and the last modification date is
+     * finally printed to stdout.
+     * </p>
+     * 
+     * @throws InternalClientException
+     * @throws EscidocException
+     * @throws TransportException
+     * @throws IOException
+     */
+    private static String create(final String ouXml)
+        throws InternalClientException, EscidocException, TransportException,
+        IOException {
 
-		// load XML template of organizational unit
-		File templOu = new File("./templates/TUE/organizational-unit/"
-				+ "escidoc_ou_for_create.xml");
-		String ouXml = Util.getXmlFileAsString(templOu);
+        // get handler for organizational units
+        RestOrganizationalUnitHandlerClient rouc =
+            new RestOrganizationalUnitHandlerClient();
 
-		// create
-		String crtdOuXML = rouc.create(ouXml);
+        // authenticate
+        rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
+            Constants.SYSTEM_ADMIN_PASSWORD);
 
-		// write out objid and last modification date
-		String[] objidLmd = Util.obtainObjidAndLmd(crtdOuXML);
-		System.out.println("Organizational Unit with objid='" + objidLmd[0]
-				+ "' at '" + objidLmd[1] + "' created");
-	}
+        // create
+        String crtdOuXML = rouc.create(ouXml);
+
+        return crtdOuXML;
+    }
 
 }

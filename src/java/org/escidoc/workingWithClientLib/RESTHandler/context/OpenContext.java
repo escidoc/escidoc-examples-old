@@ -1,30 +1,43 @@
 package org.escidoc.workingWithClientLib.RESTHandler.context;
 
-import java.util.Vector;
-
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
-import de.escidoc.core.client.ContextHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.resources.common.Filter;
-import de.escidoc.core.resources.common.Result;
-import de.escidoc.core.resources.common.TaskParam;
-import de.escidoc.core.resources.om.context.Context;
+import de.escidoc.core.client.rest.RestContextHandlerClient;
 
+/**
+ * Example how to set status of a Context to 'open' by using the XML REST
+ * representation and the eSciDoc Java client library.
+ * 
+ * The eSciDoc Java client library is used for communication with framework.
+ * Unused is mapping between Java classes and XML representations to explain the
+ * XML data structure.
+ * 
+ * eSciDoc XML REST representation is used. Please keep that in mind, if you
+ * adapt these examples for SOAP.
+ * 
+ * @author SWA
+ * 
+ */
 public class OpenContext {
 
+    /**
+     * Set status of Organizational Unit to open
+     * 
+     * @param args
+     *            If args[0] is given, it is used as objid for Organizational
+     *            Unit. Otherwise is escidoc:ex1 used.
+     */
     public static void main(String[] args) {
 
+        String id = "escidoc:1";
+        if (args.length > 0) {
+            id = args[0];
+        }
+
         try {
-
-            String id = "escidoc:1";
-            if (args.length > 0) {
-                id = args[0];
-            }
-
             openContext(id);
-
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
@@ -32,22 +45,26 @@ public class OpenContext {
 
     }
 
-    public static void openContext(String id) throws EscidocClientException {
+    public static String openContext(String id) throws EscidocClientException {
 
         // prepare client object
-        ContextHandlerClient chc = new ContextHandlerClient();
-        chc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
+        RestContextHandlerClient rchc = new RestContextHandlerClient();
+        rchc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
 
-        // create Context object retrieving the context
-        Context context = chc.retrieve(id);
+        // retrieving the context
+        String contextXml = rchc.retrieve(id);
 
-        // submit
-        Result openResult =
-            chc.open(context.getObjid(), new TaskParam(context.getLastModificationDate(),
-                "open", null, null, new Vector<Filter>()));
+        // we need last-modification-date
+        String[] objidLmd = Util.obtainObjidAndLmd(contextXml);
 
-        System.out.println("Context with objid='" + id + "' at '"
-            + openResult.getLastModificationDateAsString() + "' opened.");
+        String taskParam =
+            "<param last-modification-date=\"" + objidLmd[1] + "\">\n"
+                + "</param>";
+
+        // task oriented method open()
+        String openResult = rchc.open(objidLmd[0], taskParam);
+
+        return openResult;
     }
 }

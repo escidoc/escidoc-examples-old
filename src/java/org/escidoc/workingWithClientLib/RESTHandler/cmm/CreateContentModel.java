@@ -34,7 +34,6 @@ public class CreateContentModel {
 	public static void main(String[] args) {
 
 		try {
-			// call create to create a Content Model
 			create();
 		} catch (EscidocException e) {
 			e.printStackTrace();
@@ -64,21 +63,22 @@ public class CreateContentModel {
 	private static void create() throws InternalClientException,
 			EscidocException, TransportException, IOException {
 
-		// get handler for organizational units
+		// get handler for Content Model
 		RestContentModelHandlerClient rcmhc = new RestContentModelHandlerClient();
 
 		// authenticate
 		rcmhc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
 				Constants.SYSTEM_ADMIN_PASSWORD);
 
-		// load XML template of organizational unit
+		// load XML template of Content Model
 		File templOu = new File("./templates/TUE/content-model.xml");
 		String ouXml = Util.getXmlFileAsString(templOu);
 
 		// create
 		String crtdOuXML = rcmhc.create(ouXml);
-		String[] objidLmd = Util.obtainObjidAndLmd(crtdOuXML);
 
+        // write out objid and last modification date
+		String[] objidLmd = Util.obtainObjidAndLmd(crtdOuXML);
 		System.out.println("Content Model with objid='" + objidLmd[0]
 				+ "' at '" + objidLmd[1] + "' created");
 	}
