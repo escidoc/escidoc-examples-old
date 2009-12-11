@@ -12,12 +12,12 @@ public class CreateContainer {
 
     public static void main(String[] args) {
 
-        try {
+        String xmlFile = "templates/TUE/Container_create_minimal.xml";
+        if (args.length > 0) {
+            xmlFile = args[0];
+        }
 
-            String xmlFile = "templates/TUE/Container_create_minimal.xml";
-            if (args.length > 0) {
-                xmlFile = args[0];
-            }
+        try {
 
             String createdResource =
                 createContainer(Util.getXmlFileAsString(xmlFile));
