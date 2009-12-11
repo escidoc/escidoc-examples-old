@@ -16,12 +16,12 @@ public class ReleaseContainer {
 
     public static void main(String[] args) {
 
-        try {
+        String id = "escidoc:95001";
+        if (args.length > 0) {
+            id = args[0];
+        }
 
-            String id = "escidoc:95001";
-            if (args.length > 0) {
-                id = args[0];
-            }
+        try {
 
             releaseContainer(id);
 
@@ -32,7 +32,8 @@ public class ReleaseContainer {
 
     }
 
-    public static void releaseContainer(String id) throws EscidocClientException {
+    public static void releaseContainer(String id)
+        throws EscidocClientException {
 
         // prepare client object
         ContainerHandlerClient chc = new ContainerHandlerClient();
@@ -44,8 +45,9 @@ public class ReleaseContainer {
 
         // submit
         Result submitResult =
-            chc.submit(container, new TaskParam(container.getLastModificationDate(),
-                "submit", null, null, new Vector<Filter>()));
+            chc.submit(container, new TaskParam(container
+                .getLastModificationDate(), "submit", null, null,
+                new Vector<Filter>()));
 
         // release using submit result
         Result releaseResult =
