@@ -1,6 +1,5 @@
 package org.escidoc.workingWithClientLib.RESTHandler.cmm;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.escidoc.Constants;
@@ -27,60 +26,73 @@ import de.escidoc.core.client.rest.RestContentModelHandlerClient;
  */
 public class CreateContentModel {
 
-	/**
-	 * @param args
-	 *            args are ignored
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args
+     *            args are ignored
+     */
+    public static void main(String[] args) {
 
-		try {
-			create();
-		} catch (EscidocException e) {
-			e.printStackTrace();
-		} catch (InternalClientException e) {
-			e.printStackTrace();
-		} catch (TransportException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        // select template
+        String xmlFile = "./templates/TUE/content-model.xml";
+        if (args.length > 0) {
+            xmlFile = args[0];
+        }
 
-	}
+        try {
+            String resourceTemplXml = Util.getXmlFileAsString(xmlFile);
 
-	/**
-	 * Create a Content Model.
-	 * <p>
-	 * This method makes usage of a Content Relation XML (REST) template.<br/>
-	 * objid of created Content Relation and the last modification date is
-	 * finally printed to stdout.
-	 * </p>
-	 * 
-	 * @throws InternalClientException
-	 * @throws EscidocException
-	 * @throws TransportException
-	 * @throws IOException
-	 */
-	private static void create() throws InternalClientException,
-			EscidocException, TransportException, IOException {
+            String resourceXml = create(resourceTemplXml);
 
-		// get handler for Content Model
-		RestContentModelHandlerClient rcmhc = new RestContentModelHandlerClient();
+            // write out objid and last modification date
+            String[] objidLmd = Util.obtainObjidAndLmd(resourceXml);
+            System.out.println("Content Model with objid='" + objidLmd[0]
+                + "' at '" + objidLmd[1] + "' created");
 
-		// authenticate
-		rcmhc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-				Constants.SYSTEM_ADMIN_PASSWORD);
+        }
+        catch (EscidocException e) {
+            e.printStackTrace();
+        }
+        catch (InternalClientException e) {
+            e.printStackTrace();
+        }
+        catch (TransportException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
 
-		// load XML template of Content Model
-		File templOu = new File("./templates/TUE/content-model.xml");
-		String ouXml = Util.getXmlFileAsString(templOu);
+    }
 
-		// create
-		String crtdOuXML = rcmhc.create(ouXml);
+    /**
+     * Create a Content Model.
+     * <p>
+     * This method makes usage of a Content Relation XML (REST) template.<br/>
+     * objid of created Content Relation and the last modification date is
+     * finally printed to stdout.
+     * </p>
+     * 
+     * @throws InternalClientException
+     * @throws EscidocException
+     * @throws TransportException
+     * @throws IOException
+     */
+    private static String create(final String cmmXml)
+        throws InternalClientException, EscidocException, TransportException,
+        IOException {
 
-        // write out objid and last modification date
-		String[] objidLmd = Util.obtainObjidAndLmd(crtdOuXML);
-		System.out.println("Content Model with objid='" + objidLmd[0]
-				+ "' at '" + objidLmd[1] + "' created");
-	}
+        // get handler for Content Model
+        RestContentModelHandlerClient rcmhc =
+            new RestContentModelHandlerClient();
+
+        // authenticate
+        rcmhc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
+            Constants.SYSTEM_ADMIN_PASSWORD);
+
+        // create
+        String createdCmmXml = rcmhc.create(cmmXml);
+
+        return createdCmmXml;
+    }
 
 }
