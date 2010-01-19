@@ -27,7 +27,7 @@ public class OpenContext {
      * 
      * @param args
      *            If args[0] is given, it is used as objid for Organizational
-     *            Unit. Otherwise is escidoc:ex1 used.
+     *            Unit. Otherwise is escidoc:1 used.
      */
     public static void main(String[] args) {
 
