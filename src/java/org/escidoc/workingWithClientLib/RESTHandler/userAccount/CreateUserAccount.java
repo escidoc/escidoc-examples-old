@@ -12,8 +12,8 @@ import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.client.rest.RestUserAccountHandlerClient;
 
 /**
- * Example how to create a user account by using the XML REST
- * representation and the eSciDoc Java client library.
+ * Example how to create a user account by using the XML REST representation and
+ * the eSciDoc Java client library.
  * 
  * The eSciDoc Java client library is used for communication with framework.
  * Unused is mapping between Java classes and XML representations to explain the
@@ -27,55 +27,89 @@ import de.escidoc.core.client.rest.RestUserAccountHandlerClient;
  */
 public class CreateUserAccount {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
 
-		try {
-			create();
-		} catch (EscidocException e) {
-			e.printStackTrace();
-		} catch (InternalClientException e) {
-			e.printStackTrace();
-		} catch (TransportException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        String ouObjid = "escidoc:1";
 
-	}
+        // select template
+        String xmlFile =
+            "./templates/TUE/user-account/"
+                + "escidoc_useraccount_for_create.xml";
 
-	/**
-	 * Create Organizational Unit (from REST XML template).
-	 * 
-	 * @throws InternalClientException
-	 * @throws EscidocException
-	 * @throws TransportException
-	 * @throws IOException
-	 */
-	private static void create() throws InternalClientException,
-			EscidocException, TransportException, IOException {
+        if (args.length == 1) {
+            ouObjid = args[0];
+        }
+        else if (args.length == 2) {
+            xmlFile = args[1];
+        }
+        else if (args.length > 2) {
+            System.err.println("Wrong parameter count");
+        }
 
-		// get handler for organizational units
-		RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
+        try {
+            String createdResource = create(ouObjid, xmlFile);
 
-		// authenticate
-		ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-				Constants.SYSTEM_ADMIN_PASSWORD);
+            // write out objid and last modification date
+            String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
+            System.out.println("User Account with objid='" + objidLmd[0]
+                + "' at '" + objidLmd[1] + "' created");
 
-		// load XML template of organizational unit
-		File templ = new File("./templates/TUE/user-account/"
-				+ "escidoc_useraccount_for_create.xml");
-		String resourceXml = Util.getXmlFileAsString(templ);
+        }
+        catch (EscidocException e) {
+            e.printStackTrace();
+        }
+        catch (InternalClientException e) {
+            e.printStackTrace();
+        }
+        catch (TransportException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
 
-		// create
-		String crXML = ruahc.create(resourceXml);
+    }
 
-		// write out objid and last modification date
-		String[] objidLmd = Util.obtainObjidAndLmd(crXML);
-		System.out.println("User Account with objid='" + objidLmd[0] + "' at '"
-				+ objidLmd[1] + "' created");
-	}
+    /**
+     * Create Organizational Unit (from REST XML template).
+     * 
+     * @param ouObjid
+     *            The objid of the Organizational Unit where the User is
+     *            settled.
+     * @param xmlTemplFile
+     *            Path of the UserAccount REST XML representation template file
+     * @return XML representation of the created UserAccount
+     * 
+     * @throws InternalClientException
+     * @throws EscidocException
+     * @throws TransportException
+     * @throws IOException
+     */
+    private static String create(final String ouObjid, final String xmlTemplFile)
+        throws InternalClientException, EscidocException, TransportException,
+        IOException {
+
+        // get handler for organizational units
+        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
+
+        // authenticate
+        ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
+            Constants.SYSTEM_ADMIN_PASSWORD);
+
+        // load XML template of organizational unit
+        File templ = new File(xmlTemplFile);
+        String resourceXml = Util.getXmlFileAsString(templ);
+
+        // replace placeholder for Organizational Unit with ouObjid
+        resourceXml = resourceXml.replace("###ORGANIZATIONAL_UNIT_ID###", ouObjid);
+        
+        // create
+        String crXML = ruahc.create(resourceXml);
+
+        return crXML;
+    }
 
 }
