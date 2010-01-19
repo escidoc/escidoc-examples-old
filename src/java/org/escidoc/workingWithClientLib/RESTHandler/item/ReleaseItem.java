@@ -74,7 +74,7 @@ public class ReleaseItem {
             "<param last-modification-date=\"" + objidLmd[1] + "\">\n"
                 + "</param>";
 
-        // release using submit result
+        // release 
         String releaseResultXml = rihc.release(itemXml, taskParam);
 
         // obtain last-modification-date for further processing
