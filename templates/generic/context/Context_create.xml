@@ -7,9 +7,9 @@
 	xmlns:xml="http://www.w3.org/XML/1998/namespace">
 
 	<context:properties>
-		<prop:name>BW-eSci(T)</prop:name>
-		<prop:description>Default Context for the BW-eSci(T) project.</prop:description>
-		<prop:type>Default</prop:type>
+		<prop:name>###NAME###</prop:name>
+		<prop:description>###DESCRIPTION###</prop:description>
+		<prop:type>###TYPE###</prop:type>
 
 		<prop:organizational-units>
 			<srel:organizational-unit
