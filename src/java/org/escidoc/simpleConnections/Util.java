@@ -131,6 +131,13 @@ public class Util {
         return getXmlFileAsString(new File(path));
     }
 
+    /**
+     * Read content of File into String.
+     * 
+     * @param file
+     * @return
+     * @throws IOException
+     */
     public static String getXmlFileAsString(File file) throws IOException {
         StringWriter writer = new StringWriter();
         BufferedReader reader =
@@ -151,7 +158,7 @@ public class Util {
         storeXmlStringAsFile(xml, new File(path));
     }
 
-    public static void storeXmlStringAsFile(String xml, File file)
+    public static void storeXmlStringAsFile(final String xml, final File file)
         throws IOException {
         FileWriter writer = new FileWriter(file);
         BufferedReader reader = new BufferedReader(new StringReader(xml));
@@ -164,7 +171,8 @@ public class Util {
         writer.close();
     }
 
-    public static String getAuthHandle(String username, String password)
+    public static String getAuthHandle(
+        final String username, final String password)
         throws AuthenticationException {
         String handle = null;
 
@@ -233,7 +241,6 @@ public class Util {
                     handle = parts[0].split("=")[1];
                 }
             }
-            // System.err.println("Handle: " + handle);
 
         }
         catch (MalformedURLException e) {
