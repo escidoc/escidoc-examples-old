@@ -66,27 +66,32 @@ public class OpenOU {
     private static void openOU(final String objid)
         throws InternalClientException, EscidocException, TransportException {
 
-        /*
-         * Prepare and load taskParam XML.
-         * 
-         * You have to add the last-modification-date of the Organizational Unit
-         * which is to set in status open into the taskParam XML template.
-         */
-        String taskParam =
-            "<param last-modification-date=\"" + objid + "\">\n"
-                + "<comment>Open OU example</comment>\n" + "</param>";
-
         // login
         RestOrganizationalUnitHandlerClient rouc =
             new RestOrganizationalUnitHandlerClient();
         rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
 
+        /*
+         * Prepare and load taskParam XML.
+         * 
+         * You have to add the last-modification-date of the Organizational Unit
+         * which is to set in status open into the taskParam XML template.
+         */
+        // retrieving the OU
+        String ouXml = rouc.retrieve(objid);
+
+        // we need last-modification-date for open
+        String[] objidLmd = Util.obtainObjidAndLmd(ouXml);
+        String taskParam =
+            "<param last-modification-date=\"" + objidLmd[1] + "\">\n"
+                + "<comment>Open OU example</comment>\n" + "</param>";
+
         // open OU
         String responseXml = rouc.open(objid, taskParam);
 
         // write out objid and last modification date
-        String[] objidLmd = Util.obtainObjidAndLmd(responseXml);
+        objidLmd = Util.obtainObjidAndLmd(responseXml);
         System.out.println("Organizational Unit with objid='" + objid
             + "' at '" + objidLmd[1] + "' set to open");
     }
