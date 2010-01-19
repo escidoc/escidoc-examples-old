@@ -8,12 +8,24 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
 
+/**
+ * Example how to update an Item by using the XML REST representation and the
+ * eSciDoc Java client library.
+ * 
+ * The eSciDoc Java client library is used for communication with framework.
+ * Unused is mapping between Java classes and XML representations to explain the
+ * XML data structure.
+ * 
+ * eSciDoc XML REST representation is used. Please keep that in mind, if you
+ * adapt these examples for SOAP.
+ * 
+ */
 public class UpdateItem {
 
     public static void main(String[] args) {
 
         String id = "escidoc:1";
-        String xmlFile = "templates/generic/item//Item_update.xml";
+        String xmlFile = "templates/generic/item/Item_update.xml";
 
         try {
 
