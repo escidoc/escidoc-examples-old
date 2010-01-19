@@ -29,7 +29,7 @@ public class UpdateItem {
             e.printStackTrace();
         }
         catch (IOException e) {
-            // can not load xml, create it
+            // can not load xml file, create file from item
             try {
 
                 Util.storeXmlStringAsFile(retrieveItem(id), xmlFile);
