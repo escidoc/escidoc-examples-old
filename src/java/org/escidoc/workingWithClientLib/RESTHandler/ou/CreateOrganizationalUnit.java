@@ -31,7 +31,7 @@ public class CreateOrganizationalUnit {
      * 
      * @param args
      *            If args[0] is given, than is it taken as filename for the
-     *            resource template, otherwise default template is used
+     *            resource template, otherwise default template is used.
      */
     public static void main(String[] args) {
 
