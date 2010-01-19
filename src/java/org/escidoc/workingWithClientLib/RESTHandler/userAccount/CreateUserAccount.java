@@ -92,14 +92,14 @@ public class CreateUserAccount {
         throws InternalClientException, EscidocException, TransportException,
         IOException {
 
-        // get handler for organizational units
+        // get handler for user account
         RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
 
         // authenticate
         ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
             Constants.SYSTEM_ADMIN_PASSWORD);
 
-        // load XML template of organizational unit
+        // load XML template of user account
         File templ = new File(xmlTemplFile);
         String resourceXml = Util.getXmlFileAsString(templ);
 
