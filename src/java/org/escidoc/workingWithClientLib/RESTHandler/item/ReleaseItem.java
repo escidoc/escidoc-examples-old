@@ -28,7 +28,7 @@ public class ReleaseItem {
              * Either set the objid of the Item by parameter or set the objid in
              * the following id variable.
              */
-            String id = "escidoc:1";
+            String id = "escidoc:item";
             if (args.length > 0) {
                 id = args[0];
             }
@@ -57,7 +57,8 @@ public class ReleaseItem {
      * @param id
      * @throws EscidocClientException
      */
-    public static void releaseItem(String id) throws EscidocClientException {
+    public static void releaseItem(final String id)
+        throws EscidocClientException {
 
         // prepare client object
         RestItemHandlerClient rihc = new RestItemHandlerClient();
@@ -72,10 +73,10 @@ public class ReleaseItem {
 
         String taskParam =
             "<param last-modification-date=\"" + objidLmd[1] + "\">\n"
-                + "</param>";
+                + "<comment>release</comment>\n" + "</param>";
 
-        // release 
-        String releaseResultXml = rihc.release(itemXml, taskParam);
+        // release
+        String releaseResultXml = rihc.release(id, taskParam);
 
         // obtain last-modification-date for further processing
         objidLmd = Util.obtainObjidAndLmd(releaseResultXml);

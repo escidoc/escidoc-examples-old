@@ -24,7 +24,7 @@ public class UpdateItem {
 
     public static void main(String[] args) {
 
-        String id = "escidoc:1";
+        String id = "escidoc:item";
         String xmlFile = "templates/generic/item/Item_update.xml";
 
         try {

@@ -38,7 +38,7 @@ public class OpenOU {
          * Either set the objid of the OU by parameter or set the objid in the
          * following id variable.
          */
-        String id = "escidoc:1";
+        String id = "escidoc:organizational-unit";
         if (args.length > 0) {
             id = args[0];
         }

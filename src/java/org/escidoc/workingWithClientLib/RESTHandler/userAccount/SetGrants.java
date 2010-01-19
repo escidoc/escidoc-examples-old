@@ -36,8 +36,7 @@ public class SetGrants {
          * Either set the objid of the User Account by parameter or set the
          * objid in the following id variable.
          */
-        String userAccountId = "escidoc:1";
-        String contextObjid = "escidoc:2";
+        String userAccountId = "escidoc:user-account";
 
         // select template
         String xmlFile =
@@ -45,22 +44,12 @@ public class SetGrants {
                 + "escidoc_depositor_grant_for_create.xml";
 
         if (args.length == 1) {
-            userAccountId = args[0];
-        }
-        else if (args.length == 2) {
-            contextObjid = args[1];
-        }
-        else if (args.length == 3) {
-            xmlFile = args[2];
-        }
-        else if (args.length > 3) {
-            System.err.println("Wrong parameter count");
+            xmlFile = args[0];
         }
 
         try {
-
             String resourceXml =
-                createGrant(userAccountId, contextObjid, xmlFile);
+                createGrant(userAccountId, xmlFile);
 
             // write out objid and last modification date
             String[] objidLmd = Util.obtainObjidAndLmd(resourceXml);
@@ -100,7 +89,7 @@ public class SetGrants {
      * @throws IOException
      */
     private static String createGrant(
-        final String userAccountId, final String contextObjid,
+        final String userAccountId, 
         final String xmlTemplFile) throws InternalClientException,
         EscidocException, TransportException, IOException {
 
@@ -114,9 +103,6 @@ public class SetGrants {
         // load and prepare the XML for grants
         File templ = new File(xmlTemplFile);
         String grantXml = Util.getXmlFileAsString(templ);
-
-        // replace placeholder for Organizational Unit with ouObjid
-        grantXml = grantXml.replace("###CONTEXT_ID###", contextObjid);
 
         // create
         String crXML = ruahc.createGrant(userAccountId, grantXml);

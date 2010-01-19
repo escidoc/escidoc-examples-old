@@ -32,25 +32,17 @@ public class CreateUserAccount {
      */
     public static void main(String[] args) {
 
-        String ouObjid = "escidoc:1";
-
         // select template
         String xmlFile =
             "./templates/generic/user-account/"
                 + "escidoc_useraccount_for_create.xml";
 
         if (args.length == 1) {
-            ouObjid = args[0];
-        }
-        else if (args.length == 2) {
-            xmlFile = args[1];
-        }
-        else if (args.length > 2) {
-            System.err.println("Wrong parameter count");
+            xmlFile = args[0];
         }
 
         try {
-            String createdResource = create(ouObjid, xmlFile);
+            String createdResource = create(xmlFile);
 
             // write out objid and last modification date
             String[] objidLmd = Util.obtainObjidAndLmd(createdResource);
@@ -76,9 +68,6 @@ public class CreateUserAccount {
     /**
      * Create Organizational Unit (from REST XML template).
      * 
-     * @param ouObjid
-     *            The objid of the Organizational Unit where the User is
-     *            settled.
      * @param xmlTemplFile
      *            Path of the UserAccount REST XML representation template file
      * @return XML representation of the created UserAccount
@@ -88,7 +77,7 @@ public class CreateUserAccount {
      * @throws TransportException
      * @throws IOException
      */
-    private static String create(final String ouObjid, final String xmlTemplFile)
+    private static String create(final String xmlTemplFile)
         throws InternalClientException, EscidocException, TransportException,
         IOException {
 
@@ -102,9 +91,6 @@ public class CreateUserAccount {
         // load XML template of user account
         File templ = new File(xmlTemplFile);
         String resourceXml = Util.getXmlFileAsString(templ);
-
-        // replace placeholder for Organizational Unit with ouObjid
-        resourceXml = resourceXml.replace("###ORGANIZATIONAL_UNIT_ID###", ouObjid);
         
         // create
         String crXML = ruahc.create(resourceXml);

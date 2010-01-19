@@ -12,7 +12,7 @@ public class UpdateContainer {
 
     public static void main(String[] args) {
 
-        String id = "escidoc:1";
+        String id = "escidoc:container";
         String xmlFile = "templates/generic/container/Container_update.xml";
 
         try {

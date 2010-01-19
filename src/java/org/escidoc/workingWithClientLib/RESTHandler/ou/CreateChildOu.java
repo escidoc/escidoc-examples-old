@@ -30,12 +30,7 @@ public class CreateChildOu {
         String xmlFile =
             "./templates/generic/organizational-unit/"
                 + "escidoc_child_ou_for_create.xml";
-        
-        String parentOU = "escidoc:1";
-        String ouName = "Example OU";
-        String ouAltName = "Alternative Name of OU";
-        String ouDescription = "This is the description of the Example OU";
-        
+
         if (args.length > 0) {
             xmlFile = args[0];
         }
@@ -51,12 +46,6 @@ public class CreateChildOu {
             // load XML template of organizational unit
             File templOu = new File(xmlFile);
             String ouXml = Util.getXmlFileAsString(templOu);
-
-            // replace placeholder in template
-            ouXml = ouXml.replace("###PARENT_OU_ID###", parentOU);
-            ouXml = ouXml.replace("###NAME_OF_OU###", ouName);
-            ouXml = ouXml.replace("###ALTERNATIVE_NAME_OF_OU###", ouAltName);
-            ouXml = ouXml.replace("###DESCRIPTION_OF_OU###", ouDescription);
 
             String createdResource = createChildOu(ouXml);
 
@@ -83,6 +72,8 @@ public class CreateChildOu {
     /**
      * Create Organizational Unit (from REST XML template) as child of other OU.
      * 
+     * @param ouXml
+     *            Organizational Unit representation for create
      * @throws InternalClientException
      * @throws EscidocException
      * @throws TransportException

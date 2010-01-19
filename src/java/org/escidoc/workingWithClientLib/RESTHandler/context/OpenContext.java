@@ -31,8 +31,8 @@ public class OpenContext {
      */
     public static void main(String[] args) {
 
-        String id = "escidoc:1";
-        if (args.length > 0) {
+        String id = "escidoc:context";
+        if (args.length == 1) {
             id = args[0];
         }
 

@@ -35,7 +35,7 @@ public class UpdatePassword {
      */
     public static void main(String[] args) {
 
-        String objid = "escidoc:user";
+        String objid = "escidoc:user-account";
         String password = "mySecretPassword";
 
         /**
@@ -97,8 +97,8 @@ public class UpdatePassword {
 
         // prepare taskParam
         final String taskParamXML =
-            "<param last-modification-date=\"" + objidLmd[1] + "\" ><password>"
-                + password + "</password> </param>";
+            "<param last-modification-date=\"" + objidLmd[1] + "\" >\n"
+                + "<password>" + password + "</password>\n" + "</param>";
 
         ruahc.updatePassword(userId, taskParamXML);
     }
