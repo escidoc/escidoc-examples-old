@@ -12,7 +12,7 @@ public class CreateContainer {
 
     public static void main(String[] args) {
 
-        String xmlFile = "templates/TUE/Container_create_minimal.xml";
+        String xmlFile = "templates/generic/container/Container_create_minimal.xml";
         if (args.length > 0) {
             xmlFile = args[0];
         }

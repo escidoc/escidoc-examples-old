@@ -13,7 +13,7 @@ public class UpdateItem {
     public static void main(String[] args) {
 
         String id = "escidoc:1";
-        String xmlFile = "templates/TUE/Item_update.xml";
+        String xmlFile = "templates/generic/item//Item_update.xml";
 
         try {
 

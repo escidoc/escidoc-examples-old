@@ -37,7 +37,7 @@ public class CreateOrganizationalUnit {
 
         // select template
         String xmlFile =
-            "./templates/TUE/organizational-unit/"
+            "./templates/generic/organizational-unit/"
                 + "escidoc_ou_for_create.xml";
         if (args.length > 0) {
             xmlFile = args[0];

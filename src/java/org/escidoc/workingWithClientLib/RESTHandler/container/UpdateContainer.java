@@ -12,8 +12,8 @@ public class UpdateContainer {
 
     public static void main(String[] args) {
 
-        String id = "escidoc:95002";
-        String xmlFile = "templates/TUE/Container_update.xml";
+        String id = "escidoc:1";
+        String xmlFile = "templates/generic/container/Container_update.xml";
 
         try {
 

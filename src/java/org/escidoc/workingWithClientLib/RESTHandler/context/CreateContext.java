@@ -37,7 +37,7 @@ public class CreateContext {
     public static void main(String[] args) {
 
         // select template
-        String xmlFile = "templates/TUE/Context_create.xml";
+        String xmlFile = "templates/generic/context/Context_create.xml";
         if (args.length > 0) {
             xmlFile = args[0];
         }

@@ -33,7 +33,7 @@ public class CreateContentModel {
     public static void main(String[] args) {
 
         // select template
-        String xmlFile = "./templates/TUE/content-model.xml";
+        String xmlFile = "./templates/generic/cmm/content-model.xml";
         if (args.length > 0) {
             xmlFile = args[0];
         }

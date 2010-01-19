@@ -41,7 +41,7 @@ public class SetGrants {
 
         // select template
         String xmlFile =
-            "./templates/TUE/user-account/"
+            "./templates/generic/user-account/"
                 + "escidoc_depositor_grant_for_create.xml";
 
         if (args.length == 1) {

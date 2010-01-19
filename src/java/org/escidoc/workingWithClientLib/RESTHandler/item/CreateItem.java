@@ -26,7 +26,7 @@ public class CreateItem {
     public static void main(String[] args) {
 
         // select template
-        String xmlFile = "templates/TUE/Item_create_minimal.xml";
+        String xmlFile = "templates/generic/item/Item_create_minimal.xml";
         if (args.length > 0) {
             xmlFile = args[0];
         }
