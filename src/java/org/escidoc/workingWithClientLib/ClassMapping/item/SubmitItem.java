@@ -36,8 +36,8 @@ public class SubmitItem {
 
         // prepare client object
         ItemHandlerClient ihc = new ItemHandlerClient();
-        ihc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        ihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // create item object retrieving the item
         Item item = ihc.retrieve(id);

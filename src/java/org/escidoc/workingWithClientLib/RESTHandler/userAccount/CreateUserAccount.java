@@ -85,8 +85,8 @@ public class CreateUserAccount {
         RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
 
         // authenticate
-        ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // load XML template of user account
         File templ = new File(xmlTemplFile);

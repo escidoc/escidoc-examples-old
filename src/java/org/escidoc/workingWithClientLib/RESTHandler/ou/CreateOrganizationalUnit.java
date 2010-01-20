@@ -92,8 +92,8 @@ public class CreateOrganizationalUnit {
             new RestOrganizationalUnitHandlerClient();
 
         // authenticate
-        rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // create
         String crtdOuXML = rouc.create(ouXml);

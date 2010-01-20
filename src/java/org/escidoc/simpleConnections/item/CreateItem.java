@@ -78,8 +78,8 @@ public class CreateItem {
 
         // set username and password from params or to default
         if (args.length < 3) {
-            user = Constants.SYSTEM_ADMIN_USER;
-            pass = Constants.SYSTEM_ADMIN_PASSWORD;
+            user = Constants.USER_NAME;
+            pass = Constants.USER_PASSWORD;
         }
         else {
             user = args[1];

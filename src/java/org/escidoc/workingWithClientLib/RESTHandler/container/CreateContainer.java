@@ -72,8 +72,8 @@ public class CreateContainer {
         RestContainerHandlerClient rchc = new RestContainerHandlerClient();
 
         // login
-        rchc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // create the Container
         String createdContainer = rchc.create(containerXml);

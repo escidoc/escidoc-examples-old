@@ -49,8 +49,8 @@ public class UpdateContainer {
         throws EscidocClientException {
 
         RestContainerHandlerClient client = new RestContainerHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
         String createdContainer = client.update(containerId, containerXml);
 
         return createdContainer;
@@ -60,8 +60,8 @@ public class UpdateContainer {
         throws EscidocClientException {
 
         RestContainerHandlerClient client = new RestContainerHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
         String itemXml = client.retrieve(containerId);
 
         return itemXml;

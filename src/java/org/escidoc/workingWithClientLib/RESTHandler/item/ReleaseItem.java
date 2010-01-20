@@ -62,8 +62,8 @@ public class ReleaseItem {
 
         // prepare client object
         RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        rihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // retrieving the Item
         String itemXml = rihc.retrieve(id);

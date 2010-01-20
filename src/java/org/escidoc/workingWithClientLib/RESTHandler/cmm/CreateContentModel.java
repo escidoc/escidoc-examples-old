@@ -86,8 +86,8 @@ public class CreateContentModel {
             new RestContentModelHandlerClient();
 
         // authenticate
-        rcmhc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        rcmhc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // create
         String createdCmmXml = rcmhc.create(cmmXml);

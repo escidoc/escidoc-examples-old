@@ -61,8 +61,8 @@ public class UpdateItem {
         throws EscidocClientException {
 
         RestItemHandlerClient client = new RestItemHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
         String createdItem = client.update(itemId, itemXml);
 
         return createdItem;
@@ -72,8 +72,8 @@ public class UpdateItem {
         throws EscidocClientException {
 
         RestItemHandlerClient client = new RestItemHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
         String itemXml = client.retrieve(itemId);
 
         return itemXml;

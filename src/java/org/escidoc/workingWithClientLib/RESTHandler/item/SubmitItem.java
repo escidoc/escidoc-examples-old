@@ -1,17 +1,10 @@
 package org.escidoc.workingWithClientLib.RESTHandler.item;
 
-import java.util.Vector;
-
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
-import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
-import de.escidoc.core.resources.common.Filter;
-import de.escidoc.core.resources.common.Result;
-import de.escidoc.core.resources.common.TaskParam;
-import de.escidoc.core.resources.om.item.Item;
 
 /**
  * Example how to submit an Item.
@@ -50,8 +43,8 @@ public class SubmitItem {
         throws EscidocClientException {
 
         RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        rihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // retrieving the Item
         String itemXml = rihc.retrieve(id);

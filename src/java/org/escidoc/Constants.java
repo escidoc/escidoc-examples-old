@@ -12,11 +12,11 @@ public class Constants {
         "http://" + DEFAULT_INFRASTRUCTURE_HOST + ":"
             + DEFAULT_INFRASTRUCTURE_PORT + DEFAULT_INFRASTRUCTURE_PATH;
 
-    public static final String SYSTEM_ADMIN_USER = "sysadmin";
-//    public static final String SYSTEM_ADMIN_USER = "mustermann";
+    public static final String USER_NAME = "sysadmin";
+//    public static final String USER_NAME = "mustermann";
 
-    public static final String SYSTEM_ADMIN_PASSWORD = "eSciDoc";
-//    public static final String SYSTEM_ADMIN_PASSWORD = "PubManR2";
+    public static final String USER_PASSWORD = "eSciDoc";
+//    public static final String USER_PASSWORD = "PubManR2";
 
     /**
      * Objid from common example set.

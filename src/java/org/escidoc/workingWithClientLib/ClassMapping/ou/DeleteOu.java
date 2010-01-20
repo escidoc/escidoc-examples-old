@@ -41,7 +41,7 @@ public class DeleteOu {
             OrganizationalUnitHandlerClient client =
                 new OrganizationalUnitHandlerClient();
             client.login(Util.getInfrastructureURL(),
-                Constants.SYSTEM_ADMIN_USER, Constants.SYSTEM_ADMIN_PASSWORD);
+                Constants.USER_NAME, Constants.USER_PASSWORD);
 
             // call create
             OrganizationalUnit createdOu = client.create(ou);

@@ -159,8 +159,8 @@ public class CreateOu {
         // get handler
         OrganizationalUnitHandlerClient client =
             new OrganizationalUnitHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // call create
         OrganizationalUnit createdOu = client.create(ou);

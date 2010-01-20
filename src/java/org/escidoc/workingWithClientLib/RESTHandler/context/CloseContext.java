@@ -7,7 +7,7 @@ import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContextHandlerClient;
 
 /**
- * Example how to set status of a Context to 'open' by using the XML REST
+ * Example how to set status of a Context to 'closed' by using the XML REST
  * representation and the eSciDoc Java client library.
  * 
  * The eSciDoc Java client library is used for communication with framework.
@@ -20,14 +20,14 @@ import de.escidoc.core.client.rest.RestContextHandlerClient;
  * @author SWA
  * 
  */
-public class OpenContext {
+public class CloseContext {
 
     /**
-     * Set status of Organizational Unit to open
+     * Set status of Organizational Unit to closed.
      * 
      * @param args
      *            If args[0] is given, it is used as objid for Organizational
-     *            Unit. Otherwise is defaut value used.
+     *            Unit. Otherwise is default value used.
      */
     public static void main(String[] args) {
 
@@ -37,12 +37,12 @@ public class OpenContext {
         }
 
         try {
-            String responseXml = openContext(id);
+            String responseXml = closeContext(id);
 
             // write out objid and last modification date
             String[] objidLmd = Util.obtainObjidAndLmd(responseXml);
             System.out.println("Context with objid='" + id + "' at '"
-                + objidLmd[1] + "' set to open");
+                + objidLmd[1] + "' set to closed");
 
         }
         catch (EscidocClientException e) {
@@ -52,16 +52,21 @@ public class OpenContext {
     }
 
     /**
-     * Open Context.
+     * Close Context.
      * 
+     * <ul>
+     *   <li>get REST handler for object</li>
+     *   <li>login</li>
+     *   <li>call close method at handler</li>
+     * </ul>
      * @param id
-     *            objid of to open Context
-     * @return XML response of open method from framework
+     *            objid of to close Context
+     * @return XML response of close method from framework
      * @throws EscidocClientException
      */
-    public static String openContext(final String id) throws EscidocClientException {
+    public static String closeContext(final String id) throws EscidocClientException {
 
-        // prepare client object
+        // prepare client handler
         RestContextHandlerClient rchc = new RestContextHandlerClient();
         rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
             Constants.USER_PASSWORD);
@@ -77,7 +82,7 @@ public class OpenContext {
                 + "</param>";
 
         // task oriented method open()
-        String openResult = rchc.open(objidLmd[0], taskParam);
+        String openResult = rchc.close(objidLmd[0], taskParam);
 
         return openResult;
     }

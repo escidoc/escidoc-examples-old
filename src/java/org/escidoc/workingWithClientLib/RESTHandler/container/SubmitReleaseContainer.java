@@ -37,8 +37,8 @@ public class SubmitReleaseContainer {
         throws EscidocClientException {
 
         RestContainerHandlerClient rchc = new RestContainerHandlerClient();
-        rchc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // retrieving the Container
         String containerXml = rchc.retrieve(id);

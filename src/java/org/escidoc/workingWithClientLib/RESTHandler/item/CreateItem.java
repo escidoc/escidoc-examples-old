@@ -64,8 +64,8 @@ public class CreateItem {
         RestItemHandlerClient rihc = new RestItemHandlerClient();
 
         // login
-        rihc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        rihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // create the Item
         String createdItem = rihc.create(itemXml);

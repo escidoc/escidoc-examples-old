@@ -87,8 +87,8 @@ public class UpdatePassword {
         throws EscidocClientException {
 
         RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
-        ruahc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        ruahc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         String userXml = ruahc.retrieve(userId);
 

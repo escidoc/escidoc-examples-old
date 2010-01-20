@@ -67,8 +67,8 @@ public class ReleaseContainer {
 
 		// prepare client object
 		ContainerHandlerClient chc = new ContainerHandlerClient();
-		chc.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-				Constants.SYSTEM_ADMIN_PASSWORD);
+		chc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+				Constants.USER_PASSWORD);
 
 		// retrieve the Container to detect last modification date
 		Container container = chc.retrieve(objid);

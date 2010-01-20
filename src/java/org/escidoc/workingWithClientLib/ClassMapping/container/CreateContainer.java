@@ -63,8 +63,8 @@ public class CreateContainer {
 			ParserConfigurationException {
 
 	    ContainerHandlerClient chc = new ContainerHandlerClient();
-		chc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-				Constants.SYSTEM_ADMIN_PASSWORD);
+		chc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
+				Constants.USER_PASSWORD);
 
 		Container container = new Container();
 

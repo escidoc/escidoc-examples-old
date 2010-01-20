@@ -110,8 +110,8 @@ public class CreateContext {
         throws EscidocException, InternalClientException, TransportException {
 
         ContextHandlerClient client = new ContextHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         Context createdContext = client.create(context);
 

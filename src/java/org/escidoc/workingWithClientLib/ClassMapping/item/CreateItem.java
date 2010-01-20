@@ -63,8 +63,8 @@ public class CreateItem {
 			ParserConfigurationException {
 
 		ItemHandlerClient ihc = new ItemHandlerClient();
-		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-				Constants.SYSTEM_ADMIN_PASSWORD);
+		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
+				Constants.USER_PASSWORD);
 
 		Item item = new Item();
 

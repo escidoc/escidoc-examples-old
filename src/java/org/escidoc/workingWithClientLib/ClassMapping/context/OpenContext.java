@@ -82,8 +82,8 @@ public class OpenContext {
 			TransportException {
 
 		ContextHandlerClient client = new ContextHandlerClient();
-		client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-				Constants.SYSTEM_ADMIN_PASSWORD);
+		client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+				Constants.USER_PASSWORD);
 
 		Context context = client.retrieve(objid);
 
@@ -113,8 +113,8 @@ public class OpenContext {
 			TransportException {
 
 		ContextHandlerClient client = new ContextHandlerClient();
-		client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-				Constants.SYSTEM_ADMIN_PASSWORD);
+		client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+				Constants.USER_PASSWORD);
 
 		TaskParam taskParam = new TaskParam();
 		taskParam.setComment("Example to open Context");

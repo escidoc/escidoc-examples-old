@@ -83,8 +83,8 @@ public class CreateContext {
         RestContextHandlerClient client = new RestContextHandlerClient();
 
         // authenticate
-        client.login(Util.getInfrastructureURL(), Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // create
         String createdContext = client.create(contextXml);

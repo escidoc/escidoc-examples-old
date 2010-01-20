@@ -97,8 +97,8 @@ public class SetGrants {
         RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
 
         // authenticate
-        ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.SYSTEM_ADMIN_USER,
-            Constants.SYSTEM_ADMIN_PASSWORD);
+        ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
         // load and prepare the XML for grants
         File templ = new File(xmlTemplFile);

@@ -10,7 +10,7 @@ import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
 
 /**
- * Example how to set status of a Organizational Unit to to 'open' by using the
+ * Example how to set status of a Organizational Unit to to 'closed' by using the
  * XML REST representation and the eSciDoc Java client library.
  * 
  * The eSciDoc Java client library is used for communication with framework.
@@ -23,12 +23,12 @@ import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
  * @author SWA
  * 
  */
-public class OpenOU {
+public class CloseOU {
 
     /**
      * @param args
      *            If args[0] is given, it is used as objid for Organizational
-     *            Unit. Otherwise is escidoc:1 used.
+     *            Unit. Otherwise is a default value used.
      */
     public static void main(String[] args) {
 
@@ -42,12 +42,12 @@ public class OpenOU {
         }
 
         try {
-            String responseXml = openOU(id);
+            String responseXml = closeOU(id);
 
             // write out objid and last modification date
             String[] objidLmd = Util.obtainObjidAndLmd(responseXml);
             System.out.println("Organizational Unit with objid='" + id
-                + "' at '" + objidLmd[1] + "' set to open");
+                + "' at '" + objidLmd[1] + "' set to closed");
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
@@ -55,7 +55,7 @@ public class OpenOU {
     }
 
     /**
-     * Set Organizational Unit to open.
+     * Set Organizational Unit to close.
      * 
      * @param objd
      *            The objid of the Organizational Unit
@@ -65,12 +65,13 @@ public class OpenOU {
      * @throws EscidocException
      * @throws TransportException
      */
-    private static String openOU(final String objid)
+    private static String closeOU(final String objid)
         throws InternalClientException, EscidocException, TransportException {
 
-        // login
+        // get rest handler 
         RestOrganizationalUnitHandlerClient rouc =
             new RestOrganizationalUnitHandlerClient();
+        // login
         rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
             Constants.USER_PASSWORD);
 
@@ -87,10 +88,10 @@ public class OpenOU {
         String[] objidLmd = Util.obtainObjidAndLmd(ouXml);
         String taskParam =
             "<param last-modification-date=\"" + objidLmd[1] + "\">\n"
-                + "<comment>Open OU example</comment>\n" + "</param>";
+                + "<comment>Close example OU</comment>\n" + "</param>";
 
-        // open OU
-        String responseXml = rouc.open(objid, taskParam);
+        // close OU
+        String responseXml = rouc.close(objid, taskParam);
 
         return responseXml;
     }
