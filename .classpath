@@ -43,6 +43,6 @@
 	<classpathentry kind="lib" path="lib/xerces-2.9.1/xml-apis.jar"/>
 	<classpathentry kind="lib" path="lib/opensaml-1.0.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/escidoc-core-client-lib-1.1-build254.jar"/>
+	<classpathentry kind="lib" path="lib/escidoc-core-client-lib-1.1-swa-20100120-01.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
