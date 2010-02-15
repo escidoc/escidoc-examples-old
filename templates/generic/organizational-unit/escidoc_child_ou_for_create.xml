@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <organizational-unit:organizational-unit
-	xmlns:organizational-unit="http://www.escidoc.de/schemas/organizationalunit/0.7"
+	xmlns:organizational-unit="http://www.escidoc.de/schemas/organizationalunit/0.8"
 	xmlns:xlink="http://www.w3.org/1999/xlink" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:srel="http://escidoc.de/core/01/structural-relations/">
 	<md-records:md-records
-		xmlns:md-records="http://www.escidoc.de/schemas/metadatarecords/0.4"
+		xmlns:md-records="http://www.escidoc.de/schemas/metadatarecords/0.5"
 		xmlns:ou="http://www.escidoc.de/metadata/organizational-unit"
 		xmlns:dc="http://purl.org/dc/elements/1.1/"
 		xmlns:dcterms="http://purl.org/dc/terms/">
 		<md-records:md-record name="escidoc">
 			<ou:ou>
+                <!--SEE: /eSciDocExamples/templates/generic/organizational-unit/escidoc_ou_for_create.xml -->
 				<dc:title>###NAME_OF_OU###</dc:title>
 				<dcterms:alternative>###ALTERNATIVE_NAME_OF_OU###</dcterms:alternative>
 				<dc:description>###DESCRIPTION_OF_OU###</dc:description>
@@ -18,6 +19,14 @@
 		</md-records:md-record>
 	</md-records:md-records>
 	<organizational-unit:parents>
+        <!-- 
+        REQUIRED: an existing organizational unit(OU). If you do not know which ID to use,
+        you can create a new (parent) OU by: 
+        executing org.escidoc.workingWithClientLib.RESTHandler.ou.CreateOranizationalUnit.java 
+        Copy and paste the objid.
+        An example of valid response is:
+        "Organizational Unit with objid='escidoc:41007' at '2010-02-15T13:35:28.945Z' created"
+        -->
 		<srel:parent xlink:href="/oum/organizational-unit/###PARENT_OU_ID###" />
 	</organizational-unit:parents>
 </organizational-unit:organizational-unit>
