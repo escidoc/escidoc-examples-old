@@ -1,0 +1,6624 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root chapter="01">
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="Schatten">
+Schatten
+</word>
+<word pos="NN" lemma="unknown">
+Richelieus
+</word>
+<word pos="APPR" lemma="in">
+In
+</word>
+<word pos="ART" lemma="ein">
+einem
+</word>
+<word pos="PRF" lemma="wir">
+uns
+</word>
+<word pos="ADV" lemma="schon">
+schon
+</word>
+<word pos="ADJA" lemma="bekannt">
+bekannten
+</word>
+<word pos="NN" lemma="Gemach">
+Gemache
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="unknown">
+Kardinalspalastes
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="an">
+an
+</word>
+<word pos="ART" lemma="ein">
+einem
+</word>
+<word pos="NN" lemma="Tisch">
+Tische
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ADJA" lemma="vergoldet">
+vergoldeten
+</word>
+<word pos="NN" lemma="Eck|Ecke|Ecken">
+Ecken
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+der
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="NN" lemma="Papier">
+Papieren
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="NN" lemma="Buch">
+Büchern
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="NN" lemma="Schrift">
+Schriften
+</word>
+<word pos="VVPP" lemma="beladen">
+beladen
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="sitzen">
+saß
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="NN" lemma="Mann">
+Mann
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+der
+</word>
+<word pos="PPOSAT" lemma="sein">
+seinen
+</word>
+<word pos="NN" lemma="Kopf">
+Kopf
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="PIAT" lemma="beide">
+beide
+</word>
+<word pos="NN" lemma="Hand">
+Hände
+</word>
+<word pos="VVFIN" lemma="stützen">
+stützte
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="APPR" lemma="hinter">
+Hinter
+</word>
+<word pos="PPER" lemma="er">
+ihm
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="ADJA" lemma="weit">
+weiter
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPRART" lemma="vom">
+vom
+</word>
+<word pos="NN" lemma="Feuer">
+Feuer
+</word>
+<word pos="ADJA" lemma="gerötet">
+geröteter
+</word>
+<word pos="NN" lemma="Kamin">
+Kamin
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PWAV" lemma="worin">
+worin
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="ADJA" lemma="brennend">
+brennenden
+</word>
+<word pos="NN" lemma="unknown">
+Scheiter
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="ADJA" lemma="breit">
+breiten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADJA" lemma="vergoldet">
+vergoldeten
+</word>
+<word pos="NN" lemma="Bock">
+Böcken
+</word>
+<word pos="ADV" lemma="ineinander">
+ineinander
+</word>
+<word pos="VVFIN" lemma="fallen">
+fielen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="unknown">
+Wiederschein
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="Herd">
+Herdes
+</word>
+<word pos="VVFIN" lemma="erhellen">
+erhellte
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="ADJA" lemma="prächtig">
+prächtige
+</word>
+<word pos="NN" lemma="Kleidung">
+Kleidung
+</word>
+<word pos="PDAT" lemma="dies">
+dieses
+</word>
+<word pos="NN" lemma="Träumer">
+Träumers
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="ADV" lemma="rückwärts">
+rückwärts
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="während">
+während
+</word>
+<word pos="PPER" lemma="er">
+ihn
+</word>
+<word pos="ADV" lemma="vorn">
+vorn
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Licht">
+Licht
+</word>
+<word pos="ART" lemma="ein">
+eines
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="NN" lemma="Kerze">
+Kerzen
+</word>
+<word pos="ADJA" lemma="ausgestattet">
+ausgestatteten
+</word>
+<word pos="NN" lemma="unknown">
+Kandelabers
+</word>
+<word pos="VVFIN" lemma="erleuchten">
+erleuchtete
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="KOUS" lemma="wenn">
+Wenn
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="ADJA" lemma="rot">
+rote
+</word>
+<word pos="NN" lemma="Kleidung">
+Kleidung
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="ADJA" lemma="reich">
+reichen
+</word>
+<word pos="NN" lemma="Spitze">
+Spitzen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PROAV" lemma="dazu">
+dazu
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="ADJA" lemma="blaß">
+blasse
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADJD" lemma="gedankenvoll">
+gedankenvoll
+</word>
+<word pos="ADJA" lemma="unknown">
+niedergebeugte
+</word>
+<word pos="NN" lemma="Stirn">
+Stirn
+</word>
+<word pos="VVFIN" lemma="sehen">
+sah
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Einsamkeit">
+Einsamkeit
+</word>
+<word pos="PDAT" lemma="dies">
+dieses
+</word>
+<word pos="NN" lemma="Kabinett">
+Kabinetts
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Stille">
+Stille
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Vorzimmer">
+Vorzimmer
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="ADJA" lemma="abgemessen">
+abgemessenen
+</word>
+<word pos="NN" lemma="Schritt">
+Schritt
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Wache|Wachen">
+Wachen
+</word>
+<word pos="APPRART" lemma="am">
+am
+</word>
+<word pos="NN" lemma="unknown">
+Vorplatze
+</word>
+<word pos="VVFIN" lemma="betrachten">
+betrachtete
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="VMFIN" lemma="können">
+konnte
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="VVINF" lemma="meinen">
+meinen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Schatten">
+Schatten
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinals
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NN" lemma="unknown">
+Richelieu
+</word>
+<word pos="VVFIN" lemma="befinden">
+befinde
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="ADV" lemma="noch">
+noch
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="PPOSAT" lemma="sein">
+seinem
+</word>
+<word pos="NN" lemma="Zimmer">
+Zimmer
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ITJ" lemma="ach">
+Ach
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Tat">
+Tat
+</word>
+<word pos="ADV" lemma="nur">
+nur
+</word>
+<word pos="ADV" lemma="noch">
+noch
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Schatten">
+Schatten
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="ADJA" lemma="groß">
+großen
+</word>
+<word pos="NN" lemma="Mann">
+Mannes
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Das
+</word>
+<word pos="ADJA" lemma="geschwächt">
+geschwächte
+</word>
+<word pos="NE" lemma="Frankreich">
+Frankreich
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="ADJA" lemma="verkannt">
+verkannte
+</word>
+<word pos="NN" lemma="Autorität">
+Autorität
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="König">
+Königs
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+die
+</word>
+<word pos="ADV" lemma="abermals">
+abermals
+</word>
+<word pos="ADJD" lemma="schwach">
+schwach
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADJD" lemma="aufrührerisch">
+aufrührerisch
+</word>
+<word pos="ADJA" lemma="worden">
+gewordenen
+</word>
+<word pos="NN" lemma="Große">
+Großen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+der
+</word>
+<word pos="APPR" lemma="über">
+über
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Grenze">
+Grenzen
+</word>
+<word pos="ADJA" lemma="unknown">
+zurückgetriebene
+</word>
+<word pos="NN" lemma="Feind">
+Feind
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PIS" lemma="alle">
+alles
+</word>
+<word pos="VVFIN" lemma="geben">
+gab
+</word>
+<word pos="NN" lemma="Zeugnis">
+Zeugnis
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="NN" lemma="unknown">
+Richelieu
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="ADV" lemma="mehr">
+mehr
+</word>
+<word pos="ADV" lemma="da">
+da
+</word>
+<word pos="VAFIN" lemma="sein">
+sei
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PWS" lemma="was">
+Was
+</word>
+<word pos="ADV" lemma="aber">
+aber
+</word>
+<word pos="ADV" lemma="noch">
+noch
+</word>
+<word pos="PIS" lemma="mehr">
+mehr
+</word>
+<word pos="KOKOM" lemma="als">
+als
+</word>
+<word pos="PIS" lemma="alle">
+alles
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="ADJA" lemma="angeführt">
+Angeführte
+</word>
+<word pos="VVFIN" lemma="zeigen">
+zeigte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="ADJA" lemma="rot">
+rote
+</word>
+<word pos="NN" lemma="Kleidung">
+Kleidung
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="PRELS" lemma="d">
+die
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="ADJA" lemma="alt">
+alten
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinals
+</word>
+<word pos="VAFIN" lemma="sein">
+sei
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="NN" lemma="Absonderung">
+Absonderung
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="welch">
+welche
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wie">
+wie
+</word>
+<word pos="ADV" lemma="schon">
+schon
+</word>
+<word pos="VVPP" lemma="bemerken">
+bemerkt
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="viel">
+viel
+</word>
+<word pos="ADV" lemma="mehr">
+mehr
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="ART" lemma="ein">
+eines
+</word>
+<word pos="NN" lemma="Schatten">
+Schattens
+</word>
+<word pos="KOKOM" lemma="als">
+als
+</word>
+<word pos="ART" lemma="ein">
+eines
+</word>
+<word pos="ADJA" lemma="lebend">
+lebenden
+</word>
+<word pos="NN" lemma="Mensch">
+Menschen
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VAINF" lemma="sein">
+sein
+</word>
+<word pos="VVFIN" lemma="scheinen">
+schien
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PDS" lemma="d">
+das
+</word>
+<word pos="VAFIN" lemma="sein">
+waren
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NN" lemma="Hofleute">
+Hofleuten
+</word>
+<word pos="ADJA" lemma="entvölkert">
+entvölkerten
+</word>
+<word pos="NN" lemma="Gang">
+Gänge
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="NN" lemma="Hof">
+Höfe
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NN" lemma="Wache|Wachen">
+Wachen
+</word>
+<word pos="VVPP" lemma="anfüllen">
+angefüllt
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PDS" lemma="d">
+das
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="ADJA" lemma="höhnisch">
+höhnische
+</word>
+<word pos="NN" lemma="Gesinnung">
+Gesinnung
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+die
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Straße">
+Straße
+</word>
+<word pos="VVFIN" lemma="kundgeben">
+kundgab
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="APPR" lemma="durch">
+durch
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Fenster">
+Fenster
+</word>
+<word pos="PDAT" lemma="dies">
+dieses
+</word>
+<word pos="NN" lemma="Zimmer">
+Zimmers
+</word>
+<word pos="VVFIN" lemma="dringen">
+drang
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+die
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Hauch">
+Hauch
+</word>
+<word pos="ART" lemma="ein">
+einer
+</word>
+<word pos="APPR" lemma="gegen">
+gegen
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Minister">
+Minister
+</word>
+<word pos="ADJA" lemma="vereinigt">
+vereinigten
+</word>
+<word pos="NN" lemma="Stadt">
+Stadt
+</word>
+<word pos="VVFIN" lemma="erschüttern">
+erschütterte
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PDS" lemma="d">
+das
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="ADV" lemma="endlich">
+endlich
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="ADJA" lemma="fern">
+fernes
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="stets">
+stets
+</word>
+<word pos="ADJA" lemma="wiederholt">
+wiederholtes
+</word>
+<word pos="NN" lemma="Dröhnen">
+Dröhnen
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NN" lemma="unknown">
+Flintenschüssen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="welch">
+welche
+</word>
+<word pos="APPRART" lemma="zum">
+zum
+</word>
+<word pos="NN" lemma="Glück">
+Glück
+</word>
+<word pos="APPR" lemma="ohne">
+ohne
+</word>
+<word pos="NN" lemma="Zweck">
+Zweck
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="APPR" lemma="ohne">
+ohne
+</word>
+<word pos="NN" lemma="Folge">
+Folgen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADV" lemma="nur">
+nur
+</word>
+<word pos="PROAV" lemma="deshalb">
+deshalb
+</word>
+<word pos="VVPP" lemma="abfeuern">
+abgefeuert
+</word>
+<word pos="VAFIN" lemma="werden">
+wurden
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="damit">
+damit
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Garde">
+Garden
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Schweizer">
+Schweizern
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Musketier">
+Musketieren
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="NN" lemma="Soldat">
+Soldaten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+die
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="unknown">
+Palais-Royal
+</word>
+<word pos="VVFIN" lemma="umzingeln">
+umzingelten
+</word>
+<word pos="$(" lemma="(">
+(
+</word>
+<word pos="KON" lemma="denn">
+denn
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="unknown">
+Kardinalspalast
+</word>
+<word pos="ADV" lemma="selber">
+selber
+</word>
+<word pos="VVFIN" lemma="verändern">
+veränderte
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Name">
+Namen
+</word>
+<word pos="$(" lemma=")">
+)
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVINF" lemma="zeigen">
+zeigen
+</word>
+<word pos="VMFIN" lemma="sollen">
+sollten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="ADV" lemma="auch">
+auch
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Volk">
+Volk
+</word>
+<word pos="APPRART" lemma="im">
+im
+</word>
+<word pos="NN" lemma="Besitz">
+Besitze
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NN" lemma="Waffe">
+Waffen
+</word>
+<word pos="VAFIN" lemma="sein">
+sei
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PDAT" lemma="dies">
+Dieser
+</word>
+<word pos="NN" lemma="Schatten">
+Schatten
+</word>
+<word pos="NN" lemma="unknown">
+Richelieus
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="NE" lemma="unknown">
+Mazarin
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ADJD" lemma="unknown">
+Mazarin
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="ADV" lemma="allein">
+allein
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="fühlen">
+fühlte
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="ADJD" lemma="schwach">
+schwach
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="NN" lemma="Ausländer">
+Ausländer
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VVFIN" lemma="murmeln">
+murmelte
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="NN" lemma="Italiener">
+Italiener
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PDS" lemma="d">
+das
+</word>
+<word pos="VAFIN" lemma="sein">
+ist
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihr
+</word>
+<word pos="ADJA" lemma="ohnmächtig">
+ohnmächtiges
+</word>
+<word pos="NN" lemma="Wort">
+Wort
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="APPR" lemma="mit">
+Mit
+</word>
+<word pos="PDAT" lemma="dies">
+diesem
+</word>
+<word pos="NN" lemma="Wort">
+Worte
+</word>
+<word pos="VAFIN" lemma="haben">
+haben
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="NE" lemma="unknown">
+Concini
+</word>
+<word pos="VVPP" lemma="erdolchen">
+erdolcht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVPP" lemma="unknown">
+aufgehenkt
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVPP" lemma="verschlingen">
+verschlungen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="lassen">
+ließe
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="VVINF" lemma="gewähren">
+gewähren
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VAFIN" lemma="werden">
+würden
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="PRF" lemma="ich">
+mich
+</word>
+<word pos="ADV" lemma="gleichfalls">
+gleichfalls
+</word>
+<word pos="VVINF" lemma="umbringen">
+umbringen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="aufknüpfen">
+aufknüpfen
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVINF" lemma="zerfleischen">
+zerfleischen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wiewohl">
+wiewohl
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="PPER" lemma="sie">
+ihnen
+</word>
+<word pos="ADV" lemma="nie">
+nie
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="ADJA" lemma="ander">
+anderes
+</word>
+<word pos="NN" lemma="Leid">
+Leid
+</word>
+<word pos="VVFIN" lemma="zufügen">
+zufügte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOKOM" lemma="als">
+als
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="PIAT" lemma="bißchen">
+bißchen
+</word>
+<word pos="NN" lemma="unknown">
+aussog
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Die
+</word>
+<word pos="NN" lemma="Schwachkopf">
+Schwachköpfe
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="VVFIN" lemma="fühlen">
+fühlen
+</word>
+<word pos="ADV" lemma="also">
+also
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="ADV" lemma="keineswegs">
+keineswegs
+</word>
+<word pos="PDAT" lemma="dies">
+dieser
+</word>
+<word pos="NN" lemma="Welsche">
+Welsche
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+der
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Französisch">
+Französisch
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="ADJD" lemma="schlecht">
+schlecht
+</word>
+<word pos="VVFIN" lemma="sprechen">
+spricht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihr
+</word>
+<word pos="NN" lemma="Feind">
+Feind
+</word>
+<word pos="VAFIN" lemma="sein">
+ist
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="sondern">
+sondern
+</word>
+<word pos="ADV" lemma="vielmehr">
+vielmehr
+</word>
+<word pos="PDS" lemma="jen">
+jene
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="welch">
+welche
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Gabe">
+Gabe
+</word>
+<word pos="VVFIN" lemma="besitzen">
+besitzen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="sie">
+ihnen
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="ADJA" lemma="glatt">
+glatte
+</word>
+<word pos="NN" lemma="Wort">
+Worte
+</word>
+<word pos="APPRART" lemma="im">
+im
+</word>
+<word pos="ADJA" lemma="rein">
+reinen
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADJA" lemma="gut">
+guten
+</word>
+<word pos="NN" lemma="Pariser">
+Pariser
+</word>
+<word pos="NN" lemma="Dialekt">
+Dialekte
+</word>
+<word pos="VVIZU" lemma="vortragen">
+vorzutragen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="NN" lemma="Ja">
+Ja
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="ja">
+ja
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VVFIN" lemma="fahren">
+fuhr
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Minister">
+Minister
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="PPOSAT" lemma="sein">
+seinem
+</word>
+<word pos="ADJA" lemma="fein">
+feinen
+</word>
+<word pos="NN" lemma="Lächeln">
+Lächeln
+</word>
+<word pos="PTKVZ" lemma="fort">
+fort
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+das
+</word>
+<word pos="ADV" lemma="jetzt">
+jetzt
+</word>
+<word pos="ADJD" lemma="seltsam">
+seltsam
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="PPOSAT" lemma="sein">
+seinen
+</word>
+<word pos="ADJA" lemma="bleich">
+bleichen
+</word>
+<word pos="NN" lemma="Lippe">
+Lippen
+</word>
+<word pos="VVFIN" lemma="abstechen">
+abstach
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="ADV" lemma="ja">
+ja
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPOSAT" lemma="euer">
+euer
+</word>
+<word pos="NN" lemma="Geschrei">
+Geschrei
+</word>
+<word pos="VVFIN" lemma="sagen">
+sagte
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="PPER" lemma="ich">
+mir
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Los">
+Los
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Günstling">
+Günstlinge
+</word>
+<word pos="ADJD" lemma="wandelbar">
+wandelbar
+</word>
+<word pos="VAFIN" lemma="sein">
+ist
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="ADV" lemma="doch">
+doch
+</word>
+<word pos="KOUS" lemma="wenn">
+wenn
+</word>
+<word pos="PPER" lemma="ihr">
+ihr
+</word>
+<word pos="PDS" lemma="d">
+das
+</word>
+<word pos="VVFIN" lemma="wissen">
+wisset
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="VMFIN" lemma="müssen">
+muß
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="PPER" lemma="ihr">
+euch
+</word>
+<word pos="VVPP" lemma="bekennen">
+bekannt
+</word>
+<word pos="VAINF" lemma="sein">
+sein
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="PIAT" lemma="kein">
+kein
+</word>
+<word pos="ADJA" lemma="gewöhnlich">
+gewöhnlicher
+</word>
+<word pos="NN" lemma="Günstling">
+Günstling
+</word>
+<word pos="VAFIN" lemma="sein">
+bin
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="Graf">
+Graf
+</word>
+<word pos="APPR" lemma="vor">
+vor
+</word>
+<word pos="NN" lemma="unknown">
+Essex
+</word>
+<word pos="VVFIN" lemma="besitzen">
+besaß
+</word>
+<word pos="ART" lemma="ein">
+einen
+</word>
+<word pos="ADJA" lemma="kostbar">
+kostbaren
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="NN" lemma="Diamant">
+Diamanten
+</word>
+<word pos="ADJA" lemma="übersät">
+übersäten
+</word>
+<word pos="NN" lemma="Ring">
+Ring
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+den
+</word>
+<word pos="PPER" lemma="er">
+ihm
+</word>
+<word pos="PPOSAT" lemma="sein">
+seine
+</word>
+<word pos="ADJA" lemma="königlich">
+königliche
+</word>
+<word pos="NN" lemma="Gönnerin">
+Gönnerin
+</word>
+<word pos="VVPP" lemma="schenken">
+geschenkt
+</word>
+<word pos="VAFIN" lemma="haben">
+hatte
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="VVFIN" lemma="besitzen">
+besitze
+</word>
+<word pos="ADV" lemma="nur">
+nur
+</word>
+<word pos="ART" lemma="ein">
+einen
+</word>
+<word pos="ADJA" lemma="einfach">
+einfachen
+</word>
+<word pos="NN" lemma="Ring">
+Ring
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="NN" lemma="Namenszug">
+Namenszug
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="NN" lemma="Datum">
+Datum
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="doch">
+doch
+</word>
+<word pos="PDAT" lemma="dies">
+dieser
+</word>
+<word pos="NN" lemma="Ring">
+Ring
+</word>
+<word pos="VVFIN" lemma="werd">
+ward
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Kapelle">
+Kapelle
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="unknown">
+Palais-Royal
+</word>
+<word pos="VVPP" lemma="segnen">
+gesegnet
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="ADV" lemma="somit">
+somit
+</word>
+<word pos="VAFIN" lemma="werden">
+werden
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="PRF" lemma="ich">
+mich
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="NN" lemma="Grund">
+Grunde
+</word>
+<word pos="VVFIN" lemma="richten">
+richten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wie">
+wie
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="VVFIN" lemma="wünschen">
+wünschen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PPER" lemma="Sie|sie|sie">
+Sie
+</word>
+<word pos="VVFIN" lemma="gewahren">
+gewahren
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihrem
+</word>
+<word pos="ADJA" lemma="ewig">
+ewigen
+</word>
+<word pos="NN" lemma="Geschrei">
+Geschrei
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="ADJD" lemma="nieder">
+Nieder
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="NE" lemma="unknown">
+Mazarin
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="ADV" lemma="bald">
+bald
+</word>
+<word pos="VAFIN" lemma="werden">
+werde
+</word>
+<word pos="VVINF" lemma="rufen">
+rufen
+</word>
+<word pos="VVINF" lemma="lassen">
+lassen
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPER" lemma="es">
+Es
+</word>
+<word pos="VVFIN" lemma="leben">
+lebe
+</word>
+<word pos="NN" lemma="Herr">
+Herr
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NN" lemma="unknown">
+Beaufort
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="ADV" lemma="bald">
+bald
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPER" lemma="es">
+Es
+</word>
+<word pos="VVFIN" lemma="leben">
+lebe
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Prinz">
+Prinz
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADV" lemma="bald">
+bald
+</word>
+<word pos="ADV" lemma="ebenso">
+ebenso
+</word>
+<word pos="ADJD" lemma="lebhaft">
+lebhaft
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPER" lemma="es">
+Es
+</word>
+<word pos="VVFIN" lemma="leben">
+lebe
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Parlament">
+Parlament
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="ADV" lemma="nun">
+Nun
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="NN" lemma="Herr">
+Herr
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NN" lemma="unknown">
+Beaufort
+</word>
+<word pos="VAFIN" lemma="sein">
+ist
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="NE" lemma="unknown">
+Vincennes
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Prinz">
+Prinz
+</word>
+<word pos="VAFIN" lemma="werden">
+wird
+</word>
+<word pos="ADV" lemma="heute">
+heute
+</word>
+<word pos="KON" lemma="oder">
+oder
+</word>
+<word pos="ADV" lemma="morgen">
+morgen
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="PPER" lemma="er">
+ihm
+</word>
+<word pos="VVINF" lemma="kommen">
+kommen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Parlament">
+Parlament
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="ADV" lemma="hier">
+Hier
+</word>
+<word pos="VVFIN" lemma="verwandeln">
+verwandelte
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Lächeln">
+Lächeln
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinals
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="ein">
+einen
+</word>
+<word pos="NN" lemma="Ausdruck">
+Ausdruck
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NN" lemma="Haß">
+Haß
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELAT" lemma="d">
+dessen
+</word>
+<word pos="PPOSAT" lemma="sein">
+sein
+</word>
+<word pos="ADJA" lemma="freundlich">
+freundliches
+</word>
+<word pos="NN" lemma="Antlitz">
+Antlitz
+</word>
+<word pos="ADJD" lemma="unfähig">
+unfähig
+</word>
+<word pos="VVFIN" lemma="scheinen">
+schien
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="KON" lemma="und">
+Und
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Parlament">
+Parlament
+</word>
+<word pos="APPR" lemma="je">
+je
+</word>
+<word pos="ADV" lemma="nun">
+nun
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="wir">
+wir
+</word>
+<word pos="VAFIN" lemma="werden">
+werden
+</word>
+<word pos="VVINF" lemma="sehen">
+sehen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="was">
+was
+</word>
+<word pos="PPER" lemma="wir">
+wir
+</word>
+<word pos="APPR" lemma="aus">
+aus
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="Parlament">
+Parlament
+</word>
+<word pos="VVFIN" lemma="machen">
+machen
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PPER" lemma="wir">
+wir
+</word>
+<word pos="VAFIN" lemma="haben">
+haben
+</word>
+<word pos="NE" lemma="Orleans">
+Orleans
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="NE" lemma="unknown">
+Montargis
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="NN" lemma="O">
+O
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="VMFIN" lemma="wollen">
+will
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Zeit">
+Zeit
+</word>
+<word pos="PROAV" lemma="hierzu">
+hierzu
+</word>
+<word pos="VVINF" lemma="benützen">
+benützen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="doch">
+doch
+</word>
+<word pos="PDS" lemma="diejenigen">
+diejenigen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PWAT" lemma="welch">
+welche
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="schreien">
+schreien
+</word>
+<word pos="VVFIN" lemma="anfangen">
+anfingen
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="ADJD" lemma="nieder">
+Nieder
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="NE" lemma="unknown">
+Mazarin
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VAFIN" lemma="werden">
+werden
+</word>
+<word pos="ADV" lemma="zuletzt">
+zuletzt
+</word>
+<word pos="VVINF" lemma="ausrufen">
+ausrufen
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="ADJD" lemma="nieder">
+Nieder
+</word>
+<word pos="ADV" lemma="da">
+da
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="PIAT" lemma="all">
+all
+</word>
+<word pos="$(" lemma="'">
+'
+</word>
+<word pos="PDAT" lemma="dies">
+diesen
+</word>
+<word pos="NN" lemma="Leute">
+Leuten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="ein">
+einen
+</word>
+<word pos="APPR" lemma="nach">
+nach
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="PIS" lemma="ander">
+andern
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="NN" lemma="O">
+O
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VAFIN" lemma="sein">
+wäre
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="ADV" lemma="nur">
+nur
+</word>
+<word pos="PIAT" lemma="kein">
+kein
+</word>
+<word pos="NN" lemma="Ausländer">
+Ausländer
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VAFIN" lemma="sein">
+wäre
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="ADV" lemma="nur">
+nur
+</word>
+<word pos="NN" lemma="Franzose">
+Franzose
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="ADJA" lemma="edel">
+edler
+</word>
+<word pos="NN" lemma="Geburt">
+Geburt
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="PPER" lemma="wir">
+Wir
+</word>
+<word pos="VMFIN" lemma="wollen">
+wollen
+</word>
+<word pos="ADV" lemma="jetzt">
+jetzt
+</word>
+<word pos="VVINF" lemma="sehen">
+sehen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="was">
+was
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="PIAT" lemma="beide">
+beiden
+</word>
+<word pos="NN" lemma="Seite">
+Seiten
+</word>
+<word pos="VVFIN" lemma="geschehen">
+geschah
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="APPRART" lemma="am">
+Am
+</word>
+<word pos="ADJA" lemma="unknown">
+siebenten
+</word>
+<word pos="NN" lemma="Januar">
+Januar
+</word>
+<word pos="VAFIN" lemma="haben">
+hatten
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="CARD" lemma="siebenhundert">
+siebenhundert
+</word>
+<word pos="KON" lemma="bis">
+bis
+</word>
+<word pos="CARD" lemma="achthundert">
+achthundert
+</word>
+<word pos="NN" lemma="Kaufleute">
+Kaufleute
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NE" lemma="Paris">
+Paris
+</word>
+<word pos="APPR" lemma="aus">
+aus
+</word>
+<word pos="NN" lemma="Anlaß">
+Anlaß
+</word>
+<word pos="ART" lemma="ein">
+einer
+</word>
+<word pos="ADJA" lemma="neu">
+neuen
+</word>
+<word pos="NN" lemma="Steuer">
+Steuer
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+die
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Hauseigentümer">
+Hauseigentümern
+</word>
+<word pos="VVINF" lemma="auferlegen">
+auferlegen
+</word>
+<word pos="VMFIN" lemma="wollen">
+wollte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVPP" lemma="zusammenrotten">
+zusammengerottet
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="PROAV" lemma="dagegen">
+dagegen
+</word>
+<word pos="NN" lemma="Einspruch">
+Einspruch
+</word>
+<word pos="VVPP" lemma="tun">
+getan
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="VVFIN" lemma="schicken">
+schickten
+</word>
+<word pos="CARD" lemma="zehn">
+zehn
+</word>
+<word pos="APPR" lemma="aus">
+aus
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihrer
+</word>
+<word pos="NN" lemma="Mitte">
+Mitte
+</word>
+<word pos="PTKVZ" lemma="ab">
+ab
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihrem
+</word>
+<word pos="NN" lemma="Name">
+Namen
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="unknown">
+Herzoge
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NE" lemma="Orleans">
+Orleans
+</word>
+<word pos="VVFIN" lemma="sprechen">
+sprächen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+der
+</word>
+<word pos="APPR" lemma="nach">
+nach
+</word>
+<word pos="PPOSAT" lemma="sein">
+seiner
+</word>
+<word pos="NN" lemma="Gewohnheit">
+Gewohnheit
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Volksfreund">
+Volksfreund
+</word>
+<word pos="VVFIN" lemma="spielen">
+spielte
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="Herzog">
+Herzog
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NE" lemma="Orleans">
+Orleans
+</word>
+<word pos="VVFIN" lemma="lassen">
+ließ
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="PTKVZ" lemma="vor">
+vor
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="VVFIN" lemma="erklären">
+erklärten
+</word>
+<word pos="PPER" lemma="er">
+ihm
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="ADJD" lemma="entschlossen">
+entschlossen
+</word>
+<word pos="VAFIN" lemma="sein">
+wären
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="ADJA" lemma="neu">
+neue
+</word>
+<word pos="NN" lemma="Abgabe">
+Abgabe
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="entrichten">
+entrichten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="selbst">
+selbst
+</word>
+<word pos="KOUS" lemma="wenn">
+wenn
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Waffe">
+Waffen
+</word>
+<word pos="APPR" lemma="gegen">
+gegen
+</word>
+<word pos="PDS" lemma="diejenigen">
+diejenigen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="welch">
+welche
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="VVINF" lemma="beheben">
+beheben
+</word>
+<word pos="VMFIN" lemma="wollen">
+wollten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVINF" lemma="verteidigen">
+verteidigen
+</word>
+<word pos="VMFIN" lemma="müssen">
+müßten
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="Herzog">
+Herzog
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NE" lemma="Orleans">
+Orleans
+</word>
+<word pos="VVFIN" lemma="hören">
+hörte
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="ADJD" lemma="huldreich">
+huldreich
+</word>
+<word pos="PTKVZ" lemma="an">
+an
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="lassen">
+ließ
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="PIAT" lemma="einige">
+einige
+</word>
+<word pos="NN" lemma="Ermäßigung">
+Ermäßigung
+</word>
+<word pos="VVINF" lemma="hoffen">
+hoffen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="versprechen">
+versprach
+</word>
+<word pos="PPER" lemma="sie">
+ihnen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="VMFIN" lemma="wollen">
+wolle
+</word>
+<word pos="PROAV" lemma="deshalb">
+deshalb
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Königin">
+Königin
+</word>
+<word pos="VVINF" lemma="sprechen">
+sprechen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="entlassen">
+entließ
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="PPOSAT" lemma="sein">
+seinem
+</word>
+<word pos="ADJA" lemma="gewöhnlich">
+gewöhnlichen
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PIS" lemma="man">
+Man
+</word>
+<word pos="VAFIN" lemma="werden">
+wird
+</word>
+<word pos="VVINF" lemma="sehen">
+sehen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="APPRART" lemma="am">
+Am
+</word>
+<word pos="NN" lemma="Neunte">
+Neunten
+</word>
+<word pos="VVFIN" lemma="kommen">
+kamen
+</word>
+<word pos="ADV" lemma="auch">
+auch
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="unknown">
+Requeten-Meister
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinal
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Wortführer">
+Wortführer
+</word>
+<word pos="VVFIN" lemma="sprechen">
+sprach
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="PIAT" lemma="viel">
+viel
+</word>
+<word pos="NN" lemma="Festigkeit">
+Festigkeit
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="NN" lemma="Kühnheit">
+Kühnheit
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinal
+</word>
+<word pos="ADV" lemma="ganz">
+ganz
+</word>
+<word pos="ADJD" lemma="erstaunt">
+erstaunt
+</word>
+<word pos="PROAV" lemma="darüber">
+darüber
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PPER" lemma="er">
+Er
+</word>
+<word pos="VVFIN" lemma="verabschieden">
+verabschiedete
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="PDAT" lemma="derselbe">
+denselben
+</word>
+<word pos="NN" lemma="Wort">
+Worten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wie">
+wie
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Herzog">
+Herzog
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NE" lemma="Orleans">
+Orleans
+</word>
+<word pos="VVFIN" lemma="tun">
+tat
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPER" lemma="wir">
+Wir
+</word>
+<word pos="VMFIN" lemma="wollen">
+wollen
+</word>
+<word pos="VVINF" lemma="sehen">
+sehen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="KOUI" lemma="um">
+Um
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="sehen">
+sehen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VVFIN" lemma="berufen">
+berief
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="ADV" lemma="also">
+also
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Rat">
+Rat
+</word>
+<word pos="PTKVZ" lemma="zusammen">
+zusammen
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="lassen">
+ließ
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Finanzminister">
+Finanzminister
+</word>
+<word pos="NE" lemma="unknown">
+d'Emery
+</word>
+<word pos="VVINF" lemma="holen">
+holen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="APPR" lemma="gegen">
+Gegen
+</word>
+<word pos="NE" lemma="unknown">
+d'Emery
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Volk">
+Volk
+</word>
+<word pos="ADV" lemma="sehr">
+sehr
+</word>
+<word pos="VVPP" lemma="aufbringen">
+aufgebracht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="schon">
+schon
+</word>
+<word pos="PROAV" lemma="deshalb">
+deshalb
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="weil">
+weil
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="NN" lemma="Finanzminister">
+Finanzminister
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADV" lemma="dann">
+dann
+</word>
+<word pos="ADV" lemma="auch">
+auch
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="wir">
+wir
+</word>
+<word pos="VMFIN" lemma="müssen">
+müssen
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="ADV" lemma="wohl">
+wohl
+</word>
+<word pos="VVINF" lemma="sagen">
+sagen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="weil">
+weil
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="PIS" lemma="wenig">
+wenig
+</word>
+<word pos="VVPP" lemma="verdienen">
+verdient
+</word>
+<word pos="VAFIN" lemma="haben">
+hatte
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PIS" lemma="man">
+Man
+</word>
+<word pos="VVFIN" lemma="lassen">
+ließ
+</word>
+<word pos="PPER" lemma="er">
+ihn
+</word>
+<word pos="APPR" lemma="aus">
+aus
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="Rate">
+Rate
+</word>
+<word pos="VVINF" lemma="rufen">
+rufen
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="VVFIN" lemma="eilen">
+eilte
+</word>
+<word pos="ADV" lemma="ganz">
+ganz
+</word>
+<word pos="ADJD" lemma="blaß">
+blaß
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADJD" lemma="verstört">
+verstört
+</word>
+<word pos="PTKVZ" lemma="herbei">
+herbei
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="sagen">
+sagte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPOSAT" lemma="sein">
+sein
+</word>
+<word pos="NN" lemma="Sohn">
+Sohn
+</word>
+<word pos="VAFIN" lemma="sein">
+wäre
+</word>
+<word pos="APPR" lemma="an">
+an
+</word>
+<word pos="PDAT" lemma="dies">
+diesem
+</word>
+<word pos="NN" lemma="Tag">
+Tage
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="Platz">
+Platze
+</word>
+<word pos="APPR" lemma="vor">
+vor
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="unknown">
+Palais-Royal
+</word>
+<word pos="ADV" lemma="fast">
+fast
+</word>
+<word pos="VVPP" lemma="umbringen">
+umgebracht
+</word>
+<word pos="VAPP" lemma="werden">
+worden
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Volksmenge">
+Volksmenge
+</word>
+<word pos="VAFIN" lemma="sein">
+sei
+</word>
+<word pos="PPER" lemma="er">
+ihm
+</word>
+<word pos="ADJD" lemma="begegnet">
+begegnet
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VAFIN" lemma="haben">
+habe
+</word>
+<word pos="PPER" lemma="er">
+ihm
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Luxus">
+Luxus
+</word>
+<word pos="PPOSAT" lemma="sein">
+seiner
+</word>
+<word pos="NN" lemma="Gemahlin">
+Gemahlin
+</word>
+<word pos="VVPP" lemma="vorwerfen">
+vorgeworfen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="da">
+da
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="ART" lemma="ein">
+eine
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ADJA" lemma="rot">
+rotem
+</word>
+<word pos="NN" lemma="Samt">
+Samt
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ADJA" lemma="golden">
+goldenen
+</word>
+<word pos="NN" lemma="Franse|Fransen">
+Fransen
+</word>
+<word pos="ADJA" lemma="ausgeschmückt">
+ausgeschmückte
+</word>
+<word pos="NN" lemma="Wohnung">
+Wohnung
+</word>
+<word pos="VAFIN" lemma="haben">
+hätte
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="NE" lemma="unknown">
+D'Emerys
+</word>
+<word pos="NN" lemma="Sohn">
+Sohn
+</word>
+<word pos="VAFIN" lemma="sein">
+wäre
+</word>
+<word pos="ADV" lemma="fast">
+fast
+</word>
+<word pos="VVPP" lemma="erdrosseln">
+erdrosselt
+</word>
+<word pos="VAPP" lemma="werden">
+worden
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="denn">
+denn
+</word>
+<word pos="PIS" lemma="ein">
+einer
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Rebell">
+Rebellen
+</word>
+<word pos="VVFIN" lemma="bringen">
+brachte
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="NN" lemma="Vorschlag">
+Vorschlag
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="er">
+ihn
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="ADJD" lemma="lang">
+lang
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="würgen">
+würgen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="bis">
+bis
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Gold">
+Gold
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="welch">
+welches
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="ADJD" lemma="verschlungen">
+verschlungen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="wieder">
+wieder
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="VVPP" lemma="geben">
+gegeben
+</word>
+<word pos="VAFIN" lemma="haben">
+hätte
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="Rat">
+Rat
+</word>
+<word pos="VVFIN" lemma="entscheiden">
+entschied
+</word>
+<word pos="APPR" lemma="an">
+an
+</word>
+<word pos="PDAT" lemma="dies">
+diesem
+</word>
+<word pos="NN" lemma="Tag">
+Tage
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="denn">
+denn
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Finanzminister">
+Finanzminister
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="PDAT" lemma="dies">
+diesem
+</word>
+<word pos="NN" lemma="Vorfall">
+Vorfall
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="ADV" lemma="sehr">
+sehr
+</word>
+<word pos="VVPP" lemma="beschäftigen">
+beschäftigt
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOKOM" lemma="als">
+als
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="PPOSAT" lemma="sein">
+sein
+</word>
+<word pos="NN" lemma="Geist">
+Geist
+</word>
+<word pos="ADJD" lemma="frei">
+frei
+</word>
+<word pos="VAINF" lemma="sein">
+sein
+</word>
+<word pos="VMFIN" lemma="können">
+konnte
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="APPRART" lemma="am">
+Am
+</word>
+<word pos="ADJA" lemma="folgend">
+folgenden
+</word>
+<word pos="NN" lemma="Morgen">
+Morgen
+</word>
+<word pos="VVFIN" lemma="werd">
+ward
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="ADJA" lemma="erst">
+erste
+</word>
+<word pos="NN" lemma="Präsident">
+Präsident
+</word>
+<word pos="NE" lemma="Mathieu">
+Mathieu
+</word>
+<word pos="NN" lemma="unknown">
+Molé
+</word>
+<word pos="ADV" lemma="gleichfalls">
+gleichfalls
+</word>
+<word pos="VVPP" lemma="angreifen">
+angegriffen
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Volk">
+Volk
+</word>
+<word pos="VVFIN" lemma="bedrohen">
+bedrohte
+</word>
+<word pos="PPER" lemma="er">
+ihn
+</word>
+<word pos="APPR" lemma="ob">
+ob
+</word>
+<word pos="PIAT" lemma="all">
+all
+</word>
+<word pos="$(" lemma="'">
+'
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="Böse">
+Bösen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+das
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="PPER" lemma="er">
+ihm
+</word>
+<word pos="VVINF" lemma="zufügen">
+zufügen
+</word>
+<word pos="VMFIN" lemma="wollen">
+wollte
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="ADV" lemma="allein">
+allein
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="ADJA" lemma="erst">
+erste
+</word>
+<word pos="NN" lemma="Präsident">
+Präsident
+</word>
+<word pos="VAFIN" lemma="haben">
+hatte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUI" lemma="ohne">
+ohne
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Fassung">
+Fassung
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="verlieren">
+verlieren
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="APPR" lemma="ohne">
+ohne
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="verwundern">
+verwundern
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ADJA" lemma="gewohnt">
+gewohnter
+</word>
+<word pos="NN" lemma="Ruhe">
+Ruhe
+</word>
+<word pos="VVPP" lemma="antworten">
+geantwortet
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="VMFIN" lemma="wollen">
+wolle
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wenn">
+wenn
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Unruhestifter">
+Unruhestifter
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="VVINF" lemma="gehorchen">
+gehorchen
+</word>
+<word pos="VAFIN" lemma="werden">
+würden
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="ADJA" lemma="öffentlich">
+öffentlichen
+</word>
+<word pos="NN" lemma="Platz">
+Plätzen
+</word>
+<word pos="NN" lemma="Galgen">
+Galgen
+</word>
+<word pos="VVINF" lemma="errichten">
+errichten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADV" lemma="sogleich">
+sogleich
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="ADJA" lemma="widerspenstig">
+Widerspenstigen
+</word>
+<word pos="NN" lemma="unknown">
+aufhenken
+</word>
+<word pos="VVFIN" lemma="lassen">
+lassen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="KON" lemma="aber">
+Aber
+</word>
+<word pos="PDS" lemma="jen">
+jene
+</word>
+<word pos="VVFIN" lemma="verharren">
+verharrten
+</word>
+<word pos="ADJD" lemma="fortwährend">
+fortwährend
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihrem
+</word>
+<word pos="ADJA" lemma="starr">
+starren
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADJA" lemma="verwegen">
+verwegenen
+</word>
+<word pos="NN" lemma="Trotz">
+Trotze
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PDS" lemma="d">
+Das
+</word>
+<word pos="VAFIN" lemma="sein">
+ist
+</word>
+<word pos="ADV" lemma="noch">
+noch
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="PIS" lemma="alle">
+alles
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="KON" lemma="als">
+Als
+</word>
+<word pos="APPRART" lemma="am">
+am
+</word>
+<word pos="NN" lemma="Erste">
+Ersten
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Königin">
+Königin
+</word>
+<word pos="APPR" lemma="nach">
+nach
+</word>
+<word pos="NN" lemma="Notre-Dame">
+Notre-Dame
+</word>
+<word pos="VVFIN" lemma="gehen">
+ging
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PWS" lemma="was">
+was
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="ADJD" lemma="regelmäßig">
+regelmäßig
+</word>
+<word pos="PIAT" lemma="jed">
+jeden
+</word>
+<word pos="NN" lemma="Sonnabend">
+Sonnabend
+</word>
+<word pos="VVFIN" lemma="tun">
+tat
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="folgen">
+folgten
+</word>
+<word pos="PPER" lemma="ihr">
+ihr
+</word>
+<word pos="APPR" lemma="über">
+über
+</word>
+<word pos="CARD" lemma="zweihundert">
+zweihundert
+</word>
+<word pos="NN" lemma="Weib">
+Weiber
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="welch">
+welche
+</word>
+<word pos="PPER" lemma="ihr">
+ihr
+</word>
+<word pos="VVFIN" lemma="zurufen">
+zuriefen
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="NN" lemma="Gerechtigkeit">
+Gerechtigkeit
+</word>
+<word pos="VVFIN" lemma="fordern">
+forderten
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PPER" lemma="Sie|sie|sie">
+Sie
+</word>
+<word pos="VAFIN" lemma="haben">
+hatten
+</word>
+<word pos="ADV" lemma="zwar">
+zwar
+</word>
+<word pos="PIAT" lemma="kein">
+keine
+</word>
+<word pos="ADJA" lemma="bös|böse">
+böse
+</word>
+<word pos="NN" lemma="Absicht">
+Absicht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="da">
+da
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="ADJD" lemma="bloß">
+bloß
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihren
+</word>
+<word pos="NN" lemma="Fuß">
+Füßen
+</word>
+<word pos="VVFIN" lemma="werfen">
+werfen
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihr
+</word>
+<word pos="NN" lemma="Mitleid">
+Mitleid
+</word>
+<word pos="VVINF" lemma="erregen">
+erregen
+</word>
+<word pos="VMFIN" lemma="wollen">
+wollten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="allein">
+allein
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Wache|Wachen">
+Wachen
+</word>
+<word pos="VVFIN" lemma="verhindern">
+verhinderten
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="PROAV" lemma="daran">
+daran
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Königin">
+Königin
+</word>
+<word pos="VVFIN" lemma="schreiten">
+schritt
+</word>
+<word pos="PTKVZ" lemma="vorüber">
+vorüber
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUI" lemma="ohne">
+ohne
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihr
+</word>
+<word pos="NN" lemma="unknown">
+Gewimmer
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="achten">
+achten
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ADV" lemma="nachmittags">
+Nachmittags
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="ADV" lemma="abermals">
+abermals
+</word>
+<word pos="NN" lemma="Ratssitzung">
+Ratssitzung
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PWAV" lemma="worin">
+worin
+</word>
+<word pos="VVPP" lemma="beschließen">
+beschlossen
+</word>
+<word pos="VAFIN" lemma="werden">
+wurde
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="ADJA" lemma="königlich">
+königliche
+</word>
+<word pos="NN" lemma="Autorität">
+Autorität
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="NN" lemma="Kraft">
+Kraft
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="erhalten">
+erhalten
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PROAV" lemma="demgemäß">
+demgemäß
+</word>
+<word pos="VAFIN" lemma="werden">
+wurde
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Parlament">
+Parlament
+</word>
+<word pos="APPR" lemma="für">
+für
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="ADJA" lemma="nah">
+nächsten
+</word>
+<word pos="NN" lemma="Tag">
+Tag
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Zwölfte">
+Zwölften
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="unknown">
+zusammenberufen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="APPR" lemma="an">
+An
+</word>
+<word pos="PDAT" lemma="dies">
+diesem
+</word>
+<word pos="NN" lemma="Tag">
+Tage
+</word>
+<word pos="ADV" lemma="nun">
+nun
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="an">
+an
+</word>
+<word pos="PRELAT" lemma="d">
+dessen
+</word>
+<word pos="NN" lemma="Abend">
+Abend
+</word>
+<word pos="PPER" lemma="wir">
+wir
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="ADJA" lemma="neu">
+neue
+</word>
+<word pos="NN" lemma="Geschichte">
+Geschichte
+</word>
+<word pos="VVFIN" lemma="eröffnen">
+eröffnen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="lassen">
+ließ
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="König">
+König
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+der
+</word>
+<word pos="ADV" lemma="damals">
+damals
+</word>
+<word pos="ADV" lemma="erst">
+erst
+</word>
+<word pos="CARD" lemma="zehn">
+zehn
+</word>
+<word pos="NN" lemma="Jahr">
+Jahre
+</word>
+<word pos="ADJD" lemma="alt">
+alt
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADV" lemma="eben">
+eben
+</word>
+<word pos="VVPP" lemma="blättern">
+geblättert
+</word>
+<word pos="VAFIN" lemma="haben">
+hatte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="NN" lemma="unknown">
+Dankgebete
+</word>
+<word pos="APPR" lemma="für">
+für
+</word>
+<word pos="PPOSAT" lemma="sein">
+seine
+</word>
+<word pos="NN" lemma="Genesung">
+Genesung
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="NN" lemma="Notre-Dame">
+Notre-Dame
+</word>
+<word pos="VVINF" lemma="verrichten">
+verrichten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPOSAT" lemma="sein">
+seine
+</word>
+<word pos="NN" lemma="Garde">
+Garden
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="NN" lemma="Schweizer">
+Schweizer
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="NN" lemma="Musketier">
+Musketiere
+</word>
+<word pos="APPR" lemma="unter">
+unter
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Waffe">
+Waffen
+</word>
+<word pos="VVFIN" lemma="treten">
+treten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="ADV" lemma="rings">
+rings
+</word>
+<word pos="APPR" lemma="um">
+um
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="unknown">
+Palais-Royal
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Quai">
+Quais
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="APPRART" lemma="am">
+am
+</word>
+<word pos="NN" lemma="unknown">
+Pontneuf
+</word>
+<word pos="VVFIN" lemma="aufstellen">
+aufstellen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="APPR" lemma="nach">
+nach
+</word>
+<word pos="NN" lemma="Anhörung">
+Anhörung
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Messe">
+Messe
+</word>
+<word pos="VVFIN" lemma="begeben">
+begab
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Parlament">
+Parlament
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PWAV" lemma="wo">
+wo
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="ein">
+einer
+</word>
+<word pos="ADJA" lemma="unvorbereitet">
+unvorbereiteten
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADJA" lemma="feierlich">
+feierlichen
+</word>
+<word pos="NN" lemma="Sitzung">
+Sitzung
+</word>
+<word pos="PPOSAT" lemma="sein">
+seine
+</word>
+<word pos="ADJA" lemma="früh">
+früheren
+</word>
+<word pos="NN" lemma="Edikt">
+Edikte
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="ADJD" lemma="bloß">
+bloß
+</word>
+<word pos="VVFIN" lemma="bestätigen">
+bestätigte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="sondern">
+sondern
+</word>
+<word pos="ADV" lemma="auch">
+auch
+</word>
+<word pos="ADV" lemma="noch">
+noch
+</word>
+<word pos="CARD" lemma="fünf">
+fünf
+</word>
+<word pos="KON" lemma="bis">
+bis
+</word>
+<word pos="CARD" lemma="sechs">
+sechs
+</word>
+<word pos="ADJA" lemma="neu">
+neue
+</word>
+<word pos="VVFIN" lemma="erlassen">
+erließ
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="PDS" lemma="d">
+denen
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="PIS" lemma="ein">
+einen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="sagen">
+sagt
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinal
+</word>
+<word pos="NN" lemma="unknown">
+Retz
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADJD" lemma="verderblich">
+verderblicher
+</word>
+<word pos="VAFIN" lemma="sein">
+waren
+</word>
+<word pos="KOKOM" lemma="als">
+als
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="PIS" lemma="ander">
+andern
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PROAV" lemma="demzufolge">
+Demzufolge
+</word>
+<word pos="VVFIN" lemma="erheben">
+erhob
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="ADV" lemma="dann">
+dann
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="ADJA" lemma="erst">
+erste
+</word>
+<word pos="NN" lemma="Präsident">
+Präsident
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+der
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wie">
+wie
+</word>
+<word pos="PPER" lemma="wir">
+wir
+</word>
+<word pos="VVFIN" lemma="sehen">
+sahen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="unknown">
+tagszuvor
+</word>
+<word pos="ADV" lemma="noch">
+noch
+</word>
+<word pos="APPR" lemma="für">
+für
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Hof">
+Hof
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="sprechen">
+sprach
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="ADV" lemma="sehr">
+sehr
+</word>
+<word pos="ADJD" lemma="kühn">
+kühn
+</word>
+<word pos="APPR" lemma="aus">
+aus
+</word>
+<word pos="APPR" lemma="gegen">
+gegen
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Art">
+Art
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="NN" lemma="Weise">
+Weise
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="König">
+König
+</word>
+<word pos="APPR" lemma="nach">
+nach
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="unknown">
+Palaste
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="führen">
+führen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUI" lemma="um">
+um
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Freiheit">
+Freiheit
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Stimme|Stimmen">
+Stimmen
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="überrumpeln">
+überrumpeln
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVIZU" lemma="abnötigen">
+abzunötigen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="APPR" lemma="mit">
+Mit
+</word>
+<word pos="ADJA" lemma="besonder">
+besonderer
+</word>
+<word pos="NN" lemma="Heftigkeit">
+Heftigkeit
+</word>
+<word pos="KON" lemma="aber">
+aber
+</word>
+<word pos="VVFIN" lemma="eifern">
+eiferten
+</word>
+<word pos="APPR" lemma="gegen">
+gegen
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="ADJA" lemma="neu">
+neuen
+</word>
+<word pos="NN" lemma="Auflage">
+Auflagen
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Präsident">
+Präsident
+</word>
+<word pos="NE" lemma="unknown">
+Blancmesnil
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Rat">
+Rat
+</word>
+<word pos="NN" lemma="unknown">
+Broussel
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="KOUS" lemma="nachdem">
+Nachdem
+</word>
+<word pos="PDS" lemma="dies">
+diese
+</word>
+<word pos="NN" lemma="Verordnung">
+Verordnungen
+</word>
+<word pos="VVPP" lemma="erlassen">
+erlassen
+</word>
+<word pos="VAPP" lemma="werden">
+worden
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="kehren">
+kehrte
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="König">
+König
+</word>
+<word pos="ADV" lemma="wieder">
+wieder
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="unknown">
+Palais-Royal
+</word>
+<word pos="PTKVZ" lemma="zurück">
+zurück
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="ART" lemma="ein">
+eine
+</word>
+<word pos="ADJA" lemma="groß">
+große
+</word>
+<word pos="NN" lemma="Volksmenge">
+Volksmenge
+</word>
+<word pos="VVFIN" lemma="stehen">
+stand
+</word>
+<word pos="APPR" lemma="an">
+an
+</word>
+<word pos="PPOSAT" lemma="sein">
+seinem
+</word>
+<word pos="NN" lemma="Weg">
+Wege
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="KOUS" lemma="da">
+da
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="ADV" lemma="aber">
+aber
+</word>
+<word pos="VVFIN" lemma="wissen">
+wußte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="APPR" lemma="aus">
+aus
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="Parlament">
+Parlament
+</word>
+<word pos="VVFIN" lemma="kommen">
+komme
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUI" lemma="ohne">
+ohne
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="wissen">
+wissen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="ob">
+ob
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="Volk">
+Volke
+</word>
+<word pos="NN" lemma="Gerechtigkeit">
+Gerechtigkeit
+</word>
+<word pos="VVINF" lemma="widerfahren">
+widerfahren
+</word>
+<word pos="VVFIN" lemma="lassen">
+ließ
+</word>
+<word pos="KON" lemma="oder">
+oder
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="VVFIN" lemma="lassen">
+ließ
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="PPOSAT" lemma="sein">
+seinem
+</word>
+<word pos="NN" lemma="Weg">
+Wege
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="ADJA" lemma="einzig">
+einziger
+</word>
+<word pos="NN" lemma="Jubelruf">
+Jubelruf
+</word>
+<word pos="VVINF" lemma="vernehmen">
+vernehmen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUI" lemma="um">
+um
+</word>
+<word pos="PPER" lemma="er">
+ihm
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="PPOSAT" lemma="sein">
+seiner
+</word>
+<word pos="NN" lemma="Genesung">
+Genesung
+</word>
+<word pos="NN" lemma="Glück">
+Glück
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="wünschen">
+wünschen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="APPRART" lemma="im">
+Im
+</word>
+<word pos="NN" lemma="Gegenteil">
+Gegenteil
+</word>
+<word pos="VAFIN" lemma="sein">
+waren
+</word>
+<word pos="PIAT" lemma="alle">
+alle
+</word>
+<word pos="NN" lemma="Gesicht">
+Gesichter
+</word>
+<word pos="ADJD" lemma="finster">
+finster
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="bekümmern">
+bekümmert
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="PIS" lemma="einige">
+einige
+</word>
+<word pos="ADV" lemma="sogar">
+sogar
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Drohung">
+Drohungen
+</word>
+<word pos="ADJD" lemma="voll">
+voll
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Die
+</word>
+<word pos="NN" lemma="Truppe">
+Truppen
+</word>
+<word pos="VVFIN" lemma="bleiben">
+blieben
+</word>
+<word pos="APPR" lemma="ungeachtet">
+ungeachtet
+</word>
+<word pos="PPOSAT" lemma="sein">
+seiner
+</word>
+<word pos="NN" lemma="unknown">
+Zurückkunft
+</word>
+<word pos="APPRART" lemma="am">
+am
+</word>
+<word pos="NN" lemma="Platz">
+Platze
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="VVFIN" lemma="besorgen">
+besorgte
+</word>
+<word pos="ART" lemma="ein">
+einen
+</word>
+<word pos="NN" lemma="Aufruhr">
+Aufruhr
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wenn">
+wenn
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Resultat">
+Resultat
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="Parlament">
+Parlaments
+</word>
+<word pos="VVPP" lemma="bekennen">
+bekannt
+</word>
+<word pos="VAFIN" lemma="werden">
+wurde
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADJD" lemma="wirklich">
+wirklich
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="kaum">
+kaum
+</word>
+<word pos="VVFIN" lemma="verbreiten">
+verbreitete
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Gerücht">
+Gerücht
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Stadt">
+Stadt
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="König">
+König
+</word>
+<word pos="VAFIN" lemma="haben">
+habe
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Steuer">
+Steuern
+</word>
+<word pos="ADV" lemma="noch">
+noch
+</word>
+<word pos="ADJD" lemma="vermehrt">
+vermehrt
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUI" lemma="statt">
+statt
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="verringern">
+verringern
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="VVFIN" lemma="bilden">
+bildeten
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="NN" lemma="Gruppe">
+Gruppen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="VVFIN" lemma="rufen">
+rief
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ADJA" lemma="laut">
+lautem
+</word>
+<word pos="NN" lemma="Geschrei">
+Geschrei
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="ADJD" lemma="nieder">
+Nieder
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="NE" lemma="unknown">
+Mazarin
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="VVFIN" lemma="leben">
+lebe
+</word>
+<word pos="NN" lemma="unknown">
+Broussel
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="VVFIN" lemma="leben">
+lebe
+</word>
+<word pos="NE" lemma="unknown">
+Blancmesnil
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="KON" lemma="denn">
+denn
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Volk">
+Volk
+</word>
+<word pos="VVFIN" lemma="erfahren">
+erfuhr
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="PDAT" lemma="dies">
+diese
+</word>
+<word pos="PIAT" lemma="beide">
+beiden
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="PPOSAT" lemma="sein">
+seinen
+</word>
+<word pos="NN" lemma="Gunst">
+Gunsten
+</word>
+<word pos="VVPP" lemma="sprechen">
+gesprochen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="KOUS" lemma="obwohl">
+obwohl
+</word>
+<word pos="PPOSAT" lemma="ihr">
+ihre
+</word>
+<word pos="NN" lemma="Beredsamkeit">
+Beredsamkeit
+</word>
+<word pos="ADJD" lemma="fruchtlos">
+fruchtlos
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="VVFIN" lemma="wissen">
+wußte
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="PPER" lemma="sie">
+ihnen
+</word>
+<word pos="ADV" lemma="doch">
+doch
+</word>
+<word pos="PROAV" lemma="dafür">
+dafür
+</word>
+<word pos="PIAT" lemma="kein">
+keinen
+</word>
+<word pos="ADJA" lemma="gering">
+geringeren
+</word>
+<word pos="NN" lemma="Dank">
+Dank
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Die
+</word>
+<word pos="NN" lemma="Unruhe">
+Unruhe
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="d">
+den
+</word>
+<word pos="NN" lemma="Straße">
+Straßen
+</word>
+<word pos="VVFIN" lemma="nehmen">
+nahm
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="NN" lemma="Minute">
+Minute
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="NN" lemma="Minute">
+Minute
+</word>
+<word pos="PTKVZ" lemma="zu">
+zu
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinal
+</word>
+<word pos="VVFIN" lemma="erheben">
+erhob
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="ADV" lemma="einmal">
+einmal
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ADJA" lemma="unknown">
+halbgerunzelter
+</word>
+<word pos="NN" lemma="Stirn">
+Stirn
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NE" lemma="Haupt">
+Haupt
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOKOM" lemma="als">
+als
+</word>
+<word pos="VAFIN" lemma="haben">
+hätte
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="ART" lemma="ein">
+einen
+</word>
+<word pos="NN" lemma="Entschluß">
+Entschluß
+</word>
+<word pos="VVPP" lemma="fassen">
+gefaßt
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="richten">
+richtete
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Auge">
+Augen
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="ART" lemma="ein">
+eine
+</word>
+<word pos="ADJA" lemma="ungeheuer">
+ungeheure
+</word>
+<word pos="NN" lemma="Wanduhr">
+Wanduhr
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+die
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="CARD" lemma="sechs">
+sechs
+</word>
+<word pos="NN" lemma="Uhr">
+Uhr
+</word>
+<word pos="VVFIN" lemma="zeigen">
+zeigte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="KOUS" lemma="indem">
+indem
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="PIS" lemma="ein">
+eine
+</word>
+<word pos="APPRART" lemma="im">
+im
+</word>
+<word pos="NN" lemma="Bereich">
+Bereich
+</word>
+<word pos="PPOSAT" lemma="sein">
+seiner
+</word>
+<word pos="NN" lemma="Hand">
+Hand
+</word>
+<word pos="ADJA" lemma="liegend">
+liegende
+</word>
+<word pos="NN" lemma="Pfeife">
+Pfeife
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="ADJA" lemma="vergoldet">
+vergoldetem
+</word>
+<word pos="NN" lemma="Silber">
+Silber
+</word>
+<word pos="APPRART" lemma="vom">
+vom
+</word>
+<word pos="NN" lemma="Tisch">
+Tische
+</word>
+<word pos="VVFIN" lemma="nehmen">
+nahm
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VVFIN" lemma="pfeifen">
+pfiff
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="ADJA" lemma="wiederholt">
+wiederholtem
+</word>
+<word pos="NN" lemma="Mal">
+Male
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ADV" lemma="da">
+Da
+</word>
+<word pos="VVFIN" lemma="öffnen">
+öffnete
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="ADJD" lemma="geräuschlos">
+geräuschlos
+</word>
+<word pos="ART" lemma="ein">
+eine
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Tapete">
+Tapete
+</word>
+<word pos="ADJA" lemma="verborgen">
+verborgene
+</word>
+<word pos="NN" lemma="Türe">
+Türe
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="ADJA" lemma="schwarzgekleidet">
+schwarzgekleideter
+</word>
+<word pos="NN" lemma="Mann">
+Mann
+</word>
+<word pos="VVFIN" lemma="treten">
+trat
+</word>
+<word pos="PTKVZ" lemma="hervor">
+hervor
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="bleiben">
+blieb
+</word>
+<word pos="APPR" lemma="hinter">
+hinter
+</word>
+<word pos="ART" lemma="d">
+dem
+</word>
+<word pos="NN" lemma="Stuhl">
+Stuhle
+</word>
+<word pos="VVINF" lemma="stehen">
+stehen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="NE" lemma="unknown">
+Bernouin
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VVFIN" lemma="sprechen">
+sprach
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinal
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="ohne">
+ohne
+</word>
+<word pos="KOUS" lemma="daß">
+daß
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="PRF" lemma="er|es|sie">
+sich
+</word>
+<word pos="ADJD" lemma="unknown">
+umwandte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="denn">
+denn
+</word>
+<word pos="KOUS" lemma="da">
+da
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="ADV" lemma="zweimal">
+zweimal
+</word>
+<word pos="VVPP" lemma="pfeifen">
+gepfiffen
+</word>
+<word pos="VAFIN" lemma="haben">
+hatte
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="VVFIN" lemma="wissen">
+wußte
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="ADV" lemma="schon">
+schon
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="VMFIN" lemma="müssen">
+müsse
+</word>
+<word pos="PPOSAT" lemma="sein">
+sein
+</word>
+<word pos="NN" lemma="Kammerdiener">
+Kammerdiener
+</word>
+<word pos="VAINF" lemma="sein">
+sein
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PWS" lemma="welch">
+welche
+</word>
+<word pos="NN" lemma="Musketier">
+Musketiere
+</word>
+<word pos="VAFIN" lemma="sein">
+sind
+</word>
+<word pos="APPRART" lemma="im">
+im
+</word>
+<word pos="NN" lemma="Palast">
+Palast
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Wache">
+Wache
+</word>
+<word pos="$." lemma="?">
+?
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="NN" lemma="Monseigneur">
+Monseigneur
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="ADJA" lemma="schwarz">
+schwarzen
+</word>
+<word pos="NN" lemma="Musketier">
+Musketiere
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PRELS" lemma="welch">
+Welche
+</word>
+<word pos="NN" lemma="unknown">
+Kompagnie
+</word>
+<word pos="$." lemma="?">
+?
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="ART" lemma="d">
+Die
+</word>
+<word pos="NN" lemma="unknown">
+Kompagnie
+</word>
+<word pos="NE" lemma="unknown">
+Tréville
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="VVFIN" lemma="stehen">
+Steht
+</word>
+<word pos="ADV" lemma="etwa">
+etwa
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="NN" lemma="Offizier">
+Offizier
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="unknown">
+Kompagnie
+</word>
+<word pos="APPRART" lemma="im">
+im
+</word>
+<word pos="NN" lemma="unknown">
+Vorgemach
+</word>
+<word pos="$." lemma="?">
+?
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="Leutnant">
+Leutnant
+</word>
+<word pos="NE" lemma="unknown">
+d'Artagnan
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="ART" lemma="eine">
+Ein
+</word>
+<word pos="NN" lemma="unknown">
+Vertrauenswürdiger
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="ADJD" lemma="wahr">
+wahr
+</word>
+<word pos="$." lemma="?">
+?
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="NN" lemma="Ja">
+Ja
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="NN" lemma="Monseigneur">
+Monseigneur
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="NN" lemma="Ruf">
+Rufe
+</word>
+<word pos="PPER" lemma="ich">
+mir
+</word>
+<word pos="NN" lemma="Herr">
+Herrn
+</word>
+<word pos="NE" lemma="unknown">
+d'Artagnan
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="Kammerdiener">
+Kammerdiener
+</word>
+<word pos="VVFIN" lemma="gehen">
+ging
+</word>
+<word pos="ADV" lemma="diesmal">
+diesmal
+</word>
+<word pos="APPR" lemma="durch">
+durch
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Mitteltür">
+Mitteltür
+</word>
+<word pos="PTKVZ" lemma="ab">
+ab
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADV" lemma="zwar">
+zwar
+</word>
+<word pos="ADV" lemma="immer">
+immer
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="ADJD" lemma="still">
+still
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADJD" lemma="schweigsam">
+schweigsam
+</word>
+<word pos="KOKOM" lemma="wie">
+wie
+</word>
+<word pos="ADV" lemma="vorher">
+vorher
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PIS" lemma="man">
+Man
+</word>
+<word pos="VAFIN" lemma="haben">
+hätte
+</word>
+<word pos="VVINF" lemma="glauben">
+glauben
+</word>
+<word pos="VMINF" lemma="mögen">
+mögen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="VAFIN" lemma="sein">
+sei
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="NN" lemma="Schatten">
+Schatten
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ADV" lemma="bald">
+Bald
+</word>
+<word pos="PROAV" lemma="darauf">
+darauf
+</word>
+<word pos="VVFIN" lemma="gehen">
+ging
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Türe">
+Türe
+</word>
+<word pos="ADV" lemma="wieder">
+wieder
+</word>
+<word pos="PTKVZ" lemma="auf">
+auf
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="NN" lemma="Herr">
+Herr
+</word>
+<word pos="NE" lemma="unknown">
+d'Artagnan
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VVFIN" lemma="sprechen">
+sprach
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Kammerdiener">
+Kammerdiener
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="eine">
+Ein
+</word>
+<word pos="NN" lemma="Offizier">
+Offizier
+</word>
+<word pos="VVFIN" lemma="treten">
+trat
+</word>
+<word pos="PTKVZ" lemma="ein">
+ein
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="PPER" lemma="es">
+Es
+</word>
+<word pos="VAFIN" lemma="sein">
+war
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="NN" lemma="Mann">
+Mann
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="CARD" lemma="neununddreißig">
+neununddreißig
+</word>
+<word pos="KON" lemma="bis">
+bis
+</word>
+<word pos="CARD" lemma="vierzig">
+vierzig
+</word>
+<word pos="NN" lemma="Jahr">
+Jahren
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="von">
+von
+</word>
+<word pos="ADJA" lemma="klein">
+kleinem
+</word>
+<word pos="NN" lemma="unknown">
+Wuchse
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="doch">
+doch
+</word>
+<word pos="ADJD" lemma="gut">
+gut
+</word>
+<word pos="VVPP" lemma="bauen">
+gebaut
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ART" lemma="ein">
+einem
+</word>
+<word pos="ADJA" lemma="lebhaft">
+lebhaften
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADJA" lemma="geistvoll">
+geistvollen
+</word>
+<word pos="NN" lemma="Auge">
+Auge
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="ADJA" lemma="schwarz">
+schwarzem
+</word>
+<word pos="NN" lemma="Bart">
+Bart
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="NN" lemma="Haar|Haaren">
+Haaren
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PRELS" lemma="d">
+die
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="ergrauen">
+ergrauen
+</word>
+<word pos="VVFIN" lemma="beginnen">
+begannen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wie">
+wie
+</word>
+<word pos="PDS" lemma="d">
+das
+</word>
+<word pos="ADV" lemma="immer">
+immer
+</word>
+<word pos="VVFIN" lemma="geschehen">
+geschieht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wenn">
+wenn
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Leben">
+Leben
+</word>
+<word pos="PTKA" lemma="zu">
+zu
+</word>
+<word pos="ADJD" lemma="gut">
+gut
+</word>
+<word pos="KON" lemma="oder">
+oder
+</word>
+<word pos="PTKA" lemma="zu">
+zu
+</word>
+<word pos="ADJD" lemma="schlecht">
+schlecht
+</word>
+<word pos="VVPP" lemma="genießen">
+genossen
+</word>
+<word pos="VAFIN" lemma="haben">
+hat
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="ADV" lemma="zumal">
+zumal
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KOUS" lemma="wenn">
+wenn
+</word>
+<word pos="PIS" lemma="man">
+man
+</word>
+<word pos="ADJD" lemma="stark">
+stark
+</word>
+<word pos="ADJA" lemma="braun">
+braune
+</word>
+<word pos="NN" lemma="Haar">
+Haare
+</word>
+<word pos="VAFIN" lemma="haben">
+hat
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="NE" lemma="unknown">
+D'Artagnan
+</word>
+<word pos="VVFIN" lemma="treten">
+trat
+</word>
+<word pos="CARD" lemma="vier">
+vier
+</word>
+<word pos="NN" lemma="Schritt">
+Schritte
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Kabinett">
+Kabinett
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="bleiben">
+blieb
+</word>
+<word pos="APPR" lemma="in">
+in
+</word>
+<word pos="ADJD" lemma="ehrfurchtsvoll">
+ehrfurchtsvoller
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="doch">
+doch
+</word>
+<word pos="ADJA" lemma="würdig">
+würdiger
+</word>
+<word pos="NN" lemma="Haltung">
+Haltung
+</word>
+<word pos="VVFIN" lemma="stehen">
+stehen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="ART" lemma="d">
+Der
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinal
+</word>
+<word pos="VVFIN" lemma="richten">
+richtete
+</word>
+<word pos="PPOSAT" lemma="sein">
+sein
+</word>
+<word pos="ADV" lemma="mehr">
+mehr
+</word>
+<word pos="ADJA" lemma="schlau">
+schlaues
+</word>
+<word pos="KON" lemma="als">
+als
+</word>
+<word pos="ADJA" lemma="durchdringend">
+durchdringendes
+</word>
+<word pos="NN" lemma="Auge">
+Auge
+</word>
+<word pos="APPR" lemma="auf">
+auf
+</word>
+<word pos="PPER" lemma="er">
+ihn
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VVFIN" lemma="prüfen">
+prüfte
+</word>
+<word pos="PPER" lemma="er">
+ihn
+</word>
+<word pos="ADJD" lemma="aufmerksam">
+aufmerksam
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="ADV" lemma="dann">
+dann
+</word>
+<word pos="VVFIN" lemma="sprechen">
+sprach
+</word>
+<word pos="PPER" lemma="er">
+er
+</word>
+<word pos="APPR" lemma="nach">
+nach
+</word>
+<word pos="PIAT" lemma="einige">
+einigen
+</word>
+<word pos="NN" lemma="Sekund|Sekunde">
+Sekunden
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="Schweigen">
+Schweigens
+</word>
+<word pos="$." lemma=":">
+:
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPER" lemma="ihr">
+Ihr
+</word>
+<word pos="VAFIN" lemma="sein">
+seid
+</word>
+<word pos="NN" lemma="Herr">
+Herr
+</word>
+<word pos="NE" lemma="unknown">
+d'Artagnan
+</word>
+<word pos="$." lemma="?">
+?
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPER" lemma="ich">
+Ich
+</word>
+<word pos="VAFIN" lemma="sein">
+bin
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADJA" lemma="gnädig">
+gnädigster
+</word>
+<word pos="NN" lemma="Herr">
+Herr
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VVFIN" lemma="entgegnen">
+entgegnete
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Offizier">
+Offizier
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPOSAT" lemma="mein">
+Mein
+</word>
+<word pos="NN" lemma="Herr">
+Herr
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VVFIN" lemma="sprechen">
+sprach
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Kardinal">
+Kardinal
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPER" lemma="ihr">
+Ihr
+</word>
+<word pos="VAFIN" lemma="werden">
+werdet
+</word>
+<word pos="ADV" lemma="jetzt">
+jetzt
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="PPER" lemma="ich">
+mir
+</word>
+<word pos="VVINF" lemma="gehen">
+gehen
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="oder">
+oder
+</word>
+<word pos="ADV" lemma="vielmehr">
+vielmehr
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="VMFIN" lemma="wollen">
+will
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="PRF" lemma="ihr">
+Euch
+</word>
+<word pos="VVINF" lemma="gehen">
+gehen
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPER" lemma="ich">
+Ich
+</word>
+<word pos="VVFIN" lemma="stehen">
+stehe
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="NN" lemma="Befehl">
+Befehl
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADJA" lemma="gnädig">
+gnädigster
+</word>
+<word pos="NN" lemma="Herr">
+Herr
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VVFIN" lemma="antworten">
+antwortete
+</word>
+<word pos="NE" lemma="unknown">
+d'Artagnan
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="PPER" lemma="ich">
+Ich
+</word>
+<word pos="VMFIN" lemma="mögen">
+möchte
+</word>
+<word pos="ADV" lemma="gern">
+gern
+</word>
+<word pos="ADV" lemma="selbst">
+selbst
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="ADJA" lemma="umliegend">
+umliegenden
+</word>
+<word pos="NN" lemma="Wachtposten">
+Wachtposten
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="unknown">
+Palais-Royal
+</word>
+<word pos="VVINF" lemma="besichtigen">
+besichtigen
+</word>
+<word pos="$." lemma=";">
+;
+</word>
+<word pos="VVFIN" lemma="glauben">
+glaubt
+</word>
+<word pos="PPER" lemma="ihr">
+Ihr
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="PDS" lemma="d">
+das
+</word>
+<word pos="VAFIN" lemma="sein">
+sei
+</word>
+<word pos="APPR" lemma="mit">
+mit
+</word>
+<word pos="NN" lemma="Gefahr">
+Gefahr
+</word>
+<word pos="VVPP" lemma="verbinden">
+verbunden
+</word>
+<word pos="$." lemma="?">
+?
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="NN" lemma="Gefahr">
+Gefahr
+</word>
+<word pos="$." lemma="?">
+?
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="VVFIN" lemma="fragen">
+fragte
+</word>
+<word pos="NE" lemma="unknown">
+d'Artagnan
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="PRELS" lemma="welch">
+welche
+</word>
+<word pos="ADV" lemma="denn">
+denn
+</word>
+<word pos="$." lemma="?">
+?
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="KOUS" lemma="wie">
+Wie
+</word>
+<word pos="PPER" lemma="es">
+es
+</word>
+<word pos="VVFIN" lemma="heißen">
+heißt
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="VAFIN" lemma="sein">
+ist
+</word>
+<word pos="ART" lemma="d">
+das
+</word>
+<word pos="NN" lemma="Volk">
+Volk
+</word>
+<word pos="ADV" lemma="sehr">
+sehr
+</word>
+<word pos="ADJD" lemma="aufrührerisch">
+aufrührerisch
+</word>
+<word pos="$." lemma=".">
+.
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+<word pos="$(" lemma="»">
+»
+</word>
+<word pos="ADJA" lemma="gnädig">
+Gnädigster
+</word>
+<word pos="NN" lemma="Herr">
+Herr
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="ART" lemma="d">
+die
+</word>
+<word pos="NN" lemma="Uniform">
+Uniform
+</word>
+<word pos="ART" lemma="d">
+der
+</word>
+<word pos="NN" lemma="Musketier">
+Musketiere
+</word>
+<word pos="ART" lemma="d">
+des
+</word>
+<word pos="NN" lemma="König">
+Königs
+</word>
+<word pos="VAFIN" lemma="sein">
+ist
+</word>
+<word pos="ADV" lemma="sehr">
+sehr
+</word>
+<word pos="VVPP" lemma="achten">
+geachtet
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="KON" lemma="und">
+und
+</word>
+<word pos="VAFIN" lemma="sein">
+wäre
+</word>
+<word pos="PPER" lemma="sie">
+sie
+</word>
+<word pos="PDS" lemma="d">
+das
+</word>
+<word pos="ADV" lemma="auch">
+auch
+</word>
+<word pos="PTKNEG" lemma="nicht">
+nicht
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="ADV" lemma="so">
+so
+</word>
+<word pos="VVFIN" lemma="fühlen">
+fühle
+</word>
+<word pos="PPER" lemma="ich">
+ich
+</word>
+<word pos="PRF" lemma="ich">
+mich
+</word>
+<word pos="ADV" lemma="doch">
+doch
+</word>
+<word pos="ADJD" lemma="verbindlich">
+verbindlich
+</word>
+<word pos="$," lemma=",">
+,
+</word>
+<word pos="APPR" lemma="zu">
+zu
+</word>
+<word pos="CARD" lemma="vier">
+vier
+</word>
+<word pos="ART" lemma="ein">
+ein
+</word>
+<word pos="NN" lemma="Hundert">
+Hundert
+</word>
+<word pos="PDAT" lemma="dies">
+dieses
+</word>
+<word pos="NN" lemma="Pöbel">
+Pöbels
+</word>
+<word pos="PTKZU" lemma="zu">
+zu
+</word>
+<word pos="VVINF" lemma="verjagen">
+verjagen
+</word>
+<word pos="$." lemma="!">
+!
+</word>
+<word pos="$(" lemma="«">
+«
+</word>
+</root>

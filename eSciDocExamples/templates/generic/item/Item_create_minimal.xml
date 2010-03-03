@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<escidocItem:item xmlns:escidocItem="http://www.escidoc.de/schemas/item/0.8"
+	xmlns:escidocMetadataRecords="http://www.escidoc.de/schemas/metadatarecords/0.4"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+
+	<escidocItem:properties>
+		<srel:context xlink:href="/ir/context/###CONTEXT_ID###" />
+		<srel:content-model xlink:href="/cmm/content-model/###CONTENT_MODEL_ID###" />
+		<prop:content-model-specific />
+	</escidocItem:properties>
+
+	<escidocMetadataRecords:md-records>
+		<escidocMetadataRecords:md-record
+			name="escidoc">
+			<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+				<dc:title>Item Title</dc:title>
+				<dc:description>A minimal item used in examples.</dc:description>
+			</metadata>
+		</escidocMetadataRecords:md-record>
+
+	</escidocMetadataRecords:md-records>
+
+</escidocItem:item>
+

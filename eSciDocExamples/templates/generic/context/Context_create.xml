@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context:context
+	xmlns:context="http://www.escidoc.de/schemas/context/0.6"
+	xmlns:prop="http://escidoc.de/core/01/properties/"
+	xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace">
+
+	<context:properties>
+		<prop:name>###NAME###</prop:name>
+		<prop:description>###DESCRIPTION###</prop:description>
+		<prop:type>###TYPE###</prop:type>
+
+		<prop:organizational-units>
+			<srel:organizational-unit
+				xlink:href="/oum/organizational-unit/###ORGANIZATIONAL_UNIT_ID###" />
+		</prop:organizational-units>
+	</context:properties>
+
+</context:context>
+

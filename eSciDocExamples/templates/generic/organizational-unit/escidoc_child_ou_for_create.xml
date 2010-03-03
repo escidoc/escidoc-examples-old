@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organizational-unit:organizational-unit
+	xmlns:organizational-unit="http://www.escidoc.de/schemas/organizationalunit/0.7"
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:srel="http://escidoc.de/core/01/structural-relations/">
+	<md-records:md-records
+		xmlns:md-records="http://www.escidoc.de/schemas/metadatarecords/0.4"
+		xmlns:ou="http://www.escidoc.de/metadata/organizational-unit"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:dcterms="http://purl.org/dc/terms/">
+		<md-records:md-record name="escidoc">
+			<ou:ou>
+				<dc:title>###NAME_OF_OU###</dc:title>
+				<dcterms:alternative>###ALTERNATIVE_NAME_OF_OU###</dcterms:alternative>
+				<dc:description>###DESCRIPTION_OF_OU###</dc:description>
+			</ou:ou>
+		</md-records:md-record>
+	</md-records:md-records>
+	<organizational-unit:parents>
+		<srel:parent xlink:href="/oum/organizational-unit/###PARENT_OU_ID###" />
+	</organizational-unit:parents>
+</organizational-unit:organizational-unit>
