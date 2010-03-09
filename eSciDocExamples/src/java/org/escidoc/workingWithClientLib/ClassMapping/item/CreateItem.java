@@ -27,117 +27,119 @@ import de.escidoc.core.resources.om.item.Item;
  */
 public class CreateItem {
 
-	/**
-	 * Default Item template is loaded if no file location is given as parameter
-	 * 
-	 * @param args
-	 *            location of Item XML
-	 * @throws ParserConfigurationException
-	 */
-	public static void main(String[] args) {
+    /**
+     * Default Item template is loaded if no file location is given as parameter
+     * 
+     * @param args
+     *            location of Item XML
+     * @throws ParserConfigurationException
+     */
+    public static void main(String[] args) {
 
-		try {
+        try {
 
-			Item createdResource = createItem();
+            Item createdResource = createItem();
 
-			System.out.println("Item with objid='" + createdResource.getObjid()
-					+ "' at '"
-					+ createdResource.getLastModificationDateAsString()
-					+ "' created.");
+            System.out.println("Item with objid='" + createdResource.getObjid()
+                + "' at '" + createdResource.getLastModificationDateAsString()
+                + "' created.");
 
-		} catch (EscidocClientException e) {
-			e.printStackTrace();
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-		}
-	}
+        }
+        catch (EscidocClientException e) {
+            e.printStackTrace();
+        }
+        catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * Create Item.
-	 * 
-	 * @return XML representation of the created Item
-	 * @throws EscidocClientException
-	 * @throws ParserConfigurationException
-	 */
-	private static Item createItem() throws EscidocClientException,
-			ParserConfigurationException {
+    /**
+     * Create Item.
+     * 
+     * @return XML representation of the created Item
+     * @throws EscidocClientException
+     * @throws ParserConfigurationException
+     */
+    private static Item createItem() throws EscidocClientException,
+        ParserConfigurationException {
 
-		ItemHandlerClient ihc = new ItemHandlerClient();
-		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+        Item item = new Item();
 
-		Item item = new Item();
+        item.getProperties().setContext(
+            new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+        item.getProperties().setContentModel(
+            new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
-		item.getProperties().setContext(
-				new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
-		item.getProperties().setContentModel(
-				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+        // Content-model
+        ContentModelSpecific cms = getContentModelSpecific();
+        item.getProperties().setContentModelSpecific(cms);
 
-		// Content-model
-		ContentModelSpecific cms = getContentModelSpecific();
-		item.getProperties().setContentModelSpecific(cms);
+        // Metadata Record(s)
+        MetadataRecords mdRecords = new MetadataRecords();
+        MetadataRecord mdrecord = getMdRecord("escidoc");
+        mdRecords.add(mdrecord);
+        item.setMetadataRecords(mdRecords);
 
-		// Metadata Record(s)
-		MetadataRecords mdRecords = new MetadataRecords();
-		MetadataRecord mdrecord = getMdRecord("escidoc");
-		mdRecords.add(mdrecord);
-		item.setMetadataRecords(mdRecords);
+        // login
+        ItemHandlerClient ihc = new ItemHandlerClient();
+        ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
-		// create
-		Item newItem = ihc.create(item);
+        // create
+        Item newItem = ihc.create(item);
 
-		return newItem;
-	}
+        return newItem;
+    }
 
-	/**
-	 * Get content model specific.
-	 * 
-	 * @return
-	 * @throws ParserConfigurationException
-	 */
-	private static ContentModelSpecific getContentModelSpecific()
-			throws ParserConfigurationException {
+    /**
+     * Get content model specific.
+     * 
+     * @return
+     * @throws ParserConfigurationException
+     */
+    private static ContentModelSpecific getContentModelSpecific()
+        throws ParserConfigurationException {
 
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.newDocument();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.newDocument();
 
-		Element contentModelSpecific = doc.createElementNS(null, "cms");
-		Element element1 = doc.createElement("some-other-stuff");
-		element1.setTextContent("some content - " + System.nanoTime());
+        Element contentModelSpecific = doc.createElementNS(null, "cms");
+        Element element1 = doc.createElement("some-other-stuff");
+        element1.setTextContent("some content - " + System.nanoTime());
 
-		List<Element> cmsContent = new LinkedList<Element>();
-		cmsContent.add(contentModelSpecific);
-		cmsContent.add(element1);
+        List<Element> cmsContent = new LinkedList<Element>();
+        cmsContent.add(contentModelSpecific);
+        cmsContent.add(element1);
 
-		ContentModelSpecific cms = new ContentModelSpecific();
-		cms.setContent(cmsContent);
+        ContentModelSpecific cms = new ContentModelSpecific();
+        cms.setContent(cmsContent);
 
-		return cms;
-	}
+        return cms;
+    }
 
-	/**
-	 * Get MetadataRecord.
-	 * 
-	 * @param name
-	 *            Name of md-record.
-	 * @return MetadataRecord
-	 * @throws ParserConfigurationException
-	 */
-	private static MetadataRecord getMdRecord(final String name)
-			throws ParserConfigurationException {
+    /**
+     * Get MetadataRecord.
+     * 
+     * @param name
+     *            Name of md-record.
+     * @return MetadataRecord
+     * @throws ParserConfigurationException
+     */
+    private static MetadataRecord getMdRecord(final String name)
+        throws ParserConfigurationException {
 
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.newDocument();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.newDocument();
 
-		MetadataRecord mdRecord = new MetadataRecord();
-		mdRecord.setName(name);
+        MetadataRecord mdRecord = new MetadataRecord();
+        mdRecord.setName(name);
 
-		Element element = doc.createElementNS(null, "myMdRecord");
-		mdRecord.setContent(element);
+        Element element = doc.createElementNS(null, "myMdRecord");
+        mdRecord.setContent(element);
 
-		return mdRecord;
-	}
+        return mdRecord;
+    }
 
 }
