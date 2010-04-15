@@ -10,11 +10,20 @@
 		xmlns:dc="http://purl.org/dc/elements/1.1/"
 		xmlns:dcterms="http://purl.org/dc/terms/">
 		<md-records:md-record name="escidoc">
-			<ou:ou>
+			<mdou:organizational-unit
+				xmlns:mdou="http://purl.org/escidoc/metadata/profiles/0.1/organizationalunit"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:dcterms="http://purl.org/dc/terms/"
+				xmlns:eterms="http://purl.org/escidoc/metadata/terms/0.1/">
 				<dc:title>###NAME_OF_OU###</dc:title>
 				<dcterms:alternative>###ALTERNATIVE_NAME_OF_OU###</dcterms:alternative>
-				<dc:description>###DESCRIPTION_OF_OU###</dc:description>
-			</ou:ou>
+				<dc:identifier>pubman:ID</dc:identifier>
+				<eterms:organization-type>Institute</eterms:organization-type>
+				<eterms:country/>
+				<eterms:city/>
+				<kml:coordinates xmlns:kml="http://www.opengis.net/kml/2.2"/>
+				<eterms:start-date>2010-01-01T00:00:01.111Z</eterms:start-date>
+			</mdou:organizational-unit>
 		</md-records:md-record>
 	</md-records:md-records>
 	<organizational-unit:parents>
