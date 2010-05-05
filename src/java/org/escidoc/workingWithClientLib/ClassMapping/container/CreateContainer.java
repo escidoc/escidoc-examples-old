@@ -20,124 +20,151 @@ import de.escidoc.core.resources.common.properties.ContentModelSpecific;
 import de.escidoc.core.resources.om.container.Container;
 
 /**
- * Example how to create an Item.
+ * Example how to create a Container by using the class mapping feature of
+ * eSciDoc Java client library.
  * 
  * @author SWA
  * 
  */
 public class CreateContainer {
 
-	/**
-	 * Default Item template is loaded if no file location is given as parameter
-	 * 
-	 * @param args
-	 *            location of Item XML
-	 * @throws ParserConfigurationException
-	 */
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		try {
+        try {
 
-			Container createdResource = createContainer();
+            Container createdResource = createContainer();
 
-			System.out.println("Container with objid='" + createdResource.getObjid()
-					+ "' at '"
-					+ createdResource.getLastModificationDateAsString()
-					+ "' created.");
+            System.out.println("Container with objid='"
+                + createdResource.getObjid() + "' at '"
+                + createdResource.getLastModificationDateAsString()
+                + "' created.");
 
-		} catch (EscidocClientException e) {
-			e.printStackTrace();
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-		}
-	}
+        }
+        catch (EscidocClientException e) {
+            e.printStackTrace();
+        }
+        catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * Create Container.
-	 * 
-	 * @return XML representation of the created Item
-	 * @throws EscidocClientException
-	 * @throws ParserConfigurationException
-	 */
-	private static Container createContainer() throws EscidocClientException,
-			ParserConfigurationException {
+    /**
+     * Create Container.
+     * 
+     * @return XML representation of the created Item
+     * @throws EscidocClientException
+     * @throws ParserConfigurationException
+     */
+    private static Container createContainer() throws EscidocClientException,
+        ParserConfigurationException {
 
-	    ContainerHandlerClient chc = new ContainerHandlerClient();
-		chc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+        ContainerHandlerClient chc = new ContainerHandlerClient();
+        chc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
+            Constants.USER_PASSWORD);
 
-		Container container = new Container();
+        Container container = new Container();
 
-		container.getProperties().setContext(
-				new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
-		container.getProperties().setContentModel(
-				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+        container.getProperties().setContext(
+            new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+        container.getProperties().setContentModel(
+            new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
-		// Content-model
-		ContentModelSpecific cms = getContentModelSpecific();
-		container.getProperties().setContentModelSpecific(cms);
+        // Content-model
+        ContentModelSpecific cms = getContentModelSpecific();
+        container.getProperties().setContentModelSpecific(cms);
 
-		// Metadata Record(s)
-		MetadataRecords mdRecords = new MetadataRecords();
-		MetadataRecord mdrecord = getMdRecord("escidoc");
-		mdRecords.add(mdrecord);
-		container.setMetadataRecords(mdRecords);
+        // Metadata Record(s)
+        MetadataRecords mdRecords = new MetadataRecords();
+        MetadataRecord mdrecord =
+            getMdRecord("escidoc", "myMdRecord", "Exmaple Container",
+                "Description of an example Container.");
+        mdRecords.add(mdrecord);
+        container.setMetadataRecords(mdRecords);
 
-		// create
-		Container newContainer = chc.create(container);
+        // create
+        Container newContainer = chc.create(container);
 
-		return newContainer;
-	}
+        return newContainer;
+    }
 
-	/**
-	 * Get content model specific.
-	 * 
-	 * @return
-	 * @throws ParserConfigurationException
-	 */
-	private static ContentModelSpecific getContentModelSpecific()
-			throws ParserConfigurationException {
+    /**
+     * Get content model specific.
+     * 
+     * @return
+     * @throws ParserConfigurationException
+     */
+    private static ContentModelSpecific getContentModelSpecific()
+        throws ParserConfigurationException {
 
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.newDocument();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.newDocument();
 
-		Element contentModelSpecific = doc.createElementNS(null, "cms");
-		Element element1 = doc.createElement("some-other-stuff");
-		element1.setTextContent("some content - " + System.nanoTime());
+        Element contentModelSpecific = doc.createElementNS(null, "cms");
+        Element element1 = doc.createElement("some-other-stuff");
+        element1.setTextContent("some content - " + System.nanoTime());
 
-		List<Element> cmsContent = new LinkedList<Element>();
-		cmsContent.add(contentModelSpecific);
-		cmsContent.add(element1);
+        List<Element> cmsContent = new LinkedList<Element>();
+        cmsContent.add(contentModelSpecific);
+        cmsContent.add(element1);
 
-		ContentModelSpecific cms = new ContentModelSpecific();
-		cms.setContent(cmsContent);
+        ContentModelSpecific cms = new ContentModelSpecific();
+        cms.setContent(cmsContent);
 
-		return cms;
-	}
+        return cms;
+    }
 
-	/**
-	 * Get MetadataRecord.
-	 * 
-	 * @param name
-	 *            Name of md-record.
-	 * @return MetadataRecord
-	 * @throws ParserConfigurationException
-	 */
-	private static MetadataRecord getMdRecord(final String name)
-			throws ParserConfigurationException {
+    /**
+     * Creates an Metadata Record with DC content.
+     * 
+     * @param mdRecordName
+     *            Name of the MdRecord
+     * @param rootElementName
+     *            Name of the root element of the MdRecord content
+     * @param title
+     *            The title which is to set in the DC metadata
+     * @param description
+     *            The description which is to set in the DC metadata
+     * @return The MetadataRecord with the given values
+     * @throws ParserConfigurationException
+     *             If instantiation of DocumentBuilder fail
+     */
+    private static MetadataRecord getMdRecord(
+        final String mdRecordName, final String rootElementName,
+        final String title, final String description)
+        throws ParserConfigurationException {
 
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.newDocument();
+        // md-record
+        MetadataRecord mdRecord = new MetadataRecord();
+        mdRecord.setName(mdRecordName);
 
-		MetadataRecord mdRecord = new MetadataRecord();
-		mdRecord.setName(name);
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true);
+        factory.setCoalescing(true);
+        factory.setValidating(true);
+        DocumentBuilder builder = factory.newDocumentBuilder();
 
-		Element element = doc.createElementNS(null, "myMdRecord");
-		mdRecord.setContent(element);
+        Document doc = builder.newDocument();
+        Element mdRecordContent = doc.createElementNS(null, rootElementName);
+        mdRecord.setContent(mdRecordContent);
 
-		return mdRecord;
-	}
+        // title
+        Element titleElmt =
+            doc.createElementNS("http://purl.org/dc/elements/1.1/", "title");
+        titleElmt.setPrefix("dc");
+        titleElmt.setTextContent(title);
+        mdRecordContent.appendChild(titleElmt);
+
+        // dc:description
+        Element descriptionElmt =
+            doc.createElementNS("http://purl.org/dc/elements/1.1/",
+                "description");
+        descriptionElmt.setPrefix("dc");
+        descriptionElmt.setTextContent(description);
+        mdRecordContent.appendChild(descriptionElmt);
+        mdRecord.setContent(mdRecordContent);
+
+        return mdRecord;
+    }
 
 }

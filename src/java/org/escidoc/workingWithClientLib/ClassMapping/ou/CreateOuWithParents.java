@@ -16,33 +16,51 @@ import de.escidoc.core.client.OrganizationalUnitHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
+import de.escidoc.core.resources.oum.Parents;
 import de.escidoc.core.resources.oum.Properties;
 
 /**
- * Example how to create an Organizational Unit by using the class mapping
- * feature of eSciDoc Java client library.
+ * Example how to create a Organizational Unit parent relation by using the
+ * class mapping feature of eSciDoc Java client library.
  * 
  * @author SWA
  * 
  */
-public class CreateOu {
+public class CreateOuWithParents {
 
+    /*
+     * Two Organizational Units are created. The first OU is set as parent of
+     * the second OU. The parent relation set with the created of the second OU
+     * (It is also possible to create the parent relation after both
+     * Organizational Units are created, what is explain in another example.)
+     */
     public static void main(String[] args) {
 
         try {
-            // Prepare a value object with new values of Organizational Unit
-            OrganizationalUnit ou = prepareOrganizationalUnit();
-
-            // call create with VO on eSciDoc
-            ou = createOrganizationalUnit(ou);
+            // Create the first Organizational Unit
+            OrganizationalUnit ou1 = prepareOrganizationalUnit();
+            ou1 = createOrganizationalUnit(ou1);
 
             // for convenient reason: print out objid and last-modification-date
             // of created Organizational Unit
             System.out.println("Organizational Unit with objid='"
-                + ou.getObjid() + "' at '" + ou.getLastModificationDate()
+                + ou1.getObjid() + "' at '" + ou1.getLastModificationDate()
+                + "' created.");
+
+            // prepare the second OU
+            OrganizationalUnit ou2 = prepareOrganizationalUnit();
+            ou2.getParents().addParentRef(new ResourceRef(ou1.getObjid()));
+
+            ou2 = createOrganizationalUnit(ou2);
+
+            // for convenient reason: print out objid and last-modification-date
+            // of created Organizational Unit
+            System.out.println("Organizational Unit with objid='"
+                + ou2.getObjid() + "' at '" + ou2.getLastModificationDate()
                 + "' created.");
 
         }
@@ -83,6 +101,7 @@ public class CreateOu {
         OrganizationalUnit ou = new OrganizationalUnit();
 
         Properties properties = new Properties();
+        properties.setName("Organizational_Unit_Test_Name");
         ou.setProperties(properties);
 
         /*
@@ -100,6 +119,14 @@ public class CreateOu {
 
         // add metadata-records to OU
         ou.setMetadataRecords(mdRecords);
+
+        // add parent OU
+        Parents parents = new Parents();
+        ResourceRef resourceRef = new ResourceRef();
+
+        resourceRef.setObjid("escidoc:ex3");
+        parents.addParentRef(resourceRef);
+        ou.setParents(parents);
 
         return ou;
     }
