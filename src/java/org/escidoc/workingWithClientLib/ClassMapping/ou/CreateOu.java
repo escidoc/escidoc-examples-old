@@ -29,6 +29,11 @@ import de.escidoc.core.test.client.EscidocClientTestBase;
  */
 public class CreateOu {
 
+    /**
+     * 
+     * @param args
+     *            ignored
+     */
     public static void main(String[] args) {
 
         try {

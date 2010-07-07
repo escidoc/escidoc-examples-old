@@ -26,11 +26,9 @@ import de.escidoc.core.test.client.EscidocClientTestBase;
 public class CreateItem {
 
     /**
-     * Default Item template is loaded if no file location is given as parameter
      * 
      * @param args
-     *            location of Item XML
-     * @throws ParserConfigurationException
+     *            ignored
      */
     public static void main(String[] args) {
 
