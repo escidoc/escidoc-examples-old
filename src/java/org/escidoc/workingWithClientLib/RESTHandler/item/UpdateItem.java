@@ -5,8 +5,10 @@ import java.io.IOException;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to update an Item by using the XML REST representation and the
@@ -22,6 +24,10 @@ import de.escidoc.core.client.rest.RestItemHandlerClient;
  */
 public class UpdateItem {
 
+    /**
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
 
         String id = "escidoc:item";
@@ -57,24 +63,55 @@ public class UpdateItem {
         }
     }
 
+    /**
+     * Update Item.
+     * 
+     * @param itemId
+     * @param itemXml
+     * @return
+     * @throws EscidocClientException
+     */
     private static String updateItem(String itemId, String itemXml)
         throws EscidocClientException {
 
-        RestItemHandlerClient client = new RestItemHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
-        String createdItem = client.update(itemId, itemXml);
+        // authentication (Use a user account with permission to submit an
+        // Item).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
+        // get REST handler
+        RestItemHandlerClient rihc = new RestItemHandlerClient();
+        rihc.setServiceAddress(auth.getServiceAddress());
+        rihc.setHandle(auth.getHandle());
+
+        String createdItem = rihc.update(itemId, itemXml);
 
         return createdItem;
     }
 
+    /**
+     * Retrieve Item.
+     * 
+     * @param itemId
+     * @return
+     * @throws EscidocClientException
+     */
     private static String retrieveItem(String itemId)
         throws EscidocClientException {
 
-        RestItemHandlerClient client = new RestItemHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
-        String itemXml = client.retrieve(itemId);
+        // authentication (Use a user account with permission to submit an
+        // Item).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
+        // get REST handler
+        RestItemHandlerClient rihc = new RestItemHandlerClient();
+        rihc.setServiceAddress(auth.getServiceAddress());
+        rihc.setHandle(auth.getHandle());
+
+        String itemXml = rihc.retrieve(itemId);
 
         return itemXml;
     }

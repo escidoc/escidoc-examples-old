@@ -3,8 +3,10 @@ package org.escidoc.workingWithClientLib.RESTHandler.item;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to submit an Item.
@@ -42,9 +44,16 @@ public class SubmitItem {
     public static void submitItem(final String id)
         throws EscidocClientException {
 
+        // authentication (Use a user account with permission to submit an
+        // Item).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
+        // get REST handler
         RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        rihc.setServiceAddress(auth.getServiceAddress());
+        rihc.setHandle(auth.getHandle());
 
         // retrieving the Item
         String itemXml = rihc.retrieve(id);

@@ -3,8 +3,10 @@ package org.escidoc.workingWithClientLib.RESTHandler.userAccount;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestUserAccountHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to update a user password by using the XML REST representation
@@ -86,9 +88,16 @@ public class UpdatePassword {
         final String userId, final String password)
         throws EscidocClientException {
 
+        // authentication (Use a user account with permission to update
+        // password).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
+        // get handler for user account
         RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
-        ruahc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        ruahc.setServiceAddress(auth.getServiceAddress());
+        ruahc.setHandle(auth.getHandle());
 
         String userXml = ruahc.retrieve(userId);
 

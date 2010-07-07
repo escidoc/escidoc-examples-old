@@ -5,8 +5,10 @@ import java.io.IOException;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create an Item.
@@ -60,12 +62,16 @@ public class CreateItem {
     private static String createItem(final String itemXml)
         throws EscidocClientException {
 
+        // authentication (Use a user account with permission to create an Item
+        // - usually the depositor role).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
         // get REST handler
         RestItemHandlerClient rihc = new RestItemHandlerClient();
-
-        // login
-        rihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        rihc.setServiceAddress(auth.getServiceAddress());
+        rihc.setHandle(auth.getHandle());
 
         // create the Item
         String createdItem = rihc.create(itemXml);

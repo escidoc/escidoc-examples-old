@@ -3,11 +3,10 @@ package org.escidoc.workingWithClientLib.RESTHandler.ou;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.exceptions.EscidocException;
-import de.escidoc.core.client.exceptions.InternalClientException;
-import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to set status of a Organizational Unit to to 'open' by using the
@@ -61,18 +60,23 @@ public class OpenOU {
      *            The objid of the Organizational Unit
      * @param lmd
      *            last modification date of Organizational Unit
-     * @throws InternalClientException
-     * @throws EscidocException
-     * @throws TransportException
+     * @throws EscidocClientException
      */
     private static String openOU(final String objid)
-        throws InternalClientException, EscidocException, TransportException {
+        throws EscidocClientException {
 
-        // login
+        // authentication (Use a user account with permission to create an
+        // Organizational Unit).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
+        // get rest handler
         RestOrganizationalUnitHandlerClient rouc =
             new RestOrganizationalUnitHandlerClient();
-        rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        // login
+        rouc.setServiceAddress(auth.getServiceAddress());
+        rouc.setHandle(auth.getHandle());
 
         /*
          * Prepare and load taskParam XML.

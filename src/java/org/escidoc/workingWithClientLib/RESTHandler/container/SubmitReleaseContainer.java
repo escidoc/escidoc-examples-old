@@ -3,11 +3,23 @@ package org.escidoc.workingWithClientLib.RESTHandler.container;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContainerHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
+/**
+ * Example to sumbit and release a Container via REST interface.
+ * 
+ * @author FRS, SWA
+ * 
+ */
 public class SubmitReleaseContainer {
 
+    /**
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
 
         String id = "escidoc:container";
@@ -36,9 +48,15 @@ public class SubmitReleaseContainer {
     public static void releaseContainer(String id)
         throws EscidocClientException {
 
+        // authentication (Use a user account with permission to submit and
+        // release a Container).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
         RestContainerHandlerClient rchc = new RestContainerHandlerClient();
-        rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        rchc.setServiceAddress(auth.getServiceAddress());
+        rchc.setHandle(auth.getHandle());
 
         // retrieving the Container
         String containerXml = rchc.retrieve(id);

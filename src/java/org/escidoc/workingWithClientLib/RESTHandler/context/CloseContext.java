@@ -3,8 +3,10 @@ package org.escidoc.workingWithClientLib.RESTHandler.context;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContextHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to set status of a Context to 'closed' by using the XML REST
@@ -55,21 +57,28 @@ public class CloseContext {
      * Close Context.
      * 
      * <ul>
-     *   <li>get REST handler for object</li>
-     *   <li>login</li>
-     *   <li>call close method at handler</li>
+     * <li>get REST handler for object</li>
+     * <li>login</li>
+     * <li>call close method at handler</li>
      * </ul>
+     * 
      * @param id
      *            objid of to close Context
      * @return XML response of close method from framework
      * @throws EscidocClientException
      */
-    public static String closeContext(final String id) throws EscidocClientException {
+    public static String closeContext(final String id)
+        throws EscidocClientException {
+
+        // authentication (Use a user account with permission to close a Context).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // prepare client handler
         RestContextHandlerClient rchc = new RestContextHandlerClient();
-        rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        rchc.setServiceAddress(auth.getServiceAddress());
+        rchc.setHandle(auth.getHandle());
 
         // retrieving the context
         String contextXml = rchc.retrieve(id);

@@ -5,10 +5,10 @@ import java.io.IOException;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
-import de.escidoc.core.client.exceptions.EscidocException;
-import de.escidoc.core.client.exceptions.InternalClientException;
-import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.client.Authentication;
+import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContentModelHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to handle a ContentModel by using the XML REST representation and
@@ -49,13 +49,7 @@ public class CreateContentModel {
                 + "' at '" + objidLmd[1] + "' created");
 
         }
-        catch (EscidocException e) {
-            e.printStackTrace();
-        }
-        catch (InternalClientException e) {
-            e.printStackTrace();
-        }
-        catch (TransportException e) {
+        catch (EscidocClientException e) {
             e.printStackTrace();
         }
         catch (IOException e) {
@@ -72,22 +66,23 @@ public class CreateContentModel {
      * finally printed to stdout.
      * </p>
      * 
-     * @throws InternalClientException
-     * @throws EscidocException
-     * @throws TransportException
      * @throws IOException
+     * @throws EscidocClientException
      */
-    private static String create(final String cmmXml)
-        throws InternalClientException, EscidocException, TransportException,
-        IOException {
+    private static String create(final String cmmXml) throws IOException,
+        EscidocClientException {
+
+        // authentication (Use a user account with permission to create a
+        // Content Model).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get handler for Content Model
         RestContentModelHandlerClient rcmhc =
             new RestContentModelHandlerClient();
-
-        // authenticate
-        rcmhc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        rcmhc.setServiceAddress(auth.getServiceAddress());
+        rcmhc.setHandle(auth.getHandle());
 
         // create
         String createdCmmXml = rcmhc.create(cmmXml);

@@ -5,11 +5,13 @@ import java.io.IOException;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.client.rest.RestContextHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to handle a Context by using the XML REST representation and the
@@ -79,13 +81,16 @@ public class CreateContext {
     private static String createContext(final String contextXml)
         throws EscidocClientException {
 
+        // authentication (Use a user account with permission to create a Context).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
         // get the REST handler
         RestContextHandlerClient client = new RestContextHandlerClient();
-
-        // authenticate
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
-
+        client.setServiceAddress(auth.getServiceAddress());
+        client.setHandle(auth.getHandle());
+        
         // create
         String createdContext = client.create(contextXml);
 

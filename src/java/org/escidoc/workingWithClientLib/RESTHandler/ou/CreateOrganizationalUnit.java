@@ -5,10 +5,10 @@ import java.io.IOException;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
-import de.escidoc.core.client.exceptions.EscidocException;
-import de.escidoc.core.client.exceptions.InternalClientException;
-import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.client.Authentication;
+import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create an Organizational Unit by using the XML REST
@@ -54,13 +54,7 @@ public class CreateOrganizationalUnit {
             System.out.println("Organizational Unit with objid='" + objidLmd[0]
                 + "' at '" + objidLmd[1] + "' created");
         }
-        catch (EscidocException e) {
-            e.printStackTrace();
-        }
-        catch (InternalClientException e) {
-            e.printStackTrace();
-        }
-        catch (TransportException e) {
+        catch (EscidocClientException e) {
             e.printStackTrace();
         }
         catch (IOException e) {
@@ -78,22 +72,24 @@ public class CreateOrganizationalUnit {
      * finally printed to stdout.
      * </p>
      * 
-     * @throws InternalClientException
-     * @throws EscidocException
-     * @throws TransportException
      * @throws IOException
+     * @throws EscidocClientException
      */
-    private static String create(final String ouXml)
-        throws InternalClientException, EscidocException, TransportException,
-        IOException {
+    private static String create(final String ouXml) throws IOException,
+        EscidocClientException {
 
-        // get handler for organizational units
+        // authentication (Use a user account with permission to create an
+        // Organizational Unit).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
+        // get rest handler
         RestOrganizationalUnitHandlerClient rouc =
             new RestOrganizationalUnitHandlerClient();
-
-        // authenticate
-        rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        // login
+        rouc.setServiceAddress(auth.getServiceAddress());
+        rouc.setHandle(auth.getHandle());
 
         // create
         String crtdOuXML = rouc.create(ouXml);

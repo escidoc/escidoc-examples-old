@@ -6,10 +6,10 @@ import java.io.IOException;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
-import de.escidoc.core.client.exceptions.EscidocException;
-import de.escidoc.core.client.exceptions.InternalClientException;
-import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.client.Authentication;
+import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestUserAccountHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to add grants to an existing user account by using the XML REST
@@ -48,8 +48,7 @@ public class SetGrants {
         }
 
         try {
-            String resourceXml =
-                createGrant(userAccountId, xmlFile);
+            String resourceXml = createGrant(userAccountId, xmlFile);
 
             // write out objid and last modification date
             String[] objidLmd = Util.obtainObjidAndLmd(resourceXml);
@@ -57,13 +56,7 @@ public class SetGrants {
                 + userAccountId + "' at '" + objidLmd[1] + "'.");
 
         }
-        catch (EscidocException e) {
-            e.printStackTrace();
-        }
-        catch (InternalClientException e) {
-            e.printStackTrace();
-        }
-        catch (TransportException e) {
+        catch (EscidocClientException e) {
             e.printStackTrace();
         }
         catch (IOException e) {
@@ -83,22 +76,23 @@ public class SetGrants {
      *            Path of the Grant REST XML representation template file
      * @return XML representation of the created grant
      * 
-     * @throws InternalClientException
-     * @throws EscidocException
-     * @throws TransportException
      * @throws IOException
+     * @throws EscidocClientException
      */
     private static String createGrant(
-        final String userAccountId, 
-        final String xmlTemplFile) throws InternalClientException,
-        EscidocException, TransportException, IOException {
+        final String userAccountId, final String xmlTemplFile)
+        throws IOException, EscidocClientException {
 
-        // get REST handler for user accounts
+        // authentication (Use a user account with permission to create a
+        // Grant).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
+        // get handler for user account
         RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
-
-        // authenticate
-        ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        ruahc.setServiceAddress(auth.getServiceAddress());
+        ruahc.setHandle(auth.getHandle());
 
         // load and prepare the XML for grants
         File templ = new File(xmlTemplFile);

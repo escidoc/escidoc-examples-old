@@ -3,8 +3,10 @@ package org.escidoc.workingWithClientLib.RESTHandler.context;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContextHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to set status of a Context to 'open' by using the XML REST
@@ -59,12 +61,19 @@ public class OpenContext {
      * @return XML response of open method from framework
      * @throws EscidocClientException
      */
-    public static String openContext(final String id) throws EscidocClientException {
+    public static String openContext(final String id)
+        throws EscidocClientException {
+
+        // authentication (Use a user account with permission to open a
+        // Context).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // prepare client object
         RestContextHandlerClient rchc = new RestContextHandlerClient();
-        rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        rchc.setServiceAddress(auth.getServiceAddress());
+        rchc.setHandle(auth.getHandle());
 
         // retrieving the context
         String contextXml = rchc.retrieve(id);

@@ -6,10 +6,10 @@ import java.io.IOException;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
-import de.escidoc.core.client.exceptions.EscidocException;
-import de.escidoc.core.client.exceptions.InternalClientException;
-import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.client.Authentication;
+import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestUserAccountHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create a user account by using the XML REST representation and
@@ -50,13 +50,7 @@ public class CreateUserAccount {
                 + "' at '" + objidLmd[1] + "' created");
 
         }
-        catch (EscidocException e) {
-            e.printStackTrace();
-        }
-        catch (InternalClientException e) {
-            e.printStackTrace();
-        }
-        catch (TransportException e) {
+        catch (EscidocClientException e) {
             e.printStackTrace();
         }
         catch (IOException e) {
@@ -72,26 +66,27 @@ public class CreateUserAccount {
      *            Path of the UserAccount REST XML representation template file
      * @return XML representation of the created UserAccount
      * 
-     * @throws InternalClientException
-     * @throws EscidocException
-     * @throws TransportException
      * @throws IOException
+     * @throws EscidocClientException
      */
-    private static String create(final String xmlTemplFile)
-        throws InternalClientException, EscidocException, TransportException,
-        IOException {
+    private static String create(final String xmlTemplFile) throws IOException,
+        EscidocClientException {
+
+        // authentication (Use a user account with permission to create an
+        // User Account).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get handler for user account
         RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
-
-        // authenticate
-        ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        ruahc.setServiceAddress(auth.getServiceAddress());
+        ruahc.setHandle(auth.getHandle());
 
         // load XML template of user account
         File templ = new File(xmlTemplFile);
         String resourceXml = Util.getXmlFileAsString(templ);
-        
+
         // create
         String crXML = ruahc.create(resourceXml);
 

@@ -3,8 +3,10 @@ package org.escidoc.workingWithClientLib.RESTHandler.item;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to release an Item.
@@ -60,10 +62,16 @@ public class ReleaseItem {
     public static void releaseItem(final String id)
         throws EscidocClientException {
 
-        // prepare client object
+        // authentication (Use a user account with permission to release an
+        // Item).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
+        // get REST handler
         RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        rihc.setServiceAddress(auth.getServiceAddress());
+        rihc.setHandle(auth.getHandle());
 
         // retrieving the Item
         String itemXml = rihc.retrieve(id);
