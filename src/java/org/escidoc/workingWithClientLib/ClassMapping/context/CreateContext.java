@@ -1,9 +1,10 @@
 package org.escidoc.workingWithClientLib.ClassMapping.context;
 
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ContextHandlerClient;
+import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
@@ -11,6 +12,7 @@ import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.om.context.Context;
 import de.escidoc.core.resources.om.context.OrganizationalUnitRefs;
 import de.escidoc.core.resources.om.context.Properties;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create an Context by using the eSciDoc Java client library.
@@ -33,8 +35,7 @@ public class CreateContext {
             context = createContext(context);
 
             System.out.println("Context with objid='" + context.getObjid()
-                + "' at '" + context.getLastModificationDateAsString()
-                + "' created.");
+                + "' at '" + context.getLastModificationDate() + "' created.");
         }
         catch (EscidocException e) {
             e.printStackTrace();
@@ -43,6 +44,9 @@ public class CreateContext {
             e.printStackTrace();
         }
         catch (TransportException e) {
+            e.printStackTrace();
+        }
+        catch (EscidocClientException e) {
             e.printStackTrace();
         }
     }
@@ -94,24 +98,21 @@ public class CreateContext {
      *            The value object of a Context.
      * @return Value Object of created Context (enriched with values by
      *         infrastructure)
-     * 
-     * @throws EscidocException
-     *             Thrown if eSciDoc infrastructure throws an exception. This
-     *             happens mostly if data structure is incomplete for the
-     *             required operation, method is not allowed in object status or
-     *             permissions are restricted.
-     * @throws InternalClientException
-     *             These are thrown if client library internal failure occur.
-     * @throws TransportException
-     *             Is thrown if transport between client library and framework
-     *             is malfunctioned.
+     * @throws EscidocClientException
      */
     private static Context createContext(final Context context)
-        throws EscidocException, InternalClientException, TransportException {
+        throws EscidocClientException {
+
+        // authentication (Use a user account with write permission for Context
+        // on the selected Context. Usually is this user with administrator
+        // role).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
 
         ContextHandlerClient client = new ContextHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        client.setServiceAddress(auth.getServiceAddress());
+        client.setHandle(auth.getHandle());
 
         Context createdContext = client.create(context);
 

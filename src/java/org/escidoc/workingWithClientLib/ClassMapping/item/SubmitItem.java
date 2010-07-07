@@ -1,23 +1,38 @@
 package org.escidoc.workingWithClientLib.ClassMapping.item;
 
-import java.util.Vector;
-
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.resources.common.Filter;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.om.item.Item;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
+/**
+ * Change public-status of an Item to 'submitted'.
+ * 
+ * Precondition:
+ * <ul>
+ * <li>The Item has to exist and in status 'pending'.</li>
+ * <li>The configured user requires permissions to change the status.</li>
+ * </ul>
+ * 
+ * @author SWA
+ * 
+ */
 public class SubmitItem {
 
+    /**
+     * 
+     * @param args
+     *            The objid of the to submit Item.
+     */
     public static void main(String[] args) {
 
         try {
-
+            // configure the objid of the Item
             String id = "escidoc:1";
             if (args.length > 0) {
                 id = args[0];
@@ -32,22 +47,47 @@ public class SubmitItem {
 
     }
 
-    public static void releaseItem(String id) throws EscidocClientException {
+    /**
+     * Submit an Item.
+     * 
+     * <p>
+     * Submitting an Item is a task oriented method and needs and additional
+     * parameter instead of the Item representation.
+     * </p>
+     * <p>
+     * The taskParam has to contain the last-modification-date of the Item
+     * (optimistic locking) and the submit comment.
+     * </p>
+     * <p>
+     * The Item has to be in status pending.
+     * </p>
+     * 
+     * @param id
+     *            The objid of the Item.
+     * @throws EscidocClientException
+     */
+    public static void releaseItem(final String id)
+        throws EscidocClientException {
 
-        // prepare client object
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
+
         ItemHandlerClient ihc = new ItemHandlerClient();
-        ihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        ihc.setServiceAddress(auth.getServiceAddress());
+        ihc.setHandle(auth.getHandle());
 
-        // create item object retrieving the item
+        // retrieving the Item
         Item item = ihc.retrieve(id);
 
-        // submit
-        Result submitResult =
-            ihc.submit(item, new TaskParam(item.getLastModificationDate(),
-                "submit", null, null, new Vector<Filter>()));
+        // prepare TaskParam and call submit
+        TaskParam taskParam = new TaskParam();
+        taskParam.setLastModificationDate(item.getLastModificationDate());
+        taskParam.setComment("submit");
+
+        Result submitResult = ihc.submit(item, taskParam);
 
         System.out.println("Item with objid='" + id + "' at '"
-            + submitResult.getLastModificationDateAsString() + "' submitted.");
+            + submitResult.getLastModificationDate() + "' submitted.");
     }
 }

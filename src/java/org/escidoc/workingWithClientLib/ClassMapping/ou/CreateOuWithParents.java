@@ -1,27 +1,30 @@
 package org.escidoc.workingWithClientLib.ClassMapping.ou;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.OrganizationalUnitHandlerClient;
+import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
-import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
-import de.escidoc.core.resources.oum.Parents;
+import de.escidoc.core.resources.oum.OrganizationalUnitList;
+import de.escidoc.core.resources.oum.Parent;
 import de.escidoc.core.resources.oum.Properties;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create a Organizational Unit parent relation by using the
@@ -33,17 +36,25 @@ import de.escidoc.core.resources.oum.Properties;
 public class CreateOuWithParents {
 
     /*
-     * Two Organizational Units are created. The first OU is set as parent of
-     * the second OU. The parent relation set with the created of the second OU
-     * (It is also possible to create the parent relation after both
-     * Organizational Units are created, what is explain in another example.)
+     * Two Organizational Units are created. The first OU will be parent of the
+     * second OU. The parent relation is set during created of the second OU.
+     * 
+     * A third OU is created afterward and added as parent to the second OU to
+     * show the process of creating parent relations with already created
+     * Organizational Units.
      */
     public static void main(String[] args) {
 
         try {
+            // authentication (Use a user account with permission to create and
+            // update an Organizational Unit).
+            Authentication auth =
+                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                    Constants.USER_NAME, Constants.USER_PASSWORD);
+
             // Create the first Organizational Unit
             OrganizationalUnit ou1 = prepareOrganizationalUnit();
-            ou1 = createOrganizationalUnit(ou1);
+            ou1 = createOrganizationalUnit(auth, ou1);
 
             // for convenient reason: print out objid and last-modification-date
             // of created Organizational Unit
@@ -53,9 +64,11 @@ public class CreateOuWithParents {
 
             // prepare the second OU
             OrganizationalUnit ou2 = prepareOrganizationalUnit();
-            ou2.getParents().addParentRef(new ResourceRef(ou1.getObjid()));
+            Parent parent = new Parent();
+            parent.setObjid(ou1.getObjid());
+            ou2.getParents().addParentRef(new Parent(ou1.getObjid()));
 
-            ou2 = createOrganizationalUnit(ou2);
+            ou2 = createOrganizationalUnit(auth, ou2);
 
             // for convenient reason: print out objid and last-modification-date
             // of created Organizational Unit
@@ -63,14 +76,29 @@ public class CreateOuWithParents {
                 + ou2.getObjid() + "' at '" + ou2.getLastModificationDate()
                 + "' created.");
 
+            /*
+             * Create the third Organizational Unit.
+             */
+            OrganizationalUnit ou3 = prepareOrganizationalUnit();
+            ou3 = createOrganizationalUnit(auth, ou3);
+
+            // set third Organizational Unit as parent of the second
+            // Organizational Unit
+            OrganizationalUnitHandlerClient client =
+                new OrganizationalUnitHandlerClient();
+            client.setServiceAddress(auth.getServiceAddress());
+            client.setHandle(auth.getHandle());
+
+            ou2.getParents().addParentRef(new Parent(ou3.getObjid()));
+
+            ou2 = client.update(ou2);
+
+            // print parent child relations
+            printOut("First", client, ou1);
+            printOut("Second", client, ou2);
+            printOut("Third", client, ou3);
         }
-        catch (EscidocException e) {
-            e.printStackTrace();
-        }
-        catch (InternalClientException e) {
-            e.printStackTrace();
-        }
-        catch (TransportException e) {
+        catch (EscidocClientException e) {
             e.printStackTrace();
         }
         catch (ParserConfigurationException e) {
@@ -120,14 +148,6 @@ public class CreateOuWithParents {
         // add metadata-records to OU
         ou.setMetadataRecords(mdRecords);
 
-        // add parent OU
-        Parents parents = new Parents();
-        ResourceRef resourceRef = new ResourceRef();
-
-        resourceRef.setObjid("escidoc:ex3");
-        parents.addParentRef(resourceRef);
-        ou.setParents(parents);
-
         return ou;
     }
 
@@ -155,14 +175,14 @@ public class CreateOuWithParents {
      *             is malfunctioned.
      */
     private static OrganizationalUnit createOrganizationalUnit(
-        final OrganizationalUnit ou) throws EscidocException,
-        InternalClientException, TransportException {
+        final Authentication auth, final OrganizationalUnit ou)
+        throws EscidocException, InternalClientException, TransportException {
 
         // get handler
         OrganizationalUnitHandlerClient client =
             new OrganizationalUnitHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        client.setServiceAddress(auth.getServiceAddress());
+        client.setHandle(auth.getHandle());
 
         // call create
         OrganizationalUnit createdOu = client.create(ou);
@@ -221,6 +241,94 @@ public class CreateOuWithParents {
         mdRecord.setContent(mdRecordContent);
 
         return mdRecord;
+    }
+
+    /**
+     * Print out parents and childs of the Organizational Unit.
+     * 
+     * @param name
+     *            The name
+     * @param client
+     *            The OrganizationalUnitHandlerClient
+     * @param ou
+     *            The OrganizationalUnit
+     * @throws EscidocException
+     * @throws InternalClientException
+     * @throws TransportException
+     */
+    private static void printOut(
+        final String name, final OrganizationalUnitHandlerClient client,
+        final OrganizationalUnit ou) throws EscidocException,
+        InternalClientException, TransportException {
+
+        System.out.println(name + " Organizational Unit " + ou.getObjid());
+
+        printParents(client, ou);
+        printChilds(client, ou);
+    }
+
+    /**
+     * Print out parents of OrganizationalUnit.
+     * 
+     * @param client
+     *            OrganizationalUnitHandlerClient
+     * @param ou
+     *            The OrganizationalUnit
+     * @throws EscidocException
+     * @throws InternalClientException
+     * @throws TransportException
+     */
+    private static void printParents(
+        final OrganizationalUnitHandlerClient client,
+        final OrganizationalUnit ou) throws EscidocException,
+        InternalClientException, TransportException {
+
+        OrganizationalUnit ouR = client.retrieve(ou.getObjid());
+        System.out.println(" parents: ");
+        if (ouR.getParents().getParentRef() == null) {
+            System.out.println("   none");
+        }
+        else {
+            Iterator<Parent> it = ouR.getParents().getParentRef().iterator();
+            while (it.hasNext()) {
+                Parent p = it.next();
+                System.out.println("   " + p.getObjid());
+            }
+        }
+    }
+
+    /**
+     * Print out childs of OrganizationalUnit.
+     * 
+     * @param client
+     *            The OrganizationalUnitHandlerClient
+     * @param ou
+     *            The OrganizationalUnit
+     * @throws EscidocException
+     * @throws InternalClientException
+     * @throws TransportException
+     */
+    private static void printChilds(
+        final OrganizationalUnitHandlerClient client,
+        final OrganizationalUnit ou) throws EscidocException,
+        InternalClientException, TransportException {
+
+        OrganizationalUnitList ouCL =
+            client.retrieveChildObjects(ou.getObjid());
+
+        System.out.println(" childs: ");
+        if (ouCL.getOrganizationalUnits().isEmpty()) {
+            System.out.println("   none");
+        }
+        else {
+            Iterator<OrganizationalUnit> it =
+                ouCL.getOrganizationalUnits().iterator();
+            while (it.hasNext()) {
+                OrganizationalUnit c = it.next();
+                System.out.println("   " + c.getObjid());
+            }
+        }
+
     }
 
 }

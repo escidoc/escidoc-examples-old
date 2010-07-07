@@ -1,8 +1,5 @@
 package org.escidoc.workingWithClientLib.ClassMapping.item;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -11,13 +8,14 @@ import org.escidoc.Constants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
-import de.escidoc.core.resources.common.properties.ContentModelSpecific;
 import de.escidoc.core.resources.om.item.Item;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create an Item.
@@ -27,117 +25,97 @@ import de.escidoc.core.resources.om.item.Item;
  */
 public class CreateItem {
 
-	/**
-	 * Default Item template is loaded if no file location is given as parameter
-	 * 
-	 * @param args
-	 *            location of Item XML
-	 * @throws ParserConfigurationException
-	 */
-	public static void main(String[] args) {
+    /**
+     * Default Item template is loaded if no file location is given as parameter
+     * 
+     * @param args
+     *            location of Item XML
+     * @throws ParserConfigurationException
+     */
+    public static void main(String[] args) {
 
-		try {
+        try {
+            // authentication (Use a user account with write permission for Item
+            // on the selected Context. Usually is this user with depositor
+            // role).
+            Authentication auth =
+                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                    Constants.USER_NAME, Constants.USER_PASSWORD);
 
-			Item createdResource = createItem();
+            Item createdResource = createItem(auth);
 
-			System.out.println("Item with objid='" + createdResource.getObjid()
-					+ "' at '"
-					+ createdResource.getLastModificationDateAsString()
-					+ "' created.");
+            System.out.println("Item with objid='" + createdResource.getObjid()
+                + "' at '" + createdResource.getLastModificationDate()
+                + "' created.");
 
-		} catch (EscidocClientException e) {
-			e.printStackTrace();
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-		}
-	}
+        }
+        catch (EscidocClientException e) {
+            e.printStackTrace();
+        }
+        catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * Create Item.
-	 * 
-	 * @return XML representation of the created Item
-	 * @throws EscidocClientException
-	 * @throws ParserConfigurationException
-	 */
-	private static Item createItem() throws EscidocClientException,
-			ParserConfigurationException {
+    /**
+     * Create Item.
+     * 
+     * @param auth
+     *            Authentication (a user with write permission to create an
+     *            Item)
+     * @return XML representation of the created Item
+     * 
+     * @throws EscidocClientException
+     * @throws ParserConfigurationException
+     */
+    private static Item createItem(final Authentication auth)
+        throws EscidocClientException, ParserConfigurationException {
 
-		ItemHandlerClient ihc = new ItemHandlerClient();
-		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+        ItemHandlerClient ihc = new ItemHandlerClient();
+        ihc.setServiceAddress(auth.getServiceAddress());
+        ihc.setHandle(auth.getHandle());
 
-		Item item = new Item();
+        Item item = new Item();
 
-		item.getProperties().setContext(
-				new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
-		item.getProperties().setContentModel(
-				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+        item.getProperties().setContext(
+            new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+        item.getProperties().setContentModel(
+            new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
-		// Content-model
-		ContentModelSpecific cms = getContentModelSpecific();
-		item.getProperties().setContentModelSpecific(cms);
+        // Metadata Record(s)
+        MetadataRecords mdRecords = new MetadataRecords();
+        MetadataRecord mdrecord = getMdRecord("escidoc");
+        mdRecords.add(mdrecord);
+        item.setMetadataRecords(mdRecords);
 
-		// Metadata Record(s)
-		MetadataRecords mdRecords = new MetadataRecords();
-		MetadataRecord mdrecord = getMdRecord("escidoc");
-		mdRecords.add(mdrecord);
-		item.setMetadataRecords(mdRecords);
+        // create
+        Item newItem = ihc.create(item);
 
-		// create
-		Item newItem = ihc.create(item);
+        return newItem;
+    }
 
-		return newItem;
-	}
+    /**
+     * Get MetadataRecord.
+     * 
+     * @param name
+     *            Name of md-record.
+     * @return MetadataRecord
+     * @throws ParserConfigurationException
+     */
+    private static MetadataRecord getMdRecord(final String name)
+        throws ParserConfigurationException {
 
-	/**
-	 * Get content model specific.
-	 * 
-	 * @return
-	 * @throws ParserConfigurationException
-	 */
-	private static ContentModelSpecific getContentModelSpecific()
-			throws ParserConfigurationException {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.newDocument();
 
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.newDocument();
+        MetadataRecord mdRecord = new MetadataRecord();
+        mdRecord.setName(name);
 
-		Element contentModelSpecific = doc.createElementNS(null, "cms");
-		Element element1 = doc.createElement("some-other-stuff");
-		element1.setTextContent("some content - " + System.nanoTime());
+        Element element = doc.createElementNS(null, "myMdRecord");
+        mdRecord.setContent(element);
 
-		List<Element> cmsContent = new LinkedList<Element>();
-		cmsContent.add(contentModelSpecific);
-		cmsContent.add(element1);
-
-		ContentModelSpecific cms = new ContentModelSpecific();
-		cms.setContent(cmsContent);
-
-		return cms;
-	}
-
-	/**
-	 * Get MetadataRecord.
-	 * 
-	 * @param name
-	 *            Name of md-record.
-	 * @return MetadataRecord
-	 * @throws ParserConfigurationException
-	 */
-	private static MetadataRecord getMdRecord(final String name)
-			throws ParserConfigurationException {
-
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.newDocument();
-
-		MetadataRecord mdRecord = new MetadataRecord();
-		mdRecord.setName(name);
-
-		Element element = doc.createElementNS(null, "myMdRecord");
-		mdRecord.setContent(element);
-
-		return mdRecord;
-	}
+        return mdRecord;
+    }
 
 }

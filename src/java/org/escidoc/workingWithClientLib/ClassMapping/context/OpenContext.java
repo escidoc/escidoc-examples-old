@@ -1,8 +1,8 @@
 package org.escidoc.workingWithClientLib.ClassMapping.context;
 
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ContextHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
@@ -11,6 +11,7 @@ import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.om.context.Context;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to open an Context by using the eSciDoc Java client library.
@@ -22,107 +23,57 @@ import de.escidoc.core.resources.om.context.Context;
  */
 public class OpenContext {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// set objid of Context which is to open
-		String objid = "escidoc:1";
-		if (args.length > 0) {
-			objid = args[0];
-		}
+        // set objid of Context which is to open
+        String objid = "escidoc:1";
+        if (args.length > 0) {
+            objid = args[0];
+        }
 
-		Context context = null;
-		try {
-			// retrieve an already created Context
-			context = retrieveContext(objid);
+        try {
+            // authentication (Use a user account with write permission
+            // on the selected Context. Usually is this user with administrator
+            // role).
+            Authentication auth =
+                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                    Constants.USER_NAME, Constants.USER_PASSWORD);
 
-			// set status to open
-			context.getProperties().setPublicStatus("opened");
+            // get service handler
+            ContextHandlerClient client = new ContextHandlerClient();
+            client.setServiceAddress(auth.getServiceAddress());
+            client.setHandle(auth.getHandle());
 
-			// open Context
-			Result result = openContext(context);
+            // retrieve an already created Context
+            Context context = client.retrieve(objid);
 
-			// for convenient reason: print out objid and last-modification-date
-			// of opened context
-			System.out.println("Context with objid='" + context.getObjid()
-					+ "' at '" + result.getLastModificationDate()
-					+ "' is opened now.");
+            // prepare taskParam and call open
+            TaskParam taskParam = new TaskParam();
+            taskParam.setComment("Example to open Context");
+            taskParam
+                .setLastModificationDate(context.getLastModificationDate());
 
-		} catch (EscidocException e) {
-			e.printStackTrace();
-		} catch (InternalClientException e) {
-			e.printStackTrace();
-		} catch (TransportException e) {
-			e.printStackTrace();
-		} catch (EscidocClientException e) {
-			e.printStackTrace();
-		}
+            Result result = client.open(context.getObjid(), taskParam);
 
-	}
+            // for convenient reason: print out objid and last-modification-date
+            // of opened context
+            System.out.println("Context with objid='" + context.getObjid()
+                + "' at '" + result.getLastModificationDate()
+                + "' is opened now.");
 
-	/**
-	 * Retrieve Context from infrastructure.
-	 * 
-	 * @param objid
-	 *            The objid of the Context
-	 * @return Context
-	 * 
-	 * @throws EscidocException
-	 *             Thrown if eSciDoc infrastructure throws an exception. This
-	 *             happens mostly if data structure is incomplete for the
-	 *             required operation, method is not allowed in object status or
-	 *             permissions are restricted.
-	 * @throws InternalClientException
-	 *             These are thrown if client library internal failure occur.
-	 * @throws TransportException
-	 *             Is thrown if transport between client library and framework
-	 *             is malfunctioned.
-	 */
-	private static Context retrieveContext(final String objid)
-			throws EscidocException, InternalClientException,
-			TransportException {
+        }
+        catch (EscidocException e) {
+            e.printStackTrace();
+        }
+        catch (InternalClientException e) {
+            e.printStackTrace();
+        }
+        catch (TransportException e) {
+            e.printStackTrace();
+        }
+        catch (EscidocClientException e) {
+            e.printStackTrace();
+        }
 
-		ContextHandlerClient client = new ContextHandlerClient();
-		client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-				Constants.USER_PASSWORD);
-
-		Context context = client.retrieve(objid);
-
-		return context;
-	}
-
-	/**
-	 * Update Context at infrastructure.
-	 * 
-	 * @param context
-	 *            The to update Context
-	 * @return Result
-	 * 
-	 * @throws EscidocException
-	 *             Thrown if eSciDoc infrastructure throws an exception. This
-	 *             happens mostly if data structure is incomplete for the
-	 *             required operation, method is not allowed in object status or
-	 *             permissions are restricted.
-	 * @throws InternalClientException
-	 *             These are thrown if client library internal failure occur.
-	 * @throws TransportException
-	 *             Is thrown if transport between client library and framework
-	 *             is malfunctioned.
-	 */
-	private static Result openContext(final Context context)
-			throws EscidocException, InternalClientException,
-			TransportException {
-
-		ContextHandlerClient client = new ContextHandlerClient();
-		client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-				Constants.USER_PASSWORD);
-
-		TaskParam taskParam = new TaskParam();
-		taskParam.setComment("Example to open Context");
-		taskParam.setLastModificationDate(context.getLastModificationDate());
-
-		Result result = client.open(context.getObjid(), taskParam);
-
-		return result;
-	}
-
+    }
 }

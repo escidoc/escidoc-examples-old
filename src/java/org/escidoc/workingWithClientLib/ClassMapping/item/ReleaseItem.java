@@ -1,85 +1,92 @@
 package org.escidoc.workingWithClientLib.ClassMapping.item;
 
-import java.util.Vector;
-
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.resources.common.Filter;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.om.item.Item;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to release an Item.
  * 
- * @author FRS
+  * <ul>
+ * <li>The Item has to exist and in status 'submitted'.</li>
+ * <li>The configured user requires permissions to change the status.</li>
+ * </ul>
  * 
+ * @author FRS
  */
 public class ReleaseItem {
 
-	/**
-	 * 
-	 * @param args
-	 *            The objid of the to release Item.
-	 */
-	public static void main(String[] args) {
+    /**
+     * 
+     * @param args
+     *            The objid of the to release Item.
+     */
+    public static void main(String[] args) {
 
-		try {
+        try {
 
-			/*
-			 * Either set the objid of the Item by parameter or set the objid in
-			 * the following id variable.
-			 */
-			String id = "escidoc:1";
-			if (args.length > 0) {
-				id = args[0];
-			}
+            /*
+             * Either set the objid of the Item by parameter or set the objid in
+             * the following id variable.
+             */
+            String id = "escidoc:1";
+            if (args.length > 0) {
+                id = args[0];
+            }
 
-			releaseItem(id);
+            releaseItem(id);
 
-		} catch (EscidocClientException e) {
-			e.printStackTrace();
-		}
+        }
+        catch (EscidocClientException e) {
+            e.printStackTrace();
+        }
 
-	}
+    }
 
-	/**
-	 * Release an Item.
-	 * 
-	 * <p>
-	 * Release an Item is a task oriented method and needs and additional
-	 * parameter instead of the Item representation.
-	 * </p>
-	 * <p>
-	 * The taskParam has to contain the last-modification-date of the Item
-	 * (optimistic locking) and the release comment.
-	 * </p>
-	 * 
-	 * @param id
-	 *            The objid of the Item.
-	 * @throws EscidocClientException
-	 */
-	public static void releaseItem(final String id)
-			throws EscidocClientException {
+    /**
+     * Release an Item.
+     * 
+     * <p>
+     * Release an Item is a task oriented method and needs and additional
+     * parameter instead of the Item representation.
+     * </p>
+     * <p>
+     * The taskParam has to contain the last-modification-date of the Item
+     * (optimistic locking) and the release comment.
+     * </p>
+     * 
+     * @param id
+     *            The objid of the Item.
+     * @throws EscidocClientException
+     */
+    public static void releaseItem(final String id)
+        throws EscidocClientException {
 
-		// prepare client object
-		ItemHandlerClient ihc = new ItemHandlerClient();
-		ihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
 
-		// create item object retrieving the item
-		Item item = ihc.retrieve(id);
+        ItemHandlerClient ihc = new ItemHandlerClient();
+        ihc.setServiceAddress(auth.getServiceAddress());
+        ihc.setHandle(auth.getHandle());
 
-		// release using submit result
-		Result releaseResult = ihc.release(item, new TaskParam(item
-				.getLastModificationDate(), "release", null, null,
-				new Vector<Filter>()));
+        // retrieving the Item
+        Item item = ihc.retrieve(id);
 
-		System.out.println("Item with objid='" + id + "' at '"
-				+ releaseResult.getLastModificationDateAsString()
-				+ "' released.");
-	}
+        // prepare taskParam and call release
+        TaskParam taskParam = new TaskParam();
+        taskParam.setLastModificationDate(item.getLastModificationDate());
+        taskParam.setComment("release");
+
+        Result releaseResult = ihc.release(item, taskParam);
+
+        System.out.println("Item with objid='" + id + "' at '"
+            + releaseResult.getLastModificationDate() + "' released.");
+    }
 }

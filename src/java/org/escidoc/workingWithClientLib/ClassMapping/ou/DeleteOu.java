@@ -9,18 +9,17 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.OrganizationalUnitHandlerClient;
-import de.escidoc.core.client.exceptions.EscidocException;
-import de.escidoc.core.client.exceptions.InternalClientException;
-import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
 import de.escidoc.core.resources.oum.Properties;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to delete an Organizational Unit by using the eSciDoc Java client
@@ -34,14 +33,20 @@ public class DeleteOu {
     public static void main(String[] args) {
 
         try {
+            // authentication (Use a user account with permission to create an
+            // Organizational Unit).
+            Authentication auth =
+                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                    Constants.USER_NAME, Constants.USER_PASSWORD);
+
             // Prepare a value object with new values of Organizational Unit
             OrganizationalUnit ou = prepareOrganizationalUnit();
 
             // get handler
             OrganizationalUnitHandlerClient client =
                 new OrganizationalUnitHandlerClient();
-            client.login(Util.getInfrastructureURL(),
-                Constants.USER_NAME, Constants.USER_PASSWORD);
+            client.setServiceAddress(auth.getServiceAddress());
+            client.setHandle(auth.getHandle());
 
             // call create
             OrganizationalUnit createdOu = client.create(ou);
@@ -54,15 +59,8 @@ public class DeleteOu {
 
             // delete just created OU
             client.delete(createdOu.getObjid());
-
         }
-        catch (EscidocException e) {
-            e.printStackTrace();
-        }
-        catch (InternalClientException e) {
-            e.printStackTrace();
-        }
-        catch (TransportException e) {
+        catch (EscidocClientException e) {
             e.printStackTrace();
         }
         catch (ParserConfigurationException e) {

@@ -7,19 +7,18 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.OrganizationalUnitHandlerClient;
-import de.escidoc.core.client.exceptions.EscidocException;
-import de.escidoc.core.client.exceptions.InternalClientException;
-import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
 import de.escidoc.core.resources.oum.Properties;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create an Organizational Unit by using the class mapping
@@ -46,13 +45,7 @@ public class CreateOu {
                 + "' created.");
 
         }
-        catch (EscidocException e) {
-            e.printStackTrace();
-        }
-        catch (InternalClientException e) {
-            e.printStackTrace();
-        }
-        catch (TransportException e) {
+        catch (EscidocClientException e) {
             e.printStackTrace();
         }
         catch (ParserConfigurationException e) {
@@ -115,27 +108,22 @@ public class CreateOu {
      *            The value object of an OrganizationalUnit.
      * @return Value Object of created OrganizationalUnit (enriched with values
      *         by infrastructure)
-     * 
-     * @throws EscidocException
-     *             Thrown if eSciDoc infrastructure throws an exception. This
-     *             happens mostly if data structure is incomplete for the
-     *             required operation, method is not allowed in object status or
-     *             permissions are restricted.
-     * @throws InternalClientException
-     *             These are thrown if client library internal failure occur.
-     * @throws TransportException
-     *             Is thrown if transport between client library and framework
-     *             is malfunctioned.
+     * @throws EscidocClientException
      */
     private static OrganizationalUnit createOrganizationalUnit(
-        final OrganizationalUnit ou) throws EscidocException,
-        InternalClientException, TransportException {
+        final OrganizationalUnit ou) throws EscidocClientException {
+
+        // authentication (Use a user account with permission to create an
+        // Organizational Unit).
+        Authentication auth =
+            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get handler
         OrganizationalUnitHandlerClient client =
             new OrganizationalUnitHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        client.setServiceAddress(auth.getServiceAddress());
+        client.setHandle(auth.getHandle());
 
         // call create
         OrganizationalUnit createdOu = client.create(ou);

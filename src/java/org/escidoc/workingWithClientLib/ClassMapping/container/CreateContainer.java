@@ -1,8 +1,5 @@
 package org.escidoc.workingWithClientLib.ClassMapping.container;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -11,13 +8,14 @@ import org.escidoc.Constants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ContainerHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
-import de.escidoc.core.resources.common.properties.ContentModelSpecific;
 import de.escidoc.core.resources.om.container.Container;
+import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create a Container by using the class mapping feature of
@@ -31,12 +29,18 @@ public class CreateContainer {
     public static void main(String[] args) {
 
         try {
+            // authentication (Use a user account with write permission for Container
+            // on the selected Context. Usually is this user with depositor
+            // role).
+            Authentication auth =
+                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                    Constants.USER_NAME, Constants.USER_PASSWORD);
 
-            Container createdResource = createContainer();
+            Container createdResource = createContainer(auth);
 
             System.out.println("Container with objid='"
                 + createdResource.getObjid() + "' at '"
-                + createdResource.getLastModificationDateAsString()
+                + createdResource.getLastModificationDate()
                 + "' created.");
 
         }
@@ -55,25 +59,22 @@ public class CreateContainer {
      * @throws EscidocClientException
      * @throws ParserConfigurationException
      */
-    private static Container createContainer() throws EscidocClientException,
+    private static Container createContainer(final Authentication auth) throws EscidocClientException,
         ParserConfigurationException {
 
         ContainerHandlerClient chc = new ContainerHandlerClient();
-        chc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        chc.setServiceAddress(auth.getServiceAddress());
+        chc.setHandle(auth.getHandle());
 
         Container container = new Container();
 
+        // add properties
         container.getProperties().setContext(
             new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
         container.getProperties().setContentModel(
             new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
-        // Content-model
-        ContentModelSpecific cms = getContentModelSpecific();
-        container.getProperties().setContentModelSpecific(cms);
-
-        // Metadata Record(s)
+        // add Metadata Record(s)
         MetadataRecords mdRecords = new MetadataRecords();
         MetadataRecord mdrecord =
             getMdRecord("escidoc", "myMdRecord", "Exmaple Container",
@@ -85,33 +86,6 @@ public class CreateContainer {
         Container newContainer = chc.create(container);
 
         return newContainer;
-    }
-
-    /**
-     * Get content model specific.
-     * 
-     * @return
-     * @throws ParserConfigurationException
-     */
-    private static ContentModelSpecific getContentModelSpecific()
-        throws ParserConfigurationException {
-
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.newDocument();
-
-        Element contentModelSpecific = doc.createElementNS(null, "cms");
-        Element element1 = doc.createElement("some-other-stuff");
-        element1.setTextContent("some content - " + System.nanoTime());
-
-        List<Element> cmsContent = new LinkedList<Element>();
-        cmsContent.add(contentModelSpecific);
-        cmsContent.add(element1);
-
-        ContentModelSpecific cms = new ContentModelSpecific();
-        cms.setContent(cmsContent);
-
-        return cms;
     }
 
     /**
