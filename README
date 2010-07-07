@@ -1,0 +1,15 @@
+
+eSciDoc Examples
+===========================================
+
+This project contains Java examples to use the eSciDoc infrastructure. 
+Most of examples based on the eSciDoc Java Client lib, some show requests
+on HTTP level (see package simpleConnections).
+
+The code snippets, based on Java client lib, are located in the package 
+workingWithClientLib. This package distinguish between examples where the 
+class mapping feature is used and examples where the plain XML 
+representation via REST services is used.
+
+Class mapping means that all the XML stuff is hidden and one can work in
+Java objects (the recommended way).
