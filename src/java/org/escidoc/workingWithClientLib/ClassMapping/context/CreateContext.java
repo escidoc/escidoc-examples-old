@@ -80,7 +80,7 @@ public class CreateContext {
         // add the Organizational Unit with objid escidoc:ex3 (the ou of the
         // example eSciDoc representation package) to the list of
         // organizational Units
-        ous.addOrganizationalUnitRef(new ResourceRef("escidoc:ex3"));
+        ous.add(new ResourceRef("escidoc:ex3"));
         properties.setOrganizationalUnitRefs(ous);
 
         context.setProperties(properties);

@@ -13,3 +13,9 @@ representation via REST services is used.
 
 Class mapping means that all the XML stuff is hidden and one can work in
 Java objects (the recommended way).
+
+The code examples are designed to be easy to understand and as little 
+depending on other examples as possible. That's why you can found some 
+duplicated code or multiple handler initializations which could be reduced
+to one.
+
