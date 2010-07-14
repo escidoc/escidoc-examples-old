@@ -34,7 +34,7 @@ import de.escidoc.core.test.client.EscidocClientTestBase;
 /**
  * Example how to create an Item with binary content.
  * 
- * The binary content is to transfer fro the local disk into the infrastructure.
+ * The binary content is to transfer from the local disk into the infrastructure.
  * The infrastructure requires HTTP access to pull files - which is usually not
  * given for local files. That's why the file is upload to the staging service
  * first. The HTTP reference of the uploaded file from the staging service is
