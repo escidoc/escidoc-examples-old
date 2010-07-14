@@ -11,7 +11,7 @@ import de.escidoc.core.resources.om.container.Container;
 import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
- * Example how to release an Container.
+ * Example how to release a Container.
  * 
  * @author SWA
  * 
