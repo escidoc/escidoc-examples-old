@@ -2,8 +2,6 @@ package org.escidoc.workingWithClientLib.ClassMapping.crud;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.LinkedList;
-import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -24,7 +22,6 @@ import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
-import de.escidoc.core.resources.common.properties.ContentModelSpecific;
 import de.escidoc.core.resources.om.item.Item;
 
 /**
@@ -61,9 +58,6 @@ public class DemoItem {
         item.getProperties().setContentModel(
             new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
-        // Content-model
-        item.getProperties().setContentModelSpecific(getContentModelSpecific());
-
         // Metadata Record(s)
         MetadataRecords mdRecords = new MetadataRecords();
         mdRecords.add(getMdRecord("escidoc"));
@@ -96,13 +90,13 @@ public class DemoItem {
         // submit
         TaskParam tp = new TaskParam();
         tp.setLastModificationDate(item.getLastModificationDate());
-        tp.setComment("Submitted on eSciDoc Days 2009");
+        tp.setComment("Submitted to show lifecycle");
 
         Result result = ihc.submit(item, tp);
 
         // release
         tp.setLastModificationDate(result.getLastModificationDate());
-        tp.setComment("Released on eSciDoc Days 2009");
+        tp.setComment("Released to show lifecycle");
 
         ihc.release(item, tp);
     }
@@ -157,42 +151,12 @@ public class DemoItem {
         item.getProperties().setContentModel(
             new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
-        // Content-model
-        item.getProperties().setContentModelSpecific(getContentModelSpecific());
-
         // Metadata Record(s)
         MetadataRecords mdRecords = new MetadataRecords();
         mdRecords.add(getMdRecord("escidoc"));
         item.setMetadataRecords(mdRecords);
 
         return item;
-    }
-
-    /**
-     * Get content model specific.
-     * 
-     * @return
-     * @throws ParserConfigurationException
-     */
-    private ContentModelSpecific getContentModelSpecific()
-        throws ParserConfigurationException {
-
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.newDocument();
-
-        Element contentModelSpecific = doc.createElementNS(null, "cms");
-        Element element1 = doc.createElement("some-other-stuff");
-        element1.setTextContent("some content - " + System.nanoTime());
-
-        List<Element> cmsContent = new LinkedList<Element>();
-        cmsContent.add(contentModelSpecific);
-        cmsContent.add(element1);
-
-        ContentModelSpecific cms = new ContentModelSpecific();
-        cms.setContent(cmsContent);
-
-        return cms;
     }
 
     /**
