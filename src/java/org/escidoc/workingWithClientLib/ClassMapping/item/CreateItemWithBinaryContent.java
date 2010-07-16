@@ -34,11 +34,11 @@ import de.escidoc.core.test.client.EscidocClientTestBase;
 /**
  * Example how to create an Item with binary content.
  * 
- * The binary content is to transfer from the local disk into the infrastructure.
- * The infrastructure requires HTTP access to pull files - which is usually not
- * given for local files. That's why the file is upload to the staging service
- * first. The HTTP reference of the uploaded file from the staging service is
- * used as content references in the Item.
+ * The binary content is to transfer from the local disk into the
+ * infrastructure. The infrastructure requires HTTP access to pull files - which
+ * is usually not given for local files. That's why the file is upload to the
+ * staging service first. The HTTP reference of the uploaded file from the
+ * staging service is used as content references in the Item.
  * 
  * @author SWA
  * 
@@ -162,10 +162,14 @@ public class CreateItemWithBinaryContent {
         Component component = new Component();
         ComponentContent content = new ComponentContent();
         content.setHref(contentRef.toString());
+        content.setStorage("internal-managed");
         component.setContent(content);
         component.setProperties(new ComponentProperties());
         component.getProperties().setDescription("Random content");
         component.getProperties().setFileName(contentRef.getFile());
+        component.getProperties().setVisibility("public");
+        component.getProperties().setContentCategory("pre-print");
+
         Components components = new Components();
         components.add(component);
         item.setComponents(components);
