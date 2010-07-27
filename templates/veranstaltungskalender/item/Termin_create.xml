@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<escidocItem:item xmlns:escidocItem="http://www.escidoc.de/schemas/item/0.9"
+	xmlns:escidocMetadataRecords="http://www.escidoc.de/schemas/metadatarecords/0.5"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+
+	<escidocItem:properties>
+		<srel:context xlink:href="/ir/context/###CONTEXTID###" />
+		<srel:content-model xlink:href="/cmm/content-model/###CONTENTMODELID###" />
+		<prop:content-model-specific />
+	</escidocItem:properties>
+
+	<escidocMetadataRecords:md-records>
+		<escidocMetadataRecords:md-record
+			name="escidoc">
+			<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+				<dc:title>Ein Termin</dc:title>
+				<dc:description>Test Termin.</dc:description>
+			</metadata>
+		</escidocMetadataRecords:md-record>
+
+	</escidocMetadataRecords:md-records>
+
+</escidocItem:item>
+
