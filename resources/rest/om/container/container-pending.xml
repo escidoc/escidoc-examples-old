@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:8080/xsl/Resource2Html.xsl"?>
+<container:container xmlns:struct-map="http://www.escidoc.de/schemas/structmap/0.4"
+	xmlns:relations="http://www.escidoc.de/schemas/relations/0.3"
+	xmlns:escidocMetadataRecords="http://www.escidoc.de/schemas/metadatarecords/0.5"
+	xmlns:version="http://escidoc.de/core/01/properties/version/"
+	xmlns:release="http://escidoc.de/core/01/properties/release/"
+	xmlns:container="http://www.escidoc.de/schemas/container/0.8"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xml:base="http://localhost:8080"
+	xlink:type="simple" xlink:title="Container escidoc:157513" xlink:href="/ir/container/escidoc:157513"
+	last-modification-date="2010-06-08T16:24:51.875Z">
+	
+	<container:properties xlink:type="simple"
+		xlink:title="Properties" xlink:href="/ir/container/escidoc:157513/properties">
+		<prop:creation-date>2010-06-08T16:24:45.679Z</prop:creation-date>
+		<srel:created-by xlink:type="simple"
+			xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:exuser1" />
+		<prop:public-status>pending</prop:public-status>
+		<prop:public-status-comment>Object escidoc:157513 created.</prop:public-status-comment>
+		<prop:name>Container escidoc:157513</prop:name>
+		<srel:context xlink:type="simple" xlink:title="Context Example 1"
+			xlink:href="/ir/context/escidoc:ex1" />
+		<srel:content-model xlink:type="simple"
+			xlink:title="Generic Content Model" xlink:href="/cmm/content-model/escidoc:ex4" />
+		<prop:lock-status>unlocked</prop:lock-status>
+		<prop:version xlink:type="simple" xlink:title="current version"
+			xlink:href="/ir/container/escidoc:157513:2">
+
+			<version:number>2</version:number>
+			<version:date>2010-06-08T16:24:51.875Z</version:date>
+			<version:status>pending</version:status>
+
+			<srel:modified-by xlink:type="simple"
+				xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:exuser1" />
+
+			<version:comment>Container.addMembers</version:comment>
+
+		</prop:version>
+
+		<prop:latest-version xlink:type="simple"
+			xlink:title="latest version" xlink:href="/ir/container/escidoc:157513:2">
+
+			<version:number>2</version:number>
+			<version:date>2010-06-08T16:24:51.875Z</version:date>
+		</prop:latest-version>
+
+		<prop:content-model-specific xmlns:prop="http://escidoc.de/core/01/properties/">
+			<cms></cms>
+			<some-other-stuff>some content - 1276014285368018000</some-other-stuff>
+		</prop:content-model-specific>
+	</container:properties>
+	<escidocMetadataRecords:md-records
+		xlink:type="simple" xlink:title="Metadata of the container."
+		xlink:href="/ir/container/escidoc:157513/md-records">
+		<escidocMetadataRecords:md-record
+			name="escidoc" xlink:type="simple" xlink:title="escidoc metadata set."
+			xlink:href="/ir/container/escidoc:157513/md-records/md-record/escidoc">
+			<myMdRecord></myMdRecord>
+		</escidocMetadataRecords:md-record>
+
+	</escidocMetadataRecords:md-records>
+
+	<struct-map:struct-map xlink:type="simple"
+		xlink:title="StructMap of Container" xlink:href="/ir/container/escidoc:157513/struct-map">
+		<srel:item xlink:href="/ir/item/escidoc:157518" xlink:title="Item escidoc:157518"
+			xlink:type="simple" />
+		<srel:item xlink:href="/ir/item/escidoc:157519" xlink:title="Item escidoc:157519"
+			xlink:type="simple" />
+		<srel:item xlink:href="/ir/item/escidoc:157514" xlink:title="Item escidoc:157514"
+			xlink:type="simple" />
+		<srel:item xlink:href="/ir/item/escidoc:157515" xlink:title="Item escidoc:157515"
+			xlink:type="simple" />
+		<srel:item xlink:href="/ir/item/escidoc:157516" xlink:title="Item escidoc:157516"
+			xlink:type="simple" />
+		<srel:item xlink:href="/ir/item/escidoc:157517" xlink:title="Item escidoc:157517"
+			xlink:type="simple" />
+	</struct-map:struct-map>
+	<relations:relations xlink:type="simple"
+		xlink:title="Relations of Container" xlink:href="/ir/container/escidoc:157513/relations">
+	</relations:relations>
+
+	<container:resources xlink:type="simple"
+		xlink:title="Virtual Resources" xlink:href="/ir/container/escidoc:157513/resources" />
+</container:container>

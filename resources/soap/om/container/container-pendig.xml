@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container:container xmlns:relations="http://www.escidoc.de/schemas/relations/0.3"
+	xmlns:escidocMetadataRecords="http://www.escidoc.de/schemas/metadatarecords/0.5"
+	xmlns:version="http://escidoc.de/core/01/properties/version/"
+	xmlns:release="http://escidoc.de/core/01/properties/release/"
+	xmlns:container="http://www.escidoc.de/schemas/container/0.8"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	objid="escidoc:248652" last-modification-date="2010-08-11T09:15:42.551Z">
+	<container:properties>
+		<prop:creation-date>2010-08-11T09:15:42.551Z</prop:creation-date>
+		<srel:created-by objid="escidoc:exuser1" />
+		<prop:public-status>pending</prop:public-status>
+		<prop:public-status-comment>Object escidoc:248652 created.</prop:public-status-comment>
+		<prop:name>Container escidoc:248652</prop:name>
+		<srel:context objid="escidoc:ex1" />
+		<srel:content-model objid="escidoc:ex4" />
+		<prop:lock-status>unlocked</prop:lock-status>
+
+		<prop:version objid="escidoc:248652:1">
+			<version:number>1</version:number>
+			<version:date>2010-08-11T09:15:42.551Z</version:date>
+			<version:status>pending</version:status>
+
+			<srel:modified-by objid="escidoc:exuser1" />
+			<version:comment>Object escidoc:248652 created.</version:comment>
+		</prop:version>
+		<prop:latest-version objid="escidoc:248652:1">
+			<version:number>1</version:number>
+			<version:date>2010-08-11T09:15:42.551Z</version:date>
+		</prop:latest-version>
+
+		<prop:content-model-specific xmlns:prop="http://escidoc.de/core/01/properties/">
+			<cms></cms>
+		</prop:content-model-specific>
+	</container:properties>
+
+	<escidocMetadataRecords:md-records>
+		<escidocMetadataRecords:md-record
+			name="escidoc">
+			<myMdRecord></myMdRecord>
+		</escidocMetadataRecords:md-record>
+
+
+	</escidocMetadataRecords:md-records>
+	
+	<relations:relations>
+	</relations:relations>
+</container:container>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:8080/xsl/Resource2Html.xsl"?>
+<user-account:user-account
+	xmlns:user-account="http://www.escidoc.de/schemas/useraccount/0.7"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xml:base="http://localhost:8080"
+	xlink:type="simple" xlink:title="Name login1281517535517" xlink:href="/aa/user-account/escidoc:249600"
+	last-modification-date="2010-08-11T09:06:13.482Z">
+	
+	<user-account:properties>
+		<prop:creation-date>2010-08-11T09:06:13.482Z</prop:creation-date>
+		<srel:created-by xlink:type="simple"
+			xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:1" />
+		<srel:modified-by xlink:type="simple"
+			xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:1" />
+		<prop:name>Name login1281517535517</prop:name>
+		<prop:login-name>login1281517535517</prop:login-name>
+		<prop:active>true</prop:active>
+	</user-account:properties>
+	
+	<user-account:resources xlink:type="simple"
+		xlink:title="Virtual Resources" xlink:href="/aa/user-account/escidoc:249600/resources">
+		<user-account:current-grants xlink:type="simple"
+			xlink:title="Current Grants"
+			xlink:href="/aa/user-account/escidoc:249600/resources/current-grants" />
+		<user-account:preferences xlink:type="simple"
+			xlink:title="Preferences" xlink:href="/aa/user-account/escidoc:249600/resources/preferences" />
+		<user-account:attributes xlink:type="simple"
+			xlink:title="Attributes" xlink:href="/aa/user-account/escidoc:249600/resources/attributes" />
+	</user-account:resources>
+	
+</user-account:user-account>
+

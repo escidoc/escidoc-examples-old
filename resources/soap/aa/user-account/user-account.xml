@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user-account:user-account
+	xmlns:user-account="http://www.escidoc.de/schemas/useraccount/0.7"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	objid="escidoc:249600" last-modification-date="2010-08-11T09:06:13.482Z">
+	
+	<user-account:properties>
+		<prop:creation-date>2010-08-11T09:06:13.482Z</prop:creation-date>
+		<srel:created-by objid="escidoc:1" />
+		<srel:modified-by objid="escidoc:1" />
+		<prop:name>Name login1281517535517</prop:name>
+		<prop:login-name>login1281517535517</prop:login-name>
+		<prop:active>true</prop:active>
+	</user-account:properties>
+	
+</user-account:user-account>

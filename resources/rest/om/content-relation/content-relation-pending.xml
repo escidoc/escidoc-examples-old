@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:8080/xsl/Resource2Html.xsl"?>
+<escidocContentRelation:content-relation
+	xmlns:escidocContentRelation="http://www.escidoc.de/schemas/content-relation/0.1"
+	xmlns:escidocMetadataRecords="http://www.escidoc.de/schemas/metadatarecords/0.5"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xml:base="http://localhost:8080"
+	xlink:type="simple" xlink:title="Content Relation" xlink:href="/ir/content-relation/escidoc:248669"
+	last-modification-date="2010-08-11T11:36:09.136+02:00">
+
+	<escidocContentRelation:properties>
+		<prop:creation-date>2010-08-11T11:36:09.136+02:00</prop:creation-date>
+		<srel:created-by xlink:type="simple"
+			xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:exuser1" />
+		<srel:modified-by xlink:type="simple"
+			xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:exuser1" />
+		<prop:description>Java Client Test Content Relation</prop:description>
+		<prop:public-status>pending</prop:public-status>
+
+		<prop:public-status-comment>Object created.</prop:public-status-comment>
+		<prop:lock-status>unlocked</prop:lock-status>
+
+	</escidocContentRelation:properties>
+	<escidocContentRelation:type>http://www.escidoc.de/ontologies/mpdl-ontologies/content-relations#hasPart</escidocContentRelation:type>
+	<escidocContentRelation:subject
+		xlink:type="simple" xlink:title="Context Example 1" xlink:href="/ir/context/escidoc:ex1" />
+	<escidocContentRelation:object
+		xlink:type="simple" xlink:title="eSciDoc Banner" xlink:href="/ir/item/escidoc:ex5:1" />
+	<escidocMetadataRecords:md-records
+		xlink:type="simple" xlink:title="Metadata Records of Content Relation escidoc:248669"
+		xlink:href="/ir/content-relation/escidoc:248669/md-records">
+		<escidocMetadataRecords:md-record
+			name="escidoc" md-type="unknown" schema="unknown" xlink:type="simple"
+			xlink:title="escidoc"
+			xlink:href="/ir/content-relation/escidoc:248669/md-records/md-record/escidoc">
+			<myMdRecord></myMdRecord>
+		</escidocMetadataRecords:md-record>
+
+	</escidocMetadataRecords:md-records>
+
+	<escidocContentRelation:resources />
+</escidocContentRelation:content-relation>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context:context xmlns:context="http://www.escidoc.de/schemas/context/0.7"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	objid="escidoc:248668" last-modification-date="2010-08-11T09:33:02.340Z">
+	<context:properties>
+		<prop:creation-date>2010-08-11T09:33:02.34Z</prop:creation-date>
+		<srel:created-by objid="escidoc:exuser1" />
+		<srel:modified-by objid="escidoc:exuser1" />
+		<prop:public-status>created</prop:public-status>
+		<prop:public-status-comment>Object escidoc:248668 created.</prop:public-status-comment>
+		<prop:name>ContextName1281519174199</prop:name>
+		<prop:description>ContextDescription</prop:description>
+		<prop:type>type</prop:type>
+		<prop:organizational-units>
+			<srel:organizational-unit objid="escidoc:ex3" />
+		</prop:organizational-units>
+	</context:properties>
+	<context:admin-descriptors xmlns:context="http://www.escidoc.de/schemas/context/0.7"
+		last-modification-date="2010-08-11T09:33:02.340Z">
+		<context:admin-descriptor name="AdminDescriptorDemoName">
+
+			<admin-descriptor></admin-descriptor>
+
+		</context:admin-descriptor>
+
+
+	</context:admin-descriptors>
+</context:context>

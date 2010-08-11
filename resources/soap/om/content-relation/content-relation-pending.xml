@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<escidocContentRelation:content-relation
+	xmlns:escidocContentRelation="http://www.escidoc.de/schemas/content-relation/0.1"
+	xmlns:escidocMetadataRecords="http://www.escidoc.de/schemas/metadatarecords/0.5"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	objid="escidoc:248669" last-modification-date="2010-08-11T11:36:09.136+02:00">
+
+	<escidocContentRelation:properties>
+		<prop:creation-date>2010-08-11T11:36:09.136+02:00</prop:creation-date>
+		<srel:created-by objid="escidoc:exuser1" />
+		<srel:modified-by objid="escidoc:exuser1" />
+		<prop:description>Java Client Test Content Relation</prop:description>
+		<prop:public-status>pending</prop:public-status>
+		<prop:public-status-comment>Object created.</prop:public-status-comment>
+		<prop:lock-status>unlocked</prop:lock-status>
+
+	</escidocContentRelation:properties>
+	<escidocContentRelation:type>http://www.escidoc.de/ontologies/mpdl-ontologies/content-relations#hasPart</escidocContentRelation:type>
+	<escidocContentRelation:subject objid="escidoc:ex1" />
+	<escidocContentRelation:object objid="escidoc:ex5:1" />
+	<escidocMetadataRecords:md-records>
+		<escidocMetadataRecords:md-record
+			name="escidoc" md-type="unknown" schema="unknown">
+
+			<myMdRecord></myMdRecord>
+
+		</escidocMetadataRecords:md-record>
+
+
+	</escidocMetadataRecords:md-records>
+
+</escidocContentRelation:content-relation>

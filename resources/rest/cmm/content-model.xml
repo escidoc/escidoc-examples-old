@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:8080/xsl/Resource2Html.xsl"?>
+<escidocContentModel:content-model
+	xmlns:escidocContentStreams="http://www.escidoc.de/schemas/contentstreams/0.7"
+	xmlns:version="http://escidoc.de/core/01/properties/version/"
+	xmlns:release="http://escidoc.de/core/01/properties/release/"
+	xmlns:escidocContentModel="http://www.escidoc.de/schemas/contentmodel/0.1"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xml:base="http://localhost:8080"
+	xlink:type="simple" xlink:title="Name-1281518973974198000" xlink:href="/cmm/content-model/escidoc:250491"
+	last-modification-date="2010-08-11T09:29:42.292Z">
+	<escidocContentModel:properties
+		xlink:type="simple" xlink:title="Properties"
+		xlink:href="/cmm/content-model/escidoc:250491/properties">
+		<prop:name>Name-1281518973974198000</prop:name>
+		<prop:description>Description-1281518973974223000</prop:description>
+		<prop:creation-date>2010-08-11T09:29:42.292Z</prop:creation-date>
+		<srel:created-by xlink:type="simple"
+			xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:exuser1" />
+		<prop:version xlink:type="simple" xlink:title="This Version"
+			xlink:href="/cmm/content-model/escidoc:250491:1">
+			<version:number>1</version:number>
+			<version:date>2010-08-11T09:29:42.292Z</version:date>
+			<version:status>pending</version:status>
+			<srel:modified-by xlink:type="simple"
+				xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:exuser1" />
+			<version:comment>Object created. Content Model escidoc:250491
+				created.</version:comment>
+		</prop:version>
+		<prop:latest-version xlink:type="simple"
+			xlink:title="Latest Version" xlink:href="/cmm/content-model/escidoc:250491:1">
+			<version:number>1</version:number>
+			<version:date>2010-08-11T09:29:42.292Z</version:date>
+		</prop:latest-version>
+
+	</escidocContentModel:properties>
+
+	<escidocContentModel:resources
+		xlink:type="simple" xlink:title="Resources"
+		xlink:href="/cmm/content-model/escidoc:250491/resources">
+		<escidocContentModel:version-history
+			xlink:type="simple" xlink:title="Version History"
+			xlink:href="/cmm/content-model/escidoc:250491/resources/version-history" />
+	</escidocContentModel:resources>
+</escidocContentModel:content-model>
+
