@@ -1,50 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://localhost:8080/xsl/Resource2Html.xsl"?>
 <context:context xmlns:context="http://www.escidoc.de/schemas/context/0.7"
 	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
-	xmlns:xlink="http://www.w3.org/1999/xlink" xml:base="http://localhost:8080"
-	xlink:type="simple" xlink:title="ContextName1281519174199" xlink:href="/ir/context/escidoc:248668"
-	last-modification-date="2010-08-11T09:33:02.340Z">
-	<context:properties xlink:type="simple" xlink:title="Properties"
-		xlink:href="/ir/context/escidoc:248668/properties">
+	objid="escidoc:248668" last-modification-date="2010-08-11T09:33:02.340Z">
+	<context:properties>
 		<prop:creation-date>2010-08-11T09:33:02.34Z</prop:creation-date>
-		<srel:created-by xlink:type="simple"
-			xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:exuser1" />
-		<srel:modified-by xlink:type="simple"
-			xlink:title="System Administrator User" xlink:href="/aa/user-account/escidoc:exuser1" />
+		<srel:created-by objid="escidoc:exuser1" />
+		<srel:modified-by objid="escidoc:exuser1" />
 		<prop:public-status>created</prop:public-status>
 		<prop:public-status-comment>Object escidoc:248668 created.</prop:public-status-comment>
 		<prop:name>ContextName1281519174199</prop:name>
 		<prop:description>ContextDescription</prop:description>
 		<prop:type>type</prop:type>
-
 		<prop:organizational-units>
-			<srel:organizational-unit xlink:type="simple"
-				xlink:title="Generic Organizational Unit" xlink:href="/oum/organizational-unit/escidoc:ex3" />
+			<srel:organizational-unit objid="escidoc:ex3" />
 		</prop:organizational-units>
 	</context:properties>
-	<context:resources xmlns:context="http://www.escidoc.de/schemas/context/0.7"
-		xmlns:xlink="http://www.w3.org/1999/xlink" xml:base="http://localhost:8080"
-		xlink:type="simple" xlink:title="Virtual Resources" xlink:href="/ir/context/escidoc:248668/resources"
-		last-modification-date="2010-08-11T09:33:02.340Z">
-		<context:members xlink:type="simple" xlink:title="Members "
-			xlink:href="/ir/context/escidoc:248668/resources/members" />
-		<context:relations xlink:type="simple"
-			xlink:title="Content Relations related to this Context" xlink:href="/ir/context/escidoc:248668/resources/relations" />
-	</context:resources>
 	<context:admin-descriptors xmlns:context="http://www.escidoc.de/schemas/context/0.7"
-		xmlns:xlink="http://www.w3.org/1999/xlink" xml:base="http://localhost:8080"
-		xlink:type="simple" xlink:title="Admin Descriptors"
-		xlink:href="/ir/context/escidoc:248668/admin-descriptors"
 		last-modification-date="2010-08-11T09:33:02.340Z">
-		<context:admin-descriptor name="AdminDescriptorDemoName"
-			xlink:type="simple" xlink:title="AdminDescriptorDemoName admin descriptor."
-			xlink:href="/ir/context/escidoc:248668/admin-descriptors/admin-descriptor/AdminDescriptorDemoName">
+		<context:admin-descriptor name="AdminDescriptorDemoName">
 
 			<admin-descriptor></admin-descriptor>
 
 		</context:admin-descriptor>
 
+
 	</context:admin-descriptors>
 </context:context>
-
