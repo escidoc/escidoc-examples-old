@@ -9,9 +9,9 @@
 		xmlns:dcterms="http://purl.org/dc/terms/">
 		<md-records:md-record name="escidoc">
 			<ou:ou>
-                <!-- For example: Google -->
+                <!-- For example: FIZ Karlsruhe -->
 				<dc:title>###TITLE###</dc:title>
-                <!-- For example: GOOG -->
+                <!-- For example: Fachinformationszentrum Karlsruhe -->
 				<dcterms:alternative>###ABBREVIATION###</dcterms:alternative>
 				<dc:description>###DESCRIPTION###</dc:description>
 			</ou:ou>
