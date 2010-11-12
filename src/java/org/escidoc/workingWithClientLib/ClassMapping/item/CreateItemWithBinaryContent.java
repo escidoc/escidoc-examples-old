@@ -21,15 +21,15 @@ import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
-import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
+import de.escidoc.core.resources.common.reference.ContentModelRef;
+import de.escidoc.core.resources.common.reference.ContextRef;
 import de.escidoc.core.resources.om.item.Item;
 import de.escidoc.core.resources.om.item.component.Component;
 import de.escidoc.core.resources.om.item.component.ComponentContent;
 import de.escidoc.core.resources.om.item.component.ComponentProperties;
 import de.escidoc.core.resources.om.item.component.Components;
-import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create an Item with binary content.
@@ -57,7 +57,7 @@ public class CreateItemWithBinaryContent {
             // on the selected Context. Usually is this user with depositor
             // role).
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
                     Constants.USER_NAME, Constants.USER_PASSWORD);
 
             // upload local file
@@ -69,6 +69,8 @@ public class CreateItemWithBinaryContent {
             System.out.println("Item with objid='" + createdResource.getObjid()
                 + "' at '" + createdResource.getLastModificationDate()
                 + "' created.");
+            
+            auth.logout();
 
         }
         catch (EscidocClientException e) {
@@ -120,8 +122,8 @@ public class CreateItemWithBinaryContent {
         final Authentication auth, final File file) throws EscidocException,
         InternalClientException, TransportException {
 
-        StagingHandlerClient sthc = new StagingHandlerClient();
-        sthc.setServiceAddress(auth.getServiceAddress());
+        StagingHandlerClient sthc = new StagingHandlerClient(auth.getServiceAddress());
+        
         sthc.setHandle(auth.getHandle());
 
         return sthc.upload(file);
@@ -142,16 +144,16 @@ public class CreateItemWithBinaryContent {
         final Authentication auth, final URL contentRef)
         throws EscidocClientException, ParserConfigurationException {
 
-        ItemHandlerClient ihc = new ItemHandlerClient();
-        ihc.setServiceAddress(auth.getServiceAddress());
+        ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
+        
         ihc.setHandle(auth.getHandle());
 
         Item item = new Item();
 
         item.getProperties().setContext(
-            new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+            new ContextRef(Constants.EXAMPLE_CONTEXT_ID));
         item.getProperties().setContentModel(
-            new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+            new ContentModelRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
         // Metadata Record(s)
         MetadataRecords mdRecords = new MetadataRecords();
@@ -161,7 +163,7 @@ public class CreateItemWithBinaryContent {
 
         Component component = new Component();
         ComponentContent content = new ComponentContent();
-        content.setHref(contentRef.toString());
+        content.setXLinkHref(contentRef.toString());
         content.setStorage("internal-managed");
         component.setContent(content);
         component.setProperties(new ComponentProperties());

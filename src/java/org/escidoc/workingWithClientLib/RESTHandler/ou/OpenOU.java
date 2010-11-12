@@ -6,7 +6,7 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestOrganizationalUnitHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to set status of a Organizational Unit to to 'open' by using the
@@ -68,14 +68,14 @@ public class OpenOU {
         // authentication (Use a user account with permission to create an
         // Organizational Unit).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get rest handler
         RestOrganizationalUnitHandlerClient rouc =
-            new RestOrganizationalUnitHandlerClient();
+            new RestOrganizationalUnitHandlerClient(auth.getServiceAddress());
         // login
-        rouc.setServiceAddress(auth.getServiceAddress());
+        
         rouc.setHandle(auth.getHandle());
 
         /*
@@ -95,6 +95,8 @@ public class OpenOU {
 
         // open OU
         String responseXml = rouc.open(objid, taskParam);
+        
+        auth.logout();
 
         return responseXml;
     }

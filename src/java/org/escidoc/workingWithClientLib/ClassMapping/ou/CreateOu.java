@@ -18,7 +18,7 @@ import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
 import de.escidoc.core.resources.oum.Properties;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to create an Organizational Unit by using the class mapping
@@ -121,17 +121,19 @@ public class CreateOu {
         // authentication (Use a user account with permission to create an
         // Organizational Unit).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get handler
         OrganizationalUnitHandlerClient client =
-            new OrganizationalUnitHandlerClient();
-        client.setServiceAddress(auth.getServiceAddress());
+            new OrganizationalUnitHandlerClient(auth.getServiceAddress());
+        
         client.setHandle(auth.getHandle());
 
         // call create
         OrganizationalUnit createdOu = client.create(ou);
+        
+        auth.logout();
 
         return createdOu;
     }

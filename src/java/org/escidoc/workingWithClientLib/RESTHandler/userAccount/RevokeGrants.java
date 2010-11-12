@@ -1,6 +1,5 @@
 package org.escidoc.workingWithClientLib.RESTHandler.userAccount;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.escidoc.Constants;
@@ -9,7 +8,7 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestUserAccountHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to add grants to an existing user account by using the XML REST
@@ -78,12 +77,12 @@ public class RevokeGrants {
         // authentication (Use a user account with permission to create a
         // Grant).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get handler for user account
-        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
-        ruahc.setServiceAddress(auth.getServiceAddress());
+        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient(auth.getServiceAddress());
+        
         ruahc.setHandle(auth.getHandle());
 
         // retrieving the Item
@@ -99,6 +98,8 @@ public class RevokeGrants {
 
         // revoke
         ruahc.revokeGrant(userAccountId, grantId, taskParam);
+        
+        auth.logout();
 
     }
 }

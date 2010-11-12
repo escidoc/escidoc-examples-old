@@ -19,7 +19,7 @@ import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
 import de.escidoc.core.resources.oum.Properties;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to delete an Organizational Unit by using the eSciDoc Java client
@@ -36,7 +36,7 @@ public class DeleteOu {
             // authentication (Use a user account with permission to create an
             // Organizational Unit).
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
                     Constants.USER_NAME, Constants.USER_PASSWORD);
 
             // Prepare a value object with new values of Organizational Unit
@@ -44,8 +44,8 @@ public class DeleteOu {
 
             // get handler
             OrganizationalUnitHandlerClient client =
-                new OrganizationalUnitHandlerClient();
-            client.setServiceAddress(auth.getServiceAddress());
+                new OrganizationalUnitHandlerClient(auth.getServiceAddress());
+            
             client.setHandle(auth.getHandle());
 
             // call create
@@ -59,6 +59,8 @@ public class DeleteOu {
 
             // delete just created OU
             client.delete(createdOu.getObjid());
+            
+            auth.logout();
         }
         catch (EscidocClientException e) {
             e.printStackTrace();

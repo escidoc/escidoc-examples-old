@@ -6,7 +6,7 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to submit an Item.
@@ -47,12 +47,12 @@ public class SubmitItem {
         // authentication (Use a user account with permission to submit an
         // Item).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get REST handler
-        RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.setServiceAddress(auth.getServiceAddress());
+        RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
+        
         rihc.setHandle(auth.getHandle());
 
         // retrieving the Item
@@ -72,5 +72,7 @@ public class SubmitItem {
         objidLmd = Util.obtainObjidAndLmd(submitResult);
         System.out.println("Item with objid='" + id + "' at '" + objidLmd[1]
             + "' submitted.");
+        
+        auth.logout();
     }
 }

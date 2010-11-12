@@ -1,13 +1,13 @@
 package org.escidoc.workingWithClientLib.ClassMapping.userAccount;
 
+import org.escidoc.Constants;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.UserAccountHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.aa.useraccount.UserAccount;
 import de.escidoc.core.resources.aa.useraccount.UserAccountProperties;
 import de.escidoc.core.resources.common.TaskParam;
-import de.escidoc.core.test.client.Constants;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how an user account is made deactive. An internal user account is
@@ -25,13 +25,13 @@ public class DeactivateUserAccount {
 
         try {
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
-                    Constants.SYSTEM_ADMIN_USER,
-                    Constants.SYSTEM_ADMIN_PASSWORD);
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
+                    Constants.USER_NAME,
+                    Constants.USER_PASSWORD);
 
             // login
-            UserAccountHandlerClient uac = new UserAccountHandlerClient();
-            uac.setServiceAddress(EscidocClientTestBase.DEFAULT_SERVICE_URL);
+            UserAccountHandlerClient uac = new UserAccountHandlerClient(auth.getServiceAddress());
+            //uac.setServiceAddress(Constants.DEFAULT_SERVICE_URL);
             uac.setHandle(auth.getHandle());
 
             // create
@@ -47,6 +47,8 @@ public class DeactivateUserAccount {
             System.out.println("UserAccount with objid '" + ua.getObjid()
                 + "' created. Account active=" + ua.getProperties().isActive()
                 + ".");
+            
+            auth.logout();
         }
         catch (EscidocClientException e) {
             e.printStackTrace();

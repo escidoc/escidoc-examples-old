@@ -8,7 +8,7 @@ import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.om.item.Item;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Change the status of an Item from pending, to submitted, to released.
@@ -35,7 +35,7 @@ public class SubmitReleaseItem {
 
         try {
             // configure the objid of the Item
-            String id = "escidoc:1";
+            String id = "escidoc:6002";
             if (args.length > 0) {
                 id = args[0];
             }
@@ -81,11 +81,11 @@ public class SubmitReleaseItem {
         throws EscidocClientException {
 
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
-        ItemHandlerClient ihc = new ItemHandlerClient();
-        ihc.setServiceAddress(auth.getServiceAddress());
+        ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
+        
         ihc.setHandle(auth.getHandle());
 
         // retrieving the Item
@@ -109,5 +109,7 @@ public class SubmitReleaseItem {
 
         System.out.println("Item with objid='" + id + "' at '"
             + releaseResult.getLastModificationDate() + "' released.");
+        
+        auth.logout();
     }
 }

@@ -24,7 +24,7 @@ import de.escidoc.core.resources.oum.OrganizationalUnit;
 import de.escidoc.core.resources.oum.OrganizationalUnitList;
 import de.escidoc.core.resources.oum.Parent;
 import de.escidoc.core.resources.oum.Properties;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to create a Organizational Unit parent relation by using the
@@ -49,7 +49,7 @@ public class CreateOuWithParents {
             // authentication (Use a user account with permission to create and
             // update an Organizational Unit).
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
                     Constants.USER_NAME, Constants.USER_PASSWORD);
 
             // Create the first Organizational Unit
@@ -64,8 +64,6 @@ public class CreateOuWithParents {
 
             // prepare the second OU
             OrganizationalUnit ou2 = prepareOrganizationalUnit();
-            Parent parent = new Parent();
-            parent.setObjid(ou1.getObjid());
             ou2.getParents().addParentRef(new Parent(ou1.getObjid()));
 
             ou2 = createOrganizationalUnit(auth, ou2);
@@ -85,8 +83,8 @@ public class CreateOuWithParents {
             // set third Organizational Unit as parent of the second
             // Organizational Unit
             OrganizationalUnitHandlerClient client =
-                new OrganizationalUnitHandlerClient();
-            client.setServiceAddress(auth.getServiceAddress());
+                new OrganizationalUnitHandlerClient(auth.getServiceAddress());
+            
             client.setHandle(auth.getHandle());
 
             ou2.getParents().addParentRef(new Parent(ou3.getObjid()));
@@ -97,6 +95,8 @@ public class CreateOuWithParents {
             printOut("First", client, ou1);
             printOut("Second", client, ou2);
             printOut("Third", client, ou3);
+            
+            auth.logout();
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
@@ -180,8 +180,8 @@ public class CreateOuWithParents {
 
         // get handler
         OrganizationalUnitHandlerClient client =
-            new OrganizationalUnitHandlerClient();
-        client.setServiceAddress(auth.getServiceAddress());
+            new OrganizationalUnitHandlerClient(auth.getServiceAddress());
+        
         client.setHandle(auth.getHandle());
 
         // call create

@@ -8,7 +8,7 @@ import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.om.item.Item;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to release an Item.
@@ -35,7 +35,7 @@ public class ReleaseItem {
              * Either set the objid of the Item by parameter or set the objid in
              * the following id variable.
              */
-            String id = "escidoc:1";
+            String id = "escidoc:4003";
             if (args.length > 0) {
                 id = args[0];
             }
@@ -69,11 +69,11 @@ public class ReleaseItem {
         throws EscidocClientException {
 
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
-        ItemHandlerClient ihc = new ItemHandlerClient();
-        ihc.setServiceAddress(auth.getServiceAddress());
+        ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
+        
         ihc.setHandle(auth.getHandle());
 
         // retrieving the Item
@@ -88,5 +88,7 @@ public class ReleaseItem {
 
         System.out.println("Item with objid='" + id + "' at '"
             + releaseResult.getLastModificationDate() + "' released.");
+        
+        auth.logout();
     }
 }

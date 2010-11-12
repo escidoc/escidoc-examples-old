@@ -9,7 +9,7 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestUserAccountHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to add grants to an existing user account by using the XML REST
@@ -86,12 +86,12 @@ public class SetGrants {
         // authentication (Use a user account with permission to create a
         // Grant).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get handler for user account
-        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
-        ruahc.setServiceAddress(auth.getServiceAddress());
+        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient(auth.getServiceAddress());
+        
         ruahc.setHandle(auth.getHandle());
 
         // load and prepare the XML for grants
@@ -100,6 +100,8 @@ public class SetGrants {
 
         // create
         String crXML = ruahc.createGrant(userAccountId, grantXml);
+        
+        auth.logout();
 
         return crXML;
     }

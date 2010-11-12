@@ -9,7 +9,7 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestRoleHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to create a user account by using the XML REST representation and
@@ -75,12 +75,12 @@ public class CreateRole {
         // authentication (Use a user account with permission to create an
         // User Account).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get handler for user account
-        RestRoleHandlerClient ruahc = new RestRoleHandlerClient();
-        ruahc.setServiceAddress(auth.getServiceAddress());
+        RestRoleHandlerClient ruahc = new RestRoleHandlerClient(auth.getServiceAddress());
+        
         ruahc.setHandle(auth.getHandle());
 
         // load XML template of user account
@@ -89,6 +89,8 @@ public class CreateRole {
 
         // create
         String crXML = ruahc.create(resourceXml);
+        
+        auth.logout();
 
         return crXML;
     }

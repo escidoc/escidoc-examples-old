@@ -1,14 +1,14 @@
 package org.escidoc.workingWithClientLib.RESTHandler.item;
 
-import java.io.IOException;
 
+import java.io.IOException;
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to create an Item.
@@ -65,16 +65,18 @@ public class CreateItem {
         // authentication (Use a user account with permission to create an Item
         // - usually the depositor role).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get REST handler
-        RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.setServiceAddress(auth.getServiceAddress());
+        RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
+        
         rihc.setHandle(auth.getHandle());
 
         // create the Item
         String createdItem = rihc.create(itemXml);
+        
+        auth.logout();
 
         return createdItem;
     }

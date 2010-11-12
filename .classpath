@@ -23,7 +23,7 @@
 	<classpathentry kind="lib" path="lib/commons/commons-httpclient-3.1.jar"/>
 	<classpathentry kind="lib" path="lib/joda-time-1.5.2/joda-time-1.5.2.jar"/>
 	<classpathentry kind="lib" path="lib/security/sunxacml.jar"/>
-	<classpathentry kind="lib" path="lib/security/wss4j.jar"/>
+	<classpathentry kind="lib" path="lib/security/wss4j-1.5.8.jar"/>
 	<classpathentry kind="lib" path="lib/security/xmlsec-1.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/xalan/xalan-2.6.0.jar"/>
 	<classpathentry kind="lib" path="lib/xerces-2.9.1/resolver.jar"/>
@@ -33,7 +33,7 @@
 	<classpathentry kind="lib" path="lib/xerces-2.9.1/xml-apis.jar"/>
 	<classpathentry kind="lib" path="lib/opensaml-1.0.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/escidoc-core-1.2-client-lib-build160.jar"/>
+	<classpathentry kind="lib" path="lib/client-1.2-0.8-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="lib/jibx-1.2.2/bcel.jar"/>
 	<classpathentry kind="lib" path="lib/jibx-1.2.2/jibx-bind.jar"/>
 	<classpathentry kind="lib" path="lib/jibx-1.2.2/jibx-extras.jar"/>

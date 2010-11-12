@@ -9,7 +9,7 @@ import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * @author SWA
@@ -27,11 +27,13 @@ public class Demo1 {
         try {
             // authentication (Use a user account with permission on the Item).
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
                     Constants.USER_NAME, Constants.USER_PASSWORD);
 
             c.createItem(auth);
             c.lifecycle(auth);
+            
+            auth.logout();
 
         }
         catch (EscidocException e) {

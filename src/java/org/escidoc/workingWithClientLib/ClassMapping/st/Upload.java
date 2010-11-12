@@ -11,7 +11,7 @@ import org.escidoc.Constants;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.StagingHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to upload a file to the staging service.
@@ -44,17 +44,19 @@ public class Upload {
             // use a user accout with write permissions on staging service (this
             // is usually the role 'depositor').
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
                     Constants.USER_NAME, Constants.USER_PASSWORD);
 
-            StagingHandlerClient sthc = new StagingHandlerClient();
-            sthc.setServiceAddress(auth.getServiceAddress());
+            StagingHandlerClient sthc = new StagingHandlerClient(auth.getServiceAddress());
+            
             sthc.setHandle(auth.getHandle());
 
             URL url = sthc.upload(temp);
 
             System.out.println("The content can be downloaded once from " + url
                 + ".");
+            
+            auth.logout();
         }
         catch (EscidocClientException e) {
             e.printStackTrace();

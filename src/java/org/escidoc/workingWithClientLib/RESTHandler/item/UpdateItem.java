@@ -8,7 +8,7 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to update an Item by using the XML REST representation and the
@@ -77,15 +77,17 @@ public class UpdateItem {
         // authentication (Use a user account with permission to submit an
         // Item).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get REST handler
-        RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.setServiceAddress(auth.getServiceAddress());
+        RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
+        
         rihc.setHandle(auth.getHandle());
 
         String createdItem = rihc.update(itemId, itemXml);
+        
+        auth.logout();
 
         return createdItem;
     }
@@ -103,12 +105,12 @@ public class UpdateItem {
         // authentication (Use a user account with permission to submit an
         // Item).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get REST handler
-        RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.setServiceAddress(auth.getServiceAddress());
+        RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
+        
         rihc.setHandle(auth.getHandle());
 
         String itemXml = rihc.retrieve(itemId);

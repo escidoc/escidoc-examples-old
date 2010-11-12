@@ -11,11 +11,11 @@ import org.w3c.dom.Element;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ContainerHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
+import de.escidoc.core.resources.common.reference.ContentModelRef;
+import de.escidoc.core.resources.common.reference.ContextRef;
 import de.escidoc.core.resources.om.container.Container;
-import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create a Container by using the class mapping feature of
@@ -33,7 +33,7 @@ public class CreateContainer {
             // on the selected Context. Usually is this user with depositor
             // role).
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
                     Constants.USER_NAME, Constants.USER_PASSWORD);
 
             Container createdResource = createContainer(auth);
@@ -42,6 +42,8 @@ public class CreateContainer {
                 + createdResource.getObjid() + "' at '"
                 + createdResource.getLastModificationDate()
                 + "' created.");
+            
+            auth.logout();
 
         }
         catch (EscidocClientException e) {
@@ -62,17 +64,17 @@ public class CreateContainer {
     private static Container createContainer(final Authentication auth) throws EscidocClientException,
         ParserConfigurationException {
 
-        ContainerHandlerClient chc = new ContainerHandlerClient();
-        chc.setServiceAddress(auth.getServiceAddress());
+        ContainerHandlerClient chc = new ContainerHandlerClient(auth.getServiceAddress());
+        
         chc.setHandle(auth.getHandle());
 
         Container container = new Container();
 
         // add properties
         container.getProperties().setContext(
-            new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+            new ContextRef(Constants.EXAMPLE_CONTEXT_ID));
         container.getProperties().setContentModel(
-            new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+            new ContentModelRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
         // add Metadata Record(s)
         MetadataRecords mdRecords = new MetadataRecords();

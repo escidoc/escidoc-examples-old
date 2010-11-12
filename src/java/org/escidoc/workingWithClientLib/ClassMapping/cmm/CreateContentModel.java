@@ -6,7 +6,6 @@ import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ContentModelHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.cmm.ContentModel;
-import de.escidoc.core.test.client.EscidocClientTestBase;
 
 /**
  * Example how to create an Content Model.
@@ -27,11 +26,10 @@ public class CreateContentModel {
             // authentication (Use a user account with permission to create a
             // Content Model).
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
                     Constants.USER_NAME, Constants.USER_PASSWORD);
 
-            ContentModelHandlerClient cc = new ContentModelHandlerClient();
-            cc.setServiceAddress(auth.getServiceAddress());
+            ContentModelHandlerClient cc = new ContentModelHandlerClient(auth.getServiceAddress());
             cc.setHandle(auth.getHandle());
 
             ContentModel cmm = new ContentModel();
@@ -43,6 +41,8 @@ public class CreateContentModel {
 
             System.out.println("ContentModel with objid='" + cmm.getObjid()
                 + "' at '" + cmm.getLastModificationDate() + "' created.");
+            
+            auth.logout();
 
         }
         catch (EscidocClientException e) {

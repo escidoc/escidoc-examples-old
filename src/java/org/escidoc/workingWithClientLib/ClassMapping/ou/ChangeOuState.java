@@ -8,7 +8,7 @@ import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 public class ChangeOuState {
 
@@ -18,7 +18,7 @@ public class ChangeOuState {
 	public static void main(String[] args) {
 		
 		// set objid of Context which is to open
-        String objid = "escidoc:4";
+        String objid = "escidoc:3002";
         if (args.length > 0) {
             objid = args[0];
         }
@@ -27,13 +27,13 @@ public class ChangeOuState {
             // authentication (Use a user account with permission to create an
             // Organizational Unit).
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
                     Constants.USER_NAME, Constants.USER_PASSWORD);
 
             // get handler
             OrganizationalUnitHandlerClient client =
-                new OrganizationalUnitHandlerClient();
-            client.setServiceAddress(auth.getServiceAddress());
+                new OrganizationalUnitHandlerClient(auth.getServiceAddress());
+            
             client.setHandle(auth.getHandle());
 
             // call create
@@ -52,6 +52,8 @@ public class ChangeOuState {
             System.out.println("Context with objid='" + createdOu.getObjid()
                 + "' at '" + result.getLastModificationDate()
                 + "' is opened now.");
+            
+            auth.logout();
         }
         catch (EscidocClientException e) {
             e.printStackTrace();

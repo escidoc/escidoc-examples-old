@@ -8,11 +8,11 @@ import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
-import de.escidoc.core.resources.ResourceRef;
+import de.escidoc.core.resources.common.reference.OrganizationalUnitRef;
 import de.escidoc.core.resources.om.context.Context;
 import de.escidoc.core.resources.om.context.OrganizationalUnitRefs;
 import de.escidoc.core.resources.om.context.Properties;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to create an Context by using the eSciDoc Java client library.
@@ -80,7 +80,7 @@ public class CreateContext {
         // add the Organizational Unit with objid escidoc:ex3 (the ou of the
         // example eSciDoc representation package) to the list of
         // organizational Units
-        ous.add(new ResourceRef("escidoc:ex3"));
+        ous.add(new OrganizationalUnitRef("escidoc:3002"));
         properties.setOrganizationalUnitRefs(ous);
 
         context.setProperties(properties);
@@ -107,14 +107,16 @@ public class CreateContext {
         // on the selected Context. Usually is this user with administrator
         // role).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
-        ContextHandlerClient client = new ContextHandlerClient();
-        client.setServiceAddress(auth.getServiceAddress());
+        ContextHandlerClient client = new ContextHandlerClient(auth.getServiceAddress());
+        
         client.setHandle(auth.getHandle());
 
         Context createdContext = client.create(context);
+        
+        auth.logout();
 
         return createdContext;
     }

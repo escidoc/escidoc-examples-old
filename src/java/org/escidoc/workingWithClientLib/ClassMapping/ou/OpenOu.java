@@ -4,14 +4,13 @@ import org.escidoc.Constants;
 
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.OrganizationalUnitHandlerClient;
-import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to open an Organizational Unit by using the eSciDoc Java client library.
@@ -36,12 +35,12 @@ public class OpenOu {
             // on the selected Organizational Unit. Usually is this user with administrator
             // role).
             Authentication auth =
-                new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+                new Authentication(Constants.DEFAULT_SERVICE_URL,
                     Constants.USER_NAME, Constants.USER_PASSWORD);
 
             // get service handler
-            OrganizationalUnitHandlerClient client = new OrganizationalUnitHandlerClient();
-            client.setServiceAddress(auth.getServiceAddress());
+            OrganizationalUnitHandlerClient client = new OrganizationalUnitHandlerClient(auth.getServiceAddress());
+            
             client.setHandle(auth.getHandle());
 
             // retrieve an already created Organizational Unit
@@ -60,6 +59,8 @@ public class OpenOu {
             System.out.println("Organizational Unit with objid='" + ou.getObjid()
                 + "' at '" + result.getLastModificationDate()
                 + "' is opened now.");
+            
+            auth.logout();
 
         }
         catch (EscidocException e) {
@@ -71,9 +72,5 @@ public class OpenOu {
         catch (TransportException e) {
             e.printStackTrace();
         }
-        catch (EscidocClientException e) {
-            e.printStackTrace();
-        }
-
     }
 }

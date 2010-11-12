@@ -15,13 +15,15 @@ public class Constants {
     public static final String USER_NAME = "sysadmin";
 //    public static final String USER_NAME = "mustermann";
 
-    public static final String USER_PASSWORD = "eSciDoc";
+    public static final String USER_PASSWORD = "sysadmin";
 //    public static final String USER_PASSWORD = "PubManR2";
 
     /**
      * Objid from common example set.
      */
-    public static final String EXAMPLE_CONTEXT_ID = "escidoc:ex1";
+    //public static final String EXAMPLE_CONTEXT_ID = "escidoc:ex1";
+    public static final String EXAMPLE_CONTEXT_ID = "escidoc:4001";
 
-    public static final String EXAMPLE_CONTENT_MODEL_ID = "escidoc:ex4";
+    //public static final String EXAMPLE_CONTENT_MODEL_ID = "escidoc:ex4";
+    public static final String EXAMPLE_CONTENT_MODEL_ID = "escidoc:5001";
 }

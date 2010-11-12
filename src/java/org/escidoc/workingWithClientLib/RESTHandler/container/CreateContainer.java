@@ -8,7 +8,7 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContainerHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to handle a Container by using the XML REST representation and
@@ -73,16 +73,18 @@ public class CreateContainer {
         // authentication (Use a user account with permission to create a
         // Content Model).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get REST handler
-        RestContainerHandlerClient rchc = new RestContainerHandlerClient();
-        rchc.setServiceAddress(auth.getServiceAddress());
+        RestContainerHandlerClient rchc = new RestContainerHandlerClient(auth.getServiceAddress());
+        
         rchc.setHandle(auth.getHandle());
 
         // create the Container
         String createdContainer = rchc.create(containerXml);
+        
+        auth.logout();
 
         return createdContainer;
     }

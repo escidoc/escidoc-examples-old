@@ -8,7 +8,7 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContainerHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example to update a Container via REST interface.
@@ -71,11 +71,11 @@ public class UpdateContainer {
         // authentication (Use a user account with permission to update a
         // Container - usually the depositor role).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
-        RestContainerHandlerClient client = new RestContainerHandlerClient();
-        client.setServiceAddress(auth.getServiceAddress());
+        RestContainerHandlerClient client = new RestContainerHandlerClient(auth.getServiceAddress());
+        
         client.setHandle(auth.getHandle());
 
         String createdContainer = client.update(containerId, containerXml);
@@ -95,14 +95,16 @@ public class UpdateContainer {
         // authentication (Use a user account with permission to retrieve a
         // Container - usually the depositor role).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
-        RestContainerHandlerClient client = new RestContainerHandlerClient();
-        client.setServiceAddress(auth.getServiceAddress());
+        RestContainerHandlerClient client = new RestContainerHandlerClient(auth.getServiceAddress());
+        
         client.setHandle(auth.getHandle());
 
         String itemXml = client.retrieve(containerId);
+        
+        auth.logout();
 
         return itemXml;
     }

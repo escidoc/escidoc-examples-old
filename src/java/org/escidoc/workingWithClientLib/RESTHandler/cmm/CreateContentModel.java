@@ -8,7 +8,7 @@ import org.escidoc.simpleConnections.Util;
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContentModelHandlerClient;
-import de.escidoc.core.test.client.EscidocClientTestBase;
+
 
 /**
  * Example how to handle a ContentModel by using the XML REST representation and
@@ -75,17 +75,19 @@ public class CreateContentModel {
         // authentication (Use a user account with permission to create a
         // Content Model).
         Authentication auth =
-            new Authentication(EscidocClientTestBase.DEFAULT_SERVICE_URL,
+            new Authentication(Constants.DEFAULT_SERVICE_URL,
                 Constants.USER_NAME, Constants.USER_PASSWORD);
 
         // get handler for Content Model
         RestContentModelHandlerClient rcmhc =
-            new RestContentModelHandlerClient();
-        rcmhc.setServiceAddress(auth.getServiceAddress());
+            new RestContentModelHandlerClient(auth.getServiceAddress());
+        
         rcmhc.setHandle(auth.getHandle());
 
         // create
         String createdCmmXml = rcmhc.create(cmmXml);
+        
+        auth.logout();
 
         return createdCmmXml;
     }
