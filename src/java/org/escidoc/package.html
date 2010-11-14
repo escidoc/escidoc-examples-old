@@ -14,5 +14,67 @@ infrastructure.
 	representation and REST interface and examples which hide the XML
 	representation behind Java classes.</li>
 </ul>
+<h2>Starting from Scratch</h2>
+<p>Primary data is transfered via the eSciDoc Item resource into the
+eSciDoc repository.</p>
+<p>Before one can store primary data into an fresh installed eSciDoc
+Core respositor one has to create resources to set the way how the
+repository is organized.</p>
+<p>>These resources are Organizational Unit, Context, Content Model,
+and User Account. The resources has to refer to each other, that's why
+it's recommanded to create the resources in a certain order. A reference
+is usually directed even if the reverse direction could be requested is
+it not set.</p>
+<p>User permissions are defined via roles. The infrastructure is
+delivered with an default set of roles, which could be altered or
+extended. With the default role set are Organizational Units, Contexts,
+User Accounts and Content Models to create with system administrator
+role.</p>
+<p>During the standard installation are three users created.</p>
+<p>Organizational Units represents real world units of
+organizations. This could be the whole research institut but also a
+small task group. Organizational Units could be related to each other in
+parent child relations whereas this relations could create an
+Organizational Unit graph (It has not to be be tree, because an
+Organizational Unit could have multiple parents.). An Organizational
+Unit refers only to another Organizational Unit - whats a good reason to
+populate the repository with Organizational Units first.</p>
+<p>The status of an created Organizational Unit is to change to open
+before it could be refered from other resources. Call the open method to
+change the status.</p>
+<p>Remember, one needs system adminstrator permission to create
+Organizational Unit.</p>
+<p>Contexts are eSciDoc resources to separate the content in a
+efficient way. Contexts can only refers to Organizational Units but are
+required for Items and Container. Therefore it's recommended to create a
+Context as second resource with a reference to the before created
+Organizational Unit.</p>
+<p>Only Contexts with status open could be refered from other
+resources. Call the open method to change the status.</p>
+<p>A user with system administrator role is to use to create
+Contexts.</p>
+<p>If the authentication of your installation is not connected to
+LDAP or Shibboleth than it's now time to create a user account and
+assign it with the depositor role for the created Context.</p>
+<p>A Content Model is to create as forth resorce. A Content Model
+describes the resource and could influence -beside other things- the
+behavior of the resource which referces the Content Model.</p>
+<p>A Content Model does not refer to other resources.</p>
+<p>Let's consider: Organizational Unit, Context, and Content Model
+are created and you have one user account with permissions to create
+Items and Container.</p>
+<p>Now it's time to create an Item.</p>
+<h2>Steps In Short</h2>
+<ul>
+	<li>Create Organizational Unit</li>
+	<li>Change status of Organizational Unit to open</li>
+	<li>Create Context with reference to created Organizational Unit</li>
+	<li>Change status of Context to open</li>
+	<li>Create User Account and assign depositor role to created
+	Context</li>
+	<li>Create Content Model</li>
+	<li>Create Item with references to Content Model and Context</li>
+	<li>Create Container with references to Content Model and Context</li>
+</ul>
 </body>
 </html>
