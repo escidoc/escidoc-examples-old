@@ -64,7 +64,7 @@ public class CreateOuWithParents {
 
             // prepare the second OU
             OrganizationalUnit ou2 = prepareOrganizationalUnit();
-            ou2.getParents().addParentRef(new Parent(ou1.getObjid()));
+            ou2.getParents().add(new Parent(ou1.getObjid()));
 
             ou2 = createOrganizationalUnit(auth, ou2);
 
@@ -87,7 +87,7 @@ public class CreateOuWithParents {
             
             client.setHandle(auth.getHandle());
 
-            ou2.getParents().addParentRef(new Parent(ou3.getObjid()));
+            ou2.getParents().add(new Parent(ou3.getObjid()));
 
             ou2 = client.update(ou2);
 
@@ -285,11 +285,11 @@ public class CreateOuWithParents {
 
         OrganizationalUnit ouR = client.retrieve(ou.getObjid());
         System.out.println(" parents: ");
-        if (ouR.getParents().getParentRef() == null) {
+        if (ouR.getParents() == null) {
             System.out.println("   none");
         }
         else {
-            Iterator<Parent> it = ouR.getParents().getParentRef().iterator();
+            Iterator<Parent> it = ouR.getParents().iterator();
             while (it.hasNext()) {
                 Parent p = it.next();
                 System.out.println("   " + p.getObjid());
@@ -317,12 +317,12 @@ public class CreateOuWithParents {
             client.retrieveChildObjects(ou.getObjid());
 
         System.out.println(" childs: ");
-        if (ouCL.getOrganizationalUnits().isEmpty()) {
+        if (ouCL.isEmpty()) {
             System.out.println("   none");
         }
         else {
             Iterator<OrganizationalUnit> it =
-                ouCL.getOrganizationalUnits().iterator();
+                ouCL.iterator();
             while (it.hasNext()) {
                 OrganizationalUnit c = it.next();
                 System.out.println("   " + c.getObjid());
