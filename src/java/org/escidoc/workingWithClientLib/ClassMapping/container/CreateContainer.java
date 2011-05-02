@@ -1,5 +1,7 @@
 package org.escidoc.workingWithClientLib.ClassMapping.container;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,12 +13,14 @@ import org.escidoc.Constants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ContainerHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.common.properties.ContentModelSpecific;
+import de.escidoc.core.resources.common.reference.ContentModelRef;
+import de.escidoc.core.resources.common.reference.ContextRef;
 import de.escidoc.core.resources.om.container.Container;
 
 /**
@@ -37,17 +41,19 @@ public class CreateContainer {
 	public static void main(String[] args) {
 
 		try {
-
+			
 			Container createdResource = createContainer();
 
 			System.out.println("Container with objid='" + createdResource.getObjid()
 					+ "' at '"
-					+ createdResource.getLastModificationDateAsString()
+					+ createdResource.getLastModificationDate()
 					+ "' created.");
 
 		} catch (EscidocClientException e) {
 			e.printStackTrace();
 		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -58,20 +64,22 @@ public class CreateContainer {
 	 * @return XML representation of the created Item
 	 * @throws EscidocClientException
 	 * @throws ParserConfigurationException
+	 * @throws MalformedURLException 
 	 */
 	private static Container createContainer() throws EscidocClientException,
-			ParserConfigurationException {
-
-	    ContainerHandlerClient chc = new ContainerHandlerClient();
-		chc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+			ParserConfigurationException, MalformedURLException {
+		
+		// prepare client object
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		ContainerHandlerClient chc = new ContainerHandlerClient(auth.getServiceAddress());
+		chc.setHandle(auth.getHandle());
 
 		Container container = new Container();
 
 		container.getProperties().setContext(
-				new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+				new ContextRef(Constants.EXAMPLE_CONTEXT_ID));
 		container.getProperties().setContentModel(
-				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+				new ContentModelRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
 		// Content-model
 		ContentModelSpecific cms = getContentModelSpecific();
