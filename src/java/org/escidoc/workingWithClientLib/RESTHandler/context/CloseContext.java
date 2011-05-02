@@ -1,9 +1,14 @@
 package org.escidoc.workingWithClientLib.RESTHandler.context;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
+import de.escidoc.core.client.rest.RestContainerHandlerClient;
 import de.escidoc.core.client.rest.RestContextHandlerClient;
 
 /**
@@ -47,7 +52,9 @@ public class CloseContext {
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
-        }
+        } catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 
     }
 
@@ -63,13 +70,14 @@ public class CloseContext {
      *            objid of to close Context
      * @return XML response of close method from framework
      * @throws EscidocClientException
+     * @throws MalformedURLException 
      */
-    public static String closeContext(final String id) throws EscidocClientException {
+    public static String closeContext(final String id) throws EscidocClientException, MalformedURLException {
 
         // prepare client handler
-        RestContextHandlerClient rchc = new RestContextHandlerClient();
-        rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestContextHandlerClient rchc = new RestContextHandlerClient(auth.getServiceAddress());
+        rchc.setHandle(auth.getHandle());
 
         // retrieving the context
         String contextXml = rchc.retrieve(id);
@@ -80,10 +88,10 @@ public class CloseContext {
         String taskParam =
             "<param last-modification-date=\"" + objidLmd[1] + "\">\n"
                 + "</param>";
+        
+     // task oriented method close()
+        String closeResult = rchc.close(objidLmd[0], taskParam);
 
-        // task oriented method open()
-        String openResult = rchc.close(objidLmd[0], taskParam);
-
-        return openResult;
+        return closeResult;
     }
 }
