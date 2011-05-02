@@ -1,10 +1,12 @@
 package org.escidoc.workingWithClientLib.ClassMapping.container;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Vector;
 
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ContainerHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.common.Filter;
@@ -42,6 +44,8 @@ public class ReleaseContainer {
 
 		} catch (EscidocClientException e) {
 			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
 		}
 
 	}
@@ -61,25 +65,28 @@ public class ReleaseContainer {
 	 * @param objid
 	 *            The objid of the Container.
 	 * @throws EscidocClientException
+	 * @throws MalformedURLException 
 	 */
 	public static void releaseContainer(final String objid)
-			throws EscidocClientException {
+			throws EscidocClientException, MalformedURLException {
 
 		// prepare client object
-		ContainerHandlerClient chc = new ContainerHandlerClient();
-		chc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		ContainerHandlerClient chc = new ContainerHandlerClient(auth.getServiceAddress());
+		chc.setHandle(auth.getHandle());
 
 		// retrieve the Container to detect last modification date
 		Container container = chc.retrieve(objid);
 
 		// release using submit result
-		Result releaseResult = chc.release(container, new TaskParam(container
-				.getLastModificationDate(), "Comment for release", null, null,
-				new Vector<Filter>()));
-
+		TaskParam taskParam = new TaskParam();
+		taskParam.setLastModificationDate(container.getLastModificationDate());
+		taskParam.setComment("Comment for release");
+		taskParam.setFilters(new Vector<Filter>());
+		Result releaseResult = chc.release(container, taskParam);
+		
 		System.out.println("Container with objid='" + objid + "' at '"
-				+ releaseResult.getLastModificationDateAsString()
+				+ releaseResult.getLastModificationDate()
 				+ "' released.");
 	}
 }
