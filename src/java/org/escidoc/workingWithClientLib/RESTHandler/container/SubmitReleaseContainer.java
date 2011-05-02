@@ -1,8 +1,12 @@
 package org.escidoc.workingWithClientLib.RESTHandler.container;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContainerHandlerClient;
 
@@ -22,7 +26,9 @@ public class SubmitReleaseContainer {
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
-        }
+        } catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 
     }
 
@@ -32,13 +38,15 @@ public class SubmitReleaseContainer {
      * @param id
      *            objid of Container
      * @throws EscidocClientException
+     * @throws MalformedURLException 
      */
     public static void releaseContainer(String id)
-        throws EscidocClientException {
-
-        RestContainerHandlerClient rchc = new RestContainerHandlerClient();
-        rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        throws EscidocClientException, MalformedURLException {
+    	
+    	// prepare client object
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestContainerHandlerClient rchc = new RestContainerHandlerClient(auth.getServiceAddress());
+        rchc.setHandle(auth.getHandle());
 
         // retrieving the Container
         String containerXml = rchc.retrieve(id);
