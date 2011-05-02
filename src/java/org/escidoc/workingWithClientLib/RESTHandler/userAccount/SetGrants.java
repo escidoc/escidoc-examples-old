@@ -2,10 +2,12 @@ package org.escidoc.workingWithClientLib.RESTHandler.userAccount;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
@@ -42,9 +44,14 @@ public class SetGrants {
         String xmlFile =
             "./templates/generic/user-account/"
                 + "escidoc_depositor_grant_for_create.xml";
-
+        
         if (args.length == 1) {
-            xmlFile = args[0];
+            userAccountId = args[0];
+        }
+        
+        if (args.length == 2) {
+            userAccountId = args[0];
+            xmlFile = args[1];
         }
 
         try {
@@ -92,13 +99,11 @@ public class SetGrants {
         final String userAccountId, 
         final String xmlTemplFile) throws InternalClientException,
         EscidocException, TransportException, IOException {
-
-        // get REST handler for user accounts
-        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
-
-        // authenticate
-        ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+    	
+    	// prepare client object
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient(auth.getServiceAddress());
+        ruahc.setHandle(auth.getHandle());
 
         // load and prepare the XML for grants
         File templ = new File(xmlTemplFile);
