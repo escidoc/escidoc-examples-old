@@ -1,8 +1,12 @@
 package org.escidoc.workingWithClientLib.RESTHandler.ou;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
@@ -51,7 +55,9 @@ public class OpenOU {
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
-        }
+        } catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
     }
 
     /**
@@ -64,15 +70,15 @@ public class OpenOU {
      * @throws InternalClientException
      * @throws EscidocException
      * @throws TransportException
+     * @throws MalformedURLException 
      */
     private static String openOU(final String objid)
-        throws InternalClientException, EscidocException, TransportException {
+        throws InternalClientException, EscidocException, TransportException, MalformedURLException {
 
-        // login
-        RestOrganizationalUnitHandlerClient rouc =
-            new RestOrganizationalUnitHandlerClient();
-        rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+    	// prepare client object
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestOrganizationalUnitHandlerClient rouc = new RestOrganizationalUnitHandlerClient(auth.getServiceAddress());
+        rouc.setHandle(auth.getHandle());
 
         /*
          * Prepare and load taskParam XML.
