@@ -1,5 +1,7 @@
 package org.escidoc.workingWithClientLib.ClassMapping.crud;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,17 +13,19 @@ import org.escidoc.Constants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
-import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
 import de.escidoc.core.resources.common.properties.ContentModelSpecific;
+import de.escidoc.core.resources.common.reference.ContentModelRef;
+import de.escidoc.core.resources.common.reference.ContextRef;
 import de.escidoc.core.resources.om.item.Item;
 
 /**
@@ -42,20 +46,22 @@ public class DemoItem {
 	 * @throws EscidocException
 	 *             Thrown if framework throws exception.
 	 * @throws ParserConfigurationException
+	 * @throws MalformedURLException 
 	 */
 	public void createItem() throws EscidocException, InternalClientException,
-			TransportException, ParserConfigurationException {
-
-		ItemHandlerClient ihc = new ItemHandlerClient();
-		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-				Constants.USER_PASSWORD);
-
+			TransportException, ParserConfigurationException, MalformedURLException {
+		
+		// prepare client object
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
+		ihc.setHandle(auth.getHandle());
+		
 		Item item = new Item();
 
 		item.getProperties().setContext(
-				new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+				new ContextRef(Constants.EXAMPLE_CONTEXT_ID));
 		item.getProperties().setContentModel(
-				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+				new ContentModelRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
 		// Content-model
 		item.getProperties().setContentModelSpecific(getContentModelSpecific());
@@ -76,12 +82,14 @@ public class DemoItem {
 	 * 
 	 * @throws ParserConfigurationException
 	 * @throws EscidocClientException
+	 * @throws MalformedURLException 
 	 */
-	public void lifecycle() throws ParserConfigurationException, EscidocClientException {
-
-		ItemHandlerClient ihc = new ItemHandlerClient();
-		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+	public void lifecycle() throws ParserConfigurationException, EscidocClientException, MalformedURLException {
+		
+		// prepare client object
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
+		ihc.setHandle(auth.getHandle());
 
 		// create
 		Item item = ihc.create(prepareItem());
@@ -107,13 +115,15 @@ public class DemoItem {
 	 * 
 	 * @throws ParserConfigurationException
 	 * @throws EscidocClientException
+	 * @throws MalformedURLException 
 	 */
 	public void assignPids() throws ParserConfigurationException,
-			EscidocClientException {
-
-		ItemHandlerClient ihc = new ItemHandlerClient();
-		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+			EscidocClientException, MalformedURLException {
+		
+		// prepare client object
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
+		ihc.setHandle(auth.getHandle());
 
 		// create --------------------------------------------------------------
 		Item item = ihc.create(prepareItem());
@@ -123,14 +133,14 @@ public class DemoItem {
 		// assign object PID ---------------------------------------------------
 		TaskParam taskParam = new TaskParam();
 		taskParam.setLastModificationDate(item.getLastModificationDate());
-		taskParam.setUrl("htttaskParamo.solution/for/this/resource");
+		taskParam.setUrl(new URL ("htttaskParamo.solution/for/this/resource"));
 		taskParam.setComment("Object PID on eSciDoc Days 2009");
 
 		Result result = ihc.assignObjectPid(item, taskParam);
 
 		// assign version PID --------------------------------------------------
 		taskParam.setLastModificationDate(result.getLastModificationDate());
-		taskParam.setUrl("htttaskParamo.solution/for/this/resource");
+		taskParam.setUrl(new URL ("htttaskParamo.solution/for/this/resource"));
 		taskParam.setComment("Object PID on eSciDoc Days 2009");
 
 		ihc.assignObjectPid(item, taskParam);
@@ -146,9 +156,9 @@ public class DemoItem {
 		Item item = new Item();
 
 		item.getProperties().setContext(
-				new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+				new ContextRef(Constants.EXAMPLE_CONTEXT_ID));
 		item.getProperties().setContentModel(
-				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+				new ContentModelRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
 		// Content-model
 		item.getProperties().setContentModelSpecific(getContentModelSpecific());
