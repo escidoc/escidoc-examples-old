@@ -1,10 +1,13 @@
 package org.escidoc.workingWithClientLib.RESTHandler.container;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContainerHandlerClient;
 
@@ -64,16 +67,15 @@ public class CreateContainer {
      *            Container XML
      * @return XML representation of the created Container
      * @throws EscidocClientException
+     * @throws MalformedURLException 
      */
     private static String createContainer(final String containerXml)
-        throws EscidocClientException {
+        throws EscidocClientException, MalformedURLException {
 
-        // get REST handler
-        RestContainerHandlerClient rchc = new RestContainerHandlerClient();
-
-        // login
-        rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        // get RestContainerHandlerClient, login
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestContainerHandlerClient rchc = new RestContainerHandlerClient(auth.getServiceAddress());
+        rchc.setHandle(auth.getHandle());
 
         // create the Container
         String createdContainer = rchc.create(containerXml);
