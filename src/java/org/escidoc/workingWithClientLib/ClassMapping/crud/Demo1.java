@@ -1,5 +1,7 @@
 package org.escidoc.workingWithClientLib.ClassMapping.crud;
 
+import java.net.MalformedURLException;
+
 import javax.xml.parsers.ParserConfigurationException;
 
 import de.escidoc.core.client.exceptions.EscidocClientException;
@@ -15,8 +17,9 @@ public class Demo1 {
 
 	/**
 	 * @param args
+	 * @throws MalformedURLException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MalformedURLException {
 
 		DemoItem c = new DemoItem();
 
