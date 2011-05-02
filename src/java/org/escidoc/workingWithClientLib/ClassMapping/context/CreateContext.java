@@ -1,16 +1,19 @@
 package org.escidoc.workingWithClientLib.ClassMapping.context;
 
-import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import org.escidoc.Constants;
+
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ContextHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
-import de.escidoc.core.resources.ResourceRef;
+import de.escidoc.core.resources.common.reference.OrganizationalUnitRef;
 import de.escidoc.core.resources.om.context.Context;
+import de.escidoc.core.resources.om.context.ContextProperties;
 import de.escidoc.core.resources.om.context.OrganizationalUnitRefs;
-import de.escidoc.core.resources.om.context.Properties;
 
 /**
  * Example how to create an Context by using the eSciDoc Java client library.
@@ -33,7 +36,7 @@ public class CreateContext {
             context = createContext(context);
 
             System.out.println("Context with objid='" + context.getObjid()
-                + "' at '" + context.getLastModificationDateAsString()
+                + "' at '" + context.getLastModificationDate()
                 + "' created.");
         }
         catch (EscidocException e) {
@@ -44,7 +47,9 @@ public class CreateContext {
         }
         catch (TransportException e) {
             e.printStackTrace();
-        }
+        } catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
     }
 
     /**
@@ -57,7 +62,7 @@ public class CreateContext {
 
         Context context = new Context();
 
-        Properties properties = new Properties();
+        ContextProperties properties = new ContextProperties();
 
         // Context requires a name
         properties.setName("Example_Package_Context");
@@ -76,7 +81,7 @@ public class CreateContext {
         // add the Organizational Unit with objid escidoc:ex3 (the ou of the
         // example eSciDoc representation package) to the list of
         // organizational Units
-        ous.addOrganizationalUnitRef(new ResourceRef("escidoc:ex3"));
+        ous.add(new OrganizationalUnitRef("escidoc:ex3"));
         properties.setOrganizationalUnitRefs(ous);
 
         context.setProperties(properties);
@@ -105,15 +110,17 @@ public class CreateContext {
      * @throws TransportException
      *             Is thrown if transport between client library and framework
      *             is malfunctioned.
+     * @throws MalformedURLException 
      */
     private static Context createContext(final Context context)
-        throws EscidocException, InternalClientException, TransportException {
+        throws EscidocException, InternalClientException, TransportException, MalformedURLException {
+    	
+    	// prepare client object
+    	Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+    	ContextHandlerClient chc = new ContextHandlerClient(auth.getServiceAddress());
+    	chc.setHandle(auth.getHandle());
 
-        ContextHandlerClient client = new ContextHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
-
-        Context createdContext = client.create(context);
+        Context createdContext = chc.create(context);
 
         return createdContext;
     }
