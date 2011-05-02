@@ -1,5 +1,7 @@
 package org.escidoc.workingWithClientLib.ClassMapping.crud;
 
+import java.net.MalformedURLException;
+
 import javax.xml.parsers.ParserConfigurationException;
 
 import de.escidoc.core.client.exceptions.EscidocClientException;
@@ -32,6 +34,8 @@ public class DemoAssignPid {
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		} catch (EscidocClientException e) {
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 
