@@ -2,10 +2,12 @@ package org.escidoc.workingWithClientLib.RESTHandler.ou;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
@@ -84,12 +86,9 @@ public class CreateChildOu {
         IOException {
 
         // get handler for organizational units
-        RestOrganizationalUnitHandlerClient rouc =
-            new RestOrganizationalUnitHandlerClient();
-
-        // authenticate
-        rouc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestOrganizationalUnitHandlerClient rouc = new RestOrganizationalUnitHandlerClient(auth.getServiceAddress());
+        rouc.setHandle(auth.getHandle());
 
         // create
         String crtdOuXML = rouc.create(ouXml);
