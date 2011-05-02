@@ -1,25 +1,25 @@
 package org.escidoc.workingWithClientLib.RESTHandler.userAccount;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestUserAccountHandlerClient;
 
 /**
- * Example how to update a user password by using the XML REST representation
- * and the eSciDoc Java client library.
+ * Example how to update a user password by using the XML REST representation and the eSciDoc Java client library.
  * 
- * Be aware that this method will not work if the user are stored within
- * Shibboleth or LDAP. This is only for local user within the database (which is
- * not the proposed installation).
+ * Be aware that this method will not work if the user are stored within Shibboleth or LDAP. This is only for local user
+ * within the database (which is not the proposed installation).
  * 
- * The eSciDoc Java client library is used for communication with framework.
- * Unused is mapping between Java classes and XML representations to explain the
- * XML data structure.
+ * The eSciDoc Java client library is used for communication with framework. Unused is mapping between Java classes and
+ * XML representations to explain the XML data structure.
  * 
- * eSciDoc XML REST representation is used. Please keep that in mind, if you
- * adapt these examples for SOAP.
+ * eSciDoc XML REST representation is used. Please keep that in mind, if you adapt these examples for SOAP.
  * 
  * @author SWA
  * 
@@ -30,8 +30,7 @@ public class UpdatePassword {
      * Update user password (local database).
      * 
      * @param args
-     *            If args[0] is given, than is it taken as objid of user,
-     *            otherwise default objid is used
+     *            If args[0] is given, than is it taken as objid of user, otherwise default objid is used
      */
     public static void main(String[] args) {
 
@@ -42,9 +41,9 @@ public class UpdatePassword {
          * Update user password.
          * 
          * @param args
-         *            If args[0] is given, than is it taken as objid of user
-         *            account. If arg[1] is given too, than is it used as
-         *            password. Otherwise default values are used.
+         *            If args[0] is given, than is it taken as objid of user account. 
+         *            If arg[1] is given too, than is it  used as password. 
+         *            Otherwise default values are used.
          */
         if (args.length == 1) {
             objid = args[0];
@@ -63,6 +62,9 @@ public class UpdatePassword {
         catch (EscidocClientException e) {
             e.printStackTrace();
         }
+        catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -71,8 +73,7 @@ public class UpdatePassword {
      * Procedure:<br/>
      * <ul/>
      * <li>get last modification date of user by retrieving this resource</li>
-     * <li>call task oriented updatePassword method with new password as element
-     * of task parameter</li>
+     * <li>call task oriented updatePassword method with new password as element of task parameter</li>
      * </ul>
      * 
      * @param userId
@@ -81,14 +82,16 @@ public class UpdatePassword {
      *            New password for user
      * @throws EscidocClientException
      *             Thrown if update failed
+     * @throws MalformedURLException
      */
-    private static void updatePassword(
-        final String userId, final String password)
-        throws EscidocClientException {
+    private static void updatePassword(final String userId, final String password) throws EscidocClientException,
+        MalformedURLException {
 
-        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
-        ruahc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        // prepare client object
+        Authentication auth =
+            new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient(auth.getServiceAddress());
+        ruahc.setHandle(auth.getHandle());
 
         String userXml = ruahc.retrieve(userId);
 
@@ -97,8 +100,8 @@ public class UpdatePassword {
 
         // prepare taskParam
         final String taskParamXML =
-            "<param last-modification-date=\"" + objidLmd[1] + "\" >\n"
-                + "<password>" + password + "</password>\n" + "</param>";
+            "<param last-modification-date=\"" + objidLmd[1] + "\" >\n" + "<password>" + password + "</password>\n"
+                + "</param>";
 
         ruahc.updatePassword(userId, taskParamXML);
     }
