@@ -1,5 +1,7 @@
 package org.escidoc.workingWithClientLib.ClassMapping.item;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,12 +13,14 @@ import org.escidoc.Constants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.common.properties.ContentModelSpecific;
+import de.escidoc.core.resources.common.reference.ContentModelRef;
+import de.escidoc.core.resources.common.reference.ContextRef;
 import de.escidoc.core.resources.om.item.Item;
 
 /**
@@ -42,12 +46,14 @@ public class CreateItem {
 
 			System.out.println("Item with objid='" + createdResource.getObjid()
 					+ "' at '"
-					+ createdResource.getLastModificationDateAsString()
+					+ createdResource.getLastModificationDate()
 					+ "' created.");
 
 		} catch (EscidocClientException e) {
 			e.printStackTrace();
 		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -58,20 +64,22 @@ public class CreateItem {
 	 * @return XML representation of the created Item
 	 * @throws EscidocClientException
 	 * @throws ParserConfigurationException
+	 * @throws MalformedURLException 
 	 */
 	private static Item createItem() throws EscidocClientException,
-			ParserConfigurationException {
-
-		ItemHandlerClient ihc = new ItemHandlerClient();
-		ihc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+			ParserConfigurationException, MalformedURLException {
+		
+		// prepare client object
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
+		ihc.setHandle(auth.getHandle());
 
 		Item item = new Item();
 
 		item.getProperties().setContext(
-				new ResourceRef(Constants.EXAMPLE_CONTEXT_ID));
+				new ContextRef(Constants.EXAMPLE_CONTEXT_ID));
 		item.getProperties().setContentModel(
-				new ResourceRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
+				new ContentModelRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
 		// Content-model
 		ContentModelSpecific cms = getContentModelSpecific();
