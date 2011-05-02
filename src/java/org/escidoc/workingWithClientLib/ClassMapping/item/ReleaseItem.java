@@ -1,10 +1,12 @@
 package org.escidoc.workingWithClientLib.ClassMapping.item;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Vector;
 
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.common.Filter;
@@ -42,6 +44,8 @@ public class ReleaseItem {
 
 		} catch (EscidocClientException e) {
 			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
 		}
 
 	}
@@ -61,25 +65,28 @@ public class ReleaseItem {
 	 * @param id
 	 *            The objid of the Item.
 	 * @throws EscidocClientException
+	 * @throws MalformedURLException 
 	 */
 	public static void releaseItem(final String id)
-			throws EscidocClientException {
-
+			throws EscidocClientException, MalformedURLException {
+		
 		// prepare client object
-		ItemHandlerClient ihc = new ItemHandlerClient();
-		ihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-				Constants.USER_PASSWORD);
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
+		ihc.setHandle(auth.getHandle());
 
 		// create item object retrieving the item
 		Item item = ihc.retrieve(id);
 
 		// release using submit result
-		Result releaseResult = ihc.release(item, new TaskParam(item
-				.getLastModificationDate(), "release", null, null,
-				new Vector<Filter>()));
-
+		TaskParam taskParam = new TaskParam();
+		taskParam.setLastModificationDate(item.getLastModificationDate());
+		taskParam.setComment("release");
+		taskParam.setFilters(new Vector<Filter>());
+		Result releaseResult = ihc.release(item, taskParam);
+		
 		System.out.println("Item with objid='" + id + "' at '"
-				+ releaseResult.getLastModificationDateAsString()
+				+ releaseResult.getLastModificationDate()
 				+ "' released.");
 	}
 }
