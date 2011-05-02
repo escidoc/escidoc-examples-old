@@ -1,15 +1,18 @@
 package org.escidoc.workingWithClientLib.ClassMapping.context;
 
-import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import org.escidoc.Constants;
+
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.ContextHandlerClient;
-import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
+import de.escidoc.core.resources.common.properties.PublicStatus;
 import de.escidoc.core.resources.om.context.Context;
 
 /**
@@ -36,7 +39,7 @@ public class OpenContext {
 			context = retrieveContext(objid);
 
 			// set status to open
-			context.getProperties().setPublicStatus("opened");
+			context.getProperties().setPublicStatus(PublicStatus.OPENED);
 
 			// open Context
 			Result result = openContext(context);
@@ -53,7 +56,7 @@ public class OpenContext {
 			e.printStackTrace();
 		} catch (TransportException e) {
 			e.printStackTrace();
-		} catch (EscidocClientException e) {
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 
@@ -76,16 +79,18 @@ public class OpenContext {
 	 * @throws TransportException
 	 *             Is thrown if transport between client library and framework
 	 *             is malfunctioned.
+	 * @throws MalformedURLException 
 	 */
 	private static Context retrieveContext(final String objid)
 			throws EscidocException, InternalClientException,
-			TransportException {
+			TransportException, MalformedURLException {
+		
+		// prepare client object
+    	Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+    	ContextHandlerClient chc = new ContextHandlerClient(auth.getServiceAddress());
+    	chc.setHandle(auth.getHandle());
 
-		ContextHandlerClient client = new ContextHandlerClient();
-		client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-				Constants.USER_PASSWORD);
-
-		Context context = client.retrieve(objid);
+		Context context = chc.retrieve(objid);
 
 		return context;
 	}
@@ -107,22 +112,23 @@ public class OpenContext {
 	 * @throws TransportException
 	 *             Is thrown if transport between client library and framework
 	 *             is malfunctioned.
+	 * @throws MalformedURLException 
 	 */
 	private static Result openContext(final Context context)
 			throws EscidocException, InternalClientException,
-			TransportException {
+			TransportException, MalformedURLException {
 
-		ContextHandlerClient client = new ContextHandlerClient();
-		client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-				Constants.USER_PASSWORD);
-
+		// prepare client object
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+    	ContextHandlerClient chc = new ContextHandlerClient(auth.getServiceAddress());
+    	chc.setHandle(auth.getHandle());
+		
 		TaskParam taskParam = new TaskParam();
 		taskParam.setComment("Example to open Context");
 		taskParam.setLastModificationDate(context.getLastModificationDate());
 
-		Result result = client.open(context.getObjid(), taskParam);
+		Result result = chc.open(context.getObjid(), taskParam);
 
 		return result;
 	}
-
 }
