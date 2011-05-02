@@ -1,10 +1,13 @@
 package org.escidoc.workingWithClientLib.RESTHandler.context;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
@@ -70,21 +73,20 @@ public class CreateContext {
      * <p>
      * This method makes usage of a Context XML (REST) template.<br/>
      * </p>
+     * @throws MalformedURLException 
      * 
      * @throws InternalClientException
      * @throws EscidocException
      * @throws TransportException
      * @throws IOException
      */
-    private static String createContext(final String contextXml)
-        throws EscidocClientException {
+    public static String createContext(final String contextXml)
+        throws EscidocClientException, MalformedURLException {
 
-        // get the REST handler
-        RestContextHandlerClient client = new RestContextHandlerClient();
-
-        // authenticate
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+//        // get the REST handler
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestContextHandlerClient client = new RestContextHandlerClient(auth.getServiceAddress());
+        client.setHandle(auth.getHandle());
 
         // create
         String createdContext = client.create(contextXml);
