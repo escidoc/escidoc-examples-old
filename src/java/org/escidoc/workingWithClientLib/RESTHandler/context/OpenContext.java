@@ -1,8 +1,12 @@
 package org.escidoc.workingWithClientLib.RESTHandler.context;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestContextHandlerClient;
 
@@ -47,7 +51,9 @@ public class OpenContext {
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
-        }
+        } catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 
     }
 
@@ -58,13 +64,14 @@ public class OpenContext {
      *            objid of to open Context
      * @return XML response of open method from framework
      * @throws EscidocClientException
+     * @throws MalformedURLException 
      */
-    public static String openContext(final String id) throws EscidocClientException {
+    public static String openContext(final String id) throws EscidocClientException, MalformedURLException {
 
         // prepare client object
-        RestContextHandlerClient rchc = new RestContextHandlerClient();
-        rchc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestContextHandlerClient rchc = new RestContextHandlerClient(auth.getServiceAddress());
+        rchc.setHandle(auth.getHandle());
 
         // retrieving the context
         String contextXml = rchc.retrieve(id);
