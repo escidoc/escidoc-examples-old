@@ -2,10 +2,12 @@ package org.escidoc.workingWithClientLib.RESTHandler.userAccount;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
@@ -81,12 +83,10 @@ public class CreateUserAccount {
         throws InternalClientException, EscidocException, TransportException,
         IOException {
 
-        // get handler for user account
-        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient();
-
-        // authenticate
-        ruahc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+    	// prepare client object
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestUserAccountHandlerClient ruahc = new RestUserAccountHandlerClient(auth.getServiceAddress());
+        ruahc.setHandle(auth.getHandle());
 
         // load XML template of user account
         File templ = new File(xmlTemplFile);
