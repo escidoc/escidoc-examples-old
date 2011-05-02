@@ -3,26 +3,29 @@ package org.escidoc.workingWithClientLib.ClassMapping.ou;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.escidoc.Constants;
-import org.escidoc.simpleConnections.Util;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.OrganizationalUnitHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
-import de.escidoc.core.resources.ResourceRef;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
+import de.escidoc.core.resources.common.reference.OrganizationalUnitRef;
 import de.escidoc.core.resources.oum.OrganizationalUnit;
+import de.escidoc.core.resources.oum.OrganizationalUnitProperties;
+import de.escidoc.core.resources.oum.Parent;
 import de.escidoc.core.resources.oum.Parents;
-import de.escidoc.core.resources.oum.Properties;
 
 /**
  * Example how to create an Organizational Unit by using the eSciDoc Java client
@@ -85,7 +88,7 @@ public class CreateOu {
 
         OrganizationalUnit ou = new OrganizationalUnit();
 
-        Properties properties = new Properties();
+        OrganizationalUnitProperties properties = new OrganizationalUnitProperties();
         properties.setName("Organizational_Unit_Test_Name");
         ou.setProperties(properties);
 
@@ -120,10 +123,8 @@ public class CreateOu {
 
         // add parent OU
         Parents parents = new Parents();
-        ResourceRef resourceRef = new ResourceRef();
-
-        resourceRef.setObjid("escidoc:ex3");
-        parents.addParentRef(resourceRef);
+        OrganizationalUnitRef resourceRef = new OrganizationalUnitRef("escidoc:ex3");
+        parents.add(new Parent(resourceRef.getObjid()));
         ou.setParents(parents);
 
         return ou;
@@ -151,16 +152,16 @@ public class CreateOu {
      * @throws TransportException
      *             Is thrown if transport between client library and framework
      *             is malfunctioned.
+     * @throws MalformedURLException 
      */
     private static OrganizationalUnit createOrganizationalUnit(
         final OrganizationalUnit ou) throws EscidocException,
-        InternalClientException, TransportException {
+        InternalClientException, TransportException, MalformedURLException {
 
         // get handler
-        OrganizationalUnitHandlerClient client =
-            new OrganizationalUnitHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+    	Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+    	OrganizationalUnitHandlerClient client = new OrganizationalUnitHandlerClient(auth.getServiceAddress());
+    	client.setHandle(auth.getHandle());
 
         // call create
         OrganizationalUnit createdOu = client.create(ou);
