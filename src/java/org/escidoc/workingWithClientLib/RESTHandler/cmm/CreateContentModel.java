@@ -1,10 +1,12 @@
 package org.escidoc.workingWithClientLib.RESTHandler.cmm;
 
 import java.io.IOException;
+import java.net.URL;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
@@ -77,17 +79,14 @@ public class CreateContentModel {
      * @throws TransportException
      * @throws IOException
      */
-    private static String create(final String cmmXml)
+    public static String create(final String cmmXml)
         throws InternalClientException, EscidocException, TransportException,
         IOException {
 
-        // get handler for Content Model
-        RestContentModelHandlerClient rcmhc =
-            new RestContentModelHandlerClient();
-
-        // authenticate
-        rcmhc.login(Constants.DEFAULT_SERVICE_URL, Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        // get handler for RestContent Model, authenticate
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestContentModelHandlerClient rcmhc = new RestContentModelHandlerClient(auth.getServiceAddress());
+        rcmhc.setHandle(auth.getHandle());
 
         // create
         String createdCmmXml = rcmhc.create(cmmXml);
