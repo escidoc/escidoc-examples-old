@@ -116,7 +116,7 @@ public class CreateContext {
         throws EscidocException, InternalClientException, TransportException, MalformedURLException {
     	
     	// prepare client object
-    	Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+    	Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
     	ContextHandlerClient chc = new ContextHandlerClient(auth.getServiceAddress());
     	chc.setHandle(auth.getHandle());
 
