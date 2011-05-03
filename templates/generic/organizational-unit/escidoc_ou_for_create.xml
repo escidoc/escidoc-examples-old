@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <organizational-unit:organizational-unit
-	xmlns:organizational-unit="http://www.escidoc.de/schemas/organizationalunit/0.7"
+	xmlns:organizational-unit="http://www.escidoc.de/schemas/organizationalunit/0.8"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<md-records:md-records
-		xmlns:md-records="http://www.escidoc.de/schemas/metadatarecords/0.4"
+		xmlns:md-records="http://www.escidoc.de/schemas/metadatarecords/0.5"
 		xmlns:ou="http://www.escidoc.de/metadata/organizational-unit"
 		xmlns:dc="http://purl.org/dc/elements/1.1/"
 		xmlns:dcterms="http://purl.org/dc/terms/">
