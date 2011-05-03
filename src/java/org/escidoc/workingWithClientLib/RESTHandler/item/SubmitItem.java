@@ -1,8 +1,12 @@
 package org.escidoc.workingWithClientLib.RESTHandler.item;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
 
@@ -21,7 +25,7 @@ public class SubmitItem {
      */
     public static void main(String[] args) {
 
-        String id = "escidoc:item";
+        String id = "escidoc:20004";
         if (args.length > 0) {
             id = args[0];
         }
@@ -31,20 +35,24 @@ public class SubmitItem {
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
-        }
+        } catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
     }
 
     /**
      * 
      * @param id
      * @throws EscidocClientException
+     * @throws MalformedURLException 
      */
     public static void submitItem(final String id)
-        throws EscidocClientException {
-
-        RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+        throws EscidocClientException, MalformedURLException {
+    	
+    	// prepare client object
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
+        rihc.setHandle(auth.getHandle());
 
         // retrieving the Item
         String itemXml = rihc.retrieve(id);
