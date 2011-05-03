@@ -23,7 +23,6 @@ import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
 import de.escidoc.core.resources.common.Result;
 import de.escidoc.core.resources.common.TaskParam;
-import de.escidoc.core.resources.common.properties.ContentModelSpecific;
 import de.escidoc.core.resources.common.reference.ContentModelRef;
 import de.escidoc.core.resources.common.reference.ContextRef;
 import de.escidoc.core.resources.om.item.Item;
@@ -62,9 +61,6 @@ public class DemoItem {
 				new ContextRef(Constants.EXAMPLE_CONTEXT_ID));
 		item.getProperties().setContentModel(
 				new ContentModelRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
-
-		// Content-model
-		item.getProperties().setContentModelSpecific(getContentModelSpecific());
 
 		// Metadata Record(s)
 		MetadataRecords mdRecords = new MetadataRecords();
@@ -160,42 +156,12 @@ public class DemoItem {
 		item.getProperties().setContentModel(
 				new ContentModelRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
-		// Content-model
-		item.getProperties().setContentModelSpecific(getContentModelSpecific());
-
 		// Metadata Record(s)
 		MetadataRecords mdRecords = new MetadataRecords();
 		mdRecords.add(getMdRecord("escidoc"));
 		item.setMetadataRecords(mdRecords);
 
 		return item;
-	}
-
-	/**
-	 * Get content model specific.
-	 * 
-	 * @return
-	 * @throws ParserConfigurationException
-	 */
-	private ContentModelSpecific getContentModelSpecific()
-			throws ParserConfigurationException {
-
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.newDocument();
-
-		Element contentModelSpecific = doc.createElementNS(null, "cms");
-		Element element1 = doc.createElement("some-other-stuff");
-		element1.setTextContent("some content - " + System.nanoTime());
-
-		List<Element> cmsContent = new LinkedList<Element>();
-		cmsContent.add(contentModelSpecific);
-		cmsContent.add(element1);
-
-		ContentModelSpecific cms = new ContentModelSpecific();
-		cms.setContent(cmsContent);
-
-		return cms;
 	}
 
 	/**

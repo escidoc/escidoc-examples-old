@@ -18,7 +18,6 @@ import de.escidoc.core.client.ContainerHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.resources.common.MetadataRecord;
 import de.escidoc.core.resources.common.MetadataRecords;
-import de.escidoc.core.resources.common.properties.ContentModelSpecific;
 import de.escidoc.core.resources.common.reference.ContentModelRef;
 import de.escidoc.core.resources.common.reference.ContextRef;
 import de.escidoc.core.resources.om.container.Container;
@@ -81,10 +80,6 @@ public class CreateContainer {
 		container.getProperties().setContentModel(
 				new ContentModelRef(Constants.EXAMPLE_CONTENT_MODEL_ID));
 
-		// Content-model
-		ContentModelSpecific cms = getContentModelSpecific();
-		container.getProperties().setContentModelSpecific(cms);
-
 		// Metadata Record(s)
 		MetadataRecords mdRecords = new MetadataRecords();
 		MetadataRecord mdrecord = getMdRecord("escidoc");
@@ -95,33 +90,6 @@ public class CreateContainer {
 		Container newContainer = chc.create(container);
 
 		return newContainer;
-	}
-
-	/**
-	 * Get content model specific.
-	 * 
-	 * @return
-	 * @throws ParserConfigurationException
-	 */
-	private static ContentModelSpecific getContentModelSpecific()
-			throws ParserConfigurationException {
-
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.newDocument();
-
-		Element contentModelSpecific = doc.createElementNS(null, "cms");
-		Element element1 = doc.createElement("some-other-stuff");
-		element1.setTextContent("some content - " + System.nanoTime());
-
-		List<Element> cmsContent = new LinkedList<Element>();
-		cmsContent.add(contentModelSpecific);
-		cmsContent.add(element1);
-
-		ContentModelSpecific cms = new ContentModelSpecific();
-		cms.setContent(cmsContent);
-
-		return cms;
 	}
 
 	/**
