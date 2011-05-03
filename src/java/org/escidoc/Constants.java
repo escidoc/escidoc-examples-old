@@ -11,14 +11,17 @@ public class Constants {
     public static final String DEFAULT_SERVICE_URL =
         "http://" + DEFAULT_INFRASTRUCTURE_HOST + ":"
             + DEFAULT_INFRASTRUCTURE_PORT + DEFAULT_INFRASTRUCTURE_PATH;
-
-    public static final String USER_NAME = "sysadmin";
-//    public static final String USER_NAME = "mustermann";
-
-    public static final String USER_PASSWORD = "sysadmin";
-//    public static final String USER_PASSWORD = "eSciDoc";
-//    public static final String USER_PASSWORD = "PubManR2";
-
+    
+    public static final String USER_NAME_SYSADMIN = "sysadmin";
+    public static final String USER_PASSWORD_SYSADMIN = "sysadmin";
+    
+    public static final String USER_NAME_INSPECTOR_ = "inspector";
+    public static final String USER_PASSWORD_INSPECTOR = "inspector";
+    
+    public static final String USER_NAME_DEPOSITOR = "depositor";
+    public static final String USER_PASSWORD_DEPOSITOR = "depositor";
+    
+    
     /**
      * Objid from common example set.
      */
