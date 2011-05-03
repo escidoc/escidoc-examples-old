@@ -1,8 +1,12 @@
 package org.escidoc.workingWithClientLib.RESTHandler.item;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
 
@@ -28,7 +32,7 @@ public class ReleaseItem {
              * Either set the objid of the Item by parameter or set the objid in
              * the following id variable.
              */
-            String id = "escidoc:item";
+            String id = "escidoc:20004";
             if (args.length > 0) {
                 id = args[0];
             }
@@ -38,7 +42,9 @@ public class ReleaseItem {
         }
         catch (EscidocClientException e) {
             e.printStackTrace();
-        }
+        } catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 
     }
 
@@ -56,14 +62,15 @@ public class ReleaseItem {
      * 
      * @param id
      * @throws EscidocClientException
+     * @throws MalformedURLException 
      */
     public static void releaseItem(final String id)
-        throws EscidocClientException {
+        throws EscidocClientException, MalformedURLException {
 
-        // prepare client object
-        RestItemHandlerClient rihc = new RestItemHandlerClient();
-        rihc.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
+//        // prepare client object
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
+        rihc.setHandle(auth.getHandle());
 
         // retrieving the Item
         String itemXml = rihc.retrieve(id);
