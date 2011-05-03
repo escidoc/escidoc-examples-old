@@ -52,7 +52,7 @@ public class UpdateItem {
         throws EscidocClientException, MalformedURLException {
     	
     	// prepare client object
-        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
         RestItemHandlerClient client = new RestItemHandlerClient(auth.getServiceAddress());
         client.setHandle(auth.getHandle());
         
@@ -65,7 +65,7 @@ public class UpdateItem {
         throws EscidocClientException, MalformedURLException {
     	
     	// prepare client object
-        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
         RestItemHandlerClient client = new RestItemHandlerClient(auth.getServiceAddress());
         client.setHandle(auth.getHandle());
         
