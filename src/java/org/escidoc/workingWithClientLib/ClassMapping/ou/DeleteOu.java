@@ -39,7 +39,7 @@ public class DeleteOu {
             OrganizationalUnit ou = prepareOrganizationalUnit();
 
             // get handler
-            Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+            Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
         	OrganizationalUnitHandlerClient client = new OrganizationalUnitHandlerClient(auth.getServiceAddress());
         	client.setHandle(auth.getHandle());
 
