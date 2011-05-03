@@ -39,6 +39,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
 import de.escidoc.core.client.exceptions.application.security.AuthenticationException;
@@ -77,8 +78,8 @@ public class CreateContainer {
 
         // set username and password from params or to default
         if (args.length < 3) {
-            user = "sysadmin";
-            pass = "eSciDoc";
+            user = Constants.USER_NAME;
+            pass = Constants.USER_PASSWORD;
         }
         else {
             user = args[1];
