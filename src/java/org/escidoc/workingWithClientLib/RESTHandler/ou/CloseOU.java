@@ -76,7 +76,7 @@ public class CloseOU {
         throws InternalClientException, EscidocException, TransportException, MalformedURLException {
 
         // get rest handler
-        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
         RestOrganizationalUnitHandlerClient rouc = new RestOrganizationalUnitHandlerClient(auth.getServiceAddress());
         rouc.setHandle(auth.getHandle());
 
