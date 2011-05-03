@@ -8,7 +8,6 @@ import org.escidoc.simpleConnections.Util;
 
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
-import de.escidoc.core.client.rest.RestContainerHandlerClient;
 import de.escidoc.core.client.rest.RestContextHandlerClient;
 
 /**
