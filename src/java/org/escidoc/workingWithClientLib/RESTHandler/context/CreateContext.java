@@ -84,7 +84,7 @@ public class CreateContext {
         throws EscidocClientException, MalformedURLException {
 
 //        // get the REST handler
-        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
         RestContextHandlerClient client = new RestContextHandlerClient(auth.getServiceAddress());
         client.setHandle(auth.getHandle());
 
