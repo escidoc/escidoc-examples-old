@@ -15,7 +15,8 @@ public class Constants {
     public static final String USER_NAME = "sysadmin";
 //    public static final String USER_NAME = "mustermann";
 
-    public static final String USER_PASSWORD = "eSciDoc";
+    public static final String USER_PASSWORD = "sysadmin";
+//    public static final String USER_PASSWORD = "eSciDoc";
 //    public static final String USER_PASSWORD = "PubManR2";
 
     /**
