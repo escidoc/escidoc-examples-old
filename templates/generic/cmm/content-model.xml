@@ -3,14 +3,15 @@
   <?xml version="1.0" encoding="UTF-8"?>
  -->
 <content-model:content-model
-	xmlns:content-model="http://www.escidoc.de/schema/contenttype/0.2"
-	xmlns:xlink="http://www.w3.org/1999/xlink" objid="escidoc:ex4"
+	xmlns:content-model="http://www.escidoc.de/schemas/contentmodel/0.1"
+	xmlns:prop="http://escidoc.de/core/01/properties/"
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
 	xlink:href="/cmm/content-model/escidoc:ex4" xlink:title="Generic Content Model"
 	xlink:type="simple">
 
 	<content-model:properties xlink:title="Properties"
 		xlink:type="simple">
-		<content-model:name>Generic Content Model</content-model:name>
+		<prop:name>Generic Content Model</prop:name>
 	</content-model:properties>
 	
 </content-model:content-model>
