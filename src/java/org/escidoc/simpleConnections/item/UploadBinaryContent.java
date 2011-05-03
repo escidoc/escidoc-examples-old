@@ -41,8 +41,8 @@ public class UploadBinaryContent {
                 (HttpURLConnection) createUrl.openConnection();
 
             uploadConnection.setRequestProperty("Cookie", "escidocCookie="
-                + Util.getAuthHandle(Constants.USER_NAME,
-                    Constants.USER_PASSWORD));
+                + Util.getAuthHandle(Constants.USER_NAME_DEPOSITOR,
+                    Constants.USER_PASSWORD_DEPOSITOR));
 
             uploadConnection.setRequestMethod("PUT");
             uploadConnection.setDoOutput(true);
