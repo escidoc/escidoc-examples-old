@@ -8,6 +8,7 @@ import org.escidoc.simpleConnections.Util;
 
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
+import de.escidoc.core.client.rest.RestContainerHandlerClient;
 import de.escidoc.core.client.rest.RestContextHandlerClient;
 
 /**
@@ -74,7 +75,7 @@ public class CloseContext {
     public static String closeContext(final String id) throws EscidocClientException, MalformedURLException {
 
         // prepare client handler
-        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
         RestContextHandlerClient rchc = new RestContextHandlerClient(auth.getServiceAddress());
         rchc.setHandle(auth.getHandle());
 
