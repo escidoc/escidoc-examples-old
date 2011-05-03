@@ -6,8 +6,6 @@ import java.net.URL;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
-import org.escidoc.workingWithClientLib.RESTHandler.cmm.CreateContentModel;
-import org.escidoc.workingWithClientLib.RESTHandler.context.CreateContext;
 
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
