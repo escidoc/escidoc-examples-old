@@ -49,7 +49,7 @@ public class DemoItem {
 			TransportException, ParserConfigurationException, MalformedURLException {
 		
 		// prepare client object
-		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
 		ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
 		ihc.setHandle(auth.getHandle());
 		
@@ -81,7 +81,7 @@ public class DemoItem {
 	public void lifecycle() throws ParserConfigurationException, EscidocClientException, MalformedURLException {
 		
 		// prepare client object
-		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
 		ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
 		ihc.setHandle(auth.getHandle());
 
@@ -115,7 +115,7 @@ public class DemoItem {
 			EscidocClientException, MalformedURLException {
 		
 		// prepare client object
-		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
 		ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
 		ihc.setHandle(auth.getHandle());
 
