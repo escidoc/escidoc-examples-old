@@ -2,8 +2,6 @@ package org.escidoc.workingWithClientLib.ClassMapping.container;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.LinkedList;
-import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
