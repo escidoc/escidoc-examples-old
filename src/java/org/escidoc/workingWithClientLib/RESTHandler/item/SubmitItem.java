@@ -50,7 +50,7 @@ public class SubmitItem {
         throws EscidocClientException, MalformedURLException {
     	
     	// prepare client object
-        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
         RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
         rihc.setHandle(auth.getHandle());
 
