@@ -67,7 +67,7 @@ public class CreateItem {
 			ParserConfigurationException, MalformedURLException {
 		
 		// prepare client object
-		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
+		Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_DEPOSITOR, Constants.USER_PASSWORD_DEPOSITOR);
 		ItemHandlerClient ihc = new ItemHandlerClient(auth.getServiceAddress());
 		ihc.setHandle(auth.getHandle());
 
