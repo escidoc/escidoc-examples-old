@@ -1,10 +1,13 @@
 package org.escidoc.workingWithClientLib.RESTHandler.item;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.escidoc.Constants;
 import org.escidoc.simpleConnections.Util;
 
+import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
 
@@ -24,7 +27,7 @@ public class UpdateItem {
 
     public static void main(String[] args) {
 
-        String id = "escidoc:item";
+        String id = "escidoc:20004";
         String xmlFile = "templates/generic/item/Item_update.xml";
 
         try {
@@ -58,23 +61,27 @@ public class UpdateItem {
     }
 
     private static String updateItem(String itemId, String itemXml)
-        throws EscidocClientException {
-
-        RestItemHandlerClient client = new RestItemHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
-        String createdItem = client.update(itemId, itemXml);
+        throws EscidocClientException, MalformedURLException {
+    	
+    	// prepare client object
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
+        rihc.setHandle(auth.getHandle());
+        
+        String createdItem = rihc.update(itemId, itemXml);
 
         return createdItem;
     }
 
     private static String retrieveItem(String itemId)
-        throws EscidocClientException {
-
-        RestItemHandlerClient client = new RestItemHandlerClient();
-        client.login(Util.getInfrastructureURL(), Constants.USER_NAME,
-            Constants.USER_PASSWORD);
-        String itemXml = client.retrieve(itemId);
+        throws EscidocClientException, MalformedURLException {
+    	
+    	// prepare client object
+        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME, Constants.USER_PASSWORD);
+        RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
+        rihc.setHandle(auth.getHandle());
+        
+        String itemXml = rihc.retrieve(itemId);
 
         return itemXml;
     }
