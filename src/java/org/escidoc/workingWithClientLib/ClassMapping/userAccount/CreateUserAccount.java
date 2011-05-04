@@ -4,7 +4,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.escidoc.Constants;
-import org.joda.time.DateTime;
 
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.UserAccountHandlerClient;
@@ -47,15 +46,12 @@ public class CreateUserAccount {
             e.printStackTrace();
         }
         catch (TransportException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         catch (MalformedURLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         catch (EscidocException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -80,7 +76,6 @@ public class CreateUserAccount {
 
         UserAccountProperties properties = new UserAccountProperties();
         properties.setLoginName("my_account");
-        properties.setCreationDate(new DateTime());
         properties.setName("Max Mustermann");
         
         userAccount.setProperties(properties);
