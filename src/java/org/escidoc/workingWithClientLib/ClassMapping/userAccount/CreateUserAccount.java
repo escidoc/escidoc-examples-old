@@ -65,9 +65,7 @@ public class CreateUserAccount {
         UserAccountHandlerClient client = new UserAccountHandlerClient(auth.getServiceAddress());
         client.setHandle(auth.getHandle());
 
-        client.create(userAccount);
-
-        return userAccount;
+        return client.create(userAccount);
     }
 
     private static UserAccount prepareUserAccount() {
