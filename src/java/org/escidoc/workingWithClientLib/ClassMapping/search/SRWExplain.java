@@ -10,13 +10,10 @@ import de.escidoc.core.client.SearchHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
-import de.escidoc.core.resources.Resource;
 import de.escidoc.core.resources.sb.Record;
 import de.escidoc.core.resources.sb.RecordPacking;
 import de.escidoc.core.resources.sb.explain.ExplainResponse;
 import de.escidoc.core.resources.sb.explain.Index;
-import de.escidoc.core.resources.sb.search.SearchResult;
-import de.escidoc.core.resources.sb.search.SearchResultRecord;
 
 /**
  * Example for SRW Search.
