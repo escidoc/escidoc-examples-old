@@ -12,7 +12,7 @@ import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
 import de.escidoc.core.resources.aa.useraccount.Grant;
 import de.escidoc.core.resources.aa.useraccount.GrantProperties;
-import de.escidoc.core.resources.common.reference.Reference;
+import de.escidoc.core.resources.common.reference.ContextRef;
 import de.escidoc.core.resources.common.reference.RoleRef;
 
 /**
@@ -46,7 +46,7 @@ public class SetGrants {
 		Grant grant = new Grant();
 		GrantProperties grantProperties = new GrantProperties();
 		grantProperties.setGrantRemark("new context grant");
-		grantProperties.setAssignedOn(new Reference(contextId));
+		grantProperties.setAssignedOn(new ContextRef(contextId));
 		RoleRef roleRef = new RoleRef(roleObjectId);
 		grantProperties.setRole(roleRef);
 		grant.setGrantProperties(grantProperties);
