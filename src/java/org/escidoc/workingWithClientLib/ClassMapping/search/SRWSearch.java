@@ -3,6 +3,8 @@ package org.escidoc.workingWithClientLib.ClassMapping.search;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.escidoc.Constants;
+
 import de.escidoc.core.client.SearchHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.exceptions.InternalClientException;
@@ -35,7 +37,7 @@ public class SRWSearch {
        // SRW Search
         URL serviceAddress = null;
         try {
-            serviceAddress = new URL("");
+            serviceAddress = new URL(Constants.DEFAULT_SERVICE_URL);
         }
         catch (MalformedURLException e) {
             e.printStackTrace();
