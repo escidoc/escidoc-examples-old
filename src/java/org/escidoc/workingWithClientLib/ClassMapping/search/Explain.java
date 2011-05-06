@@ -2,16 +2,17 @@ package org.escidoc.workingWithClientLib.ClassMapping.search;
 
 import gov.loc.www.zing.srw.ExplainRequestType;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.util.List;
 
-import de.escidoc.core.client.SearchHandlerClient;
-import de.escidoc.core.client.exceptions.EscidocClientException;
+import de.escidoc.core.client.ItemHandlerClient;
+import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
 import de.escidoc.core.client.exceptions.TransportException;
+import de.escidoc.core.client.interfaces.ItemHandlerClientInterface;
 import de.escidoc.core.resources.sb.Record;
 import de.escidoc.core.resources.sb.RecordPacking;
 import de.escidoc.core.resources.sb.explain.ExplainResponse;
+import de.escidoc.core.resources.sb.explain.Index;
 
 /**
  * Example for Explain.
@@ -26,51 +27,40 @@ public class Explain {
      */
     public static void main(String[] args) {
         
-            String query = "escidoc:query";
-            
-            if (args.length == 1) {
-                query = args[0];
-            }
-            
-           // Explain
-            URL serviceAddress = null;
-            try {
-                serviceAddress = new URL("");
-            }
-            catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            
-            SearchHandlerClient c =
-                new SearchHandlerClient(serviceAddress);
-            
-            ExplainRequestType request = new ExplainRequestType();
-            request.setRecordPacking(RecordPacking.XML.toString());
-            request.setVersion("1.1");
+        ItemHandlerClientInterface c = new ItemHandlerClient();
 
-            ExplainResponse response;
-            try {
-                response = c.explain(request, null);
-            }
-            catch (InternalClientException e) {
-                e.printStackTrace();
-            }
-            catch (TransportException e) {
-                e.printStackTrace();
-            }
-            catch (EscidocClientException e) {
-                e.printStackTrace();
-            }
-            
-            Record record = response.getRecord();
-            Explain data = record.getRecordData();
+        ExplainRequestType request = new ExplainRequestType();
+        
+        ExplainResponse response =  null;
+        
+        try {
+            response = c.retrieveItems(request);
+        }
+        catch (EscidocException e) {
+            e.printStackTrace();
+        }
+        catch (InternalClientException e) {
+            e.printStackTrace();
+        }
+        catch (TransportException e) {
+            e.printStackTrace();
+        }
+        
+        Record<de.escidoc.core.resources.sb.explain.Explain> record = response.getRecord();
+        
+        de.escidoc.core.resources.sb.explain.Explain data = record.getRecordData();
 
+        List<Index> indexes = data.getIndexInfo().getIndexes();
+        
             System.out.println("\n=========================\n");
-            System.out.println("testSRWExplain: ");
-            System.out.println("RecordPacking: ");
-            System.out.println(RecordPacking.XML.toString());
-            System.out.println("\n");
-            System.out.println(data.toString());
+            System.out.println("Test Explain: ");
+            System.out.println("RecordPacking: " + RecordPacking.XML.toString());
+            System.out.println("\n\n");
+            System.out.println("available search fields for Items:\n");
+            for (Index index : indexes){
+                System.out.println(index.getTitle());
+            }
+            
             System.out.println("\n");
             
     }
