@@ -1,18 +1,12 @@
 package org.escidoc.workingWithClientLib.ClassMapping.staging;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.escidoc.Constants;
-
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
 
 import de.escidoc.core.client.Authentication;
 import de.escidoc.core.client.StagingHandlerClient;
@@ -24,7 +18,7 @@ import de.escidoc.core.client.exceptions.application.security.AuthenticationExce
 import de.escidoc.core.client.interfaces.StagingHandlerClientInterface;
 
 /**
- * Example for Staging.
+ * Example for file uploading via staging area.
  * 
  * @author JHE
  * 
@@ -35,8 +29,16 @@ public class Staging {
      * @param args
      */
     public static void main(String[] args) {
-
+        
+        // file for upload
+        String file = "templates/generic/img/escidoc-logo.jpg";
+        
+        if (args.length == 1) {
+            file = args[0];
+        }
+        
         Authentication auth = null;
+        
         try {
             auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN,
                 Constants.USER_PASSWORD_SYSADMIN);
@@ -51,6 +53,7 @@ public class Staging {
             e.printStackTrace();
         }
         
+     // get staging handler client
         StagingHandlerClientInterface sthc = new StagingHandlerClient(auth.getServiceAddress());
         try {
             sthc.setHandle(auth.getHandle());
@@ -58,10 +61,11 @@ public class Staging {
         catch (InternalClientException e) {
             e.printStackTrace();
         }
-
+        
+      // read data from filesystem
         InputStream inputStream = null;
         try {
-            inputStream = load("templates/generic/img/escidoc-logo.jpg");
+            inputStream = load(file);
             int i = 0;
             try {
                 while (inputStream.read() > -1) {
@@ -71,9 +75,10 @@ public class Staging {
             catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.println("eingelesen bytes: " + i);
             
-            inputStream = load("templates/generic/img/escidoc-logo.jpg");
+            inputStream = load(file);
+            
+            System.out.println( i + " bytes read from file: " + file);
         }
         catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -82,7 +87,10 @@ public class Staging {
         URL url = null;
         
         try {
+            // upload file and get retrieval url for the staging area
             url = sthc.upload(inputStream);
+            System.out.println("file uploaded,\nurl for staging retrieval is:\n" + url.toString());
+            
         }
         catch (EscidocException e) {
             e.printStackTrace();
@@ -94,8 +102,8 @@ public class Staging {
             e.printStackTrace();
         }
         
-        System.out.println("url: " + url.toString());
-  
+        
+      // fetch data form staging area
         InputStream ins = null;
         try {
             ins = url.openStream();
@@ -110,7 +118,7 @@ public class Staging {
                 i++;
             }
             
-           System.out.println("gelesen bytes: " + i);
+           System.out.println( i + " bytes fetched from staging area");
         }
         catch (IOException e) {
             e.printStackTrace();
