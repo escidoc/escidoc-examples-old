@@ -28,18 +28,17 @@ public class FilterSearch {
      */
     public static void main(String[] args) {
 
-        String itemId = "escidoc:item-id";
+        String query = "PID=e*";
 
         if (args.length == 1) {
-            itemId = args[0];
+            query = args[0];
         }
 
         ItemHandlerClientInterface c = new ItemHandlerClient();
 
-        String query = "\"/id\"=" + itemId;
-
         SearchRetrieveRequestType request = new SearchRetrieveRequestType();
         request.setQuery(query);
+//        request.setMaximumRecords(maximumRecords)
         request.setRecordPacking(RecordPacking.XML.toString());
 
         SearchRetrieveResponse response = null;
@@ -75,31 +74,31 @@ public class FilterSearch {
             }
         }
 
-        Collection<Item> items = null;
-        try {
-            items = c.retrieveItemsAsList(request);
-        }
-        catch (EscidocException e) {
-            e.printStackTrace();
-        }
-        catch (InternalClientException e) {
-            e.printStackTrace();
-        }
-        catch (TransportException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("\ntestFilterSearch [2]:\n");
-        System.out.println("Results: ");
-        System.out.println(items.size());
-        System.out.println("\n");
-
-        for (Item item : items) {
-            System.out.println("Item: ID[");
-            System.out.println(item.getObjid());
-            System.out.println("], Href[");
-            System.out.println(item.getXLinkHref());
-            System.out.println("]\n");
-        }
+//        Collection<Item> items = null;
+//        try {
+//            items = c.retrieveItemsAsList(request);
+//        }
+//        catch (EscidocException e) {
+//            e.printStackTrace();
+//        }
+//        catch (InternalClientException e) {
+//            e.printStackTrace();
+//        }
+//        catch (TransportException e) {
+//            e.printStackTrace();
+//        }
+//
+//        System.out.println("\ntestFilterSearch [2]:\n");
+//        System.out.println("Results: ");
+//        System.out.println(items.size());
+//        System.out.println("\n");
+//
+//        for (Item item : items) {
+//            System.out.println("Item: ID[");
+//            System.out.println(item.getObjid());
+//            System.out.println("], Href[");
+//            System.out.println(item.getXLinkHref());
+//            System.out.println("]\n");
+//        }
     }
 }
