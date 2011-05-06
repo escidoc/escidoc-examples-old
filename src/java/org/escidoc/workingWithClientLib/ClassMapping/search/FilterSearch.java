@@ -76,32 +76,5 @@ public class FilterSearch {
                 System.out.println("Item: ID[" + item.getObjid() + "], Href[" + item.getXLinkHref() + "]\n");
             }
         }
-
-        // Collection<Item> items = null;
-        // try {
-        // items = c.retrieveItemsAsList(request);
-        // }
-        // catch (EscidocException e) {
-        // e.printStackTrace();
-        // }
-        // catch (InternalClientException e) {
-        // e.printStackTrace();
-        // }
-        // catch (TransportException e) {
-        // e.printStackTrace();
-        // }
-        //
-        // System.out.println("\ntestFilterSearch [2]:\n");
-        // System.out.println("Results: ");
-        // System.out.println(items.size());
-        // System.out.println("\n");
-        //
-        // for (Item item : items) {
-        // System.out.println("Item: ID[");
-        // System.out.println(item.getObjid());
-        // System.out.println("], Href[");
-        // System.out.println(item.getXLinkHref());
-        // System.out.println("]\n");
-        // }
     }
 }
