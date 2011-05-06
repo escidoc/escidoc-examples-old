@@ -55,7 +55,7 @@ public class Explain {
             System.out.println("\n=========================\n");
             System.out.println("Test Explain: ");
             System.out.println("RecordPacking: " + RecordPacking.XML.toString());
-            System.out.println("\n\n");
+            System.out.println("\n=========================\n");
             System.out.println("available search fields for Items:\n");
             for (Index index : indexes){
                 System.out.println(index.getTitle());
