@@ -23,70 +23,66 @@ import de.escidoc.core.resources.common.reference.RoleRef;
  */
 public class SetGrants {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
 
-        try {
+		String userAccountId = "escidoc:user-account";
+		String contextId = "escidoc:context-id";
+		String roleObjectId = "escidoc:role-object-id";
 
-            String userAccountId = "escidoc:user-account";
-            String contextId = "escidoc:context-id";
-            String roleObjectId = "escidoc:role-object-id";
+		if (args.length == 1) {
+			userAccountId = args[0];
+		} else if (args.length == 2) {
+			userAccountId = args[0];
+			contextId = args[1];
+		} else if (args.length == 3) {
+			userAccountId = args[0];
+			contextId = args[1];
+			roleObjectId = args[2];
+		}
 
-            if (args.length == 1) {
-                userAccountId = args[0];
-            }
+		Grant grant = new Grant();
+		GrantProperties grantProperties = new GrantProperties();
+		grantProperties.setGrantRemark("new context grant");
+		grantProperties.setAssignedOn(new Reference(contextId));
+		RoleRef roleRef = new RoleRef(roleObjectId);
+		grantProperties.setRole(roleRef);
+		grant.setGrantProperties(grantProperties);
 
-            if (args.length == 2) {
-                contextId = args[1];
-            }
-            
-            if (args.length == 3) {
-                roleObjectId = args[2];
-            }
+		try {
+			grant = createGrant(userAccountId, grant);
 
+			// write out objid and last modification date
+			System.out.println("Grants set for User Account with objid='"
+					+ userAccountId + "' at '"
+					+ grant.getLastModificationDate() + "'.");
 
-            Grant grant = new Grant();
-            GrantProperties grantProperties = new GrantProperties();
-            grantProperties.setGrantRemark("new context grant");
-            grantProperties.setAssignedOn(new Reference(contextId));
-            RoleRef roleRef = new RoleRef(roleObjectId);
-            grantProperties.setRole(roleRef);
-            grant.setGrantProperties(grantProperties);
+		} catch (InternalClientException e) {
+			e.printStackTrace();
+		} catch (TransportException e) {
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (EscidocException e) {
+			e.printStackTrace();
+		}
+	}
 
-            grant = createGrant(userAccountId, grant);
+	private static Grant createGrant(final String userAccountId, Grant grant)
+			throws TransportException, MalformedURLException, EscidocException,
+			InternalClientException {
 
-            // write out objid and last modification date
-            System.out.println("Grants set for User Account with objid='" + userAccountId + "' at '"
-                + grant.getLastModificationDate() + "'.");
+		// prepare client object
+		Authentication auth = new Authentication(new URL(
+				Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN,
+				Constants.USER_PASSWORD_SYSADMIN);
+		UserAccountHandlerClient client = new UserAccountHandlerClient(
+				auth.getServiceAddress());
+		client.setHandle(auth.getHandle());
 
-        }
-        catch (InternalClientException e) {
-            e.printStackTrace();
-        }
-        catch (TransportException e) {
-            e.printStackTrace();
-        }
-        catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        catch (EscidocException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static Grant createGrant(final String userAccountId, Grant grant) throws TransportException,
-        MalformedURLException, EscidocException, InternalClientException {
-
-        // prepare client object
-        Authentication auth =
-            new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN,
-                Constants.USER_PASSWORD_SYSADMIN);
-        UserAccountHandlerClient client = new UserAccountHandlerClient(auth.getServiceAddress());
-        client.setHandle(auth.getHandle());
-
-        return client.createGrant(userAccountId, grant);
-    }
+		return client.createGrant(userAccountId, grant);
+	}
 
 }
