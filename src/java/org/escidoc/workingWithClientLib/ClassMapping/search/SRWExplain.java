@@ -28,18 +28,16 @@ public class SRWExplain {
      */
     public static void main(String[] args) {
 
-        
         ExplainRequestType request = new ExplainRequestType();
-        
+
         URL serviceAddress = null;
         try {
-//            serviceAddress = new URL(Constants.DEFAULT_SERVICE_URL);
-          serviceAddress = new URL("http://localhost:8080/srw/search/escidoc_all");  
+            serviceAddress = new URL("http://localhost:8080/srw/search/escidoc_all");
         }
         catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        
+
         SearchHandlerClient c = new SearchHandlerClient(serviceAddress);
 
         ExplainResponse response = null;
@@ -55,21 +53,21 @@ public class SRWExplain {
         catch (EscidocClientException e) {
             e.printStackTrace();
         }
-        
+
         Record<de.escidoc.core.resources.sb.explain.Explain> record = response.getRecord();
         de.escidoc.core.resources.sb.explain.Explain data = record.getRecordData();
 
         List<Index> indexes = data.getIndexInfo().getIndexes();
-        
-            System.out.println("\n=========================\n");
-            System.out.println("Test SRW Explain: ");
-            System.out.println("RecordPacking: " + RecordPacking.XML.toString());
-            System.out.println("\n=========================\n");
-            System.out.println("available search fields for Database 'escidoc_all':\n");
-            for (Index index : indexes){
-                System.out.println(index.getTitle());
-            }
-            
-            System.out.println("\n");
+
+        System.out.println("\n=========================\n");
+        System.out.println("Example for SRW Explain: ");
+        System.out.println("RecordPacking: " + RecordPacking.XML.toString());
+        System.out.println("\n=========================\n");
+        System.out.println("available search fields for Database 'escidoc_all':\n");
+        for (Index index : indexes) {
+            System.out.println(index.getTitle());
+        }
+
+        System.out.println("\n");
     }
 }
