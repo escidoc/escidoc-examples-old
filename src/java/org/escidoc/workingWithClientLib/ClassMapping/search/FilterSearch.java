@@ -1,9 +1,9 @@
 package org.escidoc.workingWithClientLib.ClassMapping.search;
 
+import org.apache.axis.types.NonNegativeInteger;
+import org.apache.axis.types.PositiveInteger;
+
 import gov.loc.www.zing.srw.SearchRetrieveRequestType;
-
-import java.util.Collection;
-
 import de.escidoc.core.client.ItemHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocException;
 import de.escidoc.core.client.exceptions.InternalClientException;
@@ -16,7 +16,7 @@ import de.escidoc.core.resources.sb.search.SearchResultRecord;
 import de.escidoc.core.resources.sb.search.SearchRetrieveResponse;
 
 /**
- * Example for SRW Search.
+ * Example for SRW filtered Search.
  * 
  * @author JHE
  * 
@@ -33,16 +33,20 @@ public class FilterSearch {
         if (args.length == 1) {
             query = args[0];
         }
-
+        // get the ItemHandlerClientInterface:
         ItemHandlerClientInterface c = new ItemHandlerClient();
 
         SearchRetrieveRequestType request = new SearchRetrieveRequestType();
         request.setQuery(query);
-//        request.setMaximumRecords(maximumRecords)
+
+        // further request parameters could be set, e.g.:
+        // request.setStartRecord(new PositiveInteger("21"));
+        // request.setMaximumRecords(new NonNegativeInteger("40"));
         request.setRecordPacking(RecordPacking.XML.toString());
 
         SearchRetrieveResponse response = null;
         try {
+
             response = c.retrieveItems(request);
         }
         catch (EscidocException e1) {
@@ -56,11 +60,10 @@ public class FilterSearch {
         }
 
         System.out.println("\n=========================\n");
-        System.out.println("testFilterSearch [1]: query=");
-        System.out.println(query);
-        System.out.println(" [RecordPacking: ");
-        System.out.println(RecordPacking.XML.toString());
-        System.out.println("]\n");
+        System.out.println("Example for Filter Search:\n");
+        System.out.println("query: " + query);
+        System.out.println("RecordPacking: " + RecordPacking.XML.toString());
+        System.out.println("\n");
         System.out.println("Results: ");
         System.out.println(response.getNumberOfResultingRecords());
         System.out.println("\n");
@@ -74,31 +77,31 @@ public class FilterSearch {
             }
         }
 
-//        Collection<Item> items = null;
-//        try {
-//            items = c.retrieveItemsAsList(request);
-//        }
-//        catch (EscidocException e) {
-//            e.printStackTrace();
-//        }
-//        catch (InternalClientException e) {
-//            e.printStackTrace();
-//        }
-//        catch (TransportException e) {
-//            e.printStackTrace();
-//        }
-//
-//        System.out.println("\ntestFilterSearch [2]:\n");
-//        System.out.println("Results: ");
-//        System.out.println(items.size());
-//        System.out.println("\n");
-//
-//        for (Item item : items) {
-//            System.out.println("Item: ID[");
-//            System.out.println(item.getObjid());
-//            System.out.println("], Href[");
-//            System.out.println(item.getXLinkHref());
-//            System.out.println("]\n");
-//        }
+        // Collection<Item> items = null;
+        // try {
+        // items = c.retrieveItemsAsList(request);
+        // }
+        // catch (EscidocException e) {
+        // e.printStackTrace();
+        // }
+        // catch (InternalClientException e) {
+        // e.printStackTrace();
+        // }
+        // catch (TransportException e) {
+        // e.printStackTrace();
+        // }
+        //
+        // System.out.println("\ntestFilterSearch [2]:\n");
+        // System.out.println("Results: ");
+        // System.out.println(items.size());
+        // System.out.println("\n");
+        //
+        // for (Item item : items) {
+        // System.out.println("Item: ID[");
+        // System.out.println(item.getObjid());
+        // System.out.println("], Href[");
+        // System.out.println(item.getXLinkHref());
+        // System.out.println("]\n");
+        // }
     }
 }
