@@ -79,5 +79,10 @@ public class Staging {
 
 		System.out.println("file uploaded,\nURL for retrieval is:\n"
 				+ url.toString());
+
+		// use this URL as reference in Component to store binary content in
+		// eSciDoc
+		// Be aware that files from staging service could only be accessed
+		// within a small time window and only one time.
 	}
 }
