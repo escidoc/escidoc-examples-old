@@ -25,6 +25,7 @@ public class SRWSearch {
 
     /**
      * @param args
+     *            Serach query
      */
     public static void main(String[] args) {
 
@@ -34,7 +35,7 @@ public class SRWSearch {
             query = args[0];
         }
 
-       // SRW Search
+        // SRW Search
         URL serviceAddress = null;
         try {
             serviceAddress = new URL(Constants.DEFAULT_SERVICE_URL);
@@ -59,17 +60,11 @@ public class SRWSearch {
             e.printStackTrace();
         }
 
-        System.out.println("\n=========================\n");
-        System.out.println("SRWSearch: query=");
-        System.out.println(query);
-        System.out.println(" [RecordPacking: ");
-        System.out.println(RecordPacking.XML.toString());
-        System.out.println("]\n");
-        System.out.println("Results: ");
-        System.out.println(response.getNumberOfResultingRecords());
-        System.out.println("\n");
+        System.out.println("========================================");
+        System.out.println("SRWSearch: query=" + query + "\" [RecordPacking: " + RecordPacking.XML.toString() + "]\n");
+        System.out.println("Results: " + response.getNumberOfResultingRecords());
 
-        for (SearchResultRecord record : response.getRecords()) {
+        for (final SearchResultRecord record : response.getRecords()) {
 
             SearchResult data = record.getRecordData();
 
@@ -77,8 +72,8 @@ public class SRWSearch {
 
                 Resource res = (Resource) data.getContent();
 
-                System.out.println(res.getResourceType().name() + ": ID[" + res.getObjid() + "], Href["
-                    + res.getXLinkHref() + "], Score[" + data.getScore() + "]\n");
+                System.out.println(res.getResourceType().name() + ": ID[" + res.getObjid() + "], href["
+                    + res.getXLinkHref() + "], score[" + data.getScore() + "]\n");
             }
         }
     }

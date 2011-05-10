@@ -56,17 +56,13 @@ public class SRWSimpleSearch {
 			e.printStackTrace();
 		}
 
-		System.out.println("\n=========================\n");
-		System.out.println("Example for SRW Simple Search:\n");
-		System.out.println(" query = " + query);
-		System.out.println(" [RecordPacking: " + RecordPacking.XML.toString());
-		System.out.println();
-		System.out.println("]\n");
-		System.out.println("Results: ");
-		System.out.println(response.getNumberOfResultingRecords());
-		System.out.println("\n");
+		System.out.println("======================================");
+		System.out.println("Example for SRW Simple Search:");
+		System.out.println("query = " + query);
+		System.out.println("[RecordPacking: " + RecordPacking.XML.toString() +"]\n");
+		System.out.println("Results: " +response.getNumberOfResultingRecords());
 
-		for (SearchResultRecord record : response.getRecords()) {
+		for (final SearchResultRecord record : response.getRecords()) {
 
 			SearchResult data = record.getRecordData();
 
@@ -75,8 +71,8 @@ public class SRWSimpleSearch {
 				Resource res = (Resource) data.getContent();
 
 				System.out.println(res.getResourceType().name() + ": ID["
-						+ res.getObjid() + "], Href[" + res.getXLinkHref()
-						+ "], Score[" + data.getScore() + "]\n");
+						+ res.getObjid() + "], href[" + res.getXLinkHref()
+						+ "], score[" + data.getScore() + "]\n");
 			}
 		}
 	}

@@ -1,7 +1,9 @@
 package org.escidoc.workingWithClientLib.ClassMapping.search;
 
-import org.apache.axis.types.NonNegativeInteger;
-import org.apache.axis.types.PositiveInteger;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.escidoc.Constants;
 
 import gov.loc.www.zing.srw.SearchRetrieveRequestType;
 import de.escidoc.core.client.ItemHandlerClient;
@@ -25,6 +27,7 @@ public class FilterSearch {
 
     /**
      * @param args
+     *            Search Query
      */
     public static void main(String[] args) {
 
@@ -33,8 +36,17 @@ public class FilterSearch {
         if (args.length == 1) {
             query = args[0];
         }
-        // get the ItemHandlerClientInterface:
-        ItemHandlerClientInterface c = new ItemHandlerClient();
+        
+        // get the ItemHandlerClientInterface
+        URL serviceAddress = null;
+        try {
+            serviceAddress = new URL(Constants.DEFAULT_SERVICE_URL);
+        }
+        catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        
+        ItemHandlerClientInterface c = new ItemHandlerClient(serviceAddress);
 
         SearchRetrieveRequestType request = new SearchRetrieveRequestType();
         request.setQuery(query);
@@ -59,21 +71,19 @@ public class FilterSearch {
             e1.printStackTrace();
         }
 
-        System.out.println("\n=========================\n");
-        System.out.println("Example for Filter Search:\n");
+        System.out.println("======================================");
+        System.out.println("Example for Filter Search:");
         System.out.println("query: " + query);
         System.out.println("RecordPacking: " + RecordPacking.XML.toString());
-        System.out.println("\n");
-        System.out.println("Results: ");
-        System.out.println(response.getNumberOfResultingRecords());
-        System.out.println("\n");
-
+        System.out.println("Results: " + response.getNumberOfResultingRecords());
+        System.out.println();
+        
         for (SearchResultRecord record : response.getRecords()) {
             SearchResult result = record.getRecordData();
 
             if (result.getContent() instanceof Item) {
                 Item item = (Item) result.getContent();
-                System.out.println("Item: ID[" + item.getObjid() + "], Href[" + item.getXLinkHref() + "]\n");
+                System.out.println("Item: ID[" + item.getObjid() + "], href[" + item.getXLinkHref() + "]");
             }
         }
     }

@@ -7,6 +7,7 @@ import java.net.URL;
 
 import org.apache.axis.types.NonNegativeInteger;
 import org.apache.axis.types.PositiveInteger;
+import org.escidoc.Constants;
 
 import de.escidoc.core.client.SearchHandlerClient;
 import de.escidoc.core.client.exceptions.EscidocClientException;
@@ -40,7 +41,7 @@ public class SRWEnhancedSearch {
        // SRW Search
         URL serviceAddress = null;
         try {
-            serviceAddress = new URL("http://localhost:8080/srw/search/escidoc_all");  
+            serviceAddress = new URL(Constants.DEFAULT_SERVICE_URL + "/srw/search/escidoc_all");  
         }
         catch (MalformedURLException e) {
             e.printStackTrace();
@@ -69,24 +70,23 @@ public class SRWEnhancedSearch {
             e.printStackTrace();
         }
 
-        System.out.println("\n=========================\n");
-        System.out.println("Example for SRW advanced Search:\n");
+        System.out.println("======================================");
+        System.out.println("Example for SRW advanced Search:");
         System.out.println("query = " + query);
         System.out.println("RecordPacking: " + RecordPacking.XML.toString());
-        System.out.println("\n");
         System.out.println("Results: " + response.getNumberOfResultingRecords());
-        System.out.println("\n");
+        System.out.println();
 
-        for (SearchResultRecord record : response.getRecords()) {
+        for (final SearchResultRecord record : response.getRecords()) {
 
-            SearchResult data = record.getRecordData();
+            final SearchResult data = record.getRecordData();
 
             if (data.getContent() instanceof Resource) {
 
                 Resource res = (Resource) data.getContent();
 
-                System.out.println(res.getResourceType().name() + ": ID[" + res.getObjid() + "], Href["
-                    + res.getXLinkHref() + "], Score[" + data.getScore() + "]\n");
+                System.out.println(res.getResourceType().name() + ": ID[" + res.getObjid() + "], href["
+                    + res.getXLinkHref() + "], score[" + data.getScore() + "]");
             }
         }
     }
