@@ -23,23 +23,21 @@ public class CreateUserAccount {
 
     /**
      * @param args
+     *            ignored
      */
     public static void main(String[] args) {
 
-        // Prepare a value object with new values of Organizational Unit
         try {
 
             // Prepare a value object with new values of User Account
             UserAccount userAccount = prepareUserAccount();
 
             userAccount = createUserAccount(userAccount);
-            
-            
+
             // for convenient reason: print out objid and last-modification-date
             // of created User Account
-            System.out.println("User Account with objid='"
-                + userAccount.getObjid() + "' at '" + userAccount.getLastModificationDate()
-                + "' created.");
+            System.out.println("User Account with objid='" + userAccount.getObjid() + "' at '"
+                + userAccount.getLastModificationDate() + "' created.");
 
         }
         catch (InternalClientException e) {
@@ -56,7 +54,19 @@ public class CreateUserAccount {
         }
     }
 
-    private static UserAccount createUserAccount(UserAccount userAccount) throws InternalClientException,
+    /**
+     * Create UserAccount in infrastructure.
+     * 
+     * @param userAccount
+     *            UserAccount to create
+     * @return created UserAccount
+     * 
+     * @throws InternalClientException
+     * @throws TransportException
+     * @throws MalformedURLException
+     * @throws EscidocException
+     */
+    private static UserAccount createUserAccount(final UserAccount userAccount) throws InternalClientException,
         TransportException, MalformedURLException, EscidocException {
 
         Authentication auth =
@@ -68,6 +78,11 @@ public class CreateUserAccount {
         return client.create(userAccount);
     }
 
+    /**
+     * Prepare an UserAccount, but does not create it in infrastructure.
+     * 
+     * @return UserAccount
+     */
     private static UserAccount prepareUserAccount() {
 
         UserAccount userAccount = new UserAccount();
@@ -75,7 +90,7 @@ public class CreateUserAccount {
         UserAccountProperties properties = new UserAccountProperties();
         properties.setLoginName("my_account");
         properties.setName("Max Mustermann");
-        
+
         userAccount.setProperties(properties);
 
         return userAccount;
