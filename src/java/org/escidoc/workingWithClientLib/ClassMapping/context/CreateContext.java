@@ -18,7 +18,7 @@ import de.escidoc.core.resources.om.context.OrganizationalUnitRefs;
 /**
  * Example how to create an Context by using the eSciDoc Java client library.
  * 
- * At least one Organizational Unit (OU) has to exists. The referenze of the OU
+ * At least one Organizational Unit (OU) has to exists. The reference of the OU
  * is to define as reference (see prepareContext method).
  * 
  * @author SWA
