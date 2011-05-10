@@ -12,32 +12,32 @@ import de.escidoc.core.client.exceptions.EscidocClientException;
 import de.escidoc.core.client.rest.RestItemHandlerClient;
 
 /**
- * Example how to update an Item by using the XML REST representation and the
- * eSciDoc Java client library.
+ * Example how to update an Item by using the XML REST representation and the eSciDoc Java client library.
  * 
- * The eSciDoc Java client library is used for communication with framework.
- * Unused is mapping between Java classes and XML representations to explain the
- * XML data structure.
+ * The eSciDoc Java client library is used for communication with framework. Unused is mapping between Java classes and
+ * XML representations to explain the XML data structure.
  * 
- * eSciDoc XML REST representation is used. Please keep that in mind, if you
- * adapt these examples for SOAP.
+ * eSciDoc XML REST representation is used. Please keep that in mind, if you adapt these examples for SOAP.
  * 
  */
 public class UpdateItem {
 
+    /**
+     * 
+     * @param args
+     *            ignored
+     */
     public static void main(String[] args) {
 
-        String id = "escidoc:20004";
+        String id = "escidoc:item";
         String xmlFile = "templates/generic/item/Item_update.xml";
 
         try {
 
-            String updatedResource =
-                updateItem(id, Util.getXmlFileAsString(xmlFile));
+            String updatedResource = updateItem(id, Util.getXmlFileAsString(xmlFile));
 
             String[] objidLmd = Util.obtainObjidAndLmd(updatedResource);
-            System.out.println("Item with objid='" + objidLmd[0] + "' at '"
-                + objidLmd[1] + "' updated.");
+            System.out.println("Item with objid='" + objidLmd[0] + "' at '" + objidLmd[1] + "' updated.");
 
         }
         catch (EscidocClientException e) {
@@ -54,36 +54,48 @@ public class UpdateItem {
                 ee.printStackTrace();
             }
             catch (IOException ee) {
-                System.out.println("Can neither read nor write " + xmlFile
-                    + ".");
+                System.out.println("Can neither read nor write " + xmlFile + ".");
             }
         }
     }
 
-    private static String updateItem(String itemId, String itemXml)
-        throws EscidocClientException, MalformedURLException {
-    	
-    	// prepare client object
-        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
+    /**
+     * 
+     * @param itemId
+     * @param itemXml
+     * @return
+     * @throws EscidocClientException
+     * @throws MalformedURLException
+     */
+    private static String updateItem(final String itemId, final String itemXml) throws EscidocClientException,
+        MalformedURLException {
+
+        Authentication auth =
+            new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN,
+                Constants.USER_PASSWORD_SYSADMIN);
         RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
         rihc.setHandle(auth.getHandle());
-        
-        String createdItem = rihc.update(itemId, itemXml);
 
-        return createdItem;
+        return rihc.update(itemId, itemXml);
     }
 
-    private static String retrieveItem(String itemId)
-        throws EscidocClientException, MalformedURLException {
-    	
-    	// prepare client object
-        Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
+    /**
+     * 
+     * @param itemId
+     * @return
+     * @throws EscidocClientException
+     * @throws MalformedURLException
+     */
+    private static String retrieveItem(String itemId) throws EscidocClientException, MalformedURLException {
+
+        // prepare client object
+        Authentication auth =
+            new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN,
+                Constants.USER_PASSWORD_SYSADMIN);
         RestItemHandlerClient rihc = new RestItemHandlerClient(auth.getServiceAddress());
         rihc.setHandle(auth.getHandle());
-        
-        String itemXml = rihc.retrieve(itemId);
 
-        return itemXml;
+        return rihc.retrieve(itemId);
     }
 
 }
