@@ -24,8 +24,7 @@ import de.escidoc.core.resources.oum.OrganizationalUnit;
 import de.escidoc.core.resources.oum.OrganizationalUnitProperties;
 
 /**
- * Example how to delete an Organizational Unit by using the eSciDoc Java client
- * library.
+ * Example how to delete an Organizational Unit by using the eSciDoc Java client library.
  * 
  * @author SWA
  * 
@@ -39,21 +38,23 @@ public class DeleteOu {
             OrganizationalUnit ou = prepareOrganizationalUnit();
 
             // get handler
-            Authentication auth = new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN, Constants.USER_PASSWORD_SYSADMIN);
-        	OrganizationalUnitHandlerClient client = new OrganizationalUnitHandlerClient(auth.getServiceAddress());
-        	client.setHandle(auth.getHandle());
+            Authentication auth =
+                new Authentication(new URL(Constants.DEFAULT_SERVICE_URL), Constants.USER_NAME_SYSADMIN,
+                    Constants.USER_PASSWORD_SYSADMIN);
+            OrganizationalUnitHandlerClient client = new OrganizationalUnitHandlerClient(auth.getServiceAddress());
+            client.setHandle(auth.getHandle());
 
             // call create
             OrganizationalUnit createdOu = client.create(ou);
 
             // for convenient reason: print out objid and last-modification-date
             // of created Organizational Unit
-            System.out.println("Organizational Unit with objid='"
-                + createdOu.getObjid() + "' at '"
+            System.out.println("Organizational Unit with objid='" + createdOu.getObjid() + "' at '"
                 + createdOu.getLastModificationDate() + "' created.");
 
             // delete just created OU
             client.delete(createdOu.getObjid());
+            System.out.println("Organizational Unit with objid='" + createdOu.getObjid() + " deleted.");
 
         }
         catch (EscidocException e) {
@@ -78,17 +79,15 @@ public class DeleteOu {
     }
 
     /**
-     * The value object Organizational Unit is to create and to fill with (at
-     * least required) parameter.
+     * The value object Organizational Unit is to create and to fill with (at least required) parameter.
      * 
-     * @return OrganizationalUnit (which is not created within the
-     *         infrastructure).
+     * @return OrganizationalUnit (which is not created within the infrastructure).
      * @throws ParserConfigurationException
      * @throws IOException
      * @throws SAXException
      */
-    private static OrganizationalUnit prepareOrganizationalUnit()
-        throws ParserConfigurationException, SAXException, IOException {
+    private static OrganizationalUnit prepareOrganizationalUnit() throws ParserConfigurationException, SAXException,
+        IOException {
 
         OrganizationalUnit ou = new OrganizationalUnit();
 
@@ -97,21 +96,17 @@ public class DeleteOu {
         ou.setProperties(properties);
 
         /*
-         * An Organizational Unit requires title, alternative title(s) and
-         * description. These values are set via metadata-record with name
-         * 'escidoc'.
+         * An Organizational Unit requires title, alternative title(s) and description. These values are set via
+         * metadata-record with name 'escidoc'.
          */
         MetadataRecord mdRecord = new MetadataRecord();
         mdRecord.setName("escidoc");
 
         String str =
-            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-                + "<ou:organization-details "
-                + "xmlns:ou=\"http://escidoc.mpg.de/metadataprofile/"
-                + "schema/0.1/organization\">\n"
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<ou:organization-details "
+                + "xmlns:ou=\"http://escidoc.mpg.de/metadataprofile/" + "schema/0.1/organization\">\n"
                 + "<dc:title xmlns:dc=\"http://purl.org/dc/elements/1.1/\">"
-                + "Generic Organizational Unit</dc:title>\n"
-                + "</ou:organization-details>";
+                + "Generic Organizational Unit</dc:title>\n" + "</ou:organization-details>";
         InputStream in = new ByteArrayInputStream(str.getBytes());
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
