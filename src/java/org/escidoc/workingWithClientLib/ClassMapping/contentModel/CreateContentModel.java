@@ -1,7 +1,6 @@
 package org.escidoc.workingWithClientLib.ClassMapping.contentModel;
 
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
@@ -18,6 +17,8 @@ import de.escidoc.core.resources.cmm.MetadataRecordDefinition;
 import de.escidoc.core.resources.cmm.MetadataRecordDefinitions;
 import de.escidoc.core.resources.cmm.ResourceDefinition;
 import de.escidoc.core.resources.cmm.ResourceDefinitions;
+import de.escidoc.core.resources.cmm.Schema;
+import de.escidoc.core.resources.cmm.Xslt;
 
 /**
  * Example how to create an Content Model by using the eSciDoc Java client library.
@@ -86,7 +87,7 @@ public class CreateContentModel {
         // md-record definition
         MetadataRecordDefinition mdRecordDef = new MetadataRecordDefinition();
         mdRecordDef.setName("Name-" + System.nanoTime());
-        mdRecordDef.setSchema(new URI(Constants.DEFAULT_SERVICE_URL + "/xsd/rest/content-model/0.1/content-model.xsd"));
+        mdRecordDef.setSchema(new Schema(Constants.DEFAULT_SERVICE_URL + "/xsd/rest/content-model/0.1/content-model.xsd"));
         MetadataRecordDefinitions mdrds = new MetadataRecordDefinitions();
         mdrds.add(mdRecordDef);
         contentModel.setMetadataRecordDefinitions(mdrds);
@@ -95,7 +96,7 @@ public class CreateContentModel {
         ResourceDefinition rd1 = new ResourceDefinition();
         rd1.setName("transX" + System.nanoTime());
         rd1.setMetadataRecordName("escidoc");
-        rd1.setXslt(new URI(Constants.DEFAULT_SERVICE_URL + "/xsl/mapping-unknown2dc-onlyMD.xsl"));
+        rd1.setXslt(new Xslt(Constants.DEFAULT_SERVICE_URL + "/xsl/mapping-unknown2dc-onlyMD.xsl"));
         ResourceDefinitions rds = new ResourceDefinitions();
         rds.add(rd1);
         contentModel.setResourceDefinitions(rds);
@@ -103,7 +104,7 @@ public class CreateContentModel {
         ResourceDefinition rd2 = new ResourceDefinition();
         rd2.setName("transX" + System.nanoTime());
         rd2.setMetadataRecordName("blafasel");
-        rd2.setXslt(new URI(Constants.DEFAULT_SERVICE_URL + "/xsl/copy.xsl"));
+        rd2.setXslt(new Xslt(Constants.DEFAULT_SERVICE_URL + "/xsl/copy.xsl"));
         contentModel.getResourceDefinitions().add(rd2);
 
         return contentModel;

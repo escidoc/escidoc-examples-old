@@ -99,8 +99,7 @@ public class DeleteOu {
          * An Organizational Unit requires title, alternative title(s) and description. These values are set via
          * metadata-record with name 'escidoc'.
          */
-        MetadataRecord mdRecord = new MetadataRecord();
-        mdRecord.setName("escidoc");
+        MetadataRecord mdRecord = new MetadataRecord("escidoc");
 
         String str =
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<ou:organization-details "
