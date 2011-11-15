@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<escidocItem:item xmlns:escidocItem="http://www.escidoc.de/schemas/item/0.10"
+	xmlns:escidocMetadataRecords="http://www.escidoc.de/schemas/metadatarecords/0.5"
+	xmlns:prop="http://escidoc.de/core/01/properties/" xmlns:srel="http://escidoc.de/core/01/structural-relations/"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+
+	<escidocItem:properties>
+		<srel:context xlink:href="/ir/context/###CONTEXT_ID###" />
+		<srel:content-model xlink:href="/cmm/content-model/###CONTENT_MODEL_ID###" />
+		<prop:content-model-specific />
+	</escidocItem:properties>
+
+	<escidocMetadataRecords:md-records>
+		<escidocMetadataRecords:md-record
+			name="escidoc">
+
+			<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+				<dc:creator>Author Name</dc:creator>
+				<dc:identifier>abcdefg</dc:identifier>
+				<dc:date>2010</dc:date>
+				<dc:title>Inline Content Example</dc:title>
+				<dc:type>Example</dc:type>
+
+			</metadata>
+		</escidocMetadataRecords:md-record>
+	</escidocMetadataRecords:md-records>
+
+	<escidocComponents:components
+		xmlns:escidocComponents="http://www.escidoc.de/schemas/components/0.9">
+
+		<escidocComponents:component>
+			<escidocComponents:properties>
+				<prop:valid-status>valid</prop:valid-status>
+				<prop:visibility>public</prop:visibility>
+				<prop:content-category>semi-structural</prop:content-category>
+				<prop:mime-type>text/xml</prop:mime-type>
+			</escidocComponents:properties>
+
+			<escidocComponents:content storage="internal-managed">
+				QW4gQmFzZTY0IGlubGluZSBleGFtcGxlLg==
+			</escidocComponents:content>
+		</escidocComponents:component>
+
+	</escidocComponents:components>
+
+</escidocItem:item>
+
