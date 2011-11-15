@@ -82,9 +82,9 @@ public class CreateItemWithContent {
 		Item item = new Item();
 
 		item.getProperties().setContext(
-				new ContextRef("escidoc:2302"));
+				new ContextRef("escidoc:2"));
 		item.getProperties().setContentModel(
-				new ContentModelRef("escidoc:139"));
+				new ContentModelRef("escidoc:3"));
 
 		// Metadata Record(s)
 		MetadataRecords mdRecords = new MetadataRecords();
